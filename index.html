@@ -1,0 +1,260 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<title>NIFTY Tuned — Live Engine</title>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<style>
+  :root {
+    color-scheme: light;
+    --page:           #f2f5fa;
+    --surface-1:      #ffffff;
+    --surface-2:      #e9edf5;
+    --text-primary:   #11151f;
+    --text-secondary: #5a6478;
+    --text-muted:     #838da2;
+    --gridline:       #dbe1ec;
+    --border:         rgba(17,21,31,0.12);
+
+    --accent:         #4a3aa7;
+    --accent-soft:    rgba(74,58,167,0.10);
+
+    --good:           #0ca30c;
+    --critical:       #d03b3b;
+    --warning:        #b5710a;
+    --neutral-bg:     #e7eaf1;
+    --neutral-text:   #5a6478;
+
+    --call:           #2a78d6;
+    --put:            #c23d84;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      color-scheme: dark;
+      --page:           #0a0d14;
+      --surface-1:      #141a26;
+      --surface-2:      #1c2434;
+      --text-primary:   #eef1f8;
+      --text-secondary: #9aa4bd;
+      --text-muted:     #7c869e;
+      --gridline:       #262f42;
+      --border:         rgba(238,241,248,0.12);
+
+      --accent:         #9085e9;
+      --accent-soft:    rgba(144,133,233,0.16);
+
+      --good:           #28c840;
+      --critical:       #f0645f;
+      --warning:        #f2b636;
+      --neutral-bg:     #232b3c;
+      --neutral-text:   #9aa4bd;
+
+      --call:           #3987e5;
+      --put:            #d55181;
+    }
+  }
+  * { box-sizing: border-box; }
+  body { margin: 0; background: var(--page); color: var(--text-primary); font-family: system-ui, -apple-system, "Segoe UI", sans-serif; }
+  .wrap { max-width: 900px; margin: 0 auto; padding: 0 0 32px; }
+  header { padding: 20px 24px 12px; display: flex; align-items: baseline; justify-content: space-between; flex-wrap: wrap; gap: 8px 24px; }
+  h1 { font-size: 21px; margin: 0; font-weight: 700; letter-spacing: -0.01em; }
+  .sub { color: var(--text-secondary); font-size: 14px; margin-top: 2px; }
+  #status-bar { padding: 0 24px 16px; display: flex; gap: 18px; flex-wrap: wrap; font-size: 15px; color: var(--text-secondary); }
+  #status-bar b { color: var(--text-primary); font-variant-numeric: tabular-nums; }
+  .dot { display: inline-block; width: 8px; height: 8px; border-radius: 50%; margin-right: 6px; vertical-align: middle; flex: none; }
+  .dot.live { background: var(--good); }
+  .dot.stale { background: var(--critical); }
+  .dot.paused { background: var(--warning); }
+
+  .card { background: var(--surface-1); border: 1px solid var(--border); border-radius: 12px; padding: 18px 20px; margin: 0 24px 16px; }
+  .card h2 { font-size: 13px; text-transform: uppercase; letter-spacing: 0.06em; color: var(--text-muted); margin: 0 0 12px; }
+
+  .pos-empty { color: var(--text-muted); font-size: 14px; }
+  .pos-row { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 10px; }
+  .pos-side { font-size: 20px; font-weight: 700; }
+  .pos-side.CALL { color: var(--call); }
+  .pos-side.PUT { color: var(--put); }
+  .pos-meta { font-size: 12.5px; color: var(--text-secondary); margin-top: 4px; }
+  .pnl { font-size: 24px; font-weight: 700; font-variant-numeric: tabular-nums; }
+  .pnl.good { color: var(--good); }
+  .pnl.bad { color: var(--critical); }
+
+  .stat-row { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; }
+  .stat { text-align: center; }
+  .stat .v { font-size: 20px; font-weight: 600; font-variant-numeric: tabular-nums; }
+  .stat .k { font-size: 11px; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.05em; margin-top: 2px; }
+
+  .checklist-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+  .crit-col .name { font-weight: 700; font-size: 14px; margin-bottom: 8px; }
+  .crit-col .name.CALL { color: var(--call); }
+  .crit-col .name.PUT { color: var(--put); }
+  .crit-row { display: flex; align-items: center; gap: 8px; font-size: 13.5px; color: var(--text-muted); padding: 4px 0; border-top: 1px solid var(--gridline); }
+  .crit-row:first-of-type { border-top: none; }
+  .crit-row .mark { width: 14px; text-align: center; font-weight: 700; }
+  .crit-row.met { color: var(--text-primary); }
+  .crit-row.met.call .mark { color: var(--good); }
+  .crit-row.met.put .mark { color: var(--critical); }
+  @media (max-width: 560px) { .checklist-grid { grid-template-columns: 1fr; } }
+
+  .levels { margin-top: 10px; padding-top: 8px; border-top: 1px solid var(--gridline); font-size: 13px; color: var(--text-muted); display: flex; flex-wrap: wrap; gap: 4px 14px; }
+
+  table { width: 100%; border-collapse: collapse; font-size: 13px; }
+  th { text-align: left; color: var(--text-muted); font-weight: 600; padding: 6px 4px; border-bottom: 1px solid var(--gridline); font-size: 11.5px; text-transform: uppercase; letter-spacing: 0.04em; }
+  td { padding: 7px 4px; border-bottom: 1px solid var(--gridline); font-variant-numeric: tabular-nums; }
+  .pos-pnl-cell { color: var(--good); } .neg-pnl-cell { color: var(--critical); }
+  .empty-row td { color: var(--text-muted); text-align: center; padding: 16px 4px; }
+
+  footer { padding: 8px 24px 24px; font-size: 13px; color: var(--text-muted); }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<header>
+  <div>
+    <h1>NIFTY Tuned — Live Engine</h1>
+    <div class="sub">5-condition Daily-CPR + 3/5/15-min EMA stack entry, debounced 5-min-EMA5 exit, no overnight, 11:00&ndash;13:00 blackout</div>
+  </div>
+</header>
+
+<div id="status-bar">
+  <span><span class="dot" id="live-dot"></span><span id="live-text">loading…</span></span>
+  <span>Last tick: <b id="last-tick">–</b></span>
+  <span>Status: <b id="engine-status">–</b></span>
+</div>
+
+<div class="card">
+  <h2>Position</h2>
+  <div id="position-body"><span class="pos-empty">loading…</span></div>
+</div>
+
+<div class="card">
+  <h2>Today</h2>
+  <div class="stat-row" id="stat-row"></div>
+</div>
+
+<div class="card">
+  <h2>Live condition checklist</h2>
+  <div class="checklist-grid" id="checklist-grid"></div>
+  <div class="levels" id="levels-row"></div>
+</div>
+
+<div class="card">
+  <h2>Trade log (today)</h2>
+  <table>
+    <thead><tr><th>Time</th><th>Side</th><th>Strike</th><th>Reason</th><th>P&amp;L</th></tr></thead>
+    <tbody id="trade-tbody"></tbody>
+  </table>
+</div>
+
+<footer>
+  Reads live_state.json from this same site every 30s, pushed by the live engine's Task Scheduler
+  tick (D:\...\Project Nifty 3min CPR Strategy\live\live_engine_tick.py). This page is read-only —
+  it cannot place, modify, or cancel any order; it only displays what the engine already did.
+</footer>
+
+</div>
+
+<script>
+const REFRESH_MS = 30 * 1000;
+const STATE_URL = "live_state.json";
+
+function fmt(v) { return (v > 0 ? '+' : '') + Number(v).toFixed(1); }
+
+function critRow(label, met, dir) {
+  return `<div class="crit-row ${met ? 'met ' + dir : ''}"><span class="mark">${met ? '✓' : '·'}</span>${label}</div>`;
+}
+
+async function refresh() {
+  let state;
+  try {
+    const res = await fetch(STATE_URL + "?t=" + Date.now(), { cache: "no-store" });
+    if (!res.ok) throw new Error("HTTP " + res.status);
+    state = await res.json();
+  } catch (e) {
+    document.getElementById("live-dot").className = "dot stale";
+    document.getElementById("live-text").textContent = "failed to load live_state.json — " + e.message;
+    return;
+  }
+
+  const lastTick = state.last_tick ? new Date(state.last_tick) : null;
+  const ageMin = lastTick ? (Date.now() - lastTick.getTime()) / 60000 : Infinity;
+
+  const dot = document.getElementById("live-dot");
+  const text = document.getElementById("live-text");
+  if (state.engine_status === "paused") {
+    dot.className = "dot paused";
+    text.textContent = "paused (no new entries)";
+  } else if (ageMin > 10) {
+    dot.className = "dot stale";
+    text.textContent = `stale (${Math.round(ageMin)} min since last push — market may be closed, or the task isn't firing)`;
+  } else {
+    dot.className = "dot live";
+    text.textContent = "live";
+  }
+
+  document.getElementById("last-tick").textContent = lastTick ? lastTick.toLocaleString("en-IN") : "—";
+  const statusLabels = {
+    running: "Running", paused: "Paused", token_invalid: "Token invalid",
+    config_error: "Config error", data_error: "Data error", starting: "Starting",
+  };
+  let statusText = statusLabels[state.engine_status] || state.engine_status || "—";
+  if (state.daily_loss_cap_hit) statusText += " · loss cap hit";
+  document.getElementById("engine-status").textContent = statusText;
+
+  const posBody = document.getElementById("position-body");
+  if (state.position) {
+    const p = state.position;
+    posBody.innerHTML = `
+      <div class="pos-row">
+        <div>
+          <div class="pos-side ${p.side}">${p.side} ${p.strike}</div>
+          <div class="pos-meta">Entered ${new Date(p.entry_time).toLocaleTimeString("en-IN")} @ ${p.entry_price} · qty ${p.qty} · expiry ${p.expiry}</div>
+        </div>
+      </div>`;
+  } else {
+    posBody.innerHTML = '<span class="pos-empty">No open position</span>';
+  }
+
+  document.getElementById("stat-row").innerHTML = `
+    <div class="stat"><div class="v">${state.trades_today}/6</div><div class="k">Trades today</div></div>
+    <div class="stat"><div class="v" style="color:${state.realized_pnl_today >= 0 ? 'var(--good)' : 'var(--critical)'}">${fmt(state.realized_pnl_today)}</div><div class="k">Realized P&amp;L</div></div>
+    <div class="stat"><div class="v">₹2,000</div><div class="k">Daily loss cap</div></div>
+  `;
+
+  const cl = state.checklist;
+  if (cl) {
+    const callRows = cl.checks_call.map(([label, ok]) => critRow(label, ok, "call")).join("");
+    const putRows = cl.checks_put.map(([label, ok]) => critRow(label, ok, "put")).join("");
+    document.getElementById("checklist-grid").innerHTML = `
+      <div class="crit-col"><div class="name CALL">Call</div>${callRows}</div>
+      <div class="crit-col"><div class="name PUT">Put</div>${putRows}</div>
+    `;
+    document.getElementById("levels-row").innerHTML = `
+      <span>LTP ${cl.ltp}</span>
+      <span>CPR TC ${cl.tc}</span>
+      <span>CPR BC ${cl.bc}</span>
+      <span>Prev High ${cl.prev_high}</span>
+      <span>Prev Low ${cl.prev_low}</span>
+      <span>as of ${new Date(cl.as_of).toLocaleTimeString("en-IN")}</span>
+    `;
+  }
+
+  const trades = (state.today_trades || []).slice().reverse();
+  document.getElementById("trade-tbody").innerHTML = trades.length
+    ? trades.map(t => `
+      <tr>
+        <td>${new Date(t.entry_time).toLocaleTimeString("en-IN")}</td>
+        <td>${t.side}</td>
+        <td>${t.strike}</td>
+        <td>${t.reason}</td>
+        <td class="${t.pnl >= 0 ? 'pos-pnl-cell' : 'neg-pnl-cell'}">${fmt(t.pnl)}</td>
+      </tr>`).join("")
+    : '<tr class="empty-row"><td colspan="5">No trades yet today</td></tr>';
+}
+
+refresh();
+setInterval(refresh, REFRESH_MS);
+</script>
+</body>
+</html>
