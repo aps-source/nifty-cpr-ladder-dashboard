@@ -1,7 +1,7 @@
 {
   "date": "2026-08-24",
   "engine_status": "running",
-  "last_tick": "2026-08-24T14:49:07.973307",
+  "last_tick": "2026-08-24T14:50:40.459506",
   "last_processed_bar": "2026-08-24T14:41:00+05:30",
   "position": null,
   "trades_today": 0,
@@ -10,10 +10,10 @@
   "today_trades": [],
   "bars_held": 0,
   "violation_streak": 0,
-  "last_error": "Insufficient margin for entry: need 3731.0, have 108.52",
+  "last_error": "Insufficient margin for entry: need 3675.75, have 108.52",
   "checklist": {
-    "ltp": 24166.65,
-    "as_of": "2026-08-24T14:49:00+05:30",
+    "ltp": 24164.0,
+    "as_of": "2026-08-24T14:50:00+05:30",
     "tc": 24249.47,
     "bc": 24244.4,
     "prev_high": 24282.0,
@@ -47,7 +47,7 @@
       ],
       [
         "15-min stack: price<5<26<50",
-        false
+        true
       ],
       [
         "5-min stack: price<5<26<50",
@@ -55,7 +55,7 @@
       ],
       [
         "3-min stack: price<5<26<50",
-        false
+        true
       ],
       [
         "Price below prev-day Low",
