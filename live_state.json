@@ -1,7 +1,7 @@
 {
   "date": "2026-08-24",
-  "engine_status": "running",
-  "last_tick": "2026-08-24T14:32:05.238416",
+  "engine_status": "data_error",
+  "last_tick": "2026-08-24T14:33:06.024452",
   "last_processed_bar": "2026-08-24T14:25:00+05:30",
   "position": null,
   "trades_today": 0,
@@ -10,7 +10,7 @@
   "today_trades": [],
   "bars_held": 0,
   "violation_streak": 0,
-  "last_error": null,
+  "last_error": "4 unprocessed bars found (expected <=1) -- refusing to mass-process",
   "checklist": {
     "ltp": 24173.9,
     "as_of": "2026-08-24T14:32:00+05:30",
