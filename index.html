@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 <meta charset="utf-8" />
-<title>NIFTY Tuned — Live Engine</title>
+<title>NIFTY + SENSEX Tuned — Live Engine</title>
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <style>
   :root {
@@ -105,6 +105,9 @@
   .empty-row td { color: var(--text-muted); text-align: center; padding: 16px 4px; }
 
   footer { padding: 8px 24px 24px; font-size: 13px; color: var(--text-muted); }
+
+  .sym-heading { padding: 4px 24px 8px; font-size: 16px; font-weight: 700; }
+  .sym-heading:first-of-type { margin-top: 0; }
 </style>
 </head>
 <body>
@@ -112,40 +115,12 @@
 
 <header>
   <div>
-    <h1>NIFTY Tuned — Live Engine</h1>
-    <div class="sub">5-condition Daily-CPR + 3/5/15-min EMA stack entry, debounced 5-min-EMA5 exit, no overnight, 11:00&ndash;13:00 blackout</div>
+    <h1>NIFTY + SENSEX Tuned — Live Engine</h1>
+    <div class="sub">5-condition Daily-CPR + 3/5/15-min EMA stack entry, debounced 5-min-EMA5 exit, no overnight, 11:00&ndash;13:00 blackout. Regular candles. 1 lot per instrument. Shared PAUSE.flag halts both.</div>
   </div>
 </header>
 
-<div id="status-bar">
-  <span><span class="dot" id="live-dot"></span><span id="live-text">loading…</span></span>
-  <span>Last tick: <b id="last-tick">–</b></span>
-  <span>Status: <b id="engine-status">–</b></span>
-</div>
-
-<div class="card">
-  <h2>Position</h2>
-  <div id="position-body"><span class="pos-empty">loading…</span></div>
-</div>
-
-<div class="card">
-  <h2>Today</h2>
-  <div class="stat-row" id="stat-row"></div>
-</div>
-
-<div class="card">
-  <h2>Live condition checklist</h2>
-  <div class="checklist-grid" id="checklist-grid"></div>
-  <div class="levels" id="levels-row"></div>
-</div>
-
-<div class="card">
-  <h2>Trade log (today)</h2>
-  <table>
-    <thead><tr><th>Time</th><th>Side</th><th>Strike</th><th>Reason</th><th>P&amp;L</th></tr></thead>
-    <tbody id="trade-tbody"></tbody>
-  </table>
-</div>
+<div id="root"></div>
 
 <footer>
   Reads live_state.json from this same site every 30s, pushed by the live engine's Task Scheduler
@@ -158,6 +133,10 @@
 <script>
 const REFRESH_MS = 30 * 1000;
 const STATE_URL = "live_state.json";
+const INSTRUMENTS = [
+  { key: "NIFTY", label: "NIFTY 50" },
+  { key: "SENSEX", label: "SENSEX" },
+];
 
 function fmt(v) { return (v > 0 ? '+' : '') + Number(v).toFixed(1); }
 
@@ -165,47 +144,33 @@ function critRow(label, met, dir) {
   return `<div class="crit-row ${met ? 'met ' + dir : ''}"><span class="mark">${met ? '✓' : '·'}</span>${label}</div>`;
 }
 
-async function refresh() {
-  let state;
-  try {
-    const res = await fetch(STATE_URL + "?t=" + Date.now(), { cache: "no-store" });
-    if (!res.ok) throw new Error("HTTP " + res.status);
-    state = await res.json();
-  } catch (e) {
-    document.getElementById("live-dot").className = "dot stale";
-    document.getElementById("live-text").textContent = "failed to load live_state.json — " + e.message;
-    return;
-  }
-
+function renderInstrument(inst, state) {
   const lastTick = state.last_tick ? new Date(state.last_tick) : null;
   const ageMin = lastTick ? (Date.now() - lastTick.getTime()) / 60000 : Infinity;
 
-  const dot = document.getElementById("live-dot");
-  const text = document.getElementById("live-text");
+  let dotClass, statusLine;
   if (state.engine_status === "paused") {
-    dot.className = "dot paused";
-    text.textContent = "paused (no new entries)";
+    dotClass = "paused";
+    statusLine = "paused (no new entries)";
   } else if (ageMin > 10) {
-    dot.className = "dot stale";
-    text.textContent = `stale (${Math.round(ageMin)} min since last push — market may be closed, or the task isn't firing)`;
+    dotClass = "stale";
+    statusLine = `stale (${Math.round(ageMin)} min since last push — market may be closed, or the task isn't firing)`;
   } else {
-    dot.className = "dot live";
-    text.textContent = "live";
+    dotClass = "live";
+    statusLine = "live";
   }
 
-  document.getElementById("last-tick").textContent = lastTick ? lastTick.toLocaleString("en-IN") : "—";
   const statusLabels = {
     running: "Running", paused: "Paused", token_invalid: "Token invalid",
     config_error: "Config error", data_error: "Data error", starting: "Starting",
   };
   let statusText = statusLabels[state.engine_status] || state.engine_status || "—";
   if (state.daily_loss_cap_hit) statusText += " · loss cap hit";
-  document.getElementById("engine-status").textContent = statusText;
 
-  const posBody = document.getElementById("position-body");
+  let posHtml;
   if (state.position) {
     const p = state.position;
-    posBody.innerHTML = `
+    posHtml = `
       <div class="pos-row">
         <div>
           <div class="pos-side ${p.side}">${p.side} ${p.strike}</div>
@@ -213,35 +178,34 @@ async function refresh() {
         </div>
       </div>`;
   } else {
-    posBody.innerHTML = '<span class="pos-empty">No open position</span>';
+    posHtml = '<span class="pos-empty">No open position</span>';
   }
 
-  document.getElementById("stat-row").innerHTML = `
-    <div class="stat"><div class="v">${state.trades_today}/6</div><div class="k">Trades today</div></div>
-    <div class="stat"><div class="v" style="color:${state.realized_pnl_today >= 0 ? 'var(--good)' : 'var(--critical)'}">${fmt(state.realized_pnl_today)}</div><div class="k">Realized P&amp;L</div></div>
-    <div class="stat"><div class="v">₹2,000</div><div class="k">Daily loss cap</div></div>
-  `;
-
+  let checklistHtml = "";
   const cl = state.checklist;
   if (cl) {
     const callRows = cl.checks_call.map(([label, ok]) => critRow(label, ok, "call")).join("");
     const putRows = cl.checks_put.map(([label, ok]) => critRow(label, ok, "put")).join("");
-    document.getElementById("checklist-grid").innerHTML = `
-      <div class="crit-col"><div class="name CALL">Call</div>${callRows}</div>
-      <div class="crit-col"><div class="name PUT">Put</div>${putRows}</div>
-    `;
-    document.getElementById("levels-row").innerHTML = `
-      <span>LTP ${cl.ltp}</span>
-      <span>CPR TC ${cl.tc}</span>
-      <span>CPR BC ${cl.bc}</span>
-      <span>Prev High ${cl.prev_high}</span>
-      <span>Prev Low ${cl.prev_low}</span>
-      <span>as of ${new Date(cl.as_of).toLocaleTimeString("en-IN")}</span>
-    `;
+    checklistHtml = `
+      <div class="card">
+        <h2>Live condition checklist</h2>
+        <div class="checklist-grid">
+          <div class="crit-col"><div class="name CALL">Call</div>${callRows}</div>
+          <div class="crit-col"><div class="name PUT">Put</div>${putRows}</div>
+        </div>
+        <div class="levels">
+          <span>LTP ${cl.ltp}</span>
+          <span>CPR TC ${cl.tc}</span>
+          <span>CPR BC ${cl.bc}</span>
+          <span>Prev High ${cl.prev_high}</span>
+          <span>Prev Low ${cl.prev_low}</span>
+          <span>as of ${new Date(cl.as_of).toLocaleTimeString("en-IN")}</span>
+        </div>
+      </div>`;
   }
 
   const trades = (state.today_trades || []).slice().reverse();
-  document.getElementById("trade-tbody").innerHTML = trades.length
+  const tradesHtml = trades.length
     ? trades.map(t => `
       <tr>
         <td>${new Date(t.entry_time).toLocaleTimeString("en-IN")}</td>
@@ -251,6 +215,54 @@ async function refresh() {
         <td class="${t.pnl >= 0 ? 'pos-pnl-cell' : 'neg-pnl-cell'}">${fmt(t.pnl)}</td>
       </tr>`).join("")
     : '<tr class="empty-row"><td colspan="5">No trades yet today</td></tr>';
+
+  return `
+    <div class="sym-heading">${inst.label}</div>
+    <div id="status-bar">
+      <span><span class="dot ${dotClass}"></span>${statusLine}</span>
+      <span>Last tick: <b>${lastTick ? lastTick.toLocaleString("en-IN") : "—"}</b></span>
+      <span>Status: <b>${statusText}</b></span>
+    </div>
+    <div class="card">
+      <h2>Position</h2>
+      ${posHtml}
+    </div>
+    <div class="card">
+      <h2>Today</h2>
+      <div class="stat-row">
+        <div class="stat"><div class="v">${state.trades_today}/6</div><div class="k">Trades today</div></div>
+        <div class="stat"><div class="v" style="color:${state.realized_pnl_today >= 0 ? 'var(--good)' : 'var(--critical)'}">${fmt(state.realized_pnl_today)}</div><div class="k">Realized P&amp;L</div></div>
+        <div class="stat"><div class="v">₹2,000</div><div class="k">Daily loss cap</div></div>
+      </div>
+    </div>
+    ${checklistHtml}
+    <div class="card">
+      <h2>Trade log (today)</h2>
+      <table>
+        <thead><tr><th>Time</th><th>Side</th><th>Strike</th><th>Reason</th><th>P&amp;L</th></tr></thead>
+        <tbody>${tradesHtml}</tbody>
+      </table>
+    </div>
+  `;
+}
+
+async function refresh() {
+  const root = document.getElementById("root");
+  let combined;
+  try {
+    const res = await fetch(STATE_URL + "?t=" + Date.now(), { cache: "no-store" });
+    if (!res.ok) throw new Error("HTTP " + res.status);
+    combined = await res.json();
+  } catch (e) {
+    root.innerHTML = `<div class="card"><span class="pos-empty">Failed to load live_state.json — ${e.message}</span></div>`;
+    return;
+  }
+
+  root.innerHTML = INSTRUMENTS.map(inst => {
+    const state = combined[inst.key];
+    if (!state) return `<div class="sym-heading">${inst.label}</div><div class="card"><span class="pos-empty">No data yet for ${inst.label}</span></div>`;
+    return renderInstrument(inst, state);
+  }).join("");
 }
 
 refresh();
