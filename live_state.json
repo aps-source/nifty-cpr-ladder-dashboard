@@ -1,7 +1,7 @@
 {
-  "date": null,
-  "engine_status": "paused",
-  "last_tick": "2026-08-24T14:01:02.556714",
+  "date": "2026-08-24",
+  "engine_status": "running",
+  "last_tick": "2026-08-24T14:09:59.208824",
   "last_processed_bar": null,
   "position": null,
   "trades_today": 0,
@@ -10,5 +10,57 @@
   "today_trades": [],
   "bars_held": 0,
   "violation_streak": 0,
-  "last_error": null
+  "last_error": "option_chain failed: {'error_code': None, 'error_type': None, 'error_message': None}",
+  "checklist": {
+    "ltp": 24160.9,
+    "as_of": "2026-08-24T14:08:00+05:30",
+    "tc": 24249.47,
+    "bc": 24244.4,
+    "prev_high": 24282.0,
+    "prev_low": 24206.8,
+    "checks_call": [
+      [
+        "Price above Daily CPR (TC)",
+        false
+      ],
+      [
+        "15-min stack: price>5>26>50",
+        false
+      ],
+      [
+        "5-min stack: price>5>26>50",
+        false
+      ],
+      [
+        "3-min stack: price>5>26>50",
+        false
+      ],
+      [
+        "Price above prev-day High",
+        false
+      ]
+    ],
+    "checks_put": [
+      [
+        "Price below Daily CPR (BC)",
+        true
+      ],
+      [
+        "15-min stack: price<5<26<50",
+        true
+      ],
+      [
+        "5-min stack: price<5<26<50",
+        true
+      ],
+      [
+        "3-min stack: price<5<26<50",
+        true
+      ],
+      [
+        "Price below prev-day Low",
+        true
+      ]
+    ]
+  }
 }
