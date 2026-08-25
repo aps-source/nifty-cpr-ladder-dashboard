@@ -2,8 +2,8 @@
   "NIFTY": {
     "date": "2026-08-25",
     "engine_status": "running",
-    "last_tick": "2026-08-25T10:38:07.414182",
-    "last_processed_bar": "2026-08-25T10:38:00+05:30",
+    "last_tick": "2026-08-25T10:39:10.427323",
+    "last_processed_bar": "2026-08-25T10:39:00+05:30",
     "position": null,
     "trades_today": 0,
     "realized_pnl_today": 0.0,
@@ -11,10 +11,10 @@
     "today_trades": [],
     "bars_held": 0,
     "violation_streak": 0,
-    "last_error": null,
+    "last_error": "Entry order failed: {'error_code': 'DH-905', 'error_type': 'Input_Exception', 'error_message': 'Invalid IP'}",
     "checklist": {
-      "ltp": 24131.55,
-      "as_of": "2026-08-25T10:38:00+05:30",
+      "ltp": 24128.0,
+      "as_of": "2026-08-25T10:39:00+05:30",
       "tc": 24228.65,
       "bc": 24222.25,
       "prev_high": 24313.0,
@@ -56,7 +56,7 @@
         ],
         [
           "3-min stack: price<5<26<50",
-          false
+          true
         ],
         [
           "Price below prev-day Low",
@@ -68,8 +68,8 @@
   "SENSEX": {
     "date": "2026-08-25",
     "engine_status": "running",
-    "last_tick": "2026-08-25T10:38:10.535047",
-    "last_processed_bar": "2026-08-25T10:38:00+05:30",
+    "last_tick": "2026-08-25T10:39:13.493695",
+    "last_processed_bar": "2026-08-25T10:39:00+05:30",
     "position": null,
     "trades_today": 0,
     "realized_pnl_today": 0.0,
@@ -79,8 +79,8 @@
     "violation_streak": 0,
     "last_error": null,
     "checklist": {
-      "ltp": 77171.09,
-      "as_of": "2026-08-25T10:38:00+05:30",
+      "ltp": 77170.08,
+      "as_of": "2026-08-25T10:39:00+05:30",
       "tc": 77495.53,
       "bc": 77411.93,
       "prev_high": 77789.4,
