@@ -1,9 +1,9 @@
 {
   "NIFTY": {
-    "date": "2026-08-25",
+    "date": "2026-08-26",
     "engine_status": "running",
-    "last_tick": "2026-08-25T16:21:42.525910",
-    "last_processed_bar": "2026-08-25T15:29:00+05:30",
+    "last_tick": "2026-08-26T10:07:46.660336",
+    "last_processed_bar": "2026-08-26T10:07:00+05:30",
     "position": null,
     "trades_today": 0,
     "realized_pnl_today": 0.0,
@@ -13,12 +13,12 @@
     "violation_streak": 0,
     "last_error": null,
     "checklist": {
-      "ltp": 24334.55,
-      "as_of": "2026-08-25T15:29:00+05:30",
-      "tc": 24228.65,
-      "bc": 24222.25,
-      "prev_high": 24313.0,
-      "prev_low": 24144.3,
+      "ltp": 24341.25,
+      "as_of": "2026-08-26T10:07:00+05:30",
+      "tc": 24298.62,
+      "bc": 24226.75,
+      "prev_high": 24334.55,
+      "prev_low": 24118.95,
       "checks_call": [
         [
           "Price above Daily CPR (TC)",
@@ -30,11 +30,11 @@
         ],
         [
           "5-min stack: price>5>26>50",
-          true
+          false
         ],
         [
           "3-min stack: price>5>26>50",
-          true
+          false
         ],
         [
           "Price above prev-day High",
@@ -66,10 +66,10 @@
     }
   },
   "SENSEX": {
-    "date": "2026-08-25",
+    "date": "2026-08-26",
     "engine_status": "running",
-    "last_tick": "2026-08-25T16:21:45.254415",
-    "last_processed_bar": "2026-08-25T15:29:00+05:30",
+    "last_tick": "2026-08-26T10:07:49.148674",
+    "last_processed_bar": "2026-08-26T10:07:00+05:30",
     "position": null,
     "trades_today": 0,
     "realized_pnl_today": 0.0,
@@ -79,12 +79,12 @@
     "violation_streak": 0,
     "last_error": null,
     "checklist": {
-      "ltp": 77656.09,
-      "as_of": "2026-08-25T15:29:00+05:30",
-      "tc": 77495.53,
-      "bc": 77411.93,
-      "prev_high": 77789.4,
-      "prev_low": 77201.66,
+      "ltp": 77876.03,
+      "as_of": "2026-08-26T10:07:00+05:30",
+      "tc": 77570.05,
+      "bc": 77397.97,
+      "prev_high": 77666.39,
+      "prev_low": 77129.55,
       "checks_call": [
         [
           "Price above Daily CPR (TC)",
@@ -92,19 +92,19 @@
         ],
         [
           "15-min stack: price>5>26>50",
-          false
+          true
         ],
         [
           "5-min stack: price>5>26>50",
-          true
+          false
         ],
         [
           "3-min stack: price>5>26>50",
-          true
+          false
         ],
         [
           "Price above prev-day High",
-          false
+          true
         ]
       ],
       "checks_put": [
