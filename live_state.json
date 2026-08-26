@@ -2,8 +2,8 @@
   "NIFTY": {
     "date": "2026-08-26",
     "engine_status": "running",
-    "last_tick": "2026-08-26T15:06:55.086241",
-    "last_processed_bar": "2026-08-26T15:06:00+05:30",
+    "last_tick": "2026-08-26T15:08:03.025301",
+    "last_processed_bar": "2026-08-26T15:08:00+05:30",
     "position": null,
     "trades_today": 0,
     "realized_pnl_today": 0.0,
@@ -13,8 +13,8 @@
     "violation_streak": 0,
     "last_error": null,
     "checklist": {
-      "ltp": 24276.35,
-      "as_of": "2026-08-26T15:06:00+05:30",
+      "ltp": 24276.0,
+      "as_of": "2026-08-26T15:08:00+05:30",
       "tc": 24298.62,
       "bc": 24226.75,
       "prev_high": 24334.55,
@@ -68,8 +68,8 @@
   "SENSEX": {
     "date": "2026-08-26",
     "engine_status": "running",
-    "last_tick": "2026-08-26T15:06:57.301692",
-    "last_processed_bar": "2026-08-26T15:06:00+05:30",
+    "last_tick": "2026-08-26T15:08:05.250394",
+    "last_processed_bar": "2026-08-26T15:08:00+05:30",
     "position": null,
     "trades_today": 0,
     "realized_pnl_today": 0.0,
@@ -79,8 +79,8 @@
     "violation_streak": 0,
     "last_error": null,
     "checklist": {
-      "ltp": 77600.78,
-      "as_of": "2026-08-26T15:06:00+05:30",
+      "ltp": 77609.58,
+      "as_of": "2026-08-26T15:08:00+05:30",
       "tc": 77570.05,
       "bc": 77397.97,
       "prev_high": 77666.39,
@@ -118,11 +118,11 @@
         ],
         [
           "5-min stack: price<5<26<50",
-          true
+          false
         ],
         [
           "3-min stack: price<5<26<50",
-          true
+          false
         ],
         [
           "Price below prev-day Low",
