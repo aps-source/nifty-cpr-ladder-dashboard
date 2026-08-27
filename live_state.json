@@ -2,8 +2,8 @@
   "NIFTY": {
     "date": "2026-08-27",
     "engine_status": "running",
-    "last_tick": "2026-08-27T14:16:05.450259",
-    "last_processed_bar": "2026-08-27T14:16:00+05:30",
+    "last_tick": "2026-08-27T14:17:16.242490",
+    "last_processed_bar": "2026-08-27T14:17:00+05:30",
     "position": {
       "side": "PUT",
       "entry_time": "2026-08-27T13:45:00+05:30",
@@ -20,12 +20,12 @@
     "realized_pnl_today": 0.0,
     "daily_loss_cap_hit": false,
     "today_trades": [],
-    "bars_held": 26,
-    "violation_streak": 0,
+    "bars_held": 27,
+    "violation_streak": 1,
     "last_error": null,
     "checklist": {
-      "ltp": 24132.5,
-      "as_of": "2026-08-27T14:16:00+05:30",
+      "ltp": 24138.6,
+      "as_of": "2026-08-27T14:17:00+05:30",
       "tc": 24293.17,
       "bc": 24236.23,
       "prev_high": 24378.6,
@@ -63,7 +63,7 @@
         ],
         [
           "5-min stack: price<5<26<50",
-          true
+          false
         ],
         [
           "3-min stack: price<5<26<50",
@@ -79,8 +79,8 @@
   "SENSEX": {
     "date": "2026-08-27",
     "engine_status": "running",
-    "last_tick": "2026-08-27T14:16:09.619742",
-    "last_processed_bar": "2026-08-27T14:16:00+05:30",
+    "last_tick": "2026-08-27T14:17:18.731826",
+    "last_processed_bar": "2026-08-27T14:17:00+05:30",
     "position": null,
     "trades_today": 1,
     "realized_pnl_today": 0.0,
@@ -106,10 +106,10 @@
     ],
     "bars_held": 0,
     "violation_streak": 0,
-    "last_error": "Insufficient margin for entry: need 1397.0, have 85.77",
+    "last_error": null,
     "checklist": {
-      "ltp": 77158.66,
-      "as_of": "2026-08-27T14:16:00+05:30",
+      "ltp": 77204.78,
+      "as_of": "2026-08-27T14:17:00+05:30",
       "tc": 77729.89,
       "bc": 77558.59,
       "prev_high": 77986.84,
@@ -147,11 +147,11 @@
         ],
         [
           "5-min stack: price<5<26<50",
-          true
+          false
         ],
         [
           "3-min stack: price<5<26<50",
-          true
+          false
         ],
         [
           "Price below prev-day Low",
