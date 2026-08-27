@@ -2,8 +2,8 @@
   "NIFTY": {
     "date": "2026-08-27",
     "engine_status": "running",
-    "last_tick": "2026-08-27T09:14:27.744857",
-    "last_processed_bar": "2026-08-26T15:29:00+05:30",
+    "last_tick": "2026-08-27T09:15:38.529065",
+    "last_processed_bar": "2026-08-27T09:15:00+05:30",
     "position": null,
     "trades_today": 0,
     "realized_pnl_today": 0.0,
@@ -13,12 +13,12 @@
     "violation_streak": 0,
     "last_error": null,
     "checklist": {
-      "ltp": 24207.75,
-      "as_of": "2026-08-26T15:29:00+05:30",
-      "tc": 24298.62,
-      "bc": 24226.75,
-      "prev_high": 24334.55,
-      "prev_low": 24118.95,
+      "ltp": 24278.3,
+      "as_of": "2026-08-27T09:15:00+05:30",
+      "tc": 24293.17,
+      "bc": 24236.23,
+      "prev_high": 24378.6,
+      "prev_low": 24207.75,
       "checks_call": [
         [
           "Price above Daily CPR (TC)",
@@ -44,7 +44,7 @@
       "checks_put": [
         [
           "Price below Daily CPR (BC)",
-          true
+          false
         ],
         [
           "15-min stack: price<5<26<50",
@@ -52,11 +52,11 @@
         ],
         [
           "5-min stack: price<5<26<50",
-          true
+          false
         ],
         [
           "3-min stack: price<5<26<50",
-          true
+          false
         ],
         [
           "Price below prev-day Low",
@@ -68,8 +68,8 @@
   "SENSEX": {
     "date": "2026-08-27",
     "engine_status": "running",
-    "last_tick": "2026-08-27T09:14:30.292886",
-    "last_processed_bar": "2026-08-26T15:29:00+05:30",
+    "last_tick": "2026-08-27T09:15:41.909694",
+    "last_processed_bar": "2026-08-27T09:15:00+05:30",
     "position": null,
     "trades_today": 0,
     "realized_pnl_today": 0.0,
@@ -79,12 +79,12 @@
     "violation_streak": 0,
     "last_error": null,
     "checklist": {
-      "ltp": 77472.94,
-      "as_of": "2026-08-26T15:29:00+05:30",
-      "tc": 77570.05,
-      "bc": 77397.97,
-      "prev_high": 77666.39,
-      "prev_low": 77129.55,
+      "ltp": 77627.26,
+      "as_of": "2026-08-27T09:15:00+05:30",
+      "tc": 77729.89,
+      "bc": 77558.59,
+      "prev_high": 77986.84,
+      "prev_low": 77472.94,
       "checks_call": [
         [
           "Price above Daily CPR (TC)",
@@ -118,11 +118,11 @@
         ],
         [
           "5-min stack: price<5<26<50",
-          true
+          false
         ],
         [
           "3-min stack: price<5<26<50",
-          true
+          false
         ],
         [
           "Price below prev-day Low",
