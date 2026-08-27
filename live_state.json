@@ -2,10 +2,21 @@
   "NIFTY": {
     "date": "2026-08-27",
     "engine_status": "running",
-    "last_tick": "2026-08-27T14:51:08.836411",
-    "last_processed_bar": "2026-08-27T14:51:00+05:30",
-    "position": null,
-    "trades_today": 2,
+    "last_tick": "2026-08-27T14:52:18.998634",
+    "last_processed_bar": "2026-08-27T14:52:00+05:30",
+    "position": {
+      "side": "PUT",
+      "entry_time": "2026-08-27T14:52:00+05:30",
+      "entry_price": 69.25,
+      "spot_at_entry": 24144.7,
+      "strike": 24150.0,
+      "expiry": "2026-09-01",
+      "security_id": "46992",
+      "qty": 65,
+      "order_id": "322260827211908",
+      "backstop_order_id": "34226082732208"
+    },
+    "trades_today": 3,
     "realized_pnl_today": 0.0,
     "daily_loss_cap_hit": false,
     "today_trades": [
@@ -48,8 +59,8 @@
     "violation_streak": 0,
     "last_error": null,
     "checklist": {
-      "ltp": 24151.85,
-      "as_of": "2026-08-27T14:51:00+05:30",
+      "ltp": 24146.45,
+      "as_of": "2026-08-27T14:52:00+05:30",
       "tc": 24293.17,
       "bc": 24236.23,
       "prev_high": 24378.6,
@@ -83,15 +94,15 @@
         ],
         [
           "15-min stack: price<5<26<50",
-          false
+          true
         ],
         [
           "5-min stack: price<5<26<50",
-          false
+          true
         ],
         [
           "3-min stack: price<5<26<50",
-          false
+          true
         ],
         [
           "Price below prev-day Low",
@@ -103,8 +114,8 @@
   "SENSEX": {
     "date": "2026-08-27",
     "engine_status": "running",
-    "last_tick": "2026-08-27T14:51:11.701520",
-    "last_processed_bar": "2026-08-27T14:51:00+05:30",
+    "last_tick": "2026-08-27T14:52:21.360995",
+    "last_processed_bar": "2026-08-27T14:52:00+05:30",
     "position": {
       "side": "PUT",
       "entry_time": "2026-08-27T14:35:00+05:30",
@@ -139,12 +150,12 @@
         "pnl": 0.0
       }
     ],
-    "bars_held": 7,
-    "violation_streak": 2,
+    "bars_held": 8,
+    "violation_streak": 0,
     "last_error": null,
     "checklist": {
-      "ltp": 77237.23,
-      "as_of": "2026-08-27T14:51:00+05:30",
+      "ltp": 77211.92,
+      "as_of": "2026-08-27T14:52:00+05:30",
       "tc": 77729.89,
       "bc": 77558.59,
       "prev_high": 77986.84,
@@ -178,15 +189,15 @@
         ],
         [
           "15-min stack: price<5<26<50",
-          false
+          true
         ],
         [
           "5-min stack: price<5<26<50",
-          false
+          true
         ],
         [
           "3-min stack: price<5<26<50",
-          false
+          true
         ],
         [
           "Price below prev-day Low",
