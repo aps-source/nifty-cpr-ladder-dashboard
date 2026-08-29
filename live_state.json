@@ -2,7 +2,7 @@
   "NIFTY": {
     "date": "2026-08-30",
     "engine_status": "running",
-    "last_tick": "2026-08-30T00:07:33.832024",
+    "last_tick": "2026-08-30T00:12:07.389376",
     "last_processed_bar": "2026-08-28T15:29:00+05:30",
     "position": null,
     "trades_today": 0,
@@ -72,13 +72,15 @@
       "resistance_call_oi": 13295230,
       "support_strike": 24000.0,
       "support_put_oi": 10603385,
-      "max_pain": 24200.0
+      "max_pain": 24200.0,
+      "pcr": 0.775,
+      "pcr_suggestion": "PUT"
     }
   },
   "SENSEX": {
     "date": "2026-08-30",
     "engine_status": "running",
-    "last_tick": "2026-08-30T00:07:37.508845",
+    "last_tick": "2026-08-30T00:12:10.167429",
     "last_processed_bar": "2026-08-28T15:29:00+05:30",
     "position": null,
     "trades_today": 0,
@@ -148,7 +150,9 @@
       "resistance_call_oi": 636600,
       "support_strike": 75000.0,
       "support_put_oi": 681120,
-      "max_pain": 77400.0
+      "max_pain": 77400.0,
+      "pcr": 1.022,
+      "pcr_suggestion": "NEUTRAL"
     }
   }
 }
