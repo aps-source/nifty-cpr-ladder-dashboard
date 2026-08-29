@@ -108,6 +108,9 @@
 
   .sym-heading { padding: 4px 24px 8px; font-size: 16px; font-weight: 700; }
   .sym-heading:first-of-type { margin-top: 0; }
+
+  a.trades-link { color: var(--accent); text-decoration: none; font-size: 14px; font-weight: 600; }
+  a.trades-link:hover { text-decoration: underline; }
 </style>
 </head>
 <body>
@@ -118,6 +121,7 @@
     <h1>NIFTY + SENSEX Tuned — Live Engine</h1>
     <div class="sub">5-condition Daily-CPR + 3/5/15-min EMA stack entry, debounced 5-min-EMA5 exit, no overnight, 11:00&ndash;13:00 blackout. Regular candles. 1 lot per instrument. Shared PAUSE.flag halts both.</div>
   </div>
+  <a class="trades-link" href="trades.html">Day-wise trades &amp; G/L &rarr;</a>
 </header>
 
 <div id="root"></div>

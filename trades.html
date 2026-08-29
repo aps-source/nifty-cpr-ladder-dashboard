@@ -1,0 +1,184 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<title>Day-wise Trades — NIFTY + SENSEX Tuned</title>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<style>
+  :root {
+    color-scheme: light;
+    --page:           #f2f5fa;
+    --surface-1:      #ffffff;
+    --surface-2:      #e9edf5;
+    --text-primary:   #11151f;
+    --text-secondary: #5a6478;
+    --text-muted:     #838da2;
+    --gridline:       #dbe1ec;
+    --border:         rgba(17,21,31,0.12);
+
+    --accent:         #4a3aa7;
+    --accent-soft:    rgba(74,58,167,0.10);
+
+    --good:           #0ca30c;
+    --critical:       #d03b3b;
+    --warning:        #b5710a;
+    --neutral-bg:     #e7eaf1;
+    --neutral-text:   #5a6478;
+
+    --call:           #2a78d6;
+    --put:            #c23d84;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      color-scheme: dark;
+      --page:           #0a0d14;
+      --surface-1:      #141a26;
+      --surface-2:      #1c2434;
+      --text-primary:   #eef1f8;
+      --text-secondary: #9aa4bd;
+      --text-muted:     #7c869e;
+      --gridline:       #262f42;
+      --border:         rgba(238,241,248,0.12);
+
+      --accent:         #9085e9;
+      --accent-soft:    rgba(144,133,233,0.16);
+
+      --good:           #28c840;
+      --critical:       #f0645f;
+      --warning:        #f2b636;
+      --neutral-bg:     #232b3c;
+      --neutral-text:   #9aa4bd;
+
+      --call:           #3987e5;
+      --put:            #d55181;
+    }
+  }
+  * { box-sizing: border-box; }
+  body { margin: 0; background: var(--page); color: var(--text-primary); font-family: system-ui, -apple-system, "Segoe UI", sans-serif; }
+  .wrap { max-width: 900px; margin: 0 auto; padding: 0 0 32px; }
+  header { padding: 20px 24px 12px; display: flex; align-items: baseline; justify-content: space-between; flex-wrap: wrap; gap: 8px 24px; }
+  h1 { font-size: 21px; margin: 0; font-weight: 700; letter-spacing: -0.01em; }
+  .sub { color: var(--text-secondary); font-size: 14px; margin-top: 2px; }
+  a.back { color: var(--accent); text-decoration: none; font-size: 14px; font-weight: 600; }
+  a.back:hover { text-decoration: underline; }
+
+  .card { background: var(--surface-1); border: 1px solid var(--border); border-radius: 12px; padding: 18px 20px; margin: 0 24px 16px; }
+  .card h2 { font-size: 13px; text-transform: uppercase; letter-spacing: 0.06em; color: var(--text-muted); margin: 0 0 12px; }
+
+  .stat-row { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; }
+  .stat { text-align: center; }
+  .stat .v { font-size: 22px; font-weight: 700; font-variant-numeric: tabular-nums; }
+  .stat .k { font-size: 11px; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.05em; margin-top: 2px; }
+
+  .day-heading { display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 10px; }
+  .day-date { font-size: 15px; font-weight: 700; }
+  .day-meta { font-size: 12.5px; color: var(--text-muted); }
+  .day-pnl { font-size: 17px; font-weight: 700; font-variant-numeric: tabular-nums; }
+  .day-pnl.good { color: var(--good); }
+  .day-pnl.bad { color: var(--critical); }
+
+  table { width: 100%; border-collapse: collapse; font-size: 13px; }
+  th { text-align: left; color: var(--text-muted); font-weight: 600; padding: 6px 4px; border-bottom: 1px solid var(--gridline); font-size: 11.5px; text-transform: uppercase; letter-spacing: 0.04em; }
+  td { padding: 7px 4px; border-bottom: 1px solid var(--gridline); font-variant-numeric: tabular-nums; }
+  .pos-pnl-cell { color: var(--good); } .neg-pnl-cell { color: var(--critical); }
+  .side-tag { font-weight: 700; }
+  .side-tag.CALL { color: var(--call); }
+  .side-tag.PUT { color: var(--put); }
+  .unconfirmed { color: var(--warning); font-size: 11px; margin-left: 4px; cursor: help; }
+  .empty { color: var(--text-muted); text-align: center; padding: 40px 4px; font-size: 14px; }
+
+  footer { padding: 8px 24px 24px; font-size: 13px; color: var(--text-muted); }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<header>
+  <div>
+    <h1>Day-wise Trades &amp; G/L</h1>
+    <div class="sub">Real trades placed automatically by the live engine — NIFTY 50 + SENSEX</div>
+  </div>
+  <a class="back" href="index.html">&larr; Back to live dashboard</a>
+</header>
+
+<div class="card">
+  <h2>Overall</h2>
+  <div class="stat-row" id="overall-stats"></div>
+</div>
+
+<div id="days-root"></div>
+
+<footer>
+  Reads trades_history.json from this same site, rebuilt from the engine's durable trade log on every tick.
+  A trade marked <span class="unconfirmed" title="placeholder">&#9888;</span> had its exit price reconstructed
+  from Dhan's trade records after a since-fixed logging bug, rather than confirmed by an exact order-ID match.
+</footer>
+
+</div>
+
+<script>
+const STATE_URL = "trades_history.json";
+
+function fmt(v) { return (v > 0 ? '+' : '') + Number(v).toFixed(2); }
+
+async function refresh() {
+  const overallEl = document.getElementById("overall-stats");
+  const daysRoot = document.getElementById("days-root");
+  let data;
+  try {
+    const res = await fetch(STATE_URL + "?t=" + Date.now(), { cache: "no-store" });
+    if (!res.ok) throw new Error("HTTP " + res.status);
+    data = await res.json();
+  } catch (e) {
+    daysRoot.innerHTML = `<div class="card"><span class="empty">Failed to load trades_history.json — ${e.message}</span></div>`;
+    return;
+  }
+
+  const wins = data.days.reduce((a, d) => a + d.day_wins, 0);
+  const winRate = data.overall_trades ? Math.round((wins / data.overall_trades) * 100) : 0;
+  overallEl.innerHTML = `
+    <div class="stat"><div class="v">${data.overall_trades}</div><div class="k">Total trades</div></div>
+    <div class="stat"><div class="v" style="color:${data.overall_pnl >= 0 ? 'var(--good)' : 'var(--critical)'}">${fmt(data.overall_pnl)}</div><div class="k">Overall P&amp;L (pts&times;lot)</div></div>
+    <div class="stat"><div class="v">${winRate}%</div><div class="k">Win rate</div></div>
+  `;
+
+  if (!data.days.length) {
+    daysRoot.innerHTML = `<div class="card"><span class="empty">No trades recorded yet</span></div>`;
+    return;
+  }
+
+  daysRoot.innerHTML = data.days.map(day => {
+    const rows = day.trades.map(t => `
+      <tr>
+        <td>${new Date(t.entry_time).toLocaleTimeString("en-IN")}</td>
+        <td>${t.symbol}</td>
+        <td><span class="side-tag ${t.side}">${t.side}</span></td>
+        <td>${t.strike}</td>
+        <td>${t.entry_price}</td>
+        <td>${t.exit_price}${t.pnl_confirmed ? '' : '<span class="unconfirmed" title="Exit price reconstructed, not confirmed by exact order-ID match">&#9888;</span>'}</td>
+        <td>${t.reason}</td>
+        <td class="${t.pnl >= 0 ? 'pos-pnl-cell' : 'neg-pnl-cell'}">${fmt(t.pnl)}</td>
+      </tr>`).join("");
+
+    return `
+      <div class="card">
+        <div class="day-heading">
+          <div>
+            <div class="day-date">${day.date}</div>
+            <div class="day-meta">${day.day_trades} trade${day.day_trades === 1 ? '' : 's'} &middot; ${day.day_wins}W / ${day.day_trades - day.day_wins}L</div>
+          </div>
+          <div class="day-pnl ${day.day_pnl >= 0 ? 'good' : 'bad'}">${fmt(day.day_pnl)}</div>
+        </div>
+        <table>
+          <thead><tr><th>Time</th><th>Symbol</th><th>Side</th><th>Strike</th><th>Entry</th><th>Exit</th><th>Reason</th><th>P&amp;L</th></tr></thead>
+          <tbody>${rows}</tbody>
+        </table>
+      </div>`;
+  }).join("");
+}
+
+refresh();
+setInterval(refresh, 30000);
+</script>
+</body>
+</html>
