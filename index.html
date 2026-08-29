@@ -121,16 +121,16 @@
 
   .na-note { color: var(--text-muted); font-size: 12.5px; padding: 4px 0; }
 
-  #oi-summary { padding: 4px 24px 4px; display: flex; flex-wrap: wrap; gap: 6px 28px; }
-  .oi-item { display: flex; align-items: center; gap: 8px; font-size: 21px; font-weight: 700; letter-spacing: -0.01em; }
+  #oi-summary { padding: 4px 24px 4px; display: flex; flex-direction: column; gap: 12px; }
+  .oi-item { display: flex; flex-direction: column; gap: 2px; }
+  .oi-item .lbl { display: flex; align-items: center; gap: 8px; font-size: 14px; font-weight: 700; color: var(--text-secondary); text-transform: uppercase; letter-spacing: 0.04em; }
+  .oi-item .val { font-size: 25px; font-weight: 800; letter-spacing: -0.01em; font-variant-numeric: tabular-nums; padding-left: 18px; }
   .oi-dot { width: 10px; height: 10px; border-radius: 50%; flex: none; }
   .oi-dot.price { background: var(--accent); }
   .oi-dot.resistance { background: var(--critical); }
   .oi-dot.maxpain { background: var(--warning); }
   .oi-dot.support { background: var(--good); }
   .oi-dot.pcr { background: var(--text-muted); }
-  .oi-item .lbl { font-weight: 700; }
-  .oi-item .val { font-variant-numeric: tabular-nums; }
   .oi-suggestion { font-weight: 800; }
   .oi-suggestion.CALL { color: var(--call); }
   .oi-suggestion.PUT { color: var(--put); }
@@ -369,12 +369,12 @@ async function refresh() {
   const oi = combined.NIFTY && combined.NIFTY.oi_metrics;
   if (oi) {
     oiEl.innerHTML = `
-      <div class="oi-item"><span class="oi-dot price"></span><span class="lbl">NIFTY</span><span class="val">${oi.spot}</span></div>
-      <div class="oi-item"><span class="oi-dot resistance"></span><span class="lbl">Resistance strike (max Call OI)</span><span class="val">${oi.resistance_strike}</span></div>
-      <div class="oi-item"><span class="oi-dot maxpain"></span><span class="lbl">Max Pain</span><span class="val">${oi.max_pain}</span></div>
-      <div class="oi-item"><span class="oi-dot support"></span><span class="lbl">Support strike (max Put OI)</span><span class="val">${oi.support_strike}</span></div>
-      <div class="oi-item"><span class="oi-dot pcr"></span><span class="lbl">PCR</span><span class="val">${oi.pcr ?? "—"}</span></div>
-      <div class="oi-item"><span class="lbl">Suggests:</span><span class="oi-suggestion ${oi.pcr_suggestion}">${oi.pcr_suggestion}</span></div>
+      <div class="oi-item"><span class="lbl"><span class="oi-dot price"></span>NIFTY</span><span class="val">${oi.spot}</span></div>
+      <div class="oi-item"><span class="lbl"><span class="oi-dot resistance"></span>Resistance strike (max Call OI)</span><span class="val">${oi.resistance_strike}</span></div>
+      <div class="oi-item"><span class="lbl"><span class="oi-dot maxpain"></span>Max Pain</span><span class="val">${oi.max_pain}</span></div>
+      <div class="oi-item"><span class="lbl"><span class="oi-dot support"></span>Support strike (max Put OI)</span><span class="val">${oi.support_strike}</span></div>
+      <div class="oi-item"><span class="lbl"><span class="oi-dot pcr"></span>PCR</span><span class="val">${oi.pcr ?? "—"}</span></div>
+      <div class="oi-item"><span class="lbl">Suggests</span><span class="val oi-suggestion ${oi.pcr_suggestion}">${oi.pcr_suggestion}</span></div>
     `;
     oiDisclaimerEl.textContent = "PCR-based suggestion is a reference indicator only (simple contrarian PCR reading) — it plays no part in the live strategy's actual entry/exit logic, which is unchanged (5-condition Daily-CPR + EMA stack).";
   } else {
