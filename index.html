@@ -272,23 +272,20 @@ const MIN_HOLD_BARS = 5;
 const DEBOUNCE_BARS = 3;
 
 function buildExitChecklistHtml(state, cl) {
-  const p = state.position;
-  if (!p) {
-    return `
-      <div class="card">
-        <h2>Exit condition checklist</h2>
-        <div class="na-note">No open position — exit criteria not applicable right now.</div>
-      </div>`;
-  }
   if (!cl) return "";
+  const p = state.position;  // may be null -- shown either way, like the entry checklist always is
 
   const barsHeld = state.bars_held || 0;
   const violationStreak = state.violation_streak || 0;
   const minHoldMet = barsHeld > MIN_HOLD_BARS;
   const debounceMet = violationStreak >= DEBOUNCE_BARS;
 
-  const violatedThisBar = p.side === "CALL" ? cl.ltp < cl.ema5_5m : cl.ltp > cl.ema5_5m;
-  const exitDir = p.side === "CALL" ? "price < 5-min EMA5" : "price > 5-min EMA5";
+  // Side-dependent "this bar violating" condition is shown for BOTH sides (mirroring the
+  // entry checklist's CALL/PUT columns), since it's a plain price-vs-EMA5 comparison that
+  // doesn't need an actual open position to evaluate. Min hold / debounce are real per-
+  // instrument counters (not per-side) -- shown once, using live state (0 / not-met when flat).
+  const callViolated = cl.ltp < cl.ema5_5m;
+  const putViolated = cl.ltp > cl.ema5_5m;
 
   // cl.as_of is an ISO string already carrying IST wall-clock time (e.g. "...T15:22:00+05:30") --
   // parsed from the string directly rather than via Date.getHours()/getMinutes(), which would
@@ -298,21 +295,37 @@ function buildExitChecklistHtml(state, cl) {
   const eodMet = istHM >= (15 * 60 + 15);
   const capMet = !!state.daily_loss_cap_hit;
 
-  const anyExitMet = eodMet || capMet || (minHoldMet && debounceMet);
-
-  const rows = [
+  const callRows = [
+    [`This bar violating: LTP ${cl.ltp} &lt; EMA5 ${cl.ema5_5m}`, callViolated],
     [`Minimum hold: ${barsHeld} of ${MIN_HOLD_BARS}+ bars`, minHoldMet],
-    [`This bar violating (${exitDir}): LTP ${cl.ltp} vs EMA5 ${cl.ema5_5m}`, violatedThisBar],
-    [`Debounce streak: ${violationStreak} of ${DEBOUNCE_BARS} consecutive violations`, debounceMet],
+    [`Debounce streak: ${violationStreak} of ${DEBOUNCE_BARS} violations`, debounceMet],
+  ].map(([label, ok]) => critRow(label, ok, "call")).join("");
+
+  const putRows = [
+    [`This bar violating: LTP ${cl.ltp} &gt; EMA5 ${cl.ema5_5m}`, putViolated],
+    [`Minimum hold: ${barsHeld} of ${MIN_HOLD_BARS}+ bars`, minHoldMet],
+    [`Debounce streak: ${violationStreak} of ${DEBOUNCE_BARS} violations`, debounceMet],
+  ].map(([label, ok]) => critRow(label, ok, "put")).join("");
+
+  const sharedRows = [
     [`Forced square-off (&ge;15:15 IST)`, eodMet],
     [`Daily loss cap hit`, capMet],
-  ];
-  const rowsHtml = rows.map(([label, ok]) => critRow(label, ok, p.side.toLowerCase())).join("");
+  ].map(([label, ok]) => critRow(label, ok, p ? p.side.toLowerCase() : "call")).join("");
+
+  const anyExitMet = p && (eodMet || capMet || (minHoldMet && debounceMet));
+  const posNote = p
+    ? `<div class="na-note">Currently open: <b>${p.side} ${p.strike}</b> — the ${p.side.toLowerCase()} column and shared rows below apply.</div>`
+    : `<div class="na-note">No open position right now — showing live status for both sides in case one opens.</div>`;
 
   return `
     <div class="card">
-      <h2>Exit condition checklist — ${p.side} ${p.strike}</h2>
-      <div class="crit-col">${rowsHtml}</div>
+      <h2>Exit condition checklist</h2>
+      ${posNote}
+      <div class="checklist-grid">
+        <div class="crit-col"><div class="name CALL">Call</div>${callRows}</div>
+        <div class="crit-col"><div class="name PUT">Put</div>${putRows}</div>
+      </div>
+      <div class="crit-col" style="margin-top:8px;">${sharedRows}</div>
       <div class="levels">
         <span>Exit fires when: (min hold met AND debounce met) OR forced square-off OR loss cap</span>
       </div>
