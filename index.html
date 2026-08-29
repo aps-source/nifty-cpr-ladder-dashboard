@@ -111,6 +111,15 @@
 
   a.trades-link { color: var(--accent); text-decoration: none; font-size: 14px; font-weight: 600; }
   a.trades-link:hover { text-decoration: underline; }
+
+  .trade-taken-banner {
+    font-size: 25px; font-weight: 800; letter-spacing: 0.02em; text-align: center;
+    padding: 10px 16px; border-radius: 10px; margin: 0 24px 16px;
+  }
+  .trade-taken-banner.CALL { background: color-mix(in srgb, var(--call) 16%, var(--surface-1)); color: var(--call); border: 2px solid var(--call); }
+  .trade-taken-banner.PUT { background: color-mix(in srgb, var(--put) 16%, var(--surface-1)); color: var(--put); border: 2px solid var(--put); }
+
+  .na-note { color: var(--text-muted); font-size: 12.5px; padding: 4px 0; }
 </style>
 </head>
 <body>
@@ -171,9 +180,11 @@ function renderInstrument(inst, state) {
   let statusText = statusLabels[state.engine_status] || state.engine_status || "—";
   if (state.daily_loss_cap_hit) statusText += " · loss cap hit";
 
+  let tradeTakenHtml = "";
   let posHtml;
   if (state.position) {
     const p = state.position;
+    tradeTakenHtml = `<div class="trade-taken-banner ${p.side}">TRADE TAKEN — ${p.side} ${p.strike}</div>`;
     posHtml = `
       <div class="pos-row">
         <div>
@@ -192,7 +203,7 @@ function renderInstrument(inst, state) {
     const putRows = cl.checks_put.map(([label, ok]) => critRow(label, ok, "put")).join("");
     checklistHtml = `
       <div class="card">
-        <h2>Live condition checklist</h2>
+        <h2>Entry condition checklist</h2>
         <div class="checklist-grid">
           <div class="crit-col"><div class="name CALL">Call</div>${callRows}</div>
           <div class="crit-col"><div class="name PUT">Put</div>${putRows}</div>
@@ -207,6 +218,8 @@ function renderInstrument(inst, state) {
         </div>
       </div>`;
   }
+
+  const exitChecklistHtml = buildExitChecklistHtml(state, cl);
 
   const trades = (state.today_trades || []).slice().reverse();
   const tradesHtml = trades.length
@@ -227,6 +240,7 @@ function renderInstrument(inst, state) {
       <span>Last tick: <b>${lastTick ? lastTick.toLocaleString("en-IN") : "—"}</b></span>
       <span>Status: <b>${statusText}</b></span>
     </div>
+    ${tradeTakenHtml}
     <div class="card">
       <h2>Position</h2>
       ${posHtml}
@@ -240,6 +254,7 @@ function renderInstrument(inst, state) {
       </div>
     </div>
     ${checklistHtml}
+    ${exitChecklistHtml}
     <div class="card">
       <h2>Trade log (today)</h2>
       <table>
@@ -248,6 +263,61 @@ function renderInstrument(inst, state) {
       </table>
     </div>
   `;
+}
+
+// Exit rules, matching backtest_v4.py / live_engine_tick.py exactly (unchanged all session):
+// MIN_HOLD_BARS=5, EXIT_TIER="5m" (debounced off the 5-min tier's own EMA5), DEBOUNCE_BARS=3,
+// SQUAREOFF_TIME=15:15 IST forced close, no new entries after. Also a daily loss cap force-close.
+const MIN_HOLD_BARS = 5;
+const DEBOUNCE_BARS = 3;
+
+function buildExitChecklistHtml(state, cl) {
+  const p = state.position;
+  if (!p) {
+    return `
+      <div class="card">
+        <h2>Exit condition checklist</h2>
+        <div class="na-note">No open position — exit criteria not applicable right now.</div>
+      </div>`;
+  }
+  if (!cl) return "";
+
+  const barsHeld = state.bars_held || 0;
+  const violationStreak = state.violation_streak || 0;
+  const minHoldMet = barsHeld > MIN_HOLD_BARS;
+  const debounceMet = violationStreak >= DEBOUNCE_BARS;
+
+  const violatedThisBar = p.side === "CALL" ? cl.ltp < cl.ema5_5m : cl.ltp > cl.ema5_5m;
+  const exitDir = p.side === "CALL" ? "price < 5-min EMA5" : "price > 5-min EMA5";
+
+  // cl.as_of is an ISO string already carrying IST wall-clock time (e.g. "...T15:22:00+05:30") --
+  // parsed from the string directly rather than via Date.getHours()/getMinutes(), which would
+  // silently use the VIEWER's local timezone instead of IST for anyone outside +05:30.
+  const [istH, istM] = cl.as_of.split("T")[1].split(":").map(Number);
+  const istHM = istH * 60 + istM;
+  const eodMet = istHM >= (15 * 60 + 15);
+  const capMet = !!state.daily_loss_cap_hit;
+
+  const anyExitMet = eodMet || capMet || (minHoldMet && debounceMet);
+
+  const rows = [
+    [`Minimum hold: ${barsHeld} of ${MIN_HOLD_BARS}+ bars`, minHoldMet],
+    [`This bar violating (${exitDir}): LTP ${cl.ltp} vs EMA5 ${cl.ema5_5m}`, violatedThisBar],
+    [`Debounce streak: ${violationStreak} of ${DEBOUNCE_BARS} consecutive violations`, debounceMet],
+    [`Forced square-off (&ge;15:15 IST)`, eodMet],
+    [`Daily loss cap hit`, capMet],
+  ];
+  const rowsHtml = rows.map(([label, ok]) => critRow(label, ok, p.side.toLowerCase())).join("");
+
+  return `
+    <div class="card">
+      <h2>Exit condition checklist — ${p.side} ${p.strike}</h2>
+      <div class="crit-col">${rowsHtml}</div>
+      <div class="levels">
+        <span>Exit fires when: (min hold met AND debounce met) OR forced square-off OR loss cap</span>
+      </div>
+      ${anyExitMet ? `<div class="na-note" style="color:var(--critical); font-weight:700; margin-top:6px;">Exit condition currently met — position should close on this or the next processed bar</div>` : ""}
+    </div>`;
 }
 
 async function refresh() {
