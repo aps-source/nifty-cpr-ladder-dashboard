@@ -87,6 +87,16 @@
   .unconfirmed { color: var(--warning); font-size: 11px; margin-left: 4px; cursor: help; }
   .empty { color: var(--text-muted); text-align: center; padding: 40px 4px; font-size: 14px; }
 
+  .filters { display: flex; gap: 10px; flex-wrap: wrap; }
+  .filters select {
+    background: var(--surface-2); color: var(--text-primary); border: 1px solid var(--border);
+    border-radius: 8px; padding: 7px 10px; font-size: 13px; font-family: inherit; cursor: pointer;
+  }
+  .filters label { font-size: 11px; text-transform: uppercase; letter-spacing: 0.05em; color: var(--text-muted); display: block; margin-bottom: 4px; }
+  .filter-group { display: flex; flex-direction: column; }
+  .clear-filters { align-self: flex-end; background: none; border: 1px solid var(--border); color: var(--text-secondary); border-radius: 8px; padding: 7px 12px; font-size: 13px; cursor: pointer; font-family: inherit; }
+  .clear-filters:hover { color: var(--text-primary); border-color: var(--text-secondary); }
+
   footer { padding: 8px 24px 24px; font-size: 13px; color: var(--text-muted); }
 </style>
 </head>
@@ -102,7 +112,38 @@
 </header>
 
 <div class="card">
-  <h2>Overall</h2>
+  <h2>Filters</h2>
+  <div class="filters">
+    <div class="filter-group">
+      <label for="f-date">Date</label>
+      <select id="f-date"><option value="">All dates</option></select>
+    </div>
+    <div class="filter-group">
+      <label for="f-symbol">Symbol</label>
+      <select id="f-symbol"><option value="">All symbols</option></select>
+    </div>
+    <div class="filter-group">
+      <label for="f-side">Side</label>
+      <select id="f-side">
+        <option value="">All sides</option>
+        <option value="CALL">CALL</option>
+        <option value="PUT">PUT</option>
+      </select>
+    </div>
+    <div class="filter-group">
+      <label for="f-result">Result</label>
+      <select id="f-result">
+        <option value="">Gain or loss</option>
+        <option value="gain">Gain only</option>
+        <option value="loss">Loss only</option>
+      </select>
+    </div>
+    <button class="clear-filters" id="f-clear">Clear filters</button>
+  </div>
+</div>
+
+<div class="card">
+  <h2>Overall (filtered)</h2>
   <div class="stat-row" id="overall-stats"></div>
 </div>
 
@@ -118,39 +159,76 @@
 
 <script>
 const STATE_URL = "trades_history.json";
+let RAW_DATA = null;
 
 function fmt(v) { return (v > 0 ? '+' : '') + Number(v).toFixed(2); }
 
-async function refresh() {
+function populateFilterOptions(data) {
+  const dateSel = document.getElementById("f-date");
+  const symbolSel = document.getElementById("f-symbol");
+  const prevDate = dateSel.value, prevSymbol = symbolSel.value;
+
+  const dates = data.days.map(d => d.date);
+  const symbols = [...new Set(data.days.flatMap(d => d.trades.map(t => t.symbol)))].sort();
+
+  dateSel.innerHTML = '<option value="">All dates</option>' + dates.map(d => `<option value="${d}">${d}</option>`).join("");
+  symbolSel.innerHTML = '<option value="">All symbols</option>' + symbols.map(s => `<option value="${s}">${s}</option>`).join("");
+
+  if (dates.includes(prevDate)) dateSel.value = prevDate;
+  if (symbols.includes(prevSymbol)) symbolSel.value = prevSymbol;
+}
+
+function getFilters() {
+  return {
+    date: document.getElementById("f-date").value,
+    symbol: document.getElementById("f-symbol").value,
+    side: document.getElementById("f-side").value,
+    result: document.getElementById("f-result").value,
+  };
+}
+
+function tradeMatches(t, day, f) {
+  if (f.date && day.date !== f.date) return false;
+  if (f.symbol && t.symbol !== f.symbol) return false;
+  if (f.side && t.side !== f.side) return false;
+  if (f.result === "gain" && !(t.pnl > 0)) return false;
+  if (f.result === "loss" && !(t.pnl < 0)) return false;
+  return true;
+}
+
+function render() {
   const overallEl = document.getElementById("overall-stats");
   const daysRoot = document.getElementById("days-root");
-  let data;
-  try {
-    const res = await fetch(STATE_URL + "?t=" + Date.now(), { cache: "no-store" });
-    if (!res.ok) throw new Error("HTTP " + res.status);
-    data = await res.json();
-  } catch (e) {
-    daysRoot.innerHTML = `<div class="card"><span class="empty">Failed to load trades_history.json — ${e.message}</span></div>`;
-    return;
-  }
+  if (!RAW_DATA) return;
 
-  const wins = data.days.reduce((a, d) => a + d.day_wins, 0);
-  const winRate = data.overall_trades ? Math.round((wins / data.overall_trades) * 100) : 0;
+  const f = getFilters();
+  const filteredDays = RAW_DATA.days
+    .map(day => ({ ...day, trades: day.trades.filter(t => tradeMatches(t, day, f)) }))
+    .filter(day => day.trades.length > 0);
+
+  const allFiltered = filteredDays.flatMap(d => d.trades);
+  const totalPnl = allFiltered.reduce((a, t) => a + t.pnl, 0);
+  const wins = allFiltered.filter(t => t.pnl > 0).length;
+  const winRate = allFiltered.length ? Math.round((wins / allFiltered.length) * 100) : 0;
+
   overallEl.innerHTML = `
-    <div class="stat"><div class="v">${data.overall_trades}</div><div class="k">Total trades</div></div>
-    <div class="stat"><div class="v" style="color:${data.overall_pnl >= 0 ? 'var(--good)' : 'var(--critical)'}">${fmt(data.overall_pnl)}</div><div class="k">Overall P&amp;L (pts&times;lot)</div></div>
+    <div class="stat"><div class="v">${allFiltered.length}</div><div class="k">Trades</div></div>
+    <div class="stat"><div class="v" style="color:${totalPnl >= 0 ? 'var(--good)' : 'var(--critical)'}">${fmt(totalPnl)}</div><div class="k">P&amp;L (pts&times;lot)</div></div>
     <div class="stat"><div class="v">${winRate}%</div><div class="k">Win rate</div></div>
   `;
 
-  if (!data.days.length) {
-    daysRoot.innerHTML = `<div class="card"><span class="empty">No trades recorded yet</span></div>`;
+  if (!filteredDays.length) {
+    daysRoot.innerHTML = `<div class="card"><span class="empty">No trades match the current filters</span></div>`;
     return;
   }
 
-  daysRoot.innerHTML = data.days.map(day => {
+  daysRoot.innerHTML = filteredDays.map(day => {
+    const dayPnl = day.trades.reduce((a, t) => a + t.pnl, 0);
+    const dayWins = day.trades.filter(t => t.pnl > 0).length;
     const rows = day.trades.map(t => `
       <tr>
         <td>${new Date(t.entry_time).toLocaleTimeString("en-IN")}</td>
+        <td>${new Date(t.exit_time).toLocaleTimeString("en-IN")}</td>
         <td>${t.symbol}</td>
         <td><span class="side-tag ${t.side}">${t.side}</span></td>
         <td>${t.strike}</td>
@@ -165,17 +243,37 @@ async function refresh() {
         <div class="day-heading">
           <div>
             <div class="day-date">${day.date}</div>
-            <div class="day-meta">${day.day_trades} trade${day.day_trades === 1 ? '' : 's'} &middot; ${day.day_wins}W / ${day.day_trades - day.day_wins}L</div>
+            <div class="day-meta">${day.trades.length} trade${day.trades.length === 1 ? '' : 's'} shown &middot; ${dayWins}W / ${day.trades.length - dayWins}L</div>
           </div>
-          <div class="day-pnl ${day.day_pnl >= 0 ? 'good' : 'bad'}">${fmt(day.day_pnl)}</div>
+          <div class="day-pnl ${dayPnl >= 0 ? 'good' : 'bad'}">${fmt(dayPnl)}</div>
         </div>
         <table>
-          <thead><tr><th>Time</th><th>Symbol</th><th>Side</th><th>Strike</th><th>Entry</th><th>Exit</th><th>Reason</th><th>P&amp;L</th></tr></thead>
+          <thead><tr><th>Entry Time</th><th>Exit Time</th><th>Symbol</th><th>Side</th><th>Strike</th><th>Entry</th><th>Exit</th><th>Reason</th><th>P&amp;L</th></tr></thead>
           <tbody>${rows}</tbody>
         </table>
       </div>`;
   }).join("");
 }
+
+async function refresh() {
+  const daysRoot = document.getElementById("days-root");
+  try {
+    const res = await fetch(STATE_URL + "?t=" + Date.now(), { cache: "no-store" });
+    if (!res.ok) throw new Error("HTTP " + res.status);
+    RAW_DATA = await res.json();
+  } catch (e) {
+    daysRoot.innerHTML = `<div class="card"><span class="empty">Failed to load trades_history.json — ${e.message}</span></div>`;
+    return;
+  }
+  populateFilterOptions(RAW_DATA);
+  render();
+}
+
+["f-date", "f-symbol", "f-side", "f-result"].forEach(id => document.getElementById(id).addEventListener("change", render));
+document.getElementById("f-clear").addEventListener("click", () => {
+  ["f-date", "f-symbol", "f-side", "f-result"].forEach(id => document.getElementById(id).value = "");
+  render();
+});
 
 refresh();
 setInterval(refresh, 30000);
