@@ -119,6 +119,14 @@
   .trade-taken-banner.CALL { background: color-mix(in srgb, var(--call) 16%, var(--surface-1)); color: var(--call); border: 2px solid var(--call); }
   .trade-taken-banner.PUT { background: color-mix(in srgb, var(--put) 16%, var(--surface-1)); color: var(--put); border: 2px solid var(--put); }
 
+  .error-banner {
+    font-size: 14px; font-weight: 600; padding: 10px 16px; border-radius: 10px; margin: 0 24px 16px;
+    background: color-mix(in srgb, var(--critical) 14%, var(--surface-1)); color: var(--critical); border: 1px solid var(--critical);
+    display: flex; gap: 8px; align-items: baseline; flex-wrap: wrap;
+  }
+  .error-banner .err-label { text-transform: uppercase; letter-spacing: 0.04em; font-size: 11px; flex: none; }
+  .error-banner .err-msg { font-family: ui-monospace, "SFMono-Regular", Menlo, monospace; font-size: 12.5px; word-break: break-word; }
+
   .na-note { color: var(--text-muted); font-size: 12.5px; padding: 4px 0; }
 
   #oi-summary { padding: 4px 24px 4px; display: flex; flex-direction: column; gap: 12px; }
@@ -179,6 +187,10 @@ function critRow(label, met, dir) {
 function renderInstrument(inst, state) {
   const lastTick = state.last_tick ? new Date(state.last_tick) : null;
   const ageMin = lastTick ? (Date.now() - lastTick.getTime()) / 60000 : Infinity;
+
+  const errorHtml = state.last_error
+    ? `<div class="error-banner"><span class="err-label">Error</span><span class="err-msg">${state.last_error}</span></div>`
+    : "";
 
   let dotClass, statusLine;
   if (state.engine_status === "paused") {
@@ -259,6 +271,7 @@ function renderInstrument(inst, state) {
       <span>Last tick: <b>${lastTick ? lastTick.toLocaleString("en-IN") : "—"}</b></span>
       <span>Status: <b>${statusText}</b></span>
     </div>
+    ${errorHtml}
     ${tradeTakenHtml}
     <div class="card">
       <h2>Position</h2>
