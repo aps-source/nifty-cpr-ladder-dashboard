@@ -2,8 +2,8 @@
   "NIFTY": {
     "date": "2026-08-31",
     "engine_status": "running",
-    "last_tick": "2026-08-31T13:28:52.540691",
-    "last_processed_bar": "2026-08-31T13:28:00+05:30",
+    "last_tick": "2026-08-31T13:30:04.865780",
+    "last_processed_bar": "2026-08-31T13:30:00+05:30",
     "position": null,
     "trades_today": 0,
     "realized_pnl_today": 0.0,
@@ -13,8 +13,8 @@
     "violation_streak": 0,
     "last_error": null,
     "checklist": {
-      "ltp": 24068.1,
-      "as_of": "2026-08-31T13:28:00+05:30",
+      "ltp": 24068.05,
+      "as_of": "2026-08-31T13:30:00+05:30",
       "tc": 24161.32,
       "bc": 24132.65,
       "prev_high": 24188.3,
@@ -30,7 +30,7 @@
         ],
         [
           "5-min stack: price>5>26>50",
-          false
+          true
         ],
         [
           "3-min stack: price>5>26>50",
@@ -63,17 +63,17 @@
           true
         ]
       ],
-      "ema5_5m": 24068.22
+      "ema5_5m": 24067.93
     },
     "oi_metrics": {
       "expiry": "2026-09-01",
-      "spot": 24067.65,
+      "spot": 24066.95,
       "resistance_strike": 24200.0,
-      "resistance_call_oi": 18006690,
+      "resistance_call_oi": 18120310,
       "support_strike": 24000.0,
-      "support_put_oi": 28845635,
+      "support_put_oi": 28972710,
       "max_pain": 24100.0,
-      "pcr": 0.896,
+      "pcr": 0.893,
       "pcr_suggestion": "PUT"
     },
     "ip_status": {
@@ -86,9 +86,9 @@
   },
   "SENSEX": {
     "date": "2026-08-31",
-    "engine_status": "data_error",
-    "last_tick": "2026-08-31T13:28:54.502143",
-    "last_processed_bar": "2026-08-31T13:27:00+05:30",
+    "engine_status": "running",
+    "last_tick": "2026-08-31T13:30:07.340748",
+    "last_processed_bar": "2026-08-31T13:30:00+05:30",
     "position": null,
     "trades_today": 0,
     "realized_pnl_today": 0.0,
@@ -96,10 +96,10 @@
     "today_trades": [],
     "bars_held": 0,
     "violation_streak": 0,
-    "last_error": "1-min fetch failed: ('Connection aborted.', ConnectionResetError(10054, 'An existing connection was forcibly closed by the remote host', None, 10054, None))",
+    "last_error": null,
     "checklist": {
-      "ltp": 77017.49,
-      "as_of": "2026-08-31T13:27:00+05:30",
+      "ltp": 76994.33,
+      "as_of": "2026-08-31T13:30:00+05:30",
       "tc": 77234.6,
       "bc": 77174.79,
       "prev_high": 77357.97,
@@ -148,18 +148,18 @@
           false
         ]
       ],
-      "ema5_5m": 77002.21
+      "ema5_5m": 76994.02
     },
     "oi_metrics": {
       "expiry": "2026-09-03",
-      "spot": 77014.28,
+      "spot": 76994.01,
       "resistance_strike": 77000.0,
-      "resistance_call_oi": 1038480,
+      "resistance_call_oi": 1056920,
       "support_strike": 77000.0,
-      "support_put_oi": 1484780,
+      "support_put_oi": 1470420,
       "max_pain": 77100.0,
-      "pcr": 1.104,
-      "pcr_suggestion": "CALL"
+      "pcr": 1.098,
+      "pcr_suggestion": "NEUTRAL"
     },
     "ip_status": {
       "ok": true,
