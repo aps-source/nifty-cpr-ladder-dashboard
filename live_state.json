@@ -2,8 +2,8 @@
   "NIFTY": {
     "date": "2026-08-31",
     "engine_status": "running",
-    "last_tick": "2026-08-31T10:03:33.759960",
-    "last_processed_bar": "2026-08-31T10:03:00+05:30",
+    "last_tick": "2026-08-31T10:04:46.983373",
+    "last_processed_bar": "2026-08-31T10:04:00+05:30",
     "position": null,
     "trades_today": 0,
     "realized_pnl_today": 0.0,
@@ -11,10 +11,10 @@
     "today_trades": [],
     "bars_held": 0,
     "violation_streak": 0,
-    "last_error": "Entry order failed: {'error_code': 'DH-905', 'error_type': 'Input_Exception', 'error_message': 'Invalid IP'}",
+    "last_error": null,
     "checklist": {
-      "ltp": 24024.35,
-      "as_of": "2026-08-31T10:03:00+05:30",
+      "ltp": 24031.65,
+      "as_of": "2026-08-31T10:04:00+05:30",
       "tc": 24161.32,
       "bc": 24132.65,
       "prev_high": 24188.3,
@@ -56,32 +56,39 @@
         ],
         [
           "3-min stack: price<5<26<50",
-          true
+          false
         ],
         [
           "Price below prev-day Low",
           true
         ]
       ],
-      "ema5_5m": 24030.37
+      "ema5_5m": 24032.81
     },
     "oi_metrics": {
       "expiry": "2026-09-01",
-      "spot": 24024.75,
+      "spot": 24031.4,
       "resistance_strike": 24100.0,
-      "resistance_call_oi": 22896510,
+      "resistance_call_oi": 22913215,
       "support_strike": 24000.0,
-      "support_put_oi": 19469905,
+      "support_put_oi": 19726850,
       "max_pain": 24100.0,
-      "pcr": 0.624,
+      "pcr": 0.626,
       "pcr_suggestion": "PUT"
+    },
+    "ip_status": {
+      "ok": true,
+      "detected_ip": "106.213.82.89",
+      "primary_ip": "106.213.82.89",
+      "match_status": "PRIMARY_MATCH",
+      "orders_allowed": true
     }
   },
   "SENSEX": {
     "date": "2026-08-31",
     "engine_status": "running",
-    "last_tick": "2026-08-31T10:03:41.066044",
-    "last_processed_bar": "2026-08-31T10:03:00+05:30",
+    "last_tick": "2026-08-31T10:04:50.635057",
+    "last_processed_bar": "2026-08-31T10:04:00+05:30",
     "position": null,
     "trades_today": 0,
     "realized_pnl_today": 0.0,
@@ -89,10 +96,10 @@
     "today_trades": [],
     "bars_held": 0,
     "violation_streak": 0,
-    "last_error": "Entry order failed: {'error_code': 'DH-905', 'error_type': 'Input_Exception', 'error_message': 'Invalid IP'}",
+    "last_error": null,
     "checklist": {
-      "ltp": 76871.9,
-      "as_of": "2026-08-31T10:03:00+05:30",
+      "ltp": 76896.95,
+      "as_of": "2026-08-31T10:04:00+05:30",
       "tc": 77234.6,
       "bc": 77174.79,
       "prev_high": 77357.97,
@@ -134,25 +141,32 @@
         ],
         [
           "3-min stack: price<5<26<50",
-          true
+          false
         ],
         [
           "Price below prev-day Low",
           true
         ]
       ],
-      "ema5_5m": 76891.7
+      "ema5_5m": 76900.05
     },
     "oi_metrics": {
       "expiry": "2026-09-03",
-      "spot": 76866.88,
+      "spot": 76895.14,
       "resistance_strike": 77000.0,
-      "resistance_call_oi": 1156180,
+      "resistance_call_oi": 1167580,
       "support_strike": 77000.0,
-      "support_put_oi": 1040720,
+      "support_put_oi": 1045040,
       "max_pain": 77100.0,
-      "pcr": 0.795,
+      "pcr": 0.794,
       "pcr_suggestion": "PUT"
+    },
+    "ip_status": {
+      "ok": true,
+      "detected_ip": "106.213.82.89",
+      "primary_ip": "106.213.82.89",
+      "match_status": "PRIMARY_MATCH",
+      "orders_allowed": true
     }
   }
 }
