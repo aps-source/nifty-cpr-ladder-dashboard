@@ -159,6 +159,19 @@
   .sod-row.bad { color: var(--text-primary); }
   .sod-row.bad .mark { color: var(--critical); }
   .sod-row .detail { color: var(--text-muted); font-size: 12px; }
+
+  #manual-backup { margin: 0 24px 16px; }
+  .manual-item {
+    display: flex; align-items: center; justify-content: space-between; gap: 12px; flex-wrap: wrap;
+    padding: 14px 20px; border-radius: 12px; margin-bottom: 10px; border: 2px solid;
+  }
+  .manual-item.CALL { background: color-mix(in srgb, var(--call) 16%, var(--surface-1)); border-color: var(--call); }
+  .manual-item.PUT { background: color-mix(in srgb, var(--put) 16%, var(--surface-1)); border-color: var(--put); }
+  .manual-item .mi-label { font-size: 12px; text-transform: uppercase; letter-spacing: 0.05em; color: var(--text-muted); font-weight: 700; }
+  .manual-item .mi-action { font-size: 25px; font-weight: 800; letter-spacing: 0.01em; }
+  .manual-item.CALL .mi-action { color: var(--call); }
+  .manual-item.PUT .mi-action { color: var(--put); }
+  .manual-item .mi-meta { font-size: 13px; color: var(--text-secondary); }
 </style>
 </head>
 <body>
@@ -171,6 +184,8 @@
   </div>
   <a class="trades-link" href="trades.html">Day-wise trades &amp; G/L &rarr;</a>
 </header>
+
+<div id="manual-backup"></div>
 
 <div class="card" id="sod-checklist"></div>
 
@@ -386,6 +401,39 @@ function sodRow(label, ok, detail) {
   return `<div class="sod-row ${ok ? 'ok' : 'bad'}"><span class="mark">${ok ? '✓' : '✕'}</span><span>${label}${detail ? ` <span class="detail">${detail}</span>` : ''}</span></div>`;
 }
 
+function renderManualBackup(combined) {
+  // Uses the ACTUAL strategy signal (checklist.checks_call/checks_put -- the
+  // real 5-condition entry stack), not the PCR reference indicator. Shows
+  // only when a signal is fully met AND no position is open yet, so this is
+  // never wrong about "should I act" -- added 2026-08-31 so a manual trade
+  // can back up automated execution if it fails (e.g. the intermittent
+  // Invalid IP order-placement issue seen today).
+  const el = document.getElementById("manual-backup");
+  const items = [];
+
+  for (const inst of INSTRUMENTS) {
+    const state = combined[inst.key];
+    if (!state || !state.checklist || state.position) continue;
+    const cl = state.checklist;
+    const callMet = cl.checks_call.every(([, ok]) => ok);
+    const putMet = cl.checks_put.every(([, ok]) => ok);
+    const side = callMet ? "CALL" : (putMet ? "PUT" : null);
+    if (!side) continue;
+
+    const errNote = state.last_error ? ` — last automated attempt failed: ${state.last_error}` : " — automated attempt not yet confirmed";
+    items.push(`
+      <div class="manual-item ${side}">
+        <div>
+          <div class="mi-label">${inst.label} — signal live as of ${new Date(cl.as_of).toLocaleTimeString("en-IN")}</div>
+          <div class="mi-action">BUY ${side} (ATM)</div>
+          <div class="mi-meta">Spot ${cl.ltp}${errNote}</div>
+        </div>
+      </div>`);
+  }
+
+  el.innerHTML = items.join("");
+}
+
 function renderStartOfDayChecklist(combined) {
   const el = document.getElementById("sod-checklist");
   const nifty = combined.NIFTY, sensex = combined.SENSEX;
@@ -439,6 +487,7 @@ async function refresh() {
     return;
   }
 
+  renderManualBackup(combined);
   renderStartOfDayChecklist(combined);
 
   const oiEl = document.getElementById("oi-summary");
