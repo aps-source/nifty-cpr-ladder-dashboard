@@ -2,8 +2,8 @@
   "NIFTY": {
     "date": "2026-08-31",
     "engine_status": "running",
-    "last_tick": "2026-08-31T10:45:44.835004",
-    "last_processed_bar": "2026-08-31T10:45:00+05:30",
+    "last_tick": "2026-08-31T10:46:58.253579",
+    "last_processed_bar": "2026-08-31T10:46:00+05:30",
     "position": null,
     "trades_today": 0,
     "realized_pnl_today": 0.0,
@@ -11,10 +11,10 @@
     "today_trades": [],
     "bars_held": 0,
     "violation_streak": 0,
-    "last_error": null,
+    "last_error": "Insufficient margin for entry: need 3448.25, have 2138.29",
     "checklist": {
-      "ltp": 24014.0,
-      "as_of": "2026-08-31T10:45:00+05:30",
+      "ltp": 24008.35,
+      "as_of": "2026-08-31T10:46:00+05:30",
       "tc": 24161.32,
       "bc": 24132.65,
       "prev_high": 24188.3,
@@ -52,28 +52,28 @@
         ],
         [
           "5-min stack: price<5<26<50",
-          false
+          true
         ],
         [
           "3-min stack: price<5<26<50",
-          false
+          true
         ],
         [
           "Price below prev-day Low",
           true
         ]
       ],
-      "ema5_5m": 24013.3
+      "ema5_5m": 24011.42
     },
     "oi_metrics": {
       "expiry": "2026-09-01",
-      "spot": 24013.7,
+      "spot": 24008.05,
       "resistance_strike": 24100.0,
-      "resistance_call_oi": 24965395,
+      "resistance_call_oi": 24869000,
       "support_strike": 24000.0,
-      "support_put_oi": 20375290,
+      "support_put_oi": 20489105,
       "max_pain": 24050.0,
-      "pcr": 0.591,
+      "pcr": 0.592,
       "pcr_suggestion": "PUT"
     },
     "ip_status": {
@@ -87,8 +87,8 @@
   "SENSEX": {
     "date": "2026-08-31",
     "engine_status": "running",
-    "last_tick": "2026-08-31T10:45:47.304239",
-    "last_processed_bar": "2026-08-31T10:45:00+05:30",
+    "last_tick": "2026-08-31T10:47:04.407849",
+    "last_processed_bar": "2026-08-31T10:46:00+05:30",
     "position": null,
     "trades_today": 0,
     "realized_pnl_today": 0.0,
@@ -96,10 +96,10 @@
     "today_trades": [],
     "bars_held": 0,
     "violation_streak": 0,
-    "last_error": null,
+    "last_error": "Insufficient margin for entry: need 6118.0, have 2138.29",
     "checklist": {
-      "ltp": 76810.63,
-      "as_of": "2026-08-31T10:45:00+05:30",
+      "ltp": 76797.24,
+      "as_of": "2026-08-31T10:46:00+05:30",
       "tc": 77234.6,
       "bc": 77174.79,
       "prev_high": 77357.97,
@@ -141,18 +141,18 @@
         ],
         [
           "3-min stack: price<5<26<50",
-          false
+          true
         ],
         [
           "Price below prev-day Low",
           true
         ]
       ],
-      "ema5_5m": 76812.67
+      "ema5_5m": 76808.21
     },
     "oi_metrics": {
       "expiry": "2026-09-03",
-      "spot": 76808.06,
+      "spot": 76799.52,
       "resistance_strike": 77000.0,
       "resistance_call_oi": 1349120,
       "support_strike": 77000.0,
