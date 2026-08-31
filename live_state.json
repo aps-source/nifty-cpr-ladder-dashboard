@@ -2,7 +2,7 @@
   "NIFTY": {
     "date": "2026-08-31",
     "engine_status": "running",
-    "last_tick": "2026-08-31T09:13:52.147346",
+    "last_tick": "2026-08-31T09:15:02.408439",
     "last_processed_bar": "2026-08-28T15:29:00+05:30",
     "position": null,
     "trades_today": 0,
@@ -67,7 +67,7 @@
     },
     "oi_metrics": {
       "expiry": "2026-09-01",
-      "spot": 24117.55,
+      "spot": 24115.05,
       "resistance_strike": 24300.0,
       "resistance_call_oi": 13078650,
       "support_strike": 24000.0,
@@ -80,8 +80,8 @@
   "SENSEX": {
     "date": "2026-08-31",
     "engine_status": "running",
-    "last_tick": "2026-08-31T09:13:54.536719",
-    "last_processed_bar": "2026-08-28T15:29:00+05:30",
+    "last_tick": "2026-08-31T09:15:07.384553",
+    "last_processed_bar": "2026-08-31T09:15:00+05:30",
     "position": null,
     "trades_today": 0,
     "realized_pnl_today": 0.0,
@@ -91,12 +91,12 @@
     "violation_streak": 0,
     "last_error": null,
     "checklist": {
-      "ltp": 77264.51,
-      "as_of": "2026-08-28T15:29:00+05:30",
-      "tc": 77314.28,
-      "bc": 77060.49,
-      "prev_high": 77694.97,
-      "prev_low": 76933.59,
+      "ltp": 77124.32,
+      "as_of": "2026-08-31T09:15:00+05:30",
+      "tc": 77234.6,
+      "bc": 77174.79,
+      "prev_high": 77357.97,
+      "prev_low": 76991.62,
       "checks_call": [
         [
           "Price above Daily CPR (TC)",
@@ -108,11 +108,11 @@
         ],
         [
           "5-min stack: price>5>26>50",
-          true
+          false
         ],
         [
           "3-min stack: price>5>26>50",
-          true
+          false
         ],
         [
           "Price above prev-day High",
@@ -122,7 +122,7 @@
       "checks_put": [
         [
           "Price below Daily CPR (BC)",
-          false
+          true
         ],
         [
           "15-min stack: price<5<26<50",
@@ -141,11 +141,11 @@
           false
         ]
       ],
-      "ema5_5m": 77203.41
+      "ema5_5m": 77177.05
     },
     "oi_metrics": {
       "expiry": "2026-09-03",
-      "spot": 77130.73,
+      "spot": 77094.22,
       "resistance_strike": 78000.0,
       "resistance_call_oi": 636600,
       "support_strike": 75000.0,
