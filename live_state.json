@@ -2,8 +2,8 @@
   "NIFTY": {
     "date": "2026-08-31",
     "engine_status": "running",
-    "last_tick": "2026-08-31T13:27:43.180072",
-    "last_processed_bar": "2026-08-31T13:27:00+05:30",
+    "last_tick": "2026-08-31T13:28:52.540691",
+    "last_processed_bar": "2026-08-31T13:28:00+05:30",
     "position": null,
     "trades_today": 0,
     "realized_pnl_today": 0.0,
@@ -13,8 +13,8 @@
     "violation_streak": 0,
     "last_error": null,
     "checklist": {
-      "ltp": 24074.4,
-      "as_of": "2026-08-31T13:27:00+05:30",
+      "ltp": 24068.1,
+      "as_of": "2026-08-31T13:28:00+05:30",
       "tc": 24161.32,
       "bc": 24132.65,
       "prev_high": 24188.3,
@@ -30,7 +30,7 @@
         ],
         [
           "5-min stack: price>5>26>50",
-          true
+          false
         ],
         [
           "3-min stack: price>5>26>50",
@@ -63,15 +63,15 @@
           true
         ]
       ],
-      "ema5_5m": 24070.32
+      "ema5_5m": 24068.22
     },
     "oi_metrics": {
       "expiry": "2026-09-01",
-      "spot": 24074.8,
-      "resistance_strike": 24300.0,
-      "resistance_call_oi": 17927650,
+      "spot": 24067.65,
+      "resistance_strike": 24200.0,
+      "resistance_call_oi": 18006690,
       "support_strike": 24000.0,
-      "support_put_oi": 29038035,
+      "support_put_oi": 28845635,
       "max_pain": 24100.0,
       "pcr": 0.896,
       "pcr_suggestion": "PUT"
@@ -86,8 +86,8 @@
   },
   "SENSEX": {
     "date": "2026-08-31",
-    "engine_status": "running",
-    "last_tick": "2026-08-31T13:27:45.628157",
+    "engine_status": "data_error",
+    "last_tick": "2026-08-31T13:28:54.502143",
     "last_processed_bar": "2026-08-31T13:27:00+05:30",
     "position": null,
     "trades_today": 0,
@@ -96,7 +96,7 @@
     "today_trades": [],
     "bars_held": 0,
     "violation_streak": 0,
-    "last_error": null,
+    "last_error": "1-min fetch failed: ('Connection aborted.', ConnectionResetError(10054, 'An existing connection was forcibly closed by the remote host', None, 10054, None))",
     "checklist": {
       "ltp": 77017.49,
       "as_of": "2026-08-31T13:27:00+05:30",
