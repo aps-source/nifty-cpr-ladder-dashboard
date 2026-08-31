@@ -431,14 +431,37 @@ function renderManualBackup(combined) {
 
     const cl = state.checklist;
     if (state.position) {
-      items.push(`
-        <div class="manual-item PENDING">
-          <div>
-            <div class="mi-label">${inst.label}</div>
-            <div class="mi-action">DECISION PENDING</div>
-            <div class="mi-meta">Position already open automatically (${state.position.side} ${state.position.strike}) — no manual action needed</div>
-          </div>
-        </div>`);
+      const p = state.position;
+      const barsHeld = state.bars_held || 0;
+      const violationStreak = state.violation_streak || 0;
+      const minHoldMet = barsHeld > MIN_HOLD_BARS;
+      const debounceMet = violationStreak >= DEBOUNCE_BARS;
+      const [istH, istM] = cl.as_of.split("T")[1].split(":").map(Number);
+      const eodMet = (istH * 60 + istM) >= (15 * 60 + 15);
+      const capMet = !!state.daily_loss_cap_hit;
+      const exitMet = eodMet || capMet || (minHoldMet && debounceMet);
+
+      if (exitMet) {
+        const reason = eodMet ? "forced square-off" : capMet ? "daily loss cap hit" : "min hold + debounce both met";
+        const errNote = state.last_error ? ` — last automated attempt failed: ${state.last_error}` : "";
+        items.push(`
+          <div class="manual-item ${p.side}">
+            <div>
+              <div class="mi-label">${inst.label} — exit condition met (${reason})</div>
+              <div class="mi-action">EXIT ${p.side}</div>
+              <div class="mi-meta">${p.side} ${p.strike} @ entry ${p.entry_price} · Spot ${cl.ltp}${errNote}</div>
+            </div>
+          </div>`);
+      } else {
+        items.push(`
+          <div class="manual-item PENDING">
+            <div>
+              <div class="mi-label">${inst.label}</div>
+              <div class="mi-action">DECISION PENDING</div>
+              <div class="mi-meta">Holding ${p.side} ${p.strike} @ ${p.entry_price} — exit condition not met yet (hold ${barsHeld}/${MIN_HOLD_BARS}+, debounce ${violationStreak}/${DEBOUNCE_BARS})</div>
+            </div>
+          </div>`);
+      }
       continue;
     }
 
