@@ -144,6 +144,21 @@
   .oi-suggestion.PUT { color: var(--put); }
   .oi-suggestion.NEUTRAL { color: var(--text-muted); }
   #oi-disclaimer { padding: 0 24px 18px; font-size: 11.5px; color: var(--text-muted); font-style: italic; }
+
+  #sod-checklist { margin: 0 24px 16px; }
+  .sod-summary { display: flex; align-items: center; justify-content: space-between; margin-bottom: 10px; }
+  .sod-summary .title { font-size: 13px; text-transform: uppercase; letter-spacing: 0.06em; color: var(--text-muted); font-weight: 700; }
+  .sod-summary .badge { font-size: 13px; font-weight: 800; padding: 3px 10px; border-radius: 999px; }
+  .sod-summary .badge.pass { background: color-mix(in srgb, var(--good) 18%, var(--surface-1)); color: var(--good); }
+  .sod-summary .badge.fail { background: color-mix(in srgb, var(--critical) 18%, var(--surface-1)); color: var(--critical); }
+  .sod-row { display: flex; align-items: flex-start; gap: 8px; font-size: 13.5px; padding: 6px 0; border-top: 1px solid var(--gridline); }
+  .sod-row:first-of-type { border-top: none; }
+  .sod-row .mark { width: 16px; text-align: center; font-weight: 700; flex: none; }
+  .sod-row.ok { color: var(--text-primary); }
+  .sod-row.ok .mark { color: var(--good); }
+  .sod-row.bad { color: var(--text-primary); }
+  .sod-row.bad .mark { color: var(--critical); }
+  .sod-row .detail { color: var(--text-muted); font-size: 12px; }
 </style>
 </head>
 <body>
@@ -156,6 +171,8 @@
   </div>
   <a class="trades-link" href="trades.html">Day-wise trades &amp; G/L &rarr;</a>
 </header>
+
+<div class="card" id="sod-checklist"></div>
 
 <div id="oi-summary"></div>
 <div id="oi-disclaimer"></div>
@@ -365,6 +382,51 @@ function buildExitChecklistHtml(state, cl) {
     </div>`;
 }
 
+function sodRow(label, ok, detail) {
+  return `<div class="sod-row ${ok ? 'ok' : 'bad'}"><span class="mark">${ok ? '✓' : '✕'}</span><span>${label}${detail ? ` <span class="detail">${detail}</span>` : ''}</span></div>`;
+}
+
+function renderStartOfDayChecklist(combined) {
+  const el = document.getElementById("sod-checklist");
+  const nifty = combined.NIFTY, sensex = combined.SENSEX;
+  if (!nifty && !sensex) { el.innerHTML = ""; return; }
+
+  const staleFor = (s) => {
+    if (!s || !s.last_tick) return Infinity;
+    return (Date.now() - new Date(s.last_tick).getTime()) / 60000;
+  };
+  const bothTicking = nifty && sensex && staleFor(nifty) <= 10 && staleFor(sensex) <= 10;
+  const neitherPaused = nifty && sensex && nifty.engine_status !== "paused" && sensex.engine_status !== "paused";
+  const bothHealthy = nifty && sensex && nifty.engine_status === "running" && sensex.engine_status === "running";
+  const noRecentError = nifty && sensex && !nifty.last_error && !sensex.last_error;
+
+  // ip_status is account-wide (same for both instruments) -- added 2026-08-31 after a
+  // dynamic-IP change silently blocked trading for a stretch of the morning before
+  // anyone noticed. This check would have caught it immediately.
+  const ip = nifty && nifty.ip_status;
+  const ipOk = ip && ip.ok && ip.match_status === "PRIMARY_MATCH";
+  const ipDetail = ip && ip.ok
+    ? `(detected ${ip.detected_ip}, whitelisted ${ip.primary_ip})`
+    : (ip ? `(check failed: ${ip.error})` : "");
+
+  const rows = [
+    sodRow("Both instruments ticking (last tick &le;10 min old)", bothTicking),
+    sodRow("Not paused (PAUSE.flag absent)", neitherPaused),
+    sodRow("No token/config/data errors (engine_status = running)", bothHealthy),
+    sodRow("No error on most recent order attempt", noRecentError),
+    sodRow("IP whitelist matches this machine's current public IP", ipOk, ipDetail),
+  ];
+  const allPass = bothTicking && neitherPaused && bothHealthy && noRecentError && ipOk;
+
+  el.innerHTML = `
+    <div class="sod-summary">
+      <span class="title">Start-of-day checklist</span>
+      <span class="badge ${allPass ? 'pass' : 'fail'}">${allPass ? 'ALL CLEAR' : 'NEEDS ATTENTION'}</span>
+    </div>
+    ${rows.join("")}
+  `;
+}
+
 async function refresh() {
   const root = document.getElementById("root");
   let combined;
@@ -376,6 +438,8 @@ async function refresh() {
     root.innerHTML = `<div class="card"><span class="pos-empty">Failed to load live_state.json — ${e.message}</span></div>`;
     return;
   }
+
+  renderStartOfDayChecklist(combined);
 
   const oiEl = document.getElementById("oi-summary");
   const oiDisclaimerEl = document.getElementById("oi-disclaimer");
