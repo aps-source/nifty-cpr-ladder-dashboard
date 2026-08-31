@@ -167,11 +167,15 @@
   }
   .manual-item.CALL { background: color-mix(in srgb, var(--call) 16%, var(--surface-1)); border-color: var(--call); }
   .manual-item.PUT { background: color-mix(in srgb, var(--put) 16%, var(--surface-1)); border-color: var(--put); }
+  .manual-item.PENDING { background: #000000; border-color: #000000; }
   .manual-item .mi-label { font-size: 12px; text-transform: uppercase; letter-spacing: 0.05em; color: var(--text-muted); font-weight: 700; }
+  .manual-item.PENDING .mi-label { color: #cfd4dc; }
   .manual-item .mi-action { font-size: 25px; font-weight: 800; letter-spacing: 0.01em; }
   .manual-item.CALL .mi-action { color: var(--call); }
   .manual-item.PUT .mi-action { color: var(--put); }
+  .manual-item.PENDING .mi-action { color: #ffffff; }
   .manual-item .mi-meta { font-size: 13px; color: var(--text-secondary); }
+  .manual-item.PENDING .mi-meta { color: #9aa4bd; }
 </style>
 </head>
 <body>
@@ -413,12 +417,46 @@ function renderManualBackup(combined) {
 
   for (const inst of INSTRUMENTS) {
     const state = combined[inst.key];
-    if (!state || !state.checklist || state.position) continue;
+    if (!state || !state.checklist) {
+      items.push(`
+        <div class="manual-item PENDING">
+          <div>
+            <div class="mi-label">${inst.label}</div>
+            <div class="mi-action">DECISION PENDING</div>
+            <div class="mi-meta">No data yet</div>
+          </div>
+        </div>`);
+      continue;
+    }
+
     const cl = state.checklist;
+    if (state.position) {
+      items.push(`
+        <div class="manual-item PENDING">
+          <div>
+            <div class="mi-label">${inst.label}</div>
+            <div class="mi-action">DECISION PENDING</div>
+            <div class="mi-meta">Position already open automatically (${state.position.side} ${state.position.strike}) — no manual action needed</div>
+          </div>
+        </div>`);
+      continue;
+    }
+
     const callMet = cl.checks_call.every(([, ok]) => ok);
     const putMet = cl.checks_put.every(([, ok]) => ok);
     const side = callMet ? "CALL" : (putMet ? "PUT" : null);
-    if (!side) continue;
+
+    if (!side) {
+      items.push(`
+        <div class="manual-item PENDING">
+          <div>
+            <div class="mi-label">${inst.label} — as of ${new Date(cl.as_of).toLocaleTimeString("en-IN")}</div>
+            <div class="mi-action">DECISION PENDING</div>
+            <div class="mi-meta">Spot ${cl.ltp} — no full entry signal right now</div>
+          </div>
+        </div>`);
+      continue;
+    }
 
     const errNote = state.last_error ? ` — last automated attempt failed: ${state.last_error}` : " — automated attempt not yet confirmed";
     items.push(`
