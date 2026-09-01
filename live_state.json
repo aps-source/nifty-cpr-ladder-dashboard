@@ -1,8 +1,8 @@
 {
   "NIFTY": {
     "date": "2026-09-01",
-    "engine_status": "data_error",
-    "last_tick": "2026-09-01T08:13:53.743918",
+    "engine_status": "running",
+    "last_tick": "2026-09-01T08:16:32.221380",
     "last_processed_bar": "2026-08-31T15:29:00+05:30",
     "position": null,
     "trades_today": 0,
@@ -11,7 +11,7 @@
     "today_trades": [],
     "bars_held": 0,
     "violation_streak": 0,
-    "last_error": "1-min fetch failed: ('Connection aborted.', ConnectionResetError(10054, 'An existing connection was forcibly closed by the remote host', None, 10054, None))",
+    "last_error": null,
     "checklist": {
       "ltp": 24050.25,
       "as_of": "2026-08-31T15:29:00+05:30",
@@ -77,17 +77,14 @@
       "pcr_suggestion": "PUT"
     },
     "ip_status": {
-      "ok": true,
-      "detected_ip": "106.213.82.89",
-      "primary_ip": "106.213.82.89",
-      "match_status": "PRIMARY_MATCH",
-      "orders_allowed": true
+      "ok": false,
+      "error": "'str' object has no attribute 'get'"
     }
   },
   "SENSEX": {
     "date": "2026-09-01",
     "engine_status": "running",
-    "last_tick": "2026-09-01T08:14:24.896118",
+    "last_tick": "2026-09-01T08:16:54.521104",
     "last_processed_bar": "2026-08-31T15:29:00+05:30",
     "position": null,
     "trades_today": 0,
@@ -162,11 +159,8 @@
       "pcr_suggestion": "NEUTRAL"
     },
     "ip_status": {
-      "ok": true,
-      "detected_ip": "106.213.82.89",
-      "primary_ip": "106.213.82.89",
-      "match_status": "PRIMARY_MATCH",
-      "orders_allowed": true
+      "ok": false,
+      "error": "'str' object has no attribute 'get'"
     }
   }
 }
