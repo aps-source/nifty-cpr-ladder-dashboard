@@ -1,6 +1,48 @@
 {
   "days": [
     {
+      "date": "2026-09-01",
+      "trades": [
+        {
+          "symbol": "NIFTY 50",
+          "entry_time": "2026-09-01T13:51:00+05:30",
+          "exit_time": "2026-09-01T14:47:00+05:30",
+          "side": "PUT",
+          "strike": 24000.0,
+          "expiry": "2026-09-01",
+          "entry_price": 40.3,
+          "exit_price": 30.15,
+          "qty": 65,
+          "pnl": -659.7499999999999,
+          "reason": "signal_exit",
+          "entry_order_id": 222260901584708,
+          "exit_order_id": 322260901735808,
+          "pnl_confirmed": true,
+          "date": "2026-09-01"
+        },
+        {
+          "symbol": "NIFTY 50",
+          "entry_time": "2026-09-01T14:48:00+05:30",
+          "exit_time": "2026-09-01T14:54:00+05:30",
+          "side": "PUT",
+          "strike": 23950.0,
+          "expiry": "2026-09-01",
+          "entry_price": 22.65,
+          "exit_price": 20.1,
+          "qty": 65,
+          "pnl": -165.74999999999983,
+          "reason": "signal_exit",
+          "entry_order_id": 23226090159408,
+          "exit_order_id": 222260901737708,
+          "pnl_confirmed": true,
+          "date": "2026-09-01"
+        }
+      ],
+      "day_pnl": -825.5,
+      "day_trades": 2,
+      "day_wins": 0
+    },
+    {
       "date": "2026-08-27",
       "trades": [
         {
@@ -111,6 +153,6 @@
       "day_wins": 4
     }
   ],
-  "overall_pnl": 1234.25,
-  "overall_trades": 6
+  "overall_pnl": 408.75,
+  "overall_trades": 8
 }
