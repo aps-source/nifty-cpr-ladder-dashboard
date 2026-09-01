@@ -2,22 +2,11 @@
   "NIFTY": {
     "date": "2026-09-01",
     "engine_status": "running",
-    "last_tick": "2026-09-01T15:14:05.366206",
-    "last_processed_bar": "2026-09-01T15:14:00+05:30",
-    "position": {
-      "side": "PUT",
-      "entry_time": "2026-09-01T15:03:00+05:30",
-      "entry_price": 17.35,
-      "spot_at_entry": 23973.95,
-      "strike": 23950.0,
-      "expiry": "2026-09-01",
-      "security_id": "46984",
-      "qty": 65,
-      "order_id": "23226090162608",
-      "backstop_order_id": "34226090169108"
-    },
+    "last_tick": "2026-09-01T15:15:17.528789",
+    "last_processed_bar": "2026-09-01T15:15:00+05:30",
+    "position": null,
     "trades_today": 3,
-    "realized_pnl_today": -55.25,
+    "realized_pnl_today": -178.75000000000014,
     "daily_loss_cap_hit": false,
     "today_trades": [
       {
@@ -53,14 +42,31 @@
         "exit_order_id": "222260901737708",
         "reason": "signal_exit",
         "pnl": -471.25
+      },
+      {
+        "side": "PUT",
+        "entry_time": "2026-09-01T15:03:00+05:30",
+        "entry_price": 17.35,
+        "spot_at_entry": 23973.95,
+        "strike": 23950.0,
+        "expiry": "2026-09-01",
+        "security_id": "46984",
+        "qty": 65,
+        "order_id": "23226090162608",
+        "backstop_order_id": "34226090169108",
+        "exit_time": "2026-09-01T15:15:00+05:30",
+        "exit_price": 15.45,
+        "exit_order_id": "23226090163508",
+        "reason": "eod_squareoff",
+        "pnl": -123.50000000000014
       }
     ],
-    "bars_held": 6,
+    "bars_held": 0,
     "violation_streak": 0,
     "last_error": null,
     "checklist": {
-      "ltp": 23971.8,
-      "as_of": "2026-09-01T15:14:00+05:30",
+      "ltp": 23980.55,
+      "as_of": "2026-09-01T15:15:00+05:30",
       "tc": 24061.25,
       "bc": 24053.92,
       "prev_high": 24128.7,
@@ -98,28 +104,28 @@
         ],
         [
           "5-min stack: price<5<26<50",
-          true
+          false
         ],
         [
           "3-min stack: price<5<26<50",
-          true
+          false
         ],
         [
           "Price below prev-day Low",
           true
         ]
       ],
-      "ema5_5m": 23973.37
+      "ema5_5m": 23975.76
     },
     "oi_metrics": {
       "expiry": "2026-09-01",
-      "spot": 23974.25,
+      "spot": 23980.55,
       "resistance_strike": 24100.0,
-      "resistance_call_oi": 38739285,
+      "resistance_call_oi": 35948770,
       "support_strike": 23950.0,
-      "support_put_oi": 26701025,
+      "support_put_oi": 26107055,
       "max_pain": 24000.0,
-      "pcr": 0.663,
+      "pcr": 0.683,
       "pcr_suggestion": "PUT"
     },
     "ip_status": {
@@ -133,8 +139,8 @@
   "SENSEX": {
     "date": "2026-09-01",
     "engine_status": "running",
-    "last_tick": "2026-09-01T15:14:07.836653",
-    "last_processed_bar": "2026-09-01T15:14:00+05:30",
+    "last_tick": "2026-09-01T15:15:21.330026",
+    "last_processed_bar": "2026-09-01T15:15:00+05:30",
     "position": null,
     "trades_today": 3,
     "realized_pnl_today": -520.9999999999995,
@@ -196,8 +202,8 @@
     "violation_streak": 0,
     "last_error": null,
     "checklist": {
-      "ltp": 76730.48,
-      "as_of": "2026-09-01T15:14:00+05:30",
+      "ltp": 76725.18,
+      "as_of": "2026-09-01T15:15:00+05:30",
       "tc": 76967.0,
       "bc": 76960.51,
       "prev_high": 77177.27,
@@ -239,24 +245,24 @@
         ],
         [
           "3-min stack: price<5<26<50",
-          false
+          true
         ],
         [
           "Price below prev-day Low",
           true
         ]
       ],
-      "ema5_5m": 76724.22
+      "ema5_5m": 76724.54
     },
     "oi_metrics": {
       "expiry": "2026-09-03",
-      "spot": 76735.33,
+      "spot": 76725.18,
       "resistance_strike": 77000.0,
-      "resistance_call_oi": 2179800,
+      "resistance_call_oi": 2135000,
       "support_strike": 75000.0,
-      "support_put_oi": 1184240,
+      "support_put_oi": 1169380,
       "max_pain": 76900.0,
-      "pcr": 0.683,
+      "pcr": 0.686,
       "pcr_suggestion": "PUT"
     },
     "ip_status": {
