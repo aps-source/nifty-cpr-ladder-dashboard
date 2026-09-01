@@ -53,10 +53,27 @@
           "exit_order_id": 222260901737708,
           "pnl_confirmed": true,
           "date": "2026-09-01"
+        },
+        {
+          "symbol": "SENSEX",
+          "entry_time": "2026-09-01T15:03:00+05:30",
+          "exit_time": "2026-09-01T15:04:00+05:30",
+          "side": "PUT",
+          "strike": 76700.0,
+          "expiry": "2026-09-03",
+          "entry_price": 263.15,
+          "exit_price": 165.4,
+          "qty": 20,
+          "pnl": -1954.9999999999995,
+          "reason": "loss_cap",
+          "entry_order_id": 22926090180208,
+          "exit_order_id": 32926090169908,
+          "pnl_confirmed": true,
+          "date": "2026-09-01"
         }
       ],
-      "day_pnl": -2567.5,
-      "day_trades": 3,
+      "day_pnl": -4522.5,
+      "day_trades": 4,
       "day_wins": 0
     },
     {
@@ -170,6 +187,6 @@
       "day_wins": 4
     }
   ],
-  "overall_pnl": -1333.25,
-  "overall_trades": 9
+  "overall_pnl": -3288.25,
+  "overall_trades": 10
 }
