@@ -1,8 +1,8 @@
 {
   "NIFTY": {
     "date": "2026-09-02",
-    "engine_status": "running",
-    "last_tick": "2026-09-02T11:09:33.262594",
+    "engine_status": "token_invalid",
+    "last_tick": "2026-09-02T11:10:40.100845",
     "last_processed_bar": "2026-09-02T11:09:00+05:30",
     "position": null,
     "trades_today": 1,
@@ -95,17 +95,14 @@
       "pcr_suggestion": "PUT"
     },
     "ip_status": {
-      "ok": true,
-      "detected_ip": "106.213.82.89",
-      "primary_ip": "106.213.82.89",
-      "match_status": "PRIMARY_MATCH",
-      "orders_allowed": true
+      "ok": false,
+      "error": "'str' object has no attribute 'get'"
     }
   },
   "SENSEX": {
     "date": "2026-09-02",
-    "engine_status": "running",
-    "last_tick": "2026-09-02T11:09:35.809882",
+    "engine_status": "token_invalid",
+    "last_tick": "2026-09-02T11:10:40.127240",
     "last_processed_bar": "2026-09-02T11:09:00+05:30",
     "position": null,
     "trades_today": 1,
@@ -198,11 +195,8 @@
       "pcr_suggestion": "PUT"
     },
     "ip_status": {
-      "ok": true,
-      "detected_ip": "106.213.82.89",
-      "primary_ip": "106.213.82.89",
-      "match_status": "PRIMARY_MATCH",
-      "orders_allowed": true
+      "ok": false,
+      "error": "'str' object has no attribute 'get'"
     }
   }
 }
