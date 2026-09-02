@@ -19,10 +19,27 @@
           "exit_order_id": 32926090216808,
           "pnl_confirmed": true,
           "date": "2026-09-02"
+        },
+        {
+          "symbol": "NIFTY 50",
+          "entry_time": "2026-09-02T09:16:00+05:30",
+          "exit_time": "2026-09-02T09:17:00+05:30",
+          "side": "PUT",
+          "strike": 23800.0,
+          "expiry": "2026-09-08",
+          "entry_price": 106.45,
+          "exit_price": 106.05,
+          "qty": 65,
+          "pnl": -26.00000000000037,
+          "reason": "loss_cap",
+          "entry_order_id": 32226090218108,
+          "exit_order_id": 34226090212808,
+          "pnl_confirmed": true,
+          "date": "2026-09-02"
         }
       ],
-      "day_pnl": 755.0,
-      "day_trades": 1,
+      "day_pnl": 729.0,
+      "day_trades": 2,
       "day_wins": 1
     },
     {
@@ -246,6 +263,6 @@
       "day_wins": 4
     }
   ],
-  "overall_pnl": 1289.5,
-  "overall_trades": 13
+  "overall_pnl": 1263.5,
+  "overall_trades": 14
 }
