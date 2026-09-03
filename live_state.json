@@ -1,208 +1,42 @@
 {
   "NIFTY": {
-    "date": "2026-09-02",
-    "engine_status": "running",
-    "last_tick": "2026-09-02T18:46:28.235456",
-    "last_processed_bar": "2026-09-02T15:29:00+05:30",
+    "date": "2026-09-03",
+    "engine_status": "token_invalid",
+    "last_tick": "2026-09-03T09:01:27.207316",
+    "last_processed_bar": null,
     "position": null,
-    "trades_today": 1,
-    "realized_pnl_today": -26.00000000000037,
+    "trades_today": 0,
+    "realized_pnl_today": 0.0,
     "daily_loss_cap_hit": false,
-    "today_trades": [
-      {
-        "side": "PUT",
-        "entry_time": "2026-09-02T09:16:00+05:30",
-        "entry_price": 106.45,
-        "spot_at_entry": 23821.3,
-        "strike": 23800.0,
-        "expiry": "2026-09-08",
-        "security_id": "42632",
-        "qty": 65,
-        "order_id": "32226090218108",
-        "backstop_order_id": "23226090212108",
-        "exit_time": "2026-09-02T09:17:00+05:30",
-        "exit_price": 106.05,
-        "exit_order_id": "34226090212808",
-        "reason": "loss_cap",
-        "pnl": -26.00000000000037
-      }
-    ],
+    "today_trades": [],
     "bars_held": 0,
     "violation_streak": 0,
     "last_error": null,
-    "checklist": {
-      "ltp": 23882.85,
-      "as_of": "2026-09-02T15:29:00+05:30",
-      "tc": 24047.7,
-      "bc": 24002.93,
-      "prev_high": 24142.85,
-      "prev_low": 23952.55,
-      "checks_call": [
-        [
-          "Price above Daily CPR (TC)",
-          false
-        ],
-        [
-          "15-min stack: price>5>26>50",
-          false
-        ],
-        [
-          "5-min stack: price>5>26>50",
-          true
-        ],
-        [
-          "3-min stack: price>5>26>50",
-          true
-        ],
-        [
-          "Price above prev-day High",
-          false
-        ]
-      ],
-      "checks_put": [
-        [
-          "Price below Daily CPR (BC)",
-          true
-        ],
-        [
-          "15-min stack: price<5<26<50",
-          false
-        ],
-        [
-          "5-min stack: price<5<26<50",
-          false
-        ],
-        [
-          "3-min stack: price<5<26<50",
-          false
-        ],
-        [
-          "Price below prev-day Low",
-          true
-        ]
-      ],
-      "ema5_5m": 23880.49
-    },
-    "oi_metrics": {
-      "expiry": "2026-09-08",
-      "spot": 23914.45,
-      "resistance_strike": 24200.0,
-      "resistance_call_oi": 10137075,
-      "support_strike": 23000.0,
-      "support_put_oi": 8341515,
-      "max_pain": 24000.0,
-      "pcr": 0.728,
-      "pcr_suggestion": "PUT"
-    },
+    "checklist": null,
+    "oi_metrics": null,
     "ip_status": {
-      "ok": true,
-      "detected_ip": "106.213.82.89",
-      "primary_ip": "106.213.82.89",
-      "match_status": "PRIMARY_MATCH",
-      "orders_allowed": true
+      "ok": false,
+      "error": "'str' object has no attribute 'get'"
     }
   },
   "SENSEX": {
-    "date": "2026-09-02",
-    "engine_status": "running",
-    "last_tick": "2026-09-02T18:46:30.604539",
-    "last_processed_bar": "2026-09-02T15:29:00+05:30",
+    "date": "2026-09-03",
+    "engine_status": "token_invalid",
+    "last_tick": "2026-09-03T09:01:28.040782",
+    "last_processed_bar": null,
     "position": null,
-    "trades_today": 1,
-    "realized_pnl_today": 755.0,
+    "trades_today": 0,
+    "realized_pnl_today": 0.0,
     "daily_loss_cap_hit": false,
-    "today_trades": [
-      {
-        "side": "PUT",
-        "entry_time": "2026-09-02T09:15:00+05:30",
-        "entry_price": 223.8,
-        "spot_at_entry": 76302.87,
-        "strike": 76300.0,
-        "expiry": "2026-09-03",
-        "security_id": "859302",
-        "qty": 20,
-        "order_id": "22926090212408",
-        "backstop_order_id": "32926090212808",
-        "exit_time": "2026-09-02T09:16:00+05:30",
-        "exit_price": 261.55,
-        "exit_order_id": "32926090216808",
-        "reason": "loss_cap",
-        "pnl": 755.0
-      }
-    ],
+    "today_trades": [],
     "bars_held": 0,
     "violation_streak": 0,
     "last_error": null,
-    "checklist": {
-      "ltp": 76570.35,
-      "as_of": "2026-09-02T15:29:00+05:30",
-      "tc": 76944.18,
-      "bc": 76943.99,
-      "prev_high": 77231.87,
-      "prev_low": 76656.12,
-      "checks_call": [
-        [
-          "Price above Daily CPR (TC)",
-          false
-        ],
-        [
-          "15-min stack: price>5>26>50",
-          false
-        ],
-        [
-          "5-min stack: price>5>26>50",
-          true
-        ],
-        [
-          "3-min stack: price>5>26>50",
-          true
-        ],
-        [
-          "Price above prev-day High",
-          false
-        ]
-      ],
-      "checks_put": [
-        [
-          "Price below Daily CPR (BC)",
-          true
-        ],
-        [
-          "15-min stack: price<5<26<50",
-          false
-        ],
-        [
-          "5-min stack: price<5<26<50",
-          false
-        ],
-        [
-          "3-min stack: price<5<26<50",
-          false
-        ],
-        [
-          "Price below prev-day Low",
-          true
-        ]
-      ],
-      "ema5_5m": 76493.3
-    },
-    "oi_metrics": {
-      "expiry": "2026-09-03",
-      "spot": 76570.35,
-      "resistance_strike": 77000.0,
-      "resistance_call_oi": 3494880,
-      "support_strike": 76000.0,
-      "support_put_oi": 2929680,
-      "max_pain": 76500.0,
-      "pcr": 0.864,
-      "pcr_suggestion": "PUT"
-    },
+    "checklist": null,
+    "oi_metrics": null,
     "ip_status": {
-      "ok": true,
-      "detected_ip": "106.213.82.89",
-      "primary_ip": "106.213.82.89",
-      "match_status": "PRIMARY_MATCH",
-      "orders_allowed": true
+      "ok": false,
+      "error": "'str' object has no attribute 'get'"
     }
   }
 }
