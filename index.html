@@ -513,9 +513,13 @@ function renderStartOfDayChecklist(combined) {
   // dynamic-IP change silently blocked trading for a stretch of the morning before
   // anyone noticed. This check would have caught it immediately.
   const ip = nifty && nifty.ip_status;
-  const ipOk = ip && ip.ok && ip.match_status === "PRIMARY_MATCH";
+  // Fixed 2026-09-02: was checking match_status === "PRIMARY_MATCH" specifically,
+  // which incorrectly showed NEEDS ATTENTION when a secondary IP correctly matched
+  // instead (match_status "SECONDARY_MATCH", orders_allowed still true). Checking
+  // orders_allowed directly is the actual ground truth, regardless of which slot matched.
+  const ipOk = ip && ip.ok && ip.orders_allowed;
   const ipDetail = ip && ip.ok
-    ? `(detected ${ip.detected_ip}, whitelisted ${ip.primary_ip})`
+    ? `(detected ${ip.detected_ip} — ${ip.match_status || 'status unknown'}; primary ${ip.primary_ip}${ip.secondary_ip && ip.secondary_ip !== 'NA' ? ', secondary ' + ip.secondary_ip : ''})`
     : (ip ? `(check failed: ${ip.error})` : "");
 
   const rows = [
