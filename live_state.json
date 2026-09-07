@@ -1,8 +1,8 @@
 {
   "NIFTY": {
     "date": "2026-09-07",
-    "engine_status": "running",
-    "last_tick": "2026-09-07T13:49:43.237564",
+    "engine_status": "data_error",
+    "last_tick": "2026-09-07T13:50:54.909595",
     "last_processed_bar": "2026-09-07T13:49:00+05:30",
     "position": null,
     "trades_today": 0,
@@ -11,7 +11,7 @@
     "today_trades": [],
     "bars_held": 0,
     "violation_streak": 0,
-    "last_error": null,
+    "last_error": "1-min fetch failed: {'error_code': 'DH-907', 'error_type': 'Data_Error', 'error_message': 'System is unable to fetch data due to incorrect parameters or no data present'}",
     "checklist": {
       "ltp": 23766.45,
       "as_of": "2026-09-07T13:49:00+05:30",
@@ -88,8 +88,8 @@
   "SENSEX": {
     "date": "2026-09-07",
     "engine_status": "running",
-    "last_tick": "2026-09-07T13:49:47.801171",
-    "last_processed_bar": "2026-09-07T13:49:00+05:30",
+    "last_tick": "2026-09-07T13:50:59.830295",
+    "last_processed_bar": "2026-09-07T13:50:00+05:30",
     "position": null,
     "trades_today": 0,
     "realized_pnl_today": 0.0,
@@ -99,8 +99,8 @@
     "violation_streak": 0,
     "last_error": null,
     "checklist": {
-      "ltp": 76061.43,
-      "as_of": "2026-09-07T13:49:00+05:30",
+      "ltp": 76060.92,
+      "as_of": "2026-09-07T13:50:00+05:30",
       "tc": 76699.29,
       "bc": 76576.71,
       "prev_high": 76883.14,
@@ -149,11 +149,11 @@
           true
         ]
       ],
-      "ema5_5m": 76049.58
+      "ema5_5m": 76053.36
     },
     "oi_metrics": {
       "expiry": "2026-09-10",
-      "spot": 76061.43,
+      "spot": 76065.01,
       "resistance_strike": 76500.0,
       "resistance_call_oi": 1687000,
       "support_strike": 76000.0,
