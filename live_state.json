@@ -1,8 +1,8 @@
 {
   "NIFTY": {
     "date": "2026-09-07",
-    "engine_status": "running",
-    "last_tick": "2026-09-07T15:57:30.202271",
+    "engine_status": "data_error",
+    "last_tick": "2026-09-07T15:58:40.752188",
     "last_processed_bar": "2026-09-07T15:29:00+05:30",
     "position": null,
     "trades_today": 0,
@@ -11,7 +11,7 @@
     "today_trades": [],
     "bars_held": 0,
     "violation_streak": 0,
-    "last_error": null,
+    "last_error": "[Errno 13] Permission denied: 'D:\\\\Claude - Algo\\\\Project Nifty 3min CPR Strategy\\\\nifty_1min_raw.csv'",
     "checklist": {
       "ltp": 23779.15,
       "as_of": "2026-09-07T15:29:00+05:30",
@@ -87,8 +87,8 @@
   },
   "SENSEX": {
     "date": "2026-09-07",
-    "engine_status": "running",
-    "last_tick": "2026-09-07T15:57:32.749494",
+    "engine_status": "data_error",
+    "last_tick": "2026-09-07T15:58:43.040542",
     "last_processed_bar": "2026-09-07T15:29:00+05:30",
     "position": null,
     "trades_today": 0,
@@ -97,7 +97,7 @@
     "today_trades": [],
     "bars_held": 0,
     "violation_streak": 0,
-    "last_error": null,
+    "last_error": "[Errno 13] Permission denied: 'D:\\\\Claude - Algo\\\\Project Nifty 3min CPR Strategy\\\\sensex_1min_raw.csv'",
     "checklist": {
       "ltp": 76132.81,
       "as_of": "2026-09-07T15:29:00+05:30",
