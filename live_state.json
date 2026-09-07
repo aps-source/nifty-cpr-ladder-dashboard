@@ -1,9 +1,9 @@
 {
   "NIFTY": {
     "date": "2026-09-07",
-    "engine_status": "token_invalid",
-    "last_tick": "2026-09-07T08:46:04.165673",
-    "last_processed_bar": null,
+    "engine_status": "running",
+    "last_tick": "2026-09-07T08:47:28.972702",
+    "last_processed_bar": "2026-09-04T15:29:00+05:30",
     "position": null,
     "trades_today": 0,
     "realized_pnl_today": 0.0,
@@ -12,18 +12,74 @@
     "bars_held": 0,
     "violation_streak": 0,
     "last_error": null,
-    "checklist": null,
+    "checklist": {
+      "ltp": 23897.7,
+      "as_of": "2026-09-04T15:29:00+05:30",
+      "tc": 23949.43,
+      "bc": 23898.78,
+      "prev_high": 24025.4,
+      "prev_low": 23873.45,
+      "checks_call": [
+        [
+          "Price above Daily CPR (TC)",
+          false
+        ],
+        [
+          "15-min stack: price>5>26>50",
+          false
+        ],
+        [
+          "5-min stack: price>5>26>50",
+          false
+        ],
+        [
+          "3-min stack: price>5>26>50",
+          false
+        ],
+        [
+          "Price above prev-day High",
+          false
+        ]
+      ],
+      "checks_put": [
+        [
+          "Price below Daily CPR (BC)",
+          true
+        ],
+        [
+          "15-min stack: price<5<26<50",
+          true
+        ],
+        [
+          "5-min stack: price<5<26<50",
+          true
+        ],
+        [
+          "3-min stack: price<5<26<50",
+          true
+        ],
+        [
+          "Price below prev-day Low",
+          false
+        ]
+      ],
+      "ema5_5m": 23924.56
+    },
     "oi_metrics": null,
     "ip_status": {
-      "ok": false,
-      "error": "'str' object has no attribute 'get'"
+      "ok": true,
+      "detected_ip": "106.213.86.201",
+      "primary_ip": "106.213.82.89",
+      "secondary_ip": "106.213.83.182",
+      "match_status": "MISMATCH",
+      "orders_allowed": false
     }
   },
   "SENSEX": {
     "date": "2026-09-07",
-    "engine_status": "token_invalid",
-    "last_tick": "2026-09-07T08:46:04.195287",
-    "last_processed_bar": null,
+    "engine_status": "running",
+    "last_tick": "2026-09-07T08:47:34.817437",
+    "last_processed_bar": "2026-09-04T15:29:00+05:30",
     "position": null,
     "trades_today": 0,
     "realized_pnl_today": 0.0,
@@ -32,11 +88,67 @@
     "bars_held": 0,
     "violation_streak": 0,
     "last_error": null,
-    "checklist": null,
+    "checklist": {
+      "ltp": 76515.43,
+      "as_of": "2026-09-04T15:29:00+05:30",
+      "tc": 76538.67,
+      "bc": 76281.46,
+      "prev_high": 76924.48,
+      "prev_low": 76152.86,
+      "checks_call": [
+        [
+          "Price above Daily CPR (TC)",
+          false
+        ],
+        [
+          "15-min stack: price>5>26>50",
+          false
+        ],
+        [
+          "5-min stack: price>5>26>50",
+          false
+        ],
+        [
+          "3-min stack: price>5>26>50",
+          false
+        ],
+        [
+          "Price above prev-day High",
+          false
+        ]
+      ],
+      "checks_put": [
+        [
+          "Price below Daily CPR (BC)",
+          false
+        ],
+        [
+          "15-min stack: price<5<26<50",
+          false
+        ],
+        [
+          "5-min stack: price<5<26<50",
+          true
+        ],
+        [
+          "3-min stack: price<5<26<50",
+          true
+        ],
+        [
+          "Price below prev-day Low",
+          false
+        ]
+      ],
+      "ema5_5m": 76604.26
+    },
     "oi_metrics": null,
     "ip_status": {
-      "ok": false,
-      "error": "'str' object has no attribute 'get'"
+      "ok": true,
+      "detected_ip": "106.213.86.201",
+      "primary_ip": "106.213.82.89",
+      "secondary_ip": "106.213.83.182",
+      "match_status": "MISMATCH",
+      "orders_allowed": false
     }
   }
 }
