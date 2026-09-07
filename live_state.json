@@ -1,9 +1,9 @@
 {
   "NIFTY": {
     "date": "2026-09-07",
-    "engine_status": "token_invalid",
-    "last_tick": "2026-09-07T11:51:52.676914",
-    "last_processed_bar": "2026-09-07T11:30:00+05:30",
+    "engine_status": "running",
+    "last_tick": "2026-09-07T11:54:35.047623",
+    "last_processed_bar": "2026-09-07T11:54:00+05:30",
     "position": null,
     "trades_today": 0,
     "realized_pnl_today": 0.0,
@@ -13,8 +13,8 @@
     "violation_streak": 0,
     "last_error": null,
     "checklist": {
-      "ltp": 23770.5,
-      "as_of": "2026-09-07T11:30:00+05:30",
+      "ltp": 23776.6,
+      "as_of": "2026-09-07T11:54:00+05:30",
       "tc": 23950.03,
       "bc": 23915.14,
       "prev_high": 24004.2,
@@ -63,7 +63,7 @@
           true
         ]
       ],
-      "ema5_5m": 23770.47
+      "ema5_5m": 23771.55
     },
     "oi_metrics": {
       "expiry": "2026-09-08",
@@ -77,15 +77,19 @@
       "pcr_suggestion": "PUT"
     },
     "ip_status": {
-      "ok": false,
-      "error": "'str' object has no attribute 'get'"
+      "ok": true,
+      "detected_ip": "106.213.86.201",
+      "primary_ip": "106.213.86.201",
+      "secondary_ip": "106.213.83.182",
+      "match_status": "PRIMARY_MATCH",
+      "orders_allowed": true
     }
   },
   "SENSEX": {
     "date": "2026-09-07",
-    "engine_status": "token_invalid",
-    "last_tick": "2026-09-07T11:51:52.693856",
-    "last_processed_bar": "2026-09-07T11:30:00+05:30",
+    "engine_status": "running",
+    "last_tick": "2026-09-07T11:54:38.861372",
+    "last_processed_bar": "2026-09-07T11:54:00+05:30",
     "position": null,
     "trades_today": 0,
     "realized_pnl_today": 0.0,
@@ -95,8 +99,8 @@
     "violation_streak": 0,
     "last_error": null,
     "checklist": {
-      "ltp": 76098.54,
-      "as_of": "2026-09-07T11:30:00+05:30",
+      "ltp": 76116.18,
+      "as_of": "2026-09-07T11:54:00+05:30",
       "tc": 76699.29,
       "bc": 76576.71,
       "prev_high": 76883.14,
@@ -134,18 +138,18 @@
         ],
         [
           "5-min stack: price<5<26<50",
-          true
+          false
         ],
         [
           "3-min stack: price<5<26<50",
-          true
+          false
         ],
         [
           "Price below prev-day Low",
           true
         ]
       ],
-      "ema5_5m": 76103.1
+      "ema5_5m": 76105.72
     },
     "oi_metrics": {
       "expiry": "2026-09-10",
@@ -159,8 +163,12 @@
       "pcr_suggestion": "PUT"
     },
     "ip_status": {
-      "ok": false,
-      "error": "'str' object has no attribute 'get'"
+      "ok": true,
+      "detected_ip": "106.213.86.201",
+      "primary_ip": "106.213.86.201",
+      "secondary_ip": "106.213.83.182",
+      "match_status": "PRIMARY_MATCH",
+      "orders_allowed": true
     }
   }
 }
