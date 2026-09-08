@@ -1,9 +1,9 @@
 {
   "NIFTY": {
-    "date": "2026-09-07",
-    "engine_status": "running",
-    "last_tick": "2026-09-07T23:48:12.391803",
-    "last_processed_bar": "2026-09-07T15:29:00+05:30",
+    "date": "2026-09-08",
+    "engine_status": "data_error",
+    "last_tick": "2026-09-08T08:44:33.893220",
+    "last_processed_bar": null,
     "position": null,
     "trades_today": 0,
     "realized_pnl_today": 0.0,
@@ -11,84 +11,22 @@
     "today_trades": [],
     "bars_held": 0,
     "violation_streak": 0,
-    "last_error": null,
-    "checklist": {
-      "ltp": 23779.15,
-      "as_of": "2026-09-07T15:29:00+05:30",
-      "tc": 23950.03,
-      "bc": 23915.14,
-      "prev_high": 24004.2,
-      "prev_low": 23895.85,
-      "checks_call": [
-        [
-          "Price above Daily CPR (TC)",
-          false
-        ],
-        [
-          "15-min stack: price>5>26>50",
-          false
-        ],
-        [
-          "5-min stack: price>5>26>50",
-          false
-        ],
-        [
-          "3-min stack: price>5>26>50",
-          false
-        ],
-        [
-          "Price above prev-day High",
-          false
-        ]
-      ],
-      "checks_put": [
-        [
-          "Price below Daily CPR (BC)",
-          true
-        ],
-        [
-          "15-min stack: price<5<26<50",
-          false
-        ],
-        [
-          "5-min stack: price<5<26<50",
-          false
-        ],
-        [
-          "3-min stack: price<5<26<50",
-          false
-        ],
-        [
-          "Price below prev-day Low",
-          true
-        ]
-      ],
-      "ema5_5m": 23764.74
-    },
-    "oi_metrics": {
-      "expiry": "2026-09-08",
-      "spot": 23779.15,
-      "resistance_strike": 24000.0,
-      "resistance_call_oi": 21546330,
-      "support_strike": 23500.0,
-      "support_put_oi": 11237525,
-      "max_pain": 23800.0,
-      "pcr": 0.564,
-      "pcr_suggestion": "PUT"
-    },
+    "last_error": "1-min fetch failed: ('Connection aborted.', ConnectionResetError(10054, 'An existing connection was forcibly closed by the remote host', None, 10054, None))",
+    "checklist": null,
+    "oi_metrics": null,
     "ip_status": {
       "ok": true,
-      "detected_ip": "106.213.86.201",
+      "detected_ip": "106.213.86.236",
       "primary_ip": "106.213.86.201",
       "secondary_ip": "106.213.83.182",
-      "match_status": "PRIMARY_MATCH",
-      "orders_allowed": true
+      "match_status": "MISMATCH",
+      "orders_allowed": false
     }
   },
   "SENSEX": {
-    "date": "2026-09-07",
+    "date": "2026-09-08",
     "engine_status": "running",
-    "last_tick": "2026-09-07T23:48:15.823360",
+    "last_tick": "2026-09-08T08:44:42.043672",
     "last_processed_bar": "2026-09-07T15:29:00+05:30",
     "position": null,
     "trades_today": 0,
@@ -151,24 +89,14 @@
       ],
       "ema5_5m": 76070.07
     },
-    "oi_metrics": {
-      "expiry": "2026-09-10",
-      "spot": 76132.81,
-      "resistance_strike": 76500.0,
-      "resistance_call_oi": 1243720,
-      "support_strike": 76000.0,
-      "support_put_oi": 741640,
-      "max_pain": 76300.0,
-      "pcr": 0.621,
-      "pcr_suggestion": "PUT"
-    },
+    "oi_metrics": null,
     "ip_status": {
       "ok": true,
-      "detected_ip": "106.213.86.201",
+      "detected_ip": "106.213.86.236",
       "primary_ip": "106.213.86.201",
       "secondary_ip": "106.213.83.182",
-      "match_status": "PRIMARY_MATCH",
-      "orders_allowed": true
+      "match_status": "MISMATCH",
+      "orders_allowed": false
     }
   }
 }
