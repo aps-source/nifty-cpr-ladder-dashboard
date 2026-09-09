@@ -2,8 +2,8 @@
   "NIFTY": {
     "date": "2026-09-09",
     "engine_status": "running",
-    "last_tick": "2026-09-09T09:31:40.331022",
-    "last_processed_bar": "2026-09-09T09:31:00+05:30",
+    "last_tick": "2026-09-09T09:32:59.145761",
+    "last_processed_bar": "2026-09-09T09:32:00+05:30",
     "position": null,
     "trades_today": 0,
     "realized_pnl_today": 0.0,
@@ -11,10 +11,10 @@
     "today_trades": [],
     "bars_held": 0,
     "violation_streak": 0,
-    "last_error": "Entry order failed: {'error_code': 'DH-905', 'error_type': 'Input_Exception', 'error_message': 'Invalid IP'}",
+    "last_error": "Insufficient margin for entry: need 6753.5, have 3848.65",
     "checklist": {
-      "ltp": 23516.6,
-      "as_of": "2026-09-09T09:31:00+05:30",
+      "ltp": 23507.6,
+      "as_of": "2026-09-09T09:32:00+05:30",
       "tc": 23691.15,
       "bc": 23653.78,
       "prev_high": 23758.95,
@@ -63,17 +63,17 @@
           true
         ]
       ],
-      "ema5_5m": 23535.33
+      "ema5_5m": 23532.33
     },
     "oi_metrics": {
       "expiry": "2026-09-15",
-      "spot": 23515.3,
+      "spot": 23510.0,
       "resistance_strike": 24000.0,
-      "resistance_call_oi": 9997065,
+      "resistance_call_oi": 10018905,
       "support_strike": 23500.0,
-      "support_put_oi": 11375000,
+      "support_put_oi": 11586900,
       "max_pain": 23650.0,
-      "pcr": 0.717,
+      "pcr": 0.723,
       "pcr_suggestion": "PUT"
     },
     "ip_status": {
@@ -88,8 +88,8 @@
   "SENSEX": {
     "date": "2026-09-09",
     "engine_status": "running",
-    "last_tick": "2026-09-09T09:31:47.272309",
-    "last_processed_bar": "2026-09-09T09:31:00+05:30",
+    "last_tick": "2026-09-09T09:33:11.068834",
+    "last_processed_bar": "2026-09-09T09:33:00+05:30",
     "position": null,
     "trades_today": 0,
     "realized_pnl_today": 0.0,
@@ -97,10 +97,10 @@
     "today_trades": [],
     "bars_held": 0,
     "violation_streak": 0,
-    "last_error": "Entry order failed: {'error_code': 'DH-905', 'error_type': 'Input_Exception', 'error_message': 'Invalid IP'}",
+    "last_error": "Insufficient margin for entry: need 4518.0, have 3848.65",
     "checklist": {
-      "ltp": 75078.96,
-      "as_of": "2026-09-09T09:31:00+05:30",
+      "ltp": 75060.42,
+      "as_of": "2026-09-09T09:33:00+05:30",
       "tc": 75782.73,
       "bc": 75645.96,
       "prev_high": 76012.11,
@@ -149,17 +149,17 @@
           true
         ]
       ],
-      "ema5_5m": 75165.89
+      "ema5_5m": 75159.71
     },
     "oi_metrics": {
       "expiry": "2026-09-10",
-      "spot": 75077.81,
+      "spot": 75069.73,
       "resistance_strike": 76000.0,
-      "resistance_call_oi": 3433720,
+      "resistance_call_oi": 3454360,
       "support_strike": 75000.0,
-      "support_put_oi": 3505100,
+      "support_put_oi": 3782480,
       "max_pain": 75200.0,
-      "pcr": 0.657,
+      "pcr": 0.672,
       "pcr_suggestion": "PUT"
     },
     "ip_status": {
