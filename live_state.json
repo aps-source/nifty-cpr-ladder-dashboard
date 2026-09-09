@@ -1,8 +1,8 @@
 {
   "NIFTY": {
     "date": "2026-09-09",
-    "engine_status": "running",
-    "last_tick": "2026-09-09T08:19:44.084833",
+    "engine_status": "data_error",
+    "last_tick": "2026-09-09T08:20:52.376276",
     "last_processed_bar": "2026-09-08T15:29:00+05:30",
     "position": null,
     "trades_today": 0,
@@ -11,7 +11,7 @@
     "today_trades": [],
     "bars_held": 0,
     "violation_streak": 0,
-    "last_error": null,
+    "last_error": "1-min fetch failed: Expecting value: line 1 column 1 (char 0)",
     "checklist": {
       "ltp": 23635.1,
       "as_of": "2026-09-08T15:29:00+05:30",
@@ -87,8 +87,8 @@
   },
   "SENSEX": {
     "date": "2026-09-09",
-    "engine_status": "running",
-    "last_tick": "2026-09-09T08:19:46.616859",
+    "engine_status": "token_invalid",
+    "last_tick": "2026-09-09T08:20:53.047607",
     "last_processed_bar": "2026-09-08T15:29:00+05:30",
     "position": null,
     "trades_today": 0,
