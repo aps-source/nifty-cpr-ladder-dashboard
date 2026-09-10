@@ -36,10 +36,44 @@
           "exit_order_id": 32226091063808,
           "pnl_confirmed": true,
           "date": "2026-09-10"
+        },
+        {
+          "symbol": "NIFTY 50",
+          "entry_time": "2026-09-10T10:01:00+05:30",
+          "exit_time": "2026-09-10T10:18:00+05:30",
+          "side": "PUT",
+          "strike": 23400.0,
+          "expiry": "2026-09-15",
+          "entry_price": 82.75,
+          "exit_price": 76.8,
+          "qty": 65,
+          "pnl": -386.75000000000017,
+          "reason": "signal_exit",
+          "entry_order_id": 22226091070908,
+          "exit_order_id": 34226091019908,
+          "pnl_confirmed": true,
+          "date": "2026-09-10"
+        },
+        {
+          "symbol": "SENSEX",
+          "entry_time": "2026-09-10T10:02:00+05:30",
+          "exit_time": "2026-09-10T10:18:00+05:30",
+          "side": "PUT",
+          "strike": 74700.0,
+          "expiry": "2026-09-10",
+          "entry_price": 154.65,
+          "exit_price": 130.35,
+          "qty": 20,
+          "pnl": -486.0000000000002,
+          "reason": "signal_exit",
+          "entry_order_id": 32926091099308,
+          "exit_order_id": 329260910123908,
+          "pnl_confirmed": true,
+          "date": "2026-09-10"
         }
       ],
-      "day_pnl": -1052.75,
-      "day_trades": 2,
+      "day_pnl": -1925.5,
+      "day_trades": 4,
       "day_wins": 0
     },
     {
@@ -305,6 +339,6 @@
       "day_wins": 4
     }
   ],
-  "overall_pnl": 210.75,
-  "overall_trades": 16
+  "overall_pnl": -662.0,
+  "overall_trades": 18
 }

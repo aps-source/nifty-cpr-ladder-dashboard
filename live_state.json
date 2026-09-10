@@ -2,22 +2,11 @@
   "NIFTY": {
     "date": "2026-09-10",
     "engine_status": "running",
-    "last_tick": "2026-09-10T10:17:25.967487",
-    "last_processed_bar": "2026-09-10T10:17:00+05:30",
-    "position": {
-      "side": "PUT",
-      "entry_time": "2026-09-10T10:01:00+05:30",
-      "entry_price": 82.75,
-      "spot_at_entry": 23421.3,
-      "strike": 23400.0,
-      "expiry": "2026-09-15",
-      "security_id": "47294",
-      "qty": 65,
-      "order_id": "22226091070908",
-      "backstop_order_id": "23226091015908"
-    },
+    "last_tick": "2026-09-10T10:18:42.801879",
+    "last_processed_bar": "2026-09-10T10:18:00+05:30",
+    "position": null,
     "trades_today": 2,
-    "realized_pnl_today": -529.7499999999994,
+    "realized_pnl_today": -916.4999999999995,
     "daily_loss_cap_hit": false,
     "today_trades": [
       {
@@ -36,14 +25,31 @@
         "exit_order_id": "32226091063808",
         "reason": "signal_exit",
         "pnl": -529.7499999999994
+      },
+      {
+        "side": "PUT",
+        "entry_time": "2026-09-10T10:01:00+05:30",
+        "entry_price": 82.75,
+        "spot_at_entry": 23421.3,
+        "strike": 23400.0,
+        "expiry": "2026-09-15",
+        "security_id": "47294",
+        "qty": 65,
+        "order_id": "22226091070908",
+        "backstop_order_id": "23226091015908",
+        "exit_time": "2026-09-10T10:18:00+05:30",
+        "exit_price": 76.8,
+        "exit_order_id": "34226091019908",
+        "reason": "signal_exit",
+        "pnl": -386.75000000000017
       }
     ],
-    "bars_held": 16,
-    "violation_streak": 2,
+    "bars_held": 0,
+    "violation_streak": 0,
     "last_error": null,
     "checklist": {
-      "ltp": 23433.35,
-      "as_of": "2026-09-10T10:17:00+05:30",
+      "ltp": 23430.15,
+      "as_of": "2026-09-10T10:18:00+05:30",
       "tc": 23501.53,
       "bc": 23454.84,
       "prev_high": 23571.55,
@@ -77,7 +83,7 @@
         ],
         [
           "15-min stack: price<5<26<50",
-          false
+          true
         ],
         [
           "5-min stack: price<5<26<50",
@@ -89,20 +95,20 @@
         ],
         [
           "Price below prev-day Low",
-          false
+          true
         ]
       ],
-      "ema5_5m": 23423.7
+      "ema5_5m": 23422.64
     },
     "oi_metrics": {
       "expiry": "2026-09-15",
-      "spot": 23433.75,
+      "spot": 23429.5,
       "resistance_strike": 23500.0,
-      "resistance_call_oi": 13811265,
+      "resistance_call_oi": 13657085,
       "support_strike": 23000.0,
-      "support_put_oi": 10319270,
+      "support_put_oi": 10639135,
       "max_pain": 23500.0,
-      "pcr": 0.612,
+      "pcr": 0.619,
       "pcr_suggestion": "PUT"
     },
     "ip_status": {
@@ -117,22 +123,11 @@
   "SENSEX": {
     "date": "2026-09-10",
     "engine_status": "running",
-    "last_tick": "2026-09-10T10:17:28.491902",
-    "last_processed_bar": "2026-09-10T10:17:00+05:30",
-    "position": {
-      "side": "PUT",
-      "entry_time": "2026-09-10T10:02:00+05:30",
-      "entry_price": 154.65,
-      "spot_at_entry": 74746.55,
-      "strike": 74700.0,
-      "expiry": "2026-09-10",
-      "security_id": "860498",
-      "qty": 20,
-      "order_id": "32926091099308",
-      "backstop_order_id": "32926091099408"
-    },
+    "last_tick": "2026-09-10T10:18:57.111317",
+    "last_processed_bar": "2026-09-10T10:18:00+05:30",
+    "position": null,
     "trades_today": 2,
-    "realized_pnl_today": -522.9999999999995,
+    "realized_pnl_today": -1008.9999999999998,
     "daily_loss_cap_hit": false,
     "today_trades": [
       {
@@ -151,14 +146,31 @@
         "exit_order_id": "32926091081308",
         "reason": "signal_exit",
         "pnl": -522.9999999999995
+      },
+      {
+        "side": "PUT",
+        "entry_time": "2026-09-10T10:02:00+05:30",
+        "entry_price": 154.65,
+        "spot_at_entry": 74746.55,
+        "strike": 74700.0,
+        "expiry": "2026-09-10",
+        "security_id": "860498",
+        "qty": 20,
+        "order_id": "32926091099308",
+        "backstop_order_id": "32926091099408",
+        "exit_time": "2026-09-10T10:18:00+05:30",
+        "exit_price": 130.35,
+        "exit_order_id": "329260910123908",
+        "reason": "signal_exit",
+        "pnl": -486.0000000000002
       }
     ],
-    "bars_held": 14,
-    "violation_streak": 2,
+    "bars_held": 0,
+    "violation_streak": 0,
     "last_error": null,
     "checklist": {
-      "ltp": 74757.57,
-      "as_of": "2026-09-10T10:17:00+05:30",
+      "ltp": 74753.63,
+      "as_of": "2026-09-10T10:18:00+05:30",
       "tc": 75007.73,
       "bc": 74845.4,
       "prev_high": 75251.23,
@@ -207,17 +219,17 @@
           true
         ]
       ],
-      "ema5_5m": 74735.85
+      "ema5_5m": 74734.54
     },
     "oi_metrics": {
       "expiry": "2026-09-10",
-      "spot": 74759.34,
+      "spot": 74759.37,
       "resistance_strike": 75000.0,
-      "resistance_call_oi": 8891580,
+      "resistance_call_oi": 8602360,
       "support_strike": 74500.0,
-      "support_put_oi": 5818880,
+      "support_put_oi": 6185800,
       "max_pain": 74800.0,
-      "pcr": 0.7,
+      "pcr": 0.723,
       "pcr_suggestion": "PUT"
     },
     "ip_status": {
