@@ -2,10 +2,21 @@
   "NIFTY": {
     "date": "2026-09-10",
     "engine_status": "running",
-    "last_tick": "2026-09-10T09:21:29.148951",
-    "last_processed_bar": "2026-09-10T09:21:00+05:30",
-    "position": null,
-    "trades_today": 0,
+    "last_tick": "2026-09-10T09:22:44.980895",
+    "last_processed_bar": "2026-09-10T09:22:00+05:30",
+    "position": {
+      "side": "PUT",
+      "entry_time": "2026-09-10T09:22:00+05:30",
+      "entry_price": 82.3,
+      "spot_at_entry": 23424.5,
+      "strike": 23400.0,
+      "expiry": "2026-09-15",
+      "security_id": "47294",
+      "qty": 65,
+      "order_id": "22226091029308",
+      "backstop_order_id": "34226091013808"
+    },
+    "trades_today": 1,
     "realized_pnl_today": 0.0,
     "daily_loss_cap_hit": false,
     "today_trades": [],
@@ -13,8 +24,8 @@
     "violation_streak": 0,
     "last_error": null,
     "checklist": {
-      "ltp": 23458.1,
-      "as_of": "2026-09-10T09:21:00+05:30",
+      "ltp": 23425.1,
+      "as_of": "2026-09-10T09:22:00+05:30",
       "tc": 23501.53,
       "bc": 23454.84,
       "prev_high": 23571.55,
@@ -44,7 +55,7 @@
       "checks_put": [
         [
           "Price below Daily CPR (BC)",
-          false
+          true
         ],
         [
           "15-min stack: price<5<26<50",
@@ -56,24 +67,24 @@
         ],
         [
           "3-min stack: price<5<26<50",
-          false
+          true
         ],
         [
           "Price below prev-day Low",
-          false
+          true
         ]
       ],
-      "ema5_5m": 23459.01
+      "ema5_5m": 23448.01
     },
     "oi_metrics": {
       "expiry": "2026-09-15",
-      "spot": 23458.55,
+      "spot": 23425.4,
       "resistance_strike": 24000.0,
-      "resistance_call_oi": 11932830,
+      "resistance_call_oi": 11944985,
       "support_strike": 23500.0,
-      "support_put_oi": 9737325,
+      "support_put_oi": 9906325,
       "max_pain": 23550.0,
-      "pcr": 0.625,
+      "pcr": 0.631,
       "pcr_suggestion": "PUT"
     },
     "ip_status": {
@@ -88,10 +99,21 @@
   "SENSEX": {
     "date": "2026-09-10",
     "engine_status": "running",
-    "last_tick": "2026-09-10T09:21:31.731192",
-    "last_processed_bar": "2026-09-10T09:21:00+05:30",
-    "position": null,
-    "trades_today": 0,
+    "last_tick": "2026-09-10T09:22:52.616803",
+    "last_processed_bar": "2026-09-10T09:22:00+05:30",
+    "position": {
+      "side": "PUT",
+      "entry_time": "2026-09-10T09:22:00+05:30",
+      "entry_price": 193.95,
+      "spot_at_entry": 74753.25,
+      "strike": 74800.0,
+      "expiry": "2026-09-10",
+      "security_id": "860365",
+      "qty": 20,
+      "order_id": "34926091012908",
+      "backstop_order_id": "34926091013008"
+    },
+    "trades_today": 1,
     "realized_pnl_today": 0.0,
     "daily_loss_cap_hit": false,
     "today_trades": [],
@@ -99,8 +121,8 @@
     "violation_streak": 0,
     "last_error": null,
     "checklist": {
-      "ltp": 74859.48,
-      "as_of": "2026-09-10T09:21:00+05:30",
+      "ltp": 74745.66,
+      "as_of": "2026-09-10T09:22:00+05:30",
       "tc": 75007.73,
       "bc": 74845.4,
       "prev_high": 75251.23,
@@ -130,7 +152,7 @@
       "checks_put": [
         [
           "Price below Daily CPR (BC)",
-          false
+          true
         ],
         [
           "15-min stack: price<5<26<50",
@@ -142,24 +164,24 @@
         ],
         [
           "3-min stack: price<5<26<50",
-          false
+          true
         ],
         [
           "Price below prev-day Low",
-          false
+          true
         ]
       ],
-      "ema5_5m": 74865.34
+      "ema5_5m": 74827.4
     },
     "oi_metrics": {
       "expiry": "2026-09-10",
-      "spot": 74860.47,
+      "spot": 74747.49,
       "resistance_strike": 75000.0,
-      "resistance_call_oi": 4034500,
+      "resistance_call_oi": 4739700,
       "support_strike": 74500.0,
-      "support_put_oi": 3461580,
-      "max_pain": 75000.0,
-      "pcr": 0.69,
+      "support_put_oi": 4247420,
+      "max_pain": 74900.0,
+      "pcr": 0.738,
       "pcr_suggestion": "PUT"
     },
     "ip_status": {
