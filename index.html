@@ -338,6 +338,10 @@ function renderInstrument(inst, state) {
 // SQUAREOFF_TIME=15:15 IST forced close, no new entries after. Also a daily loss cap force-close.
 const MIN_HOLD_BARS = 5;
 const DEBOUNCE_BARS = 3;
+const MAX_TRADES_PER_DAY = 6;
+const MIDDAY_SKIP_START_MIN = 11 * 60;       // 11:00 IST
+const MIDDAY_SKIP_END_MIN = 13 * 60;         // 13:00 IST
+const SQUAREOFF_MIN = 15 * 60 + 15;          // 15:15 IST
 
 function buildExitChecklistHtml(state, cl) {
   if (!cl) return "";
@@ -469,13 +473,31 @@ function renderManualBackup(combined) {
     const putMet = cl.checks_put.every(([, ok]) => ok);
     const side = callMet ? "CALL" : (putMet ? "PUT" : null);
 
-    if (!side) {
+    // Same entry-blocking rules the real strategy enforces (backtest_v4.py / live_engine_tick.py):
+    // no new entries past 15:15 IST, none 11:00-13:00 IST, none once 6 trades are already taken
+    // today. BUG FIXED 2026-09-15: this block used to show "BUY CALL/PUT" purely off the 5-condition
+    // signal, with no time/cap check -- so it kept suggesting trades the automated strategy itself
+    // would never take (e.g. a fully-met signal at 15:27, well past the cutoff).
+    const [entH, entM] = cl.as_of.split("T")[1].split(":").map(Number);
+    const entMin = entH * 60 + entM;
+    const pastCutoff = entMin >= SQUAREOFF_MIN;
+    const inMidday = entMin >= MIDDAY_SKIP_START_MIN && entMin < MIDDAY_SKIP_END_MIN;
+    const capBlocked = !!state.daily_loss_cap_hit;
+    const tradesCapped = (state.trades_today || 0) >= MAX_TRADES_PER_DAY;
+    const entryBlocked = pastCutoff || inMidday || capBlocked || tradesCapped;
+
+    if (!side || entryBlocked) {
+      let blockReason = "no full entry signal right now";
+      if (side && pastCutoff) blockReason = `signal met, but past 15:15 IST square-off cutoff -- strategy would not enter`;
+      else if (side && inMidday) blockReason = `signal met, but inside the 11:00-13:00 IST blackout -- strategy would not enter`;
+      else if (side && capBlocked) blockReason = `signal met, but daily loss cap already hit -- strategy would not enter`;
+      else if (side && tradesCapped) blockReason = `signal met, but already at ${MAX_TRADES_PER_DAY}/${MAX_TRADES_PER_DAY} trades today -- strategy would not enter`;
       items.push(`
         <div class="manual-item PENDING">
           <div>
             <div class="mi-label">${inst.label} — as of ${new Date(cl.as_of).toLocaleTimeString("en-IN")}</div>
             <div class="mi-action">DECISION PENDING</div>
-            <div class="mi-meta">Spot ${cl.ltp} — no full entry signal right now</div>
+            <div class="mi-meta">Spot ${cl.ltp} — ${blockReason}</div>
           </div>
         </div>`);
       continue;
