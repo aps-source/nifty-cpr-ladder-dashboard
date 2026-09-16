@@ -2,7 +2,7 @@
   "NIFTY": {
     "date": "2026-09-17",
     "engine_status": "running",
-    "last_tick": "2026-09-17T00:10:14.465975",
+    "last_tick": "2026-09-17T00:11:41.764086",
     "last_processed_bar": "2026-09-16T15:29:00+05:30",
     "position": null,
     "trades_today": 0,
@@ -65,7 +65,17 @@
       ],
       "ema5_5m": 23226.35
     },
-    "oi_metrics": null,
+    "oi_metrics": {
+      "expiry": "2026-09-22",
+      "spot": 23217.6,
+      "resistance_strike": 24000.0,
+      "resistance_call_oi": 8860475,
+      "support_strike": 23000.0,
+      "support_put_oi": 8146905,
+      "max_pain": 23300.0,
+      "pcr": 0.936,
+      "pcr_suggestion": "NEUTRAL"
+    },
     "ip_status": {
       "ok": true,
       "detected_ip": "122.169.46.6",
@@ -78,7 +88,7 @@
   "SENSEX": {
     "date": "2026-09-17",
     "engine_status": "running",
-    "last_tick": "2026-09-17T00:10:20.840915",
+    "last_tick": "2026-09-17T00:11:47.533149",
     "last_processed_bar": "2026-09-16T15:29:00+05:30",
     "position": null,
     "trades_today": 0,
@@ -141,7 +151,17 @@
       ],
       "ema5_5m": 74315.9
     },
-    "oi_metrics": null,
+    "oi_metrics": {
+      "expiry": "2026-09-17",
+      "spot": 74336.45,
+      "resistance_strike": 76000.0,
+      "resistance_call_oi": 2049160,
+      "support_strike": 71000.0,
+      "support_put_oi": 3129360,
+      "max_pain": 74400.0,
+      "pcr": 1.179,
+      "pcr_suggestion": "CALL"
+    },
     "ip_status": {
       "ok": true,
       "detected_ip": "122.169.46.6",
