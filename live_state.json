@@ -1,8 +1,8 @@
 {
   "NIFTY": {
     "date": "2026-09-16",
-    "engine_status": "token_invalid",
-    "last_tick": "2026-09-16T09:10:37.968679",
+    "engine_status": "running",
+    "last_tick": "2026-09-16T09:11:57.013167",
     "last_processed_bar": "2026-09-15T15:29:00+05:30",
     "position": null,
     "trades_today": 0,
@@ -66,25 +66,29 @@
       "ema5_5m": 23156.12
     },
     "oi_metrics": {
-      "expiry": "2026-09-15",
-      "spot": 23118.6,
-      "resistance_strike": 23300.0,
-      "resistance_call_oi": 19052215,
-      "support_strike": 23100.0,
-      "support_put_oi": 20543380,
-      "max_pain": 23150.0,
-      "pcr": 0.537,
+      "expiry": "2026-09-22",
+      "spot": 23201.6,
+      "resistance_strike": 25000.0,
+      "resistance_call_oi": 7803120,
+      "support_strike": 21700.0,
+      "support_put_oi": 5225805,
+      "max_pain": 23350.0,
+      "pcr": 0.657,
       "pcr_suggestion": "PUT"
     },
     "ip_status": {
-      "ok": false,
-      "error": "'str' object has no attribute 'get'"
+      "ok": true,
+      "detected_ip": "122.169.46.196",
+      "primary_ip": "122.169.46.196",
+      "secondary_ip": "106.213.86.236",
+      "match_status": "PRIMARY_MATCH",
+      "orders_allowed": true
     }
   },
   "SENSEX": {
     "date": "2026-09-16",
-    "engine_status": "token_invalid",
-    "last_tick": "2026-09-16T09:10:37.995049",
+    "engine_status": "running",
+    "last_tick": "2026-09-16T09:12:03.106866",
     "last_processed_bar": "2026-09-15T15:29:00+05:30",
     "position": null,
     "trades_today": 0,
@@ -149,7 +153,7 @@
     },
     "oi_metrics": {
       "expiry": "2026-09-17",
-      "spot": 74003.82,
+      "spot": 74249.31,
       "resistance_strike": 77000.0,
       "resistance_call_oi": 2054800,
       "support_strike": 71000.0,
@@ -159,8 +163,12 @@
       "pcr_suggestion": "PUT"
     },
     "ip_status": {
-      "ok": false,
-      "error": "'str' object has no attribute 'get'"
+      "ok": true,
+      "detected_ip": "122.169.46.196",
+      "primary_ip": "122.169.46.196",
+      "secondary_ip": "106.213.86.236",
+      "match_status": "PRIMARY_MATCH",
+      "orders_allowed": true
     }
   }
 }
