@@ -2,8 +2,8 @@
   "NIFTY": {
     "date": "2026-09-18",
     "engine_status": "running",
-    "last_tick": "2026-09-18T09:14:13.226483",
-    "last_processed_bar": "2026-09-17T15:29:00+05:30",
+    "last_tick": "2026-09-18T09:15:25.481145",
+    "last_processed_bar": "2026-09-18T09:15:00+05:30",
     "position": null,
     "trades_today": 0,
     "realized_pnl_today": 0.0,
@@ -13,12 +13,12 @@
     "violation_streak": 0,
     "last_error": null,
     "checklist": {
-      "ltp": 23270.6,
-      "as_of": "2026-09-17T15:29:00+05:30",
-      "tc": 23211.87,
-      "bc": 23200.42,
-      "prev_high": 23284.75,
-      "prev_low": 23116.1,
+      "ltp": 23341.55,
+      "as_of": "2026-09-18T09:15:00+05:30",
+      "tc": 23278.6,
+      "bc": 23273.27,
+      "prev_high": 23363.55,
+      "prev_low": 23193.65,
       "checks_call": [
         [
           "Price above Daily CPR (TC)",
@@ -26,15 +26,15 @@
         ],
         [
           "15-min stack: price>5>26>50",
-          false
+          true
         ],
         [
           "5-min stack: price>5>26>50",
-          false
+          true
         ],
         [
           "3-min stack: price>5>26>50",
-          false
+          true
         ],
         [
           "Price above prev-day High",
@@ -56,40 +56,40 @@
         ],
         [
           "3-min stack: price<5<26<50",
-          true
+          false
         ],
         [
           "Price below prev-day Low",
           false
         ]
       ],
-      "ema5_5m": 23284.97
+      "ema5_5m": 23303.83
     },
     "oi_metrics": {
       "expiry": "2026-09-22",
-      "spot": 23334.7,
+      "spot": 23343.6,
       "resistance_strike": 24500.0,
       "resistance_call_oi": 10449985,
       "support_strike": 22000.0,
-      "support_put_oi": 10917465,
+      "support_put_oi": 10933650,
       "max_pain": 23300.0,
-      "pcr": 0.995,
+      "pcr": 0.993,
       "pcr_suggestion": "NEUTRAL"
     },
     "ip_status": {
       "ok": true,
       "detected_ip": "122.169.46.151",
       "primary_ip": "122.169.46.196",
-      "secondary_ip": "106.213.86.236",
-      "match_status": "MISMATCH",
-      "orders_allowed": false
+      "secondary_ip": "122.169.46.151",
+      "match_status": "SECONDARY_MATCH",
+      "orders_allowed": true
     }
   },
   "SENSEX": {
     "date": "2026-09-18",
     "engine_status": "running",
-    "last_tick": "2026-09-18T09:14:15.895370",
-    "last_processed_bar": "2026-09-17T15:29:00+05:30",
+    "last_tick": "2026-09-18T09:15:29.634109",
+    "last_processed_bar": "2026-09-18T09:15:00+05:30",
     "position": null,
     "trades_today": 0,
     "realized_pnl_today": 0.0,
@@ -99,12 +99,12 @@
     "violation_streak": 0,
     "last_error": null,
     "checklist": {
-      "ltp": 74314.59,
-      "as_of": "2026-09-17T15:29:00+05:30",
-      "tc": 74305.5,
-      "bc": 74243.6,
-      "prev_high": 74505.86,
-      "prev_low": 73981.33,
+      "ltp": 74574.45,
+      "as_of": "2026-09-18T09:15:00+05:30",
+      "tc": 74420.76,
+      "bc": 74349.98,
+      "prev_high": 74677.56,
+      "prev_low": 74163.95,
       "checks_call": [
         [
           "Price above Daily CPR (TC)",
@@ -134,26 +134,26 @@
         ],
         [
           "15-min stack: price<5<26<50",
-          true
+          false
         ],
         [
           "5-min stack: price<5<26<50",
-          true
+          false
         ],
         [
           "3-min stack: price<5<26<50",
-          true
+          false
         ],
         [
           "Price below prev-day Low",
           false
         ]
       ],
-      "ema5_5m": 74378.76
+      "ema5_5m": 74443.99
     },
     "oi_metrics": {
       "expiry": "2026-09-24",
-      "spot": 74575.24,
+      "spot": 74545.72,
       "resistance_strike": 74500.0,
       "resistance_call_oi": 370440,
       "support_strike": 68000.0,
@@ -166,9 +166,9 @@
       "ok": true,
       "detected_ip": "122.169.46.151",
       "primary_ip": "122.169.46.196",
-      "secondary_ip": "106.213.86.236",
-      "match_status": "MISMATCH",
-      "orders_allowed": false
+      "secondary_ip": "122.169.46.151",
+      "match_status": "SECONDARY_MATCH",
+      "orders_allowed": true
     }
   }
 }
