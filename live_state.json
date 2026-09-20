@@ -2,7 +2,7 @@
   "NIFTY": {
     "date": "2026-09-20",
     "engine_status": "running",
-    "last_tick": "2026-09-20T17:44:25.605024",
+    "last_tick": "2026-09-20T17:46:07.931156",
     "last_processed_bar": "2026-09-18T15:29:00+05:30",
     "position": null,
     "trades_today": 0,
@@ -77,18 +77,14 @@
       "pcr_suggestion": "CALL"
     },
     "ip_status": {
-      "ok": true,
-      "detected_ip": "171.78.154.168",
-      "primary_ip": "122.169.46.196",
-      "secondary_ip": "122.169.46.151",
-      "match_status": "MISMATCH",
-      "orders_allowed": false
+      "ok": false,
+      "error": "'str' object has no attribute 'get'"
     }
   },
   "SENSEX": {
     "date": "2026-09-20",
     "engine_status": "running",
-    "last_tick": "2026-09-20T17:44:36.322727",
+    "last_tick": "2026-09-20T17:46:14.172863",
     "last_processed_bar": "2026-09-18T15:29:00+05:30",
     "position": null,
     "trades_today": 0,
@@ -163,12 +159,8 @@
       "pcr_suggestion": "CALL"
     },
     "ip_status": {
-      "ok": true,
-      "detected_ip": "171.78.154.168",
-      "primary_ip": "122.169.46.196",
-      "secondary_ip": "122.169.46.151",
-      "match_status": "MISMATCH",
-      "orders_allowed": false
+      "ok": false,
+      "error": "'str' object has no attribute 'get'"
     }
   }
 }
