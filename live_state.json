@@ -2,8 +2,8 @@
   "NIFTY": {
     "date": "2026-09-21",
     "engine_status": "running",
-    "last_tick": "2026-09-21T09:48:50.304282",
-    "last_processed_bar": "2026-09-21T09:48:00+05:30",
+    "last_tick": "2026-09-21T09:51:11.623796",
+    "last_processed_bar": "2026-09-21T09:50:00+05:30",
     "position": null,
     "trades_today": 0,
     "realized_pnl_today": 0.0,
@@ -11,10 +11,10 @@
     "today_trades": [],
     "bars_held": 0,
     "violation_streak": 0,
-    "last_error": null,
+    "last_error": "Entry order failed: {'error_code': 'DH-905', 'error_type': 'Input_Exception', 'error_message': 'Invalid IP'}",
     "checklist": {
-      "ltp": 23401.7,
-      "as_of": "2026-09-21T09:48:00+05:30",
+      "ltp": 23403.35,
+      "as_of": "2026-09-21T09:50:00+05:30",
       "tc": 23343.5,
       "bc": 23337.7,
       "prev_high": 23388.3,
@@ -63,17 +63,17 @@
           false
         ]
       ],
-      "ema5_5m": 23392.84
+      "ema5_5m": 23396.31
     },
     "oi_metrics": {
       "expiry": "2026-09-22",
-      "spot": 23346.4,
-      "resistance_strike": 24000.0,
-      "resistance_call_oi": 11558560,
+      "spot": 23402.95,
+      "resistance_strike": 23400.0,
+      "resistance_call_oi": 22457370,
       "support_strike": 23300.0,
-      "support_put_oi": 12686570,
-      "max_pain": 23350.0,
-      "pcr": 1.121,
+      "support_put_oi": 23354110,
+      "max_pain": 23400.0,
+      "pcr": 1.168,
       "pcr_suggestion": "CALL"
     },
     "ip_status": {
@@ -88,8 +88,8 @@
   "SENSEX": {
     "date": "2026-09-21",
     "engine_status": "running",
-    "last_tick": "2026-09-21T09:48:55.534465",
-    "last_processed_bar": "2026-09-21T09:48:00+05:30",
+    "last_tick": "2026-09-21T09:52:46.696920",
+    "last_processed_bar": "2026-09-21T09:51:00+05:30",
     "position": null,
     "trades_today": 0,
     "realized_pnl_today": 0.0,
@@ -97,10 +97,10 @@
     "today_trades": [],
     "bars_held": 0,
     "violation_streak": 0,
-    "last_error": null,
+    "last_error": "Entry order failed: {'error_code': 'DH-905', 'error_type': 'Input_Exception', 'error_message': 'Invalid IP'}",
     "checklist": {
-      "ltp": 74749.6,
-      "as_of": "2026-09-21T09:48:00+05:30",
+      "ltp": 74762.25,
+      "as_of": "2026-09-21T09:51:00+05:30",
       "tc": 74557.23,
       "bc": 74551.76,
       "prev_high": 74728.44,
@@ -149,17 +149,17 @@
           false
         ]
       ],
-      "ema5_5m": 74729.06
+      "ema5_5m": 74741.51
     },
     "oi_metrics": {
       "expiry": "2026-09-24",
-      "spot": 74294.96,
+      "spot": 74764.0,
       "resistance_strike": 74500.0,
-      "resistance_call_oi": 846060,
+      "resistance_call_oi": 884580,
       "support_strike": 74500.0,
-      "support_put_oi": 1009000,
-      "max_pain": 74600.0,
-      "pcr": 1.225,
+      "support_put_oi": 1365220,
+      "max_pain": 74700.0,
+      "pcr": 1.258,
       "pcr_suggestion": "CALL"
     },
     "ip_status": {
