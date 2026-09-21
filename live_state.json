@@ -1,8 +1,8 @@
 {
   "NIFTY": {
     "date": "2026-09-21",
-    "engine_status": "data_error",
-    "last_tick": "2026-09-21T08:36:07.880729",
+    "engine_status": "running",
+    "last_tick": "2026-09-21T08:37:24.964148",
     "last_processed_bar": "2026-09-18T15:29:00+05:30",
     "position": null,
     "trades_today": 0,
@@ -11,7 +11,7 @@
     "today_trades": [],
     "bars_held": 0,
     "violation_streak": 0,
-    "last_error": "1-min fetch failed: {'error_code': 'DH-906', 'error_type': 'Order_Error', 'error_message': 'Invalid Token'}",
+    "last_error": null,
     "checklist": {
       "ltp": 23346.4,
       "as_of": "2026-09-18T15:29:00+05:30",
@@ -79,16 +79,16 @@
     "ip_status": {
       "ok": true,
       "detected_ip": "171.78.154.168",
-      "primary_ip": "122.169.46.196",
+      "primary_ip": "171.78.154.168",
       "secondary_ip": "122.169.46.151",
-      "match_status": "MISMATCH",
-      "orders_allowed": false
+      "match_status": "PRIMARY_MATCH",
+      "orders_allowed": true
     }
   },
   "SENSEX": {
     "date": "2026-09-21",
-    "engine_status": "token_invalid",
-    "last_tick": "2026-09-21T08:36:08.577795",
+    "engine_status": "running",
+    "last_tick": "2026-09-21T08:37:28.651688",
     "last_processed_bar": "2026-09-18T15:29:00+05:30",
     "position": null,
     "trades_today": 0,
@@ -165,10 +165,10 @@
     "ip_status": {
       "ok": true,
       "detected_ip": "171.78.154.168",
-      "primary_ip": "122.169.46.196",
+      "primary_ip": "171.78.154.168",
       "secondary_ip": "122.169.46.151",
-      "match_status": "MISMATCH",
-      "orders_allowed": false
+      "match_status": "PRIMARY_MATCH",
+      "orders_allowed": true
     }
   }
 }
