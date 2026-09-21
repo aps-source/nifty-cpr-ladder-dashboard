@@ -2,8 +2,8 @@
   "NIFTY": {
     "date": "2026-09-21",
     "engine_status": "running",
-    "last_tick": "2026-09-21T14:39:34.030448",
-    "last_processed_bar": "2026-09-21T14:39:00+05:30",
+    "last_tick": "2026-09-21T14:40:55.728472",
+    "last_processed_bar": "2026-09-21T14:40:00+05:30",
     "position": null,
     "trades_today": 0,
     "realized_pnl_today": 0.0,
@@ -13,8 +13,8 @@
     "violation_streak": 0,
     "last_error": null,
     "checklist": {
-      "ltp": 23450.35,
-      "as_of": "2026-09-21T14:39:00+05:30",
+      "ltp": 23450.65,
+      "as_of": "2026-09-21T14:40:00+05:30",
       "tc": 23343.5,
       "bc": 23337.7,
       "prev_high": 23388.3,
@@ -67,29 +67,25 @@
     },
     "oi_metrics": {
       "expiry": "2026-09-22",
-      "spot": 23450.1,
+      "spot": 23450.65,
       "resistance_strike": 23500.0,
-      "resistance_call_oi": 20921810,
+      "resistance_call_oi": 21277425,
       "support_strike": 23400.0,
-      "support_put_oi": 32128785,
+      "support_put_oi": 32085365,
       "max_pain": 23450.0,
-      "pcr": 1.537,
+      "pcr": 1.526,
       "pcr_suggestion": "CALL"
     },
     "ip_status": {
-      "ok": true,
-      "detected_ip": "171.78.154.168",
-      "primary_ip": "171.78.154.168",
-      "secondary_ip": "122.169.46.151",
-      "match_status": "PRIMARY_MATCH",
-      "orders_allowed": true
+      "ok": false,
+      "error": "'str' object has no attribute 'get'"
     }
   },
   "SENSEX": {
     "date": "2026-09-21",
     "engine_status": "running",
-    "last_tick": "2026-09-21T14:39:36.819719",
-    "last_processed_bar": "2026-09-21T14:39:00+05:30",
+    "last_tick": "2026-09-21T14:40:58.775044",
+    "last_processed_bar": "2026-09-21T14:40:00+05:30",
     "position": null,
     "trades_today": 0,
     "realized_pnl_today": 0.0,
@@ -99,8 +95,8 @@
     "violation_streak": 0,
     "last_error": null,
     "checklist": {
-      "ltp": 74931.39,
-      "as_of": "2026-09-21T14:39:00+05:30",
+      "ltp": 74934.81,
+      "as_of": "2026-09-21T14:40:00+05:30",
       "tc": 74557.23,
       "bc": 74551.76,
       "prev_high": 74728.44,
@@ -120,7 +116,7 @@
         ],
         [
           "3-min stack: price>5>26>50",
-          false
+          true
         ],
         [
           "Price above prev-day High",
@@ -149,26 +145,22 @@
           false
         ]
       ],
-      "ema5_5m": 74935.92
+      "ema5_5m": 74935.55
     },
     "oi_metrics": {
       "expiry": "2026-09-24",
-      "spot": 74931.43,
+      "spot": 74935.48,
       "resistance_strike": 75000.0,
-      "resistance_call_oi": 1213820,
+      "resistance_call_oi": 1226000,
       "support_strike": 74500.0,
-      "support_put_oi": 1524520,
+      "support_put_oi": 1509260,
       "max_pain": 74800.0,
-      "pcr": 1.482,
+      "pcr": 1.474,
       "pcr_suggestion": "CALL"
     },
     "ip_status": {
-      "ok": true,
-      "detected_ip": "171.78.154.168",
-      "primary_ip": "171.78.154.168",
-      "secondary_ip": "122.169.46.151",
-      "match_status": "PRIMARY_MATCH",
-      "orders_allowed": true
+      "ok": false,
+      "error": "'str' object has no attribute 'get'"
     }
   }
 }
