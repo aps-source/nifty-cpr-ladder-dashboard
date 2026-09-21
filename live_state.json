@@ -1,9 +1,9 @@
 {
   "NIFTY": {
     "date": "2026-09-21",
-    "engine_status": "token_invalid",
-    "last_tick": "2026-09-21T12:58:28.263813",
-    "last_processed_bar": "2026-09-21T12:57:00+05:30",
+    "engine_status": "running",
+    "last_tick": "2026-09-21T13:00:19.429258",
+    "last_processed_bar": "2026-09-21T13:00:00+05:30",
     "position": null,
     "trades_today": 0,
     "realized_pnl_today": 0.0,
@@ -13,8 +13,8 @@
     "violation_streak": 0,
     "last_error": null,
     "checklist": {
-      "ltp": 23414.8,
-      "as_of": "2026-09-21T12:57:00+05:30",
+      "ltp": 23411.3,
+      "as_of": "2026-09-21T13:00:00+05:30",
       "tc": 23343.5,
       "bc": 23337.7,
       "prev_high": 23388.3,
@@ -26,15 +26,15 @@
         ],
         [
           "15-min stack: price>5>26>50",
-          true
+          false
         ],
         [
           "5-min stack: price>5>26>50",
-          true
+          false
         ],
         [
           "3-min stack: price>5>26>50",
-          true
+          false
         ],
         [
           "Price above prev-day High",
@@ -63,15 +63,15 @@
           false
         ]
       ],
-      "ema5_5m": 23414.74
+      "ema5_5m": 23413.11
     },
     "oi_metrics": {
       "expiry": "2026-09-22",
-      "spot": 23414.55,
+      "spot": 23411.4,
       "resistance_strike": 23400.0,
-      "resistance_call_oi": 22140170,
+      "resistance_call_oi": 22301305,
       "support_strike": 23400.0,
-      "support_put_oi": 28841020,
+      "support_put_oi": 29161015,
       "max_pain": 23400.0,
       "pcr": 1.338,
       "pcr_suggestion": "CALL"
@@ -87,9 +87,9 @@
   },
   "SENSEX": {
     "date": "2026-09-21",
-    "engine_status": "data_error",
-    "last_tick": "2026-09-21T12:58:52.877460",
-    "last_processed_bar": "2026-09-21T12:57:00+05:30",
+    "engine_status": "running",
+    "last_tick": "2026-09-21T13:00:31.242691",
+    "last_processed_bar": "2026-09-21T13:00:00+05:30",
     "position": null,
     "trades_today": 0,
     "realized_pnl_today": 0.0,
@@ -97,10 +97,10 @@
     "today_trades": [],
     "bars_held": 0,
     "violation_streak": 0,
-    "last_error": "1-min fetch failed: ('Connection aborted.', ConnectionResetError(10054, 'An existing connection was forcibly closed by the remote host', None, 10054, None))",
+    "last_error": "Insufficient margin for entry: need 6894.0, have 1128.19",
     "checklist": {
-      "ltp": 74824.7,
-      "as_of": "2026-09-21T12:57:00+05:30",
+      "ltp": 74824.22,
+      "as_of": "2026-09-21T13:00:00+05:30",
       "tc": 74557.23,
       "bc": 74551.76,
       "prev_high": 74728.44,
@@ -149,17 +149,17 @@
           false
         ]
       ],
-      "ema5_5m": 74822.13
+      "ema5_5m": 74823.26
     },
     "oi_metrics": {
       "expiry": "2026-09-24",
-      "spot": 74825.32,
+      "spot": 74822.79,
       "resistance_strike": 75000.0,
-      "resistance_call_oi": 1000960,
+      "resistance_call_oi": 1014700,
       "support_strike": 74500.0,
-      "support_put_oi": 1621600,
+      "support_put_oi": 1616960,
       "max_pain": 74700.0,
-      "pcr": 1.333,
+      "pcr": 1.326,
       "pcr_suggestion": "CALL"
     },
     "ip_status": {
