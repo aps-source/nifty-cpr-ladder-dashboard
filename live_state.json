@@ -2,8 +2,8 @@
   "NIFTY": {
     "date": "2026-09-21",
     "engine_status": "running",
-    "last_tick": "2026-09-21T15:16:44.964228",
-    "last_processed_bar": "2026-09-21T15:16:00+05:30",
+    "last_tick": "2026-09-21T15:18:06.950402",
+    "last_processed_bar": "2026-09-21T15:18:00+05:30",
     "position": null,
     "trades_today": 0,
     "realized_pnl_today": 0.0,
@@ -14,7 +14,7 @@
     "last_error": null,
     "checklist": {
       "ltp": 23429.0,
-      "as_of": "2026-09-21T15:16:00+05:30",
+      "as_of": "2026-09-21T15:18:00+05:30",
       "tc": 23343.5,
       "bc": 23337.7,
       "prev_high": 23388.3,
@@ -69,27 +69,23 @@
       "expiry": "2026-09-22",
       "spot": 23429.0,
       "resistance_strike": 23500.0,
-      "resistance_call_oi": 18801185,
+      "resistance_call_oi": 18900180,
       "support_strike": 23400.0,
-      "support_put_oi": 25756705,
+      "support_put_oi": 25467650,
       "max_pain": 23450.0,
-      "pcr": 1.433,
+      "pcr": 1.439,
       "pcr_suggestion": "CALL"
     },
     "ip_status": {
-      "ok": true,
-      "detected_ip": "171.78.154.168",
-      "primary_ip": "171.78.154.168",
-      "secondary_ip": "122.169.46.151",
-      "match_status": "PRIMARY_MATCH",
-      "orders_allowed": true
+      "ok": false,
+      "error": "'str' object has no attribute 'get'"
     }
   },
   "SENSEX": {
     "date": "2026-09-21",
     "engine_status": "running",
-    "last_tick": "2026-09-21T15:16:47.559043",
-    "last_processed_bar": "2026-09-21T15:16:00+05:30",
+    "last_tick": "2026-09-21T15:18:09.638028",
+    "last_processed_bar": "2026-09-21T15:18:00+05:30",
     "position": null,
     "trades_today": 0,
     "realized_pnl_today": 0.0,
@@ -100,7 +96,7 @@
     "last_error": null,
     "checklist": {
       "ltp": 74894.86,
-      "as_of": "2026-09-21T15:16:00+05:30",
+      "as_of": "2026-09-21T15:18:00+05:30",
       "tc": 74557.23,
       "bc": 74551.76,
       "prev_high": 74728.44,
@@ -155,20 +151,16 @@
       "expiry": "2026-09-24",
       "spot": 74894.86,
       "resistance_strike": 75000.0,
-      "resistance_call_oi": 1079680,
+      "resistance_call_oi": 1072280,
       "support_strike": 74500.0,
-      "support_put_oi": 1315120,
+      "support_put_oi": 1307120,
       "max_pain": 74800.0,
-      "pcr": 1.396,
+      "pcr": 1.402,
       "pcr_suggestion": "CALL"
     },
     "ip_status": {
-      "ok": true,
-      "detected_ip": "171.78.154.168",
-      "primary_ip": "171.78.154.168",
-      "secondary_ip": "122.169.46.151",
-      "match_status": "PRIMARY_MATCH",
-      "orders_allowed": true
+      "ok": false,
+      "error": "'str' object has no attribute 'get'"
     }
   }
 }
