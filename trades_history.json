@@ -38,6 +38,23 @@
           "date": "2026-09-22"
         },
         {
+          "symbol": "SENSEX",
+          "entry_time": "2026-09-22T09:54:00+05:30",
+          "exit_time": "2026-09-22T10:19:00+05:30",
+          "side": "CALL",
+          "strike": 75000.0,
+          "expiry": "2026-09-24",
+          "entry_price": 276.55,
+          "exit_price": 282.25,
+          "qty": 20,
+          "pnl": 113.99999999999976,
+          "reason": "signal_exit",
+          "entry_order_id": 23926092211608,
+          "exit_order_id": 34926092211508,
+          "pnl_confirmed": true,
+          "date": "2026-09-22"
+        },
+        {
           "symbol": "NIFTY 50",
           "entry_time": "2026-09-22T10:09:00+05:30",
           "exit_time": "2026-09-22T10:18:00+05:30",
@@ -55,9 +72,9 @@
           "date": "2026-09-22"
         }
       ],
-      "day_pnl": -2312.25,
-      "day_trades": 3,
-      "day_wins": 0
+      "day_pnl": -2198.25,
+      "day_trades": 4,
+      "day_wins": 1
     },
     {
       "date": "2026-09-10",
@@ -415,6 +432,6 @@
       "day_wins": 4
     }
   ],
-  "overall_pnl": -3013.25,
-  "overall_trades": 22
+  "overall_pnl": -2899.25,
+  "overall_trades": 23
 }
