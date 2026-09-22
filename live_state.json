@@ -1,9 +1,9 @@
 {
   "NIFTY": {
-    "date": "2026-09-21",
-    "engine_status": "running",
-    "last_tick": "2026-09-21T15:57:39.138128",
-    "last_processed_bar": "2026-09-21T15:29:00+05:30",
+    "date": "2026-09-22",
+    "engine_status": "token_invalid",
+    "last_tick": "2026-09-22T09:01:49.240282",
+    "last_processed_bar": null,
     "position": null,
     "trades_today": 0,
     "realized_pnl_today": 0.0,
@@ -12,84 +12,18 @@
     "bars_held": 0,
     "violation_streak": 0,
     "last_error": null,
-    "checklist": {
-      "ltp": 23414.3,
-      "as_of": "2026-09-21T15:29:00+05:30",
-      "tc": 23343.5,
-      "bc": 23337.7,
-      "prev_high": 23388.3,
-      "prev_low": 23287.1,
-      "checks_call": [
-        [
-          "Price above Daily CPR (TC)",
-          true
-        ],
-        [
-          "15-min stack: price>5>26>50",
-          false
-        ],
-        [
-          "5-min stack: price>5>26>50",
-          false
-        ],
-        [
-          "3-min stack: price>5>26>50",
-          false
-        ],
-        [
-          "Price above prev-day High",
-          true
-        ]
-      ],
-      "checks_put": [
-        [
-          "Price below Daily CPR (BC)",
-          false
-        ],
-        [
-          "15-min stack: price<5<26<50",
-          false
-        ],
-        [
-          "5-min stack: price<5<26<50",
-          false
-        ],
-        [
-          "3-min stack: price<5<26<50",
-          false
-        ],
-        [
-          "Price below prev-day Low",
-          false
-        ]
-      ],
-      "ema5_5m": 23427.59
-    },
-    "oi_metrics": {
-      "expiry": "2026-09-22",
-      "spot": 23414.3,
-      "resistance_strike": 23500.0,
-      "resistance_call_oi": 11866400,
-      "support_strike": 23400.0,
-      "support_put_oi": 16426475,
-      "max_pain": 23400.0,
-      "pcr": 1.469,
-      "pcr_suggestion": "CALL"
-    },
+    "checklist": null,
+    "oi_metrics": null,
     "ip_status": {
-      "ok": true,
-      "detected_ip": "171.78.154.168",
-      "primary_ip": "171.78.154.168",
-      "secondary_ip": "122.169.46.151",
-      "match_status": "PRIMARY_MATCH",
-      "orders_allowed": true
+      "ok": false,
+      "error": "'str' object has no attribute 'get'"
     }
   },
   "SENSEX": {
-    "date": "2026-09-21",
-    "engine_status": "running",
-    "last_tick": "2026-09-21T15:57:41.913105",
-    "last_processed_bar": "2026-09-21T15:29:00+05:30",
+    "date": "2026-09-22",
+    "engine_status": "token_invalid",
+    "last_tick": "2026-09-22T09:01:50.572401",
+    "last_processed_bar": null,
     "position": null,
     "trades_today": 0,
     "realized_pnl_today": 0.0,
@@ -98,77 +32,11 @@
     "bars_held": 0,
     "violation_streak": 0,
     "last_error": null,
-    "checklist": {
-      "ltp": 74858.99,
-      "as_of": "2026-09-21T15:29:00+05:30",
-      "tc": 74557.23,
-      "bc": 74551.76,
-      "prev_high": 74728.44,
-      "prev_low": 74375.07,
-      "checks_call": [
-        [
-          "Price above Daily CPR (TC)",
-          true
-        ],
-        [
-          "15-min stack: price>5>26>50",
-          false
-        ],
-        [
-          "5-min stack: price>5>26>50",
-          false
-        ],
-        [
-          "3-min stack: price>5>26>50",
-          false
-        ],
-        [
-          "Price above prev-day High",
-          true
-        ]
-      ],
-      "checks_put": [
-        [
-          "Price below Daily CPR (BC)",
-          false
-        ],
-        [
-          "15-min stack: price<5<26<50",
-          false
-        ],
-        [
-          "5-min stack: price<5<26<50",
-          false
-        ],
-        [
-          "3-min stack: price<5<26<50",
-          false
-        ],
-        [
-          "Price below prev-day Low",
-          false
-        ]
-      ],
-      "ema5_5m": 74888.8
-    },
-    "oi_metrics": {
-      "expiry": "2026-09-24",
-      "spot": 74858.99,
-      "resistance_strike": 77000.0,
-      "resistance_call_oi": 884860,
-      "support_strike": 74500.0,
-      "support_put_oi": 1114900,
-      "max_pain": 74800.0,
-      "pcr": 1.493,
-      "pcr_suggestion": "CALL"
-    },
+    "checklist": null,
+    "oi_metrics": null,
     "ip_status": {
-      "ok": true,
-      "detected_ip": "171.78.154.168",
-      "primary_ip": "171.78.154.168",
-      "secondary_ip": "122.169.46.151",
-      "match_status": "PRIMARY_MATCH",
-      "orders_allowed": true
+      "ok": false,
+      "error": "'str' object has no attribute 'get'"
     }
   }
 }
