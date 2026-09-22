@@ -2,8 +2,8 @@
   "NIFTY": {
     "date": "2026-09-22",
     "engine_status": "running",
-    "last_tick": "2026-09-22T12:24:33.460928",
-    "last_processed_bar": "2026-09-22T12:24:00+05:30",
+    "last_tick": "2026-09-22T12:25:42.754802",
+    "last_processed_bar": "2026-09-22T12:25:00+05:30",
     "position": null,
     "trades_today": 2,
     "realized_pnl_today": -1329.2499999999998,
@@ -48,8 +48,8 @@
     "violation_streak": 0,
     "last_error": null,
     "checklist": {
-      "ltp": 23359.65,
-      "as_of": "2026-09-22T12:24:00+05:30",
+      "ltp": 23361.25,
+      "as_of": "2026-09-22T12:25:00+05:30",
       "tc": 23406.47,
       "bc": 23390.8,
       "prev_high": 23466.8,
@@ -91,24 +91,24 @@
         ],
         [
           "3-min stack: price<5<26<50",
-          true
+          false
         ],
         [
           "Price below prev-day Low",
           false
         ]
       ],
-      "ema5_5m": 23362.01
+      "ema5_5m": 23361.76
     },
     "oi_metrics": {
       "expiry": "2026-09-22",
-      "spot": 23359.05,
+      "spot": 23361.6,
       "resistance_strike": 23400.0,
-      "resistance_call_oi": 45771700,
+      "resistance_call_oi": 45731790,
       "support_strike": 23300.0,
-      "support_put_oi": 32131255,
+      "support_put_oi": 32370130,
       "max_pain": 23350.0,
-      "pcr": 0.826,
+      "pcr": 0.828,
       "pcr_suggestion": "PUT"
     },
     "ip_status": {
@@ -123,8 +123,8 @@
   "SENSEX": {
     "date": "2026-09-22",
     "engine_status": "running",
-    "last_tick": "2026-09-22T12:24:35.931491",
-    "last_processed_bar": "2026-09-22T12:24:00+05:30",
+    "last_tick": "2026-09-22T12:25:45.243724",
+    "last_processed_bar": "2026-09-22T12:25:00+05:30",
     "position": null,
     "trades_today": 2,
     "realized_pnl_today": -869.0000000000009,
@@ -169,8 +169,8 @@
     "violation_streak": 0,
     "last_error": null,
     "checklist": {
-      "ltp": 74657.4,
-      "as_of": "2026-09-22T12:24:00+05:30",
+      "ltp": 74657.94,
+      "as_of": "2026-09-22T12:25:00+05:30",
       "tc": 74812.92,
       "bc": 74720.79,
       "prev_high": 74987.4,
@@ -208,7 +208,7 @@
         ],
         [
           "5-min stack: price<5<26<50",
-          true
+          false
         ],
         [
           "3-min stack: price<5<26<50",
@@ -219,17 +219,17 @@
           false
         ]
       ],
-      "ema5_5m": 74657.71
+      "ema5_5m": 74657.79
     },
     "oi_metrics": {
       "expiry": "2026-09-24",
-      "spot": 74657.95,
+      "spot": 74657.1,
       "resistance_strike": 75000.0,
-      "resistance_call_oi": 1956820,
+      "resistance_call_oi": 1966920,
       "support_strike": 74500.0,
-      "support_put_oi": 1235360,
+      "support_put_oi": 1235620,
       "max_pain": 74700.0,
-      "pcr": 0.913,
+      "pcr": 0.909,
       "pcr_suggestion": "NEUTRAL"
     },
     "ip_status": {
