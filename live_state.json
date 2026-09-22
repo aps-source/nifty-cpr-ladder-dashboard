@@ -2,8 +2,8 @@
   "NIFTY": {
     "date": "2026-09-22",
     "engine_status": "running",
-    "last_tick": "2026-09-22T15:20:57.445996",
-    "last_processed_bar": "2026-09-22T15:20:00+05:30",
+    "last_tick": "2026-09-22T15:22:17.094243",
+    "last_processed_bar": "2026-09-22T15:22:00+05:30",
     "position": null,
     "trades_today": 2,
     "realized_pnl_today": -1329.2499999999998,
@@ -49,7 +49,7 @@
     "last_error": null,
     "checklist": {
       "ltp": 23349.5,
-      "as_of": "2026-09-22T15:20:00+05:30",
+      "as_of": "2026-09-22T15:22:00+05:30",
       "tc": 23406.47,
       "bc": 23390.8,
       "prev_high": 23466.8,
@@ -104,27 +104,23 @@
       "expiry": "2026-09-22",
       "spot": 23349.5,
       "resistance_strike": 23400.0,
-      "resistance_call_oi": 34129225,
+      "resistance_call_oi": 34791575,
       "support_strike": 23300.0,
-      "support_put_oi": 31016960,
+      "support_put_oi": 28693405,
       "max_pain": 23350.0,
-      "pcr": 0.93,
-      "pcr_suggestion": "NEUTRAL"
+      "pcr": 0.869,
+      "pcr_suggestion": "PUT"
     },
     "ip_status": {
-      "ok": true,
-      "detected_ip": "171.78.154.168",
-      "primary_ip": "171.78.154.168",
-      "secondary_ip": "122.169.46.151",
-      "match_status": "PRIMARY_MATCH",
-      "orders_allowed": true
+      "ok": false,
+      "error": "'str' object has no attribute 'get'"
     }
   },
   "SENSEX": {
     "date": "2026-09-22",
     "engine_status": "running",
-    "last_tick": "2026-09-22T15:20:59.973604",
-    "last_processed_bar": "2026-09-22T15:21:00+05:30",
+    "last_tick": "2026-09-22T15:22:19.951127",
+    "last_processed_bar": "2026-09-22T15:22:00+05:30",
     "position": null,
     "trades_today": 2,
     "realized_pnl_today": -869.0000000000009,
@@ -170,7 +166,7 @@
     "last_error": null,
     "checklist": {
       "ltp": 74653.15,
-      "as_of": "2026-09-22T15:21:00+05:30",
+      "as_of": "2026-09-22T15:22:00+05:30",
       "tc": 74812.92,
       "bc": 74720.79,
       "prev_high": 74987.4,
@@ -233,12 +229,8 @@
       "pcr_suggestion": "PUT"
     },
     "ip_status": {
-      "ok": true,
-      "detected_ip": "171.78.154.168",
-      "primary_ip": "171.78.154.168",
-      "secondary_ip": "122.169.46.151",
-      "match_status": "PRIMARY_MATCH",
-      "orders_allowed": true
+      "ok": false,
+      "error": "'str' object has no attribute 'get'"
     }
   }
 }
