@@ -1,8 +1,8 @@
 {
   "NIFTY": {
     "date": "2026-09-23",
-    "engine_status": "running",
-    "last_tick": "2026-09-23T13:10:51.598203",
+    "engine_status": "token_invalid",
+    "last_tick": "2026-09-23T13:12:19.212392",
     "last_processed_bar": "2026-09-23T13:10:00+05:30",
     "position": null,
     "trades_today": 0,
@@ -77,19 +77,15 @@
       "pcr_suggestion": "CALL"
     },
     "ip_status": {
-      "ok": true,
-      "detected_ip": "171.78.154.168",
-      "primary_ip": "171.78.154.168",
-      "secondary_ip": "122.169.46.151",
-      "match_status": "PRIMARY_MATCH",
-      "orders_allowed": true
+      "ok": false,
+      "error": "'str' object has no attribute 'get'"
     }
   },
   "SENSEX": {
     "date": "2026-09-23",
     "engine_status": "running",
-    "last_tick": "2026-09-23T13:10:54.069300",
-    "last_processed_bar": "2026-09-23T13:10:00+05:30",
+    "last_tick": "2026-09-23T13:12:22.852888",
+    "last_processed_bar": "2026-09-23T13:12:00+05:30",
     "position": null,
     "trades_today": 0,
     "realized_pnl_today": 0.0,
@@ -99,8 +95,8 @@
     "violation_streak": 0,
     "last_error": null,
     "checklist": {
-      "ltp": 74911.89,
-      "as_of": "2026-09-23T13:10:00+05:30",
+      "ltp": 74907.9,
+      "as_of": "2026-09-23T13:12:00+05:30",
       "tc": 74731.32,
       "bc": 74596.49,
       "prev_high": 75038.93,
@@ -112,7 +108,7 @@
         ],
         [
           "15-min stack: price>5>26>50",
-          true
+          false
         ],
         [
           "5-min stack: price>5>26>50",
@@ -149,26 +145,22 @@
           false
         ]
       ],
-      "ema5_5m": 74919.25
+      "ema5_5m": 74917.92
     },
     "oi_metrics": {
       "expiry": "2026-09-24",
-      "spot": 74910.89,
+      "spot": 74907.9,
       "resistance_strike": 75000.0,
-      "resistance_call_oi": 3944440,
+      "resistance_call_oi": 3969800,
       "support_strike": 74500.0,
-      "support_put_oi": 4640200,
+      "support_put_oi": 4641020,
       "max_pain": 74900.0,
-      "pcr": 1.634,
+      "pcr": 1.63,
       "pcr_suggestion": "CALL"
     },
     "ip_status": {
-      "ok": true,
-      "detected_ip": "171.78.154.168",
-      "primary_ip": "171.78.154.168",
-      "secondary_ip": "122.169.46.151",
-      "match_status": "PRIMARY_MATCH",
-      "orders_allowed": true
+      "ok": false,
+      "error": "'str' object has no attribute 'get'"
     }
   }
 }
