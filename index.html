@@ -342,6 +342,7 @@ const MAX_TRADES_PER_DAY = 6;
 const MIDDAY_SKIP_START_MIN = 11 * 60;       // 11:00 IST
 const MIDDAY_SKIP_END_MIN = 13 * 60;         // 13:00 IST
 const SQUAREOFF_MIN = 15 * 60 + 15;          // 15:15 IST
+const SKIP_ENTRY_DOW = [2, 4];               // Tue, Thu (JS getDay: Sun=0) -- no new entries, added 2026-09-24
 
 function buildExitChecklistHtml(state, cl) {
   if (!cl) return "";
@@ -484,11 +485,15 @@ function renderManualBackup(combined) {
     const inMidday = entMin >= MIDDAY_SKIP_START_MIN && entMin < MIDDAY_SKIP_END_MIN;
     const capBlocked = !!state.daily_loss_cap_hit;
     const tradesCapped = (state.trades_today || 0) >= MAX_TRADES_PER_DAY;
-    const entryBlocked = pastCutoff || inMidday || capBlocked || tradesCapped;
+    const [asY, asMo, asD] = cl.as_of.split("T")[0].split("-").map(Number);
+    const asDow = new Date(asY, asMo - 1, asD).getDay();
+    const weekdaySkipped = SKIP_ENTRY_DOW.includes(asDow);
+    const entryBlocked = pastCutoff || inMidday || capBlocked || tradesCapped || weekdaySkipped;
 
     if (!side || entryBlocked) {
       let blockReason = "no full entry signal right now";
-      if (side && pastCutoff) blockReason = `signal met, but past 15:15 IST square-off cutoff -- strategy would not enter`;
+      if (side && weekdaySkipped) blockReason = `signal met, but new entries are switched off on ${["Sun","Mon","Tue","Wed","Thu","Fri","Sat"][asDow]}s (weekday rule) -- strategy would not enter`;
+      else if (side && pastCutoff) blockReason = `signal met, but past 15:15 IST square-off cutoff -- strategy would not enter`;
       else if (side && inMidday) blockReason = `signal met, but inside the 11:00-13:00 IST blackout -- strategy would not enter`;
       else if (side && capBlocked) blockReason = `signal met, but daily loss cap already hit -- strategy would not enter`;
       else if (side && tradesCapped) blockReason = `signal met, but already at ${MAX_TRADES_PER_DAY}/${MAX_TRADES_PER_DAY} trades today -- strategy would not enter`;
