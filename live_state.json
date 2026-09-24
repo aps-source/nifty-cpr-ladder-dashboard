@@ -1,8 +1,8 @@
 {
   "NIFTY": {
     "date": "2026-09-24",
-    "engine_status": "running",
-    "last_tick": "2026-09-24T15:38:46.377256",
+    "engine_status": "data_error",
+    "last_tick": "2026-09-24T15:42:58.424240",
     "last_processed_bar": "2026-09-24T15:29:00+05:30",
     "position": null,
     "trades_today": 5,
@@ -97,7 +97,7 @@
     ],
     "bars_held": 0,
     "violation_streak": 0,
-    "last_error": null,
+    "last_error": "No columns to parse from file",
     "checklist": {
       "ltp": 23063.1,
       "as_of": "2026-09-24T15:29:00+05:30",
@@ -163,18 +163,14 @@
       "pcr_suggestion": "PUT"
     },
     "ip_status": {
-      "ok": true,
-      "detected_ip": "171.78.154.168",
-      "primary_ip": "171.78.154.168",
-      "secondary_ip": "122.169.46.151",
-      "match_status": "PRIMARY_MATCH",
-      "orders_allowed": true
+      "ok": false,
+      "error": "'str' object has no attribute 'get'"
     }
   },
   "SENSEX": {
     "date": "2026-09-24",
     "engine_status": "running",
-    "last_tick": "2026-09-24T15:39:04.938020",
+    "last_tick": "2026-09-24T15:43:02.796157",
     "last_processed_bar": "2026-09-24T15:29:00+05:30",
     "position": null,
     "trades_today": 4,
@@ -310,20 +306,16 @@
       "expiry": "2026-09-24",
       "spot": 73580.54,
       "resistance_strike": 73700.0,
-      "resistance_call_oi": 4760340,
+      "resistance_call_oi": 4700640,
       "support_strike": 73500.0,
-      "support_put_oi": 4390380,
+      "support_put_oi": 4290840,
       "max_pain": 73700.0,
-      "pcr": 0.724,
+      "pcr": 0.733,
       "pcr_suggestion": "PUT"
     },
     "ip_status": {
-      "ok": true,
-      "detected_ip": "171.78.154.168",
-      "primary_ip": "171.78.154.168",
-      "secondary_ip": "122.169.46.151",
-      "match_status": "PRIMARY_MATCH",
-      "orders_allowed": true
+      "ok": false,
+      "error": "'str' object has no attribute 'get'"
     }
   }
 }
