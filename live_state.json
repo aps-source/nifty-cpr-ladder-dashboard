@@ -1,8 +1,8 @@
 {
   "NIFTY": {
     "date": "2026-09-24",
-    "engine_status": "data_error",
-    "last_tick": "2026-09-24T15:44:09.377492",
+    "engine_status": "running",
+    "last_tick": "2026-09-24T15:45:40.311720",
     "last_processed_bar": "2026-09-24T15:29:00+05:30",
     "position": null,
     "trades_today": 5,
@@ -97,7 +97,7 @@
     ],
     "bars_held": 0,
     "violation_streak": 0,
-    "last_error": "No columns to parse from file",
+    "last_error": null,
     "checklist": {
       "ltp": 23063.1,
       "as_of": "2026-09-24T15:29:00+05:30",
@@ -149,32 +149,28 @@
           true
         ]
       ],
-      "ema5_5m": 23079.77
+      "ema5_5m": 23079.87
     },
     "oi_metrics": {
       "expiry": "2026-09-29",
       "spot": 23063.1,
       "resistance_strike": 24000.0,
-      "resistance_call_oi": 20089745,
+      "resistance_call_oi": 19965010,
       "support_strike": 23000.0,
-      "support_put_oi": 12660400,
+      "support_put_oi": 12413660,
       "max_pain": 23300.0,
-      "pcr": 0.728,
+      "pcr": 0.729,
       "pcr_suggestion": "PUT"
     },
     "ip_status": {
-      "ok": true,
-      "detected_ip": "171.78.154.168",
-      "primary_ip": "171.78.154.168",
-      "secondary_ip": "122.169.46.151",
-      "match_status": "PRIMARY_MATCH",
-      "orders_allowed": true
+      "ok": false,
+      "error": "'str' object has no attribute 'get'"
     }
   },
   "SENSEX": {
     "date": "2026-09-24",
     "engine_status": "running",
-    "last_tick": "2026-09-24T15:44:15.082507",
+    "last_tick": "2026-09-24T15:45:46.637453",
     "last_processed_bar": "2026-09-24T15:29:00+05:30",
     "position": null,
     "trades_today": 4,
@@ -318,12 +314,8 @@
       "pcr_suggestion": "PUT"
     },
     "ip_status": {
-      "ok": true,
-      "detected_ip": "171.78.154.168",
-      "primary_ip": "171.78.154.168",
-      "secondary_ip": "122.169.46.151",
-      "match_status": "PRIMARY_MATCH",
-      "orders_allowed": true
+      "ok": false,
+      "error": "'str' object has no attribute 'get'"
     }
   }
 }
