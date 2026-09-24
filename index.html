@@ -7,238 +7,457 @@
 <style>
   :root {
     color-scheme: light;
-    --page:           #f2f5fa;
+    --page:           #eceff8;
     --surface-1:      #ffffff;
-    --surface-2:      #e9edf5;
-    --text-primary:   #11151f;
-    --text-secondary: #5a6478;
-    --text-muted:     #838da2;
-    --gridline:       #dbe1ec;
-    --border:         rgba(17,21,31,0.12);
+    --surface-2:      #f3f5fb;
+    --text-primary:   #0e1320;
+    --text-secondary: #4f5a74;
+    --text-muted:     #76829c;
+    --gridline:       #e2e7f1;
+    --border:         rgba(14,19,32,0.10);
+    --shadow:         0 1px 2px rgba(14,19,32,0.06), 0 8px 24px rgba(40,50,110,0.08);
 
-    --accent:         #4a3aa7;
-    --accent-soft:    rgba(74,58,167,0.10);
+    --brand-a:        #4338ca;
+    --brand-b:        #7c3aed;
+    --brand-c:        #0d9488;
+    --accent:         #4f46e5;
 
-    --good:           #0ca30c;
-    --critical:       #d03b3b;
-    --warning:        #b5710a;
-    --neutral-bg:     #e7eaf1;
-    --neutral-text:   #5a6478;
+    --nifty:          #6d4bd8;
+    --sensex:         #0b8f83;
+    --call:           #2563eb;
+    --put:            #d6336c;
 
-    --call:           #2a78d6;
-    --put:            #c23d84;
+    --good:           #12a150;
+    --warning:        #c77d00;
+    --critical:       #dc3545;
+    --slate-1:        #1b2340;
+    --slate-2:        #2d3a66;
   }
   @media (prefers-color-scheme: dark) {
     :root {
       color-scheme: dark;
-      --page:           #0a0d14;
-      --surface-1:      #141a26;
-      --surface-2:      #1c2434;
-      --text-primary:   #eef1f8;
-      --text-secondary: #9aa4bd;
-      --text-muted:     #7c869e;
-      --gridline:       #262f42;
-      --border:         rgba(238,241,248,0.12);
+      --page:           #090c14;
+      --surface-1:      #131a29;
+      --surface-2:      #1a2336;
+      --text-primary:   #eef1f9;
+      --text-secondary: #a0abc4;
+      --text-muted:     #7f8aa3;
+      --gridline:       #253048;
+      --border:         rgba(238,241,249,0.11);
+      --shadow:         0 1px 2px rgba(0,0,0,0.4), 0 10px 28px rgba(0,0,0,0.35);
 
-      --accent:         #9085e9;
-      --accent-soft:    rgba(144,133,233,0.16);
+      --brand-a:        #4f46e5;
+      --brand-b:        #8b5cf6;
+      --brand-c:        #14b8a6;
+      --accent:         #9b8cf3;
 
-      --good:           #28c840;
-      --critical:       #f0645f;
+      --nifty:          #8a75ec;
+      --sensex:         #17a390;
+      --call:           #4a8cf0;
+      --put:            #e0578a;
+
+      --good:           #2bc85a;
       --warning:        #f2b636;
-      --neutral-bg:     #232b3c;
-      --neutral-text:   #9aa4bd;
-
-      --call:           #3987e5;
-      --put:            #d55181;
+      --critical:       #f0645f;
+      --slate-1:        #0f1630;
+      --slate-2:        #26305a;
     }
   }
   * { box-sizing: border-box; }
-  body { margin: 0; background: var(--page); color: var(--text-primary); font-family: system-ui, -apple-system, "Segoe UI", sans-serif; }
-  .wrap { max-width: 900px; margin: 0 auto; padding: 0 0 32px; }
-  header { padding: 20px 24px 12px; display: flex; align-items: baseline; justify-content: space-between; flex-wrap: wrap; gap: 8px 24px; }
-  h1 { font-size: 21px; margin: 0; font-weight: 700; letter-spacing: -0.01em; }
-  .sub { color: var(--text-secondary); font-size: 14px; margin-top: 2px; }
-  #status-bar { padding: 0 24px 16px; display: flex; gap: 18px; flex-wrap: wrap; font-size: 15px; color: var(--text-secondary); }
-  #status-bar b { color: var(--text-primary); font-variant-numeric: tabular-nums; }
-  .dot { display: inline-block; width: 8px; height: 8px; border-radius: 50%; margin-right: 6px; vertical-align: middle; flex: none; }
-  .dot.live { background: var(--good); }
-  .dot.stale { background: var(--critical); }
-  .dot.paused { background: var(--warning); }
-
-  .card { background: var(--surface-1); border: 1px solid var(--border); border-radius: 12px; padding: 18px 20px; margin: 0 24px 16px; }
-  .card h2 { font-size: 13px; text-transform: uppercase; letter-spacing: 0.06em; color: var(--text-muted); margin: 0 0 12px; }
-
-  .pos-empty { color: var(--text-muted); font-size: 14px; }
-  .pos-row { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 10px; }
-  .pos-side { font-size: 20px; font-weight: 700; }
-  .pos-side.CALL { color: var(--call); }
-  .pos-side.PUT { color: var(--put); }
-  .pos-meta { font-size: 12.5px; color: var(--text-secondary); margin-top: 4px; }
-  .pnl { font-size: 24px; font-weight: 700; font-variant-numeric: tabular-nums; }
-  .pnl.good { color: var(--good); }
-  .pnl.bad { color: var(--critical); }
-
-  .stat-row { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; }
-  .stat { text-align: center; }
-  .stat .v { font-size: 20px; font-weight: 600; font-variant-numeric: tabular-nums; }
-  .stat .k { font-size: 11px; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.05em; margin-top: 2px; }
-
-  .checklist-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
-  .crit-col .name { font-weight: 700; font-size: 14px; margin-bottom: 8px; }
-  .crit-col .name.CALL { color: var(--call); }
-  .crit-col .name.PUT { color: var(--put); }
-  .crit-row { display: flex; align-items: center; gap: 8px; font-size: 13.5px; color: var(--text-muted); padding: 4px 0; border-top: 1px solid var(--gridline); }
-  .crit-row:first-of-type { border-top: none; }
-  .crit-row .mark { width: 14px; text-align: center; font-weight: 700; }
-  .crit-row.met { color: var(--text-primary); }
-  .crit-row.met.call .mark { color: var(--good); }
-  .crit-row.met.put .mark { color: var(--critical); }
-  @media (max-width: 560px) { .checklist-grid { grid-template-columns: 1fr; } }
-
-  .levels { margin-top: 10px; padding-top: 8px; border-top: 1px solid var(--gridline); font-size: 13px; color: var(--text-muted); display: flex; flex-wrap: wrap; gap: 4px 14px; }
-
-  table { width: 100%; border-collapse: collapse; font-size: 13px; }
-  th { text-align: left; color: var(--text-muted); font-weight: 600; padding: 6px 4px; border-bottom: 1px solid var(--gridline); font-size: 11.5px; text-transform: uppercase; letter-spacing: 0.04em; }
-  td { padding: 7px 4px; border-bottom: 1px solid var(--gridline); font-variant-numeric: tabular-nums; }
-  .pos-pnl-cell { color: var(--good); } .neg-pnl-cell { color: var(--critical); }
-  .empty-row td { color: var(--text-muted); text-align: center; padding: 16px 4px; }
-
-  footer { padding: 8px 24px 24px; font-size: 13px; color: var(--text-muted); }
-
-  .sym-heading { padding: 4px 24px 8px; font-size: 16px; font-weight: 700; }
-  .sym-heading:first-of-type { margin-top: 0; }
-
-  a.trades-link { color: var(--accent); text-decoration: none; font-size: 14px; font-weight: 600; }
-  a.trades-link:hover { text-decoration: underline; }
-
-  .trade-taken-banner {
-    font-size: 25px; font-weight: 800; letter-spacing: 0.02em; text-align: center;
-    padding: 10px 16px; border-radius: 10px; margin: 0 24px 16px;
+  html { font-size: clamp(15px, 0.55vw + 9px, 19px); }
+  body {
+    margin: 0; color: var(--text-primary);
+    font-family: system-ui, -apple-system, "Segoe UI", sans-serif; line-height: 1.4;
+    background:
+      radial-gradient(1100px 480px at 8% -8%, color-mix(in srgb, var(--brand-b) 16%, transparent), transparent 70%),
+      radial-gradient(900px 480px at 100% 0%, color-mix(in srgb, var(--brand-c) 14%, transparent), transparent 70%),
+      var(--page);
+    background-attachment: fixed;
   }
-  .trade-taken-banner.CALL { background: color-mix(in srgb, var(--call) 16%, var(--surface-1)); color: var(--call); border: 2px solid var(--call); }
-  .trade-taken-banner.PUT { background: color-mix(in srgb, var(--put) 16%, var(--surface-1)); color: var(--put); border: 2px solid var(--put); }
+  .muted { color: var(--text-muted); }
+  b { font-variant-numeric: tabular-nums; }
 
-  .error-banner {
-    font-size: 14px; font-weight: 600; padding: 10px 16px; border-radius: 10px; margin: 0 24px 16px;
-    background: color-mix(in srgb, var(--critical) 14%, var(--surface-1)); color: var(--critical); border: 1px solid var(--critical);
-    display: flex; gap: 8px; align-items: baseline; flex-wrap: wrap;
+  /* ---------- hero header ---------- */
+  .hero {
+    background: linear-gradient(115deg, var(--brand-a) 0%, var(--brand-b) 52%, var(--brand-c) 100%);
+    color: #fff; padding: 1.05rem clamp(14px, 2vw, 32px) 0.9rem;
+    box-shadow: 0 6px 26px rgba(67,56,202,0.28);
   }
-  .error-banner .err-label { text-transform: uppercase; letter-spacing: 0.04em; font-size: 11px; flex: none; }
-  .error-banner .err-msg { font-family: ui-monospace, "SFMono-Regular", Menlo, monospace; font-size: 12.5px; word-break: break-word; }
+  .hero-inner { max-width: 2300px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; gap: 12px 24px; flex-wrap: wrap; }
+  .brand { display: flex; align-items: center; gap: 0.9rem; }
+  .logo { width: 2.5rem; height: 2.5rem; border-radius: 0.8rem; background: rgba(255,255,255,0.18); display: grid; place-items: center; font-size: 1.35rem; backdrop-filter: blur(4px); }
+  h1 { font-size: 1.45rem; margin: 0; font-weight: 800; letter-spacing: -0.015em; }
+  .tag { font-size: 0.86rem; opacity: 0.88; margin-top: 1px; }
+  .hero-right { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; }
+  .hero-pill { background: rgba(255,255,255,0.16); border: 1px solid rgba(255,255,255,0.28); padding: 0.32rem 0.75rem; border-radius: 999px; font-size: 0.82rem; font-variant-numeric: tabular-nums; }
+  a.btn { background: #fff; color: var(--brand-a); text-decoration: none; font-weight: 700; font-size: 0.88rem; padding: 0.45rem 0.95rem; border-radius: 999px; box-shadow: 0 2px 10px rgba(0,0,0,0.18); }
+  a.btn:hover { transform: translateY(-1px); }
+  details.rules { max-width: 2300px; margin: 0.55rem auto 0; font-size: 0.83rem; opacity: 0.95; }
+  details.rules summary { cursor: pointer; font-weight: 600; width: fit-content; }
+  details.rules p { margin: 0.4rem 0 0; max-width: 1200px; opacity: 0.92; }
 
-  .na-note { color: var(--text-muted); font-size: 12.5px; padding: 4px 0; }
+  .page { max-width: 2300px; margin: 0 auto; padding: 1.1rem clamp(14px, 2vw, 32px) 2rem; }
 
-  #oi-summary { padding: 4px 24px 4px; display: flex; flex-direction: column; gap: 12px; }
-  .oi-item { display: flex; flex-direction: column; gap: 2px; }
-  .oi-item .lbl { display: flex; align-items: center; gap: 8px; font-size: 14px; font-weight: 700; color: var(--text-secondary); text-transform: uppercase; letter-spacing: 0.04em; }
-  .oi-item .val { font-size: 25px; font-weight: 800; letter-spacing: -0.01em; font-variant-numeric: tabular-nums; padding-left: 18px; }
-  .oi-dot { width: 10px; height: 10px; border-radius: 50%; flex: none; }
-  .oi-dot.price { background: var(--accent); }
-  .oi-dot.resistance { background: var(--critical); }
-  .oi-dot.maxpain { background: var(--warning); }
-  .oi-dot.support { background: var(--good); }
-  .oi-dot.pcr { background: var(--text-muted); }
-  .oi-suggestion { font-weight: 800; }
-  .oi-suggestion.CALL { color: var(--call); }
-  .oi-suggestion.PUT { color: var(--put); }
-  .oi-suggestion.NEUTRAL { color: var(--text-muted); }
-  #oi-disclaimer { padding: 0 24px 18px; font-size: 11.5px; color: var(--text-muted); font-style: italic; }
+  /* ---------- KPI strip ---------- */
+  .kpis { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(165px, 100%), 1fr)); gap: 0.9rem; margin-bottom: 1rem; }
+  .kpi {
+    position: relative; overflow: hidden; background: var(--surface-1); border: 1px solid var(--border); border-radius: 1rem;
+    padding: 0.95rem 1.1rem; box-shadow: var(--shadow);
+  }
+  .kpi::before { content: ""; position: absolute; inset: 0 auto 0 0; width: 5px; background: var(--kc, var(--accent)); }
+  .kpi .k { font-size: 0.72rem; text-transform: uppercase; letter-spacing: 0.07em; color: var(--text-muted); font-weight: 700; }
+  .kpi .v { font-size: 1.85rem; font-weight: 800; letter-spacing: -0.02em; font-variant-numeric: tabular-nums; margin-top: 0.1rem; line-height: 1.15; }
+  .kpi .s { font-size: 0.82rem; color: var(--text-secondary); margin-top: 0.15rem; }
+  .kpi.hero-kpi { background: linear-gradient(135deg, color-mix(in srgb, var(--kc) 20%, var(--surface-1)), var(--surface-1) 70%); }
+  .kpi.good { --kc: var(--good); } .kpi.bad { --kc: var(--critical); } .kpi.warn { --kc: var(--warning); }
+  .kpi.violet { --kc: var(--nifty); } .kpi.teal { --kc: var(--sensex); } .kpi.blue { --kc: var(--call); } .kpi.pink { --kc: var(--put); }
+  .v.good { color: var(--good); } .v.bad { color: var(--critical); } .v.warn { color: var(--warning); }
 
-  #sod-checklist { margin: 0 24px 16px; }
-  .sod-summary { display: flex; align-items: center; justify-content: space-between; margin-bottom: 10px; }
-  .sod-summary .title { font-size: 13px; text-transform: uppercase; letter-spacing: 0.06em; color: var(--text-muted); font-weight: 700; }
-  .sod-summary .badge { font-size: 13px; font-weight: 800; padding: 3px 10px; border-radius: 999px; }
-  .sod-summary .badge.pass { background: color-mix(in srgb, var(--good) 18%, var(--surface-1)); color: var(--good); }
-  .sod-summary .badge.fail { background: color-mix(in srgb, var(--critical) 18%, var(--surface-1)); color: var(--critical); }
-  .sod-row { display: flex; align-items: flex-start; gap: 8px; font-size: 13.5px; padding: 6px 0; border-top: 1px solid var(--gridline); }
+  .st-pill { display: inline-flex; align-items: center; gap: 0.35rem; font-weight: 700; font-size: 0.78rem; padding: 0.15rem 0.55rem; border-radius: 999px; margin-right: 0.35rem; }
+  .st-pill.live { background: color-mix(in srgb, var(--good) 16%, var(--surface-1)); color: var(--good); }
+  .st-pill.stale { background: color-mix(in srgb, var(--critical) 16%, var(--surface-1)); color: var(--critical); }
+  .st-pill.paused { background: color-mix(in srgb, var(--warning) 18%, var(--surface-1)); color: var(--warning); }
+  .dot { display: inline-block; width: 0.55rem; height: 0.55rem; border-radius: 50%; background: currentColor; flex: none; }
+  .st-pill.live .dot { animation: pulse 2s infinite; }
+  @keyframes pulse { 0%,100% { box-shadow: 0 0 0 0 color-mix(in srgb, currentColor 55%, transparent); } 60% { box-shadow: 0 0 0 6px transparent; } }
+
+  /* ---------- decision banners ---------- */
+  .decisions { display: grid; grid-template-columns: repeat(auto-fit, minmax(330px, 1fr)); gap: 0.9rem; margin-bottom: 1rem; }
+  .decision {
+    display: flex; align-items: center; gap: 1rem; padding: 1rem 1.3rem; border-radius: 1.1rem; color: #fff;
+    box-shadow: var(--shadow); border: 1px solid rgba(255,255,255,0.14);
+  }
+  .decision .glyph { width: 3.1rem; height: 3.1rem; border-radius: 50%; background: rgba(255,255,255,0.2); display: grid; place-items: center; font-size: 1.5rem; font-weight: 800; flex: none; }
+  .decision .mi-label { font-size: 0.72rem; text-transform: uppercase; letter-spacing: 0.07em; opacity: 0.9; font-weight: 700; }
+  .decision .mi-action { font-size: 1.75rem; font-weight: 800; letter-spacing: 0.005em; line-height: 1.15; }
+  .decision .mi-meta { font-size: 0.85rem; opacity: 0.92; margin-top: 0.15rem; }
+  .decision.CALL { background: linear-gradient(120deg, color-mix(in srgb, var(--call) 72%, #000), var(--call)); }
+  .decision.PUT { background: linear-gradient(120deg, color-mix(in srgb, var(--put) 72%, #000), var(--put)); }
+  .decision.PENDING { background: linear-gradient(120deg, var(--slate-1), var(--slate-2)); }
+  .decision.PENDING .glyph { background: rgba(255,255,255,0.12); }
+
+  /* ---------- layout ---------- */
+  .layout { display: grid; gap: 1rem; grid-template-columns: minmax(0, 1fr); align-items: start; }
+  .side { display: grid; gap: 1rem; grid-template-columns: repeat(auto-fit, minmax(340px, 1fr)); align-content: start; }
+  @media (min-width: 1040px) { .layout { grid-template-columns: repeat(2, minmax(0, 1fr)); } .side { grid-column: 1 / -1; } }
+  @media (min-width: 1700px) { .layout { grid-template-columns: 24rem repeat(2, minmax(0, 1fr)); } .side { grid-column: auto; grid-template-columns: minmax(0, 1fr); position: sticky; top: 1rem; } }
+  #root { display: contents; }
+
+  .card { background: var(--surface-1); border: 1px solid var(--border); border-radius: 1rem; padding: 1.05rem 1.2rem; box-shadow: var(--shadow); }
+  .card h2, .box h3 { font-size: 0.74rem; text-transform: uppercase; letter-spacing: 0.08em; color: var(--text-muted); margin: 0 0 0.7rem; font-weight: 800; }
+  .card.tint-violet { border-top: 4px solid var(--nifty); } .card.tint-teal { border-top: 4px solid var(--sensex); }
+
+  /* ---------- start-of-day checklist ---------- */
+  .sod-summary { display: flex; align-items: center; justify-content: space-between; margin-bottom: 0.6rem; gap: 8px; }
+  .sod-summary .title { font-size: 0.74rem; text-transform: uppercase; letter-spacing: 0.08em; color: var(--text-muted); font-weight: 800; }
+  .badge { font-size: 0.78rem; font-weight: 800; padding: 0.25rem 0.75rem; border-radius: 999px; white-space: nowrap; }
+  .badge.pass { background: linear-gradient(135deg, var(--good), color-mix(in srgb, var(--good) 60%, var(--brand-c))); color: #fff; }
+  .badge.fail { background: linear-gradient(135deg, var(--critical), color-mix(in srgb, var(--critical) 60%, var(--warning))); color: #fff; }
+  .sod-row { display: flex; align-items: flex-start; gap: 0.6rem; font-size: 0.9rem; padding: 0.42rem 0; border-top: 1px solid var(--gridline); }
   .sod-row:first-of-type { border-top: none; }
-  .sod-row .mark { width: 16px; text-align: center; font-weight: 700; flex: none; }
-  .sod-row.ok { color: var(--text-primary); }
-  .sod-row.ok .mark { color: var(--good); }
-  .sod-row.bad { color: var(--text-primary); }
-  .sod-row.bad .mark { color: var(--critical); }
-  .sod-row .detail { color: var(--text-muted); font-size: 12px; }
+  .sod-row .mark { width: 1.35rem; height: 1.35rem; border-radius: 50%; display: grid; place-items: center; font-size: 0.78rem; font-weight: 800; flex: none; color: #fff; }
+  .sod-row.ok .mark { background: var(--good); } .sod-row.bad .mark { background: var(--critical); }
+  .sod-row .detail { color: var(--text-muted); font-size: 0.78rem; display: block; }
 
-  #manual-backup { margin: 0 24px 16px; }
-  .manual-item {
-    display: flex; align-items: center; justify-content: space-between; gap: 12px; flex-wrap: wrap;
-    padding: 14px 20px; border-radius: 12px; margin-bottom: 10px; border: 2px solid;
-  }
-  .manual-item.CALL { background: color-mix(in srgb, var(--call) 16%, var(--surface-1)); border-color: var(--call); }
-  .manual-item.PUT { background: color-mix(in srgb, var(--put) 16%, var(--surface-1)); border-color: var(--put); }
-  .manual-item.PENDING { background: #000000; border-color: #000000; }
-  .manual-item .mi-label { font-size: 12px; text-transform: uppercase; letter-spacing: 0.05em; color: var(--text-muted); font-weight: 700; }
-  .manual-item.PENDING .mi-label { color: #cfd4dc; }
-  .manual-item .mi-action { font-size: 25px; font-weight: 800; letter-spacing: 0.01em; }
-  .manual-item.CALL .mi-action { color: var(--call); }
-  .manual-item.PUT .mi-action { color: var(--put); }
-  .manual-item.PENDING .mi-action { color: #ffffff; }
-  .manual-item .mi-meta { font-size: 13px; color: var(--text-secondary); }
-  .manual-item.PENDING .mi-meta { color: #9aa4bd; }
+  /* ---------- market levels ladder ---------- */
+  .ladder { position: relative; height: 3.6rem; margin: 0.4rem 0.4rem 0.2rem; }
+  .ladder .track { position: absolute; left: 0; right: 0; top: 1.55rem; height: 0.7rem; border-radius: 999px; background: linear-gradient(90deg, var(--good), var(--warning) 50%, var(--critical)); opacity: 0.9; }
+  .ladder .mk { position: absolute; top: 1.3rem; width: 0.4rem; height: 1.2rem; border-radius: 3px; background: var(--surface-1); border: 2px solid var(--text-primary); transform: translateX(-50%); }
+  .ladder .spot { position: absolute; top: 0; transform: translateX(-50%); text-align: center; font-weight: 800; font-size: 0.82rem; color: var(--accent); white-space: nowrap; }
+  .ladder .spot::after { content: "▼"; display: block; font-size: 0.7rem; line-height: 0.8; margin-top: 1px; }
+  .ladder .tick { position: absolute; top: 2.55rem; transform: translateX(-50%); font-size: 0.68rem; font-weight: 800; color: var(--text-secondary); }
+  .lvl-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 0.55rem; margin-top: 0.6rem; }
+  .lvl { border-radius: 0.75rem; padding: 0.5rem 0.7rem; background: var(--surface-2); border-left: 4px solid var(--c, var(--text-muted)); }
+  .lvl .l { font-size: 0.68rem; text-transform: uppercase; letter-spacing: 0.05em; color: var(--text-muted); font-weight: 700; }
+  .lvl .n { font-size: 1.25rem; font-weight: 800; font-variant-numeric: tabular-nums; }
+  .lvl .d { font-size: 0.72rem; color: var(--text-secondary); }
+  .lvl.res { --c: var(--critical); } .lvl.mp { --c: var(--warning); } .lvl.sup { --c: var(--good); } .lvl.pcr { --c: var(--brand-c); }
+  .suggest { display: inline-block; font-weight: 800; padding: 0.1rem 0.6rem; border-radius: 999px; }
+  .suggest.CALL { background: color-mix(in srgb, var(--call) 16%, var(--surface-1)); color: var(--call); }
+  .suggest.PUT { background: color-mix(in srgb, var(--put) 16%, var(--surface-1)); color: var(--put); }
+  .suggest.NEUTRAL { background: var(--surface-2); color: var(--text-muted); }
+  .disclaimer { font-size: 0.72rem; color: var(--text-muted); font-style: italic; margin-top: 0.6rem; }
+
+  /* ---------- instrument panel ---------- */
+  .panel { display: grid; gap: 0.85rem; align-content: start; min-width: 0; }
+  .panel-head { border-radius: 1rem; padding: 0.85rem 1.15rem; color: #fff; box-shadow: var(--shadow); display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 0.5rem 1rem; background: linear-gradient(120deg, color-mix(in srgb, var(--inst) 88%, #000), var(--inst) 60%, color-mix(in srgb, var(--inst) 60%, var(--brand-c))); }
+  .inst-name { font-size: 1.25rem; font-weight: 800; letter-spacing: 0.01em; }
+  .spot-big { font-size: 1.75rem; font-weight: 800; font-variant-numeric: tabular-nums; line-height: 1.1; text-align: right; }
+  .spot-big small { display: block; font-size: 0.72rem; font-weight: 600; opacity: 0.9; }
+  .panel-head .st-pill { background: rgba(255,255,255,0.2); color: #fff; margin: 0.25rem 0 0; }
+  .panel-head .stline { font-size: 0.78rem; opacity: 0.95; margin-top: 0.25rem; }
+
+  .box { background: var(--surface-1); border: 1px solid var(--border); border-radius: 1rem; padding: 0.95rem 1.1rem; box-shadow: var(--shadow); }
+  .split { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 0.85rem; }
+
+  .tiles { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 0.7rem; }
+  .tile { border-radius: 0.9rem; padding: 0.65rem 0.8rem; background: var(--surface-2); border: 1px solid var(--border); min-width: 0; }
+  .tile .v { font-size: 1.35rem; font-weight: 800; font-variant-numeric: tabular-nums; line-height: 1.15; }
+  .tile .k { font-size: 0.68rem; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.06em; font-weight: 700; margin-top: 2px; }
+  .tile .v { white-space: nowrap; }
+  .tile .v.good { color: var(--good); } .tile .v.bad { color: var(--critical); }
+  @media (max-width: 480px) { .tile { padding: 0.55rem 0.55rem; } .tile .v { font-size: 1.02rem; } .tile .k { font-size: 0.6rem; letter-spacing: 0.03em; } }
+  .meter { height: 0.5rem; border-radius: 999px; background: var(--gridline); overflow: hidden; margin-top: 0.4rem; }
+  .meter i { display: block; height: 100%; border-radius: 999px; background: linear-gradient(90deg, var(--good), var(--warning) 60%, var(--critical)); }
+
+  .pos-empty { color: var(--text-muted); font-size: 0.92rem; }
+  .pos-side { font-size: 1.4rem; font-weight: 800; }
+  .pos-side.CALL { color: var(--call); } .pos-side.PUT { color: var(--put); }
+  .pos-meta { font-size: 0.85rem; color: var(--text-secondary); margin-top: 0.2rem; }
+  .taken { border-radius: 1rem; padding: 0.7rem 1rem; text-align: center; font-size: 1.35rem; font-weight: 800; letter-spacing: 0.02em; color: #fff; box-shadow: var(--shadow); }
+  .taken.CALL { background: linear-gradient(120deg, var(--call), color-mix(in srgb, var(--call) 60%, var(--brand-c))); }
+  .taken.PUT { background: linear-gradient(120deg, var(--put), color-mix(in srgb, var(--put) 60%, var(--brand-b))); }
+  .error-banner { display: flex; gap: 0.6rem; align-items: baseline; flex-wrap: wrap; border-radius: 0.9rem; padding: 0.65rem 1rem; font-weight: 600; font-size: 0.9rem; background: color-mix(in srgb, var(--critical) 13%, var(--surface-1)); color: var(--critical); border: 1px solid var(--critical); }
+  .error-banner .err-label { text-transform: uppercase; letter-spacing: 0.05em; font-size: 0.7rem; font-weight: 800; }
+  .error-banner .err-msg { font-family: ui-monospace, "SFMono-Regular", Menlo, monospace; font-size: 0.8rem; word-break: break-word; }
+
+  .checklist-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+  @media (max-width: 560px) { .checklist-grid { grid-template-columns: 1fr; } }
+  .chead { display: flex; align-items: center; justify-content: space-between; margin-bottom: 0.35rem; }
+  .cname { font-weight: 800; font-size: 0.95rem; }
+  .ccol.call .cname { color: var(--call); } .ccol.put .cname { color: var(--put); }
+  .cscore { font-size: 0.75rem; font-weight: 800; padding: 0.12rem 0.55rem; border-radius: 999px; background: var(--surface-2); color: var(--text-secondary); }
+  .ccol.call .cscore.full { background: var(--call); color: #fff; } .ccol.put .cscore.full { background: var(--put); color: #fff; }
+  .segs { display: grid; grid-auto-flow: column; grid-auto-columns: 1fr; gap: 4px; margin-bottom: 0.45rem; }
+  .segs i { height: 0.42rem; border-radius: 999px; background: var(--gridline); }
+  .ccol.call .segs i.on { background: var(--call); } .ccol.put .segs i.on { background: var(--put); }
+  .crit-row { display: flex; align-items: flex-start; gap: 0.5rem; font-size: 0.86rem; color: var(--text-muted); padding: 0.28rem 0; border-top: 1px solid var(--gridline); }
+  .crit-row:first-of-type { border-top: none; }
+  .crit-row .mark { width: 1.05rem; text-align: center; font-weight: 800; flex: none; }
+  .crit-row.met { color: var(--text-primary); }
+  .crit-row.met.call .mark { color: var(--call); } .crit-row.met.put .mark { color: var(--put); }
+  .levels { margin-top: 0.7rem; padding-top: 0.55rem; border-top: 1px solid var(--gridline); display: flex; flex-wrap: wrap; gap: 0.35rem 0.5rem; }
+  .chip { font-size: 0.78rem; padding: 0.15rem 0.6rem; border-radius: 999px; background: var(--surface-2); color: var(--text-secondary); font-variant-numeric: tabular-nums; }
+  .chip b { color: var(--text-primary); }
+  .na-note { color: var(--text-muted); font-size: 0.82rem; padding: 0.2rem 0 0.5rem; }
+
+  table { width: 100%; border-collapse: collapse; font-size: 0.86rem; }
+  th { text-align: left; color: var(--text-muted); font-weight: 700; padding: 0.4rem 0.4rem; border-bottom: 2px solid var(--gridline); font-size: 0.7rem; text-transform: uppercase; letter-spacing: 0.06em; }
+  td { padding: 0.5rem 0.4rem; border-bottom: 1px solid var(--gridline); font-variant-numeric: tabular-nums; }
+  tr:last-child td { border-bottom: none; }
+  .empty-row td { color: var(--text-muted); text-align: center; padding: 1.1rem 0.4rem; }
+  .side-pill { font-weight: 800; font-size: 0.72rem; padding: 0.12rem 0.55rem; border-radius: 999px; color: #fff; }
+  .side-pill.CALL { background: var(--call); } .side-pill.PUT { background: var(--put); }
+  .reason { font-size: 0.74rem; padding: 0.1rem 0.5rem; border-radius: 999px; background: var(--surface-2); color: var(--text-secondary); }
+  .pos-pnl-cell { color: var(--good); font-weight: 700; } .neg-pnl-cell { color: var(--critical); font-weight: 700; }
+
+  .spark svg { width: 100%; height: 4.2rem; display: block; }
+  .spark-cap { display: flex; justify-content: space-between; font-size: 0.78rem; color: var(--text-secondary); margin-top: 0.3rem; }
+
+  footer { margin-top: 1.4rem; font-size: 0.78rem; color: var(--text-muted); text-align: center; }
 </style>
 </head>
 <body>
-<div class="wrap">
 
-<header>
-  <div>
-    <h1>NIFTY + SENSEX Tuned — Live Engine</h1>
-    <div class="sub">5-condition Daily-CPR + 3/5/15-min EMA stack entry, debounced 5-min-EMA5 exit, no overnight, 11:00&ndash;13:00 blackout. Regular candles. 1 lot per instrument. Shared PAUSE.flag halts both.</div>
+<header class="hero">
+  <div class="hero-inner">
+    <div class="brand">
+      <div class="logo">◆</div>
+      <div>
+        <h1>NIFTY + SENSEX Live Engine</h1>
+        <div class="tag">Tuned CPR-ladder &middot; regular candles &middot; 1 lot per index</div>
+      </div>
+    </div>
+    <div class="hero-right">
+      <span class="hero-pill" id="clock">loading…</span>
+      <a class="btn" href="trades.html">Day-wise trades &amp; G/L &rarr;</a>
+    </div>
   </div>
-  <a class="trades-link" href="trades.html">Day-wise trades &amp; G/L &rarr;</a>
+  <details class="rules">
+    <summary>Strategy rules</summary>
+    <p>5-condition Daily-CPR + 3/5/15-min EMA stack entry, debounced 5-min-EMA5 exit, no overnight, 11:00&ndash;13:00 blackout, no new entries on Tuesdays/Thursdays, forced square-off 15:15, max 6 trades/day per index. Shared PAUSE.flag halts both indices.</p>
+  </details>
 </header>
 
-<div id="manual-backup"></div>
+<main class="page">
+  <section class="kpis" id="kpis"></section>
+  <section class="decisions" id="manual-backup"></section>
 
-<div class="card" id="sod-checklist"></div>
+  <div class="layout">
+    <aside class="side">
+      <div class="card" id="sod-checklist"></div>
+      <div class="card" id="levels-card" hidden>
+        <h2>Market levels &middot; NIFTY option-chain</h2>
+        <div id="oi-summary"></div>
+        <div class="disclaimer" id="oi-disclaimer"></div>
+      </div>
+    </aside>
+    <div id="root"></div>
+  </div>
 
-<div id="oi-summary"></div>
-<div id="oi-disclaimer"></div>
-
-<div id="root"></div>
-
-<footer>
-  Reads live_state.json from this same site every 30s, pushed by the live engine's Task Scheduler
-  tick (D:\...\Project Nifty 3min CPR Strategy\live\live_engine_tick.py). This page is read-only —
-  it cannot place, modify, or cancel any order; it only displays what the engine already did.
-</footer>
-
-</div>
+  <footer>
+    Reads live_state.json from this same site every 30s, pushed by the live engine every tick. This page is read-only &mdash;
+    it cannot place, modify, or cancel any order; it only displays what the engine already did.
+  </footer>
+</main>
 
 <script>
 const REFRESH_MS = 30 * 1000;
 const STATE_URL = "live_state.json";
 const INSTRUMENTS = [
-  { key: "NIFTY", label: "NIFTY 50" },
-  { key: "SENSEX", label: "SENSEX" },
+  { key: "NIFTY", label: "NIFTY 50", cls: "violet", color: "var(--nifty)" },
+  { key: "SENSEX", label: "SENSEX", cls: "teal", color: "var(--sensex)" },
 ];
+const DAILY_LOSS_CAP = 2000;
 
-function fmt(v) { return (v > 0 ? '+' : '') + Number(v).toFixed(1); }
+// Exit / entry rules, matching backtest_v4.py / live_engine_tick.py exactly (unchanged):
+// MIN_HOLD_BARS=5, EXIT_TIER="5m" (debounced off the 5-min tier's own EMA5), DEBOUNCE_BARS=3,
+// SQUAREOFF_TIME=15:15 IST forced close, no new entries after. Also a daily loss cap force-close.
+const MIN_HOLD_BARS = 5;
+const DEBOUNCE_BARS = 3;
+const MAX_TRADES_PER_DAY = 6;
+const MIDDAY_SKIP_START_MIN = 11 * 60;       // 11:00 IST
+const MIDDAY_SKIP_END_MIN = 13 * 60;         // 13:00 IST
+const SQUAREOFF_MIN = 15 * 60 + 15;          // 15:15 IST
+const SKIP_ENTRY_DOW = [2, 4];               // Tue, Thu (JS getDay: Sun=0) -- no new entries, added 2026-09-24
+const DOW_NAMES = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
+const DOW_FULL = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
 
-function critRow(label, met, dir) {
-  return `<div class="crit-row ${met ? 'met ' + dir : ''}"><span class="mark">${met ? '✓' : '·'}</span>${label}</div>`;
+const $ = (id) => document.getElementById(id);
+const esc = (s) => String(s).replace(/[&<>"]/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]));
+const rs = (v) => (v >= 0 ? "+" : "−") + "₹" + Math.abs(Math.round(v)).toLocaleString("en-IN");
+const tm = (iso) => new Date(iso).toLocaleTimeString("en-IN");
+
+// as_of is an ISO string already carrying IST wall-clock time (e.g. "2026-09-24T15:22:00+05:30") -- parsed from the
+// string directly rather than via Date.getHours(), which would use the VIEWER's timezone instead of IST.
+function istParts(asOf) {
+  const [d, t] = asOf.split("T");
+  const [y, mo, da] = d.split("-").map(Number);
+  const [h, m] = t.split(":").map(Number);
+  return { min: h * 60 + m, dow: new Date(y, mo - 1, da).getDay() };
 }
 
+function ageMinutes(state) {
+  const lt = state && state.last_tick ? new Date(state.last_tick) : null;
+  return lt ? (Date.now() - lt.getTime()) / 60000 : Infinity;
+}
+
+function statusPill(state) {
+  const ageMin = ageMinutes(state);
+  if (state.engine_status === "paused") return { cls: "paused", label: "Paused", line: "paused (no new entries)" };
+  if (ageMin > 10) return { cls: "stale", label: "Stale", line: `stale (${Math.round(ageMin)} min since last push — market may be closed, or the engine isn't running)` };
+  return { cls: "live", label: "Live", line: "live" };
+}
+
+// Same entry-blocking rules the real strategy enforces (backtest_v4.py / live_engine_tick.py).
+function entryStatus(state) {
+  const cl = state && state.checklist;
+  if (!cl) return { open: false, text: "No data" };
+  if (state.position) return { open: false, text: "In position" };
+  const { min, dow } = istParts(cl.as_of);
+  if (SKIP_ENTRY_DOW.includes(dow)) return { open: false, text: `Off · ${DOW_NAMES[dow]} rule` };
+  if (min >= SQUAREOFF_MIN) return { open: false, text: "Closed · after 15:15" };
+  if (min < 9 * 60 + 15) return { open: false, text: "Pre-market" };
+  if (min >= MIDDAY_SKIP_START_MIN && min < MIDDAY_SKIP_END_MIN) return { open: false, text: "Blackout until 13:00" };
+  if (state.daily_loss_cap_hit) return { open: false, text: "Loss cap hit" };
+  if ((state.trades_today || 0) >= MAX_TRADES_PER_DAY) return { open: false, text: `${MAX_TRADES_PER_DAY}/${MAX_TRADES_PER_DAY} trades used` };
+  return { open: true, text: "Open" };
+}
+
+/* ------------------------------ checklists ------------------------------ */
+function critRow(label, met, dir) {
+  return `<div class="crit-row ${met ? "met " + dir : ""}"><span class="mark">${met ? "✓" : "·"}</span><span>${label}</span></div>`;
+}
+
+function checkCol(name, rows, dir, showScore) {
+  const met = rows.filter(([, ok]) => ok).length;
+  const full = met === rows.length;
+  return `
+    <div class="ccol ${dir}">
+      <div class="chead"><span class="cname">${name}</span>${showScore ? `<span class="cscore ${full ? "full" : ""}">${met}/${rows.length}${full ? " · SIGNAL" : ""}</span>` : ""}</div>
+      <div class="segs">${rows.map(([, ok]) => `<i class="${ok ? "on" : ""}"></i>`).join("")}</div>
+      ${rows.map(([label, ok]) => critRow(label, ok, dir)).join("")}
+    </div>`;
+}
+
+function buildExitChecklistHtml(state, cl) {
+  if (!cl) return "";
+  const p = state.position;  // may be null -- shown either way, like the entry checklist always is
+
+  const barsHeld = state.bars_held || 0;
+  const violationStreak = state.violation_streak || 0;
+  const minHoldMet = barsHeld > MIN_HOLD_BARS;
+  const debounceMet = violationStreak >= DEBOUNCE_BARS;
+
+  // Side-dependent "this bar violating" condition is shown for BOTH sides (mirroring the entry checklist's
+  // CALL/PUT columns); min hold / debounce are real per-instrument counters (not per-side).
+  const callViolated = cl.ltp < cl.ema5_5m;
+  const putViolated = cl.ltp > cl.ema5_5m;
+  const eodMet = istParts(cl.as_of).min >= SQUAREOFF_MIN;
+  const capMet = !!state.daily_loss_cap_hit;
+
+  const callRows = [
+    [`This bar violating: LTP ${cl.ltp} &lt; EMA5 ${cl.ema5_5m}`, callViolated],
+    [`Minimum hold: ${barsHeld} of ${MIN_HOLD_BARS}+ bars`, minHoldMet],
+    [`Debounce streak: ${violationStreak} of ${DEBOUNCE_BARS} violations`, debounceMet],
+  ];
+  const putRows = [
+    [`This bar violating: LTP ${cl.ltp} &gt; EMA5 ${cl.ema5_5m}`, putViolated],
+    [`Minimum hold: ${barsHeld} of ${MIN_HOLD_BARS}+ bars`, minHoldMet],
+    [`Debounce streak: ${violationStreak} of ${DEBOUNCE_BARS} violations`, debounceMet],
+  ];
+  const sharedRows = [
+    [`Forced square-off (&ge;15:15 IST)`, eodMet],
+    [`Daily loss cap hit`, capMet],
+  ].map(([label, ok]) => critRow(label, ok, p ? p.side.toLowerCase() : "call")).join("");
+
+  const anyExitMet = p && (eodMet || capMet || (minHoldMet && debounceMet));
+  const posNote = p
+    ? `<div class="na-note">Currently open: <b>${p.side} ${p.strike}</b> — the ${p.side.toLowerCase()} column and shared rows below apply.</div>`
+    : `<div class="na-note">No open position right now — showing live status for both sides in case one opens.</div>`;
+
+  return `
+    <div class="box">
+      <h3>Exit condition checklist</h3>
+      ${posNote}
+      <div class="checklist-grid">
+        ${checkCol("Call", callRows, "call", false)}
+        ${checkCol("Put", putRows, "put", false)}
+      </div>
+      <div style="margin-top:0.5rem;">${sharedRows}</div>
+      <div class="levels"><span class="chip">Exit fires when: (min hold met AND debounce met) OR forced square-off OR loss cap</span></div>
+      ${anyExitMet ? `<div class="na-note" style="color:var(--critical); font-weight:700; margin-top:0.4rem;">Exit condition currently met — position should close on this or the next processed bar</div>` : ""}
+    </div>`;
+}
+
+function sodRow(label, ok, detail) {
+  return `<div class="sod-row ${ok ? "ok" : "bad"}"><span class="mark">${ok ? "✓" : "✕"}</span><span>${label}${detail ? `<span class="detail">${detail}</span>` : ""}</span></div>`;
+}
+
+/* ------------------------------ sparkline ------------------------------ */
+function sparkline(trades) {
+  if (!trades.length) return `<div class="pos-empty">No closed trades yet today</div>`;
+  const pts = [0];
+  let c = 0;
+  trades.forEach((t) => { c += Number(t.pnl) || 0; pts.push(c); });
+  const w = 260, h = 70, p = 8;
+  const mn = Math.min(0, ...pts), mx = Math.max(0, ...pts), rng = (mx - mn) || 1;
+  const x = (i) => p + (w - 2 * p) * (i / (pts.length - 1 || 1));
+  const y = (v) => h - p - (h - 2 * p) * ((v - mn) / rng);
+  const line = pts.map((v, i) => `${i ? "L" : "M"}${x(i).toFixed(1)},${y(v).toFixed(1)}`).join(" ");
+  const area = `${line} L${x(pts.length - 1).toFixed(1)},${y(0).toFixed(1)} L${x(0).toFixed(1)},${y(0).toFixed(1)} Z`;
+  const col = c >= 0 ? "var(--good)" : "var(--critical)";
+  return `
+    <div class="spark">
+      <svg viewBox="0 0 ${w} ${h}" preserveAspectRatio="none" role="img" aria-label="Cumulative P&L today">
+        <line x1="${p}" y1="${y(0)}" x2="${w - p}" y2="${y(0)}" stroke="var(--gridline)" stroke-width="1.5" stroke-dasharray="4 4"/>
+        <path d="${area}" fill="${col}" opacity="0.14"/>
+        <path d="${line}" fill="none" stroke="${col}" stroke-width="2.5" stroke-linejoin="round" stroke-linecap="round"/>
+        <circle cx="${x(pts.length - 1).toFixed(1)}" cy="${y(c).toFixed(1)}" r="4.5" fill="${col}" stroke="var(--surface-1)" stroke-width="2"/>
+      </svg>
+      <div class="spark-cap"><span>${trades.length} closed trade${trades.length > 1 ? "s" : ""}</span><b style="color:${col}">${rs(c)}</b></div>
+    </div>`;
+}
+
+/* ------------------------------ instrument panel ------------------------------ */
 function renderInstrument(inst, state) {
   const lastTick = state.last_tick ? new Date(state.last_tick) : null;
-  const ageMin = lastTick ? (Date.now() - lastTick.getTime()) / 60000 : Infinity;
+  const st = statusPill(state);
+  const cl = state.checklist;
 
   const errorHtml = state.last_error
-    ? `<div class="error-banner"><span class="err-label">Error</span><span class="err-msg">${state.last_error}</span></div>`
+    ? `<div class="error-banner"><span class="err-label">Error</span><span class="err-msg">${esc(state.last_error)}</span></div>`
     : "";
-
-  let dotClass, statusLine;
-  if (state.engine_status === "paused") {
-    dotClass = "paused";
-    statusLine = "paused (no new entries)";
-  } else if (ageMin > 10) {
-    dotClass = "stale";
-    statusLine = `stale (${Math.round(ageMin)} min since last push — market may be closed, or the task isn't firing)`;
-  } else {
-    dotClass = "live";
-    statusLine = "live";
-  }
 
   const statusLabels = {
     running: "Running", paused: "Paused", token_invalid: "Token invalid",
@@ -251,186 +470,110 @@ function renderInstrument(inst, state) {
   let posHtml;
   if (state.position) {
     const p = state.position;
-    tradeTakenHtml = `<div class="trade-taken-banner ${p.side}">TRADE TAKEN — ${p.side} ${p.strike}</div>`;
+    tradeTakenHtml = `<div class="taken ${p.side}">TRADE TAKEN — ${p.side} ${p.strike}</div>`;
     posHtml = `
-      <div class="pos-row">
-        <div>
-          <div class="pos-side ${p.side}">${p.side} ${p.strike}</div>
-          <div class="pos-meta">Entered ${new Date(p.entry_time).toLocaleTimeString("en-IN")} @ ${p.entry_price} · qty ${p.qty} · expiry ${p.expiry}</div>
-        </div>
-      </div>`;
+      <div class="pos-side ${p.side}">${p.side} ${p.strike}</div>
+      <div class="pos-meta">Entered ${tm(p.entry_time)} @ ${p.entry_price} · qty ${p.qty} · expiry ${p.expiry}</div>`;
   } else {
     posHtml = '<span class="pos-empty">No open position</span>';
   }
 
-  let checklistHtml = "";
-  const cl = state.checklist;
+  let entryHtml = "";
   if (cl) {
-    const callRows = cl.checks_call.map(([label, ok]) => critRow(label, ok, "call")).join("");
-    const putRows = cl.checks_put.map(([label, ok]) => critRow(label, ok, "put")).join("");
-    checklistHtml = `
-      <div class="card">
-        <h2>Entry condition checklist</h2>
+    entryHtml = `
+      <div class="box">
+        <h3>Entry condition checklist</h3>
         <div class="checklist-grid">
-          <div class="crit-col"><div class="name CALL">Call</div>${callRows}</div>
-          <div class="crit-col"><div class="name PUT">Put</div>${putRows}</div>
+          ${checkCol("Call", cl.checks_call, "call", true)}
+          ${checkCol("Put", cl.checks_put, "put", true)}
         </div>
         <div class="levels">
-          <span>LTP ${cl.ltp}</span>
-          <span>CPR TC ${cl.tc}</span>
-          <span>CPR BC ${cl.bc}</span>
-          <span>Prev High ${cl.prev_high}</span>
-          <span>Prev Low ${cl.prev_low}</span>
-          <span>as of ${new Date(cl.as_of).toLocaleTimeString("en-IN")}</span>
+          <span class="chip">LTP <b>${cl.ltp}</b></span>
+          <span class="chip">CPR TC <b>${cl.tc}</b></span>
+          <span class="chip">CPR BC <b>${cl.bc}</b></span>
+          <span class="chip">Prev High <b>${cl.prev_high}</b></span>
+          <span class="chip">Prev Low <b>${cl.prev_low}</b></span>
+          <span class="chip">as of <b>${tm(cl.as_of)}</b></span>
         </div>
       </div>`;
   }
 
-  const exitChecklistHtml = buildExitChecklistHtml(state, cl);
-
-  const trades = (state.today_trades || []).slice().reverse();
+  const closed = state.today_trades || [];
+  const trades = closed.slice().reverse();
   const tradesHtml = trades.length
-    ? trades.map(t => `
+    ? trades.map((t) => `
       <tr>
-        <td>${new Date(t.entry_time).toLocaleTimeString("en-IN")}</td>
-        <td>${t.side}</td>
+        <td>${tm(t.entry_time)}</td>
+        <td><span class="side-pill ${t.side}">${t.side}</span></td>
         <td>${t.strike}</td>
-        <td>${t.reason}</td>
-        <td class="${t.pnl >= 0 ? 'pos-pnl-cell' : 'neg-pnl-cell'}">${fmt(t.pnl)}</td>
+        <td><span class="reason">${esc(t.reason)}</span></td>
+        <td class="${t.pnl >= 0 ? "pos-pnl-cell" : "neg-pnl-cell"}">${rs(t.pnl)}</td>
       </tr>`).join("")
     : '<tr class="empty-row"><td colspan="5">No trades yet today</td></tr>';
 
+  const realized = Number(state.realized_pnl_today) || 0;
+  const lossUsed = Math.min(100, Math.max(0, (-realized / DAILY_LOSS_CAP) * 100));
+  const es = entryStatus(state);
+
   return `
-    <div class="sym-heading">${inst.label}</div>
-    <div id="status-bar">
-      <span><span class="dot ${dotClass}"></span>${statusLine}</span>
-      <span>Last tick: <b>${lastTick ? lastTick.toLocaleString("en-IN") : "—"}</b></span>
-      <span>Status: <b>${statusText}</b></span>
-    </div>
-    ${errorHtml}
-    ${tradeTakenHtml}
-    <div class="card">
-      <h2>Position</h2>
-      ${posHtml}
-    </div>
-    <div class="card">
-      <h2>Today</h2>
-      <div class="stat-row">
-        <div class="stat"><div class="v">${state.trades_today}/6</div><div class="k">Trades today</div></div>
-        <div class="stat"><div class="v" style="color:${state.realized_pnl_today >= 0 ? 'var(--good)' : 'var(--critical)'}">${fmt(state.realized_pnl_today)}</div><div class="k">Realized P&amp;L</div></div>
-        <div class="stat"><div class="v">₹2,000</div><div class="k">Daily loss cap</div></div>
+    <section class="panel">
+      <div class="panel-head" style="--inst:${inst.color}">
+        <div>
+          <div class="inst-name">${inst.label}</div>
+          <span class="st-pill ${st.cls}"><span class="dot"></span>${st.label}</span>
+          <div class="stline">Last tick <b>${lastTick ? lastTick.toLocaleString("en-IN") : "—"}</b> · ${statusText}</div>
+        </div>
+        <div class="spot-big">${cl ? cl.ltp : "—"}<small>${cl ? "spot as of " + tm(cl.as_of) : ""}</small></div>
       </div>
-    </div>
-    ${checklistHtml}
-    ${exitChecklistHtml}
-    <div class="card">
-      <h2>Trade log (today)</h2>
-      <table>
-        <thead><tr><th>Time</th><th>Side</th><th>Strike</th><th>Reason</th><th>P&amp;L</th></tr></thead>
-        <tbody>${tradesHtml}</tbody>
-      </table>
-    </div>
-  `;
+      ${errorHtml}
+      ${tradeTakenHtml}
+      <div class="box">
+        <div class="tiles">
+          <div class="tile"><div class="v">${state.trades_today}/${MAX_TRADES_PER_DAY}</div><div class="k">Trades today</div></div>
+          <div class="tile"><div class="v ${realized >= 0 ? "good" : "bad"}">${rs(realized)}</div><div class="k">Realized P&amp;L</div></div>
+          <div class="tile"><div class="v">₹${DAILY_LOSS_CAP.toLocaleString("en-IN")}</div><div class="k">Loss cap · ${Math.round(lossUsed)}% used</div><div class="meter"><i style="width:${lossUsed}%"></i></div></div>
+        </div>
+      </div>
+      <div class="split">
+        <div class="box"><h3>Position</h3>${posHtml}<div class="chip" style="margin-top:0.6rem;display:inline-block;">Entries: <b>${es.text}</b></div></div>
+        <div class="box"><h3>Today's P&amp;L curve</h3>${sparkline(closed)}</div>
+      </div>
+      ${entryHtml}
+      ${buildExitChecklistHtml(state, cl)}
+      <div class="box">
+        <h3>Trade log (today)</h3>
+        <table>
+          <thead><tr><th>Time</th><th>Side</th><th>Strike</th><th>Reason</th><th>P&amp;L</th></tr></thead>
+          <tbody>${tradesHtml}</tbody>
+        </table>
+      </div>
+    </section>`;
 }
 
-// Exit rules, matching backtest_v4.py / live_engine_tick.py exactly (unchanged all session):
-// MIN_HOLD_BARS=5, EXIT_TIER="5m" (debounced off the 5-min tier's own EMA5), DEBOUNCE_BARS=3,
-// SQUAREOFF_TIME=15:15 IST forced close, no new entries after. Also a daily loss cap force-close.
-const MIN_HOLD_BARS = 5;
-const DEBOUNCE_BARS = 3;
-const MAX_TRADES_PER_DAY = 6;
-const MIDDAY_SKIP_START_MIN = 11 * 60;       // 11:00 IST
-const MIDDAY_SKIP_END_MIN = 13 * 60;         // 13:00 IST
-const SQUAREOFF_MIN = 15 * 60 + 15;          // 15:15 IST
-const SKIP_ENTRY_DOW = [2, 4];               // Tue, Thu (JS getDay: Sun=0) -- no new entries, added 2026-09-24
-
-function buildExitChecklistHtml(state, cl) {
-  if (!cl) return "";
-  const p = state.position;  // may be null -- shown either way, like the entry checklist always is
-
-  const barsHeld = state.bars_held || 0;
-  const violationStreak = state.violation_streak || 0;
-  const minHoldMet = barsHeld > MIN_HOLD_BARS;
-  const debounceMet = violationStreak >= DEBOUNCE_BARS;
-
-  // Side-dependent "this bar violating" condition is shown for BOTH sides (mirroring the
-  // entry checklist's CALL/PUT columns), since it's a plain price-vs-EMA5 comparison that
-  // doesn't need an actual open position to evaluate. Min hold / debounce are real per-
-  // instrument counters (not per-side) -- shown once, using live state (0 / not-met when flat).
-  const callViolated = cl.ltp < cl.ema5_5m;
-  const putViolated = cl.ltp > cl.ema5_5m;
-
-  // cl.as_of is an ISO string already carrying IST wall-clock time (e.g. "...T15:22:00+05:30") --
-  // parsed from the string directly rather than via Date.getHours()/getMinutes(), which would
-  // silently use the VIEWER's local timezone instead of IST for anyone outside +05:30.
-  const [istH, istM] = cl.as_of.split("T")[1].split(":").map(Number);
-  const istHM = istH * 60 + istM;
-  const eodMet = istHM >= (15 * 60 + 15);
-  const capMet = !!state.daily_loss_cap_hit;
-
-  const callRows = [
-    [`This bar violating: LTP ${cl.ltp} &lt; EMA5 ${cl.ema5_5m}`, callViolated],
-    [`Minimum hold: ${barsHeld} of ${MIN_HOLD_BARS}+ bars`, minHoldMet],
-    [`Debounce streak: ${violationStreak} of ${DEBOUNCE_BARS} violations`, debounceMet],
-  ].map(([label, ok]) => critRow(label, ok, "call")).join("");
-
-  const putRows = [
-    [`This bar violating: LTP ${cl.ltp} &gt; EMA5 ${cl.ema5_5m}`, putViolated],
-    [`Minimum hold: ${barsHeld} of ${MIN_HOLD_BARS}+ bars`, minHoldMet],
-    [`Debounce streak: ${violationStreak} of ${DEBOUNCE_BARS} violations`, debounceMet],
-  ].map(([label, ok]) => critRow(label, ok, "put")).join("");
-
-  const sharedRows = [
-    [`Forced square-off (&ge;15:15 IST)`, eodMet],
-    [`Daily loss cap hit`, capMet],
-  ].map(([label, ok]) => critRow(label, ok, p ? p.side.toLowerCase() : "call")).join("");
-
-  const anyExitMet = p && (eodMet || capMet || (minHoldMet && debounceMet));
-  const posNote = p
-    ? `<div class="na-note">Currently open: <b>${p.side} ${p.strike}</b> — the ${p.side.toLowerCase()} column and shared rows below apply.</div>`
-    : `<div class="na-note">No open position right now — showing live status for both sides in case one opens.</div>`;
-
+/* ------------------------------ decision banners (manual backup) ------------------------------ */
+function decisionHtml(kind, glyph, label, action, meta) {
   return `
-    <div class="card">
-      <h2>Exit condition checklist</h2>
-      ${posNote}
-      <div class="checklist-grid">
-        <div class="crit-col"><div class="name CALL">Call</div>${callRows}</div>
-        <div class="crit-col"><div class="name PUT">Put</div>${putRows}</div>
+    <div class="decision ${kind}">
+      <div class="glyph">${glyph}</div>
+      <div>
+        <div class="mi-label">${label}</div>
+        <div class="mi-action">${action}</div>
+        <div class="mi-meta">${meta}</div>
       </div>
-      <div class="crit-col" style="margin-top:8px;">${sharedRows}</div>
-      <div class="levels">
-        <span>Exit fires when: (min hold met AND debounce met) OR forced square-off OR loss cap</span>
-      </div>
-      ${anyExitMet ? `<div class="na-note" style="color:var(--critical); font-weight:700; margin-top:6px;">Exit condition currently met — position should close on this or the next processed bar</div>` : ""}
     </div>`;
 }
 
-function sodRow(label, ok, detail) {
-  return `<div class="sod-row ${ok ? 'ok' : 'bad'}"><span class="mark">${ok ? '✓' : '✕'}</span><span>${label}${detail ? ` <span class="detail">${detail}</span>` : ''}</span></div>`;
-}
-
 function renderManualBackup(combined) {
-  // Uses the ACTUAL strategy signal (checklist.checks_call/checks_put -- the
-  // real 5-condition entry stack), not the PCR reference indicator. Shows
-  // only when a signal is fully met AND no position is open yet, so this is
-  // never wrong about "should I act" -- added 2026-08-31 so a manual trade
-  // can back up automated execution if it fails (e.g. the intermittent
-  // Invalid IP order-placement issue seen today).
-  const el = document.getElementById("manual-backup");
+  // Uses the ACTUAL strategy signal (checklist.checks_call/checks_put -- the real 5-condition entry stack), not the
+  // PCR reference indicator. Shows a BUY only when a signal is fully met, entry is allowed and no position is open,
+  // so a manual trade can back up automated execution without ever suggesting something the strategy would refuse.
+  const el = $("manual-backup");
   const items = [];
 
   for (const inst of INSTRUMENTS) {
     const state = combined[inst.key];
     if (!state || !state.checklist) {
-      items.push(`
-        <div class="manual-item PENDING">
-          <div>
-            <div class="mi-label">${inst.label}</div>
-            <div class="mi-action">DECISION PENDING</div>
-            <div class="mi-meta">No data yet</div>
-          </div>
-        </div>`);
+      items.push(decisionHtml("PENDING", "…", inst.label, "DECISION PENDING", "No data yet"));
       continue;
     }
 
@@ -441,31 +584,16 @@ function renderManualBackup(combined) {
       const violationStreak = state.violation_streak || 0;
       const minHoldMet = barsHeld > MIN_HOLD_BARS;
       const debounceMet = violationStreak >= DEBOUNCE_BARS;
-      const [istH, istM] = cl.as_of.split("T")[1].split(":").map(Number);
-      const eodMet = (istH * 60 + istM) >= (15 * 60 + 15);
+      const eodMet = istParts(cl.as_of).min >= SQUAREOFF_MIN;
       const capMet = !!state.daily_loss_cap_hit;
       const exitMet = eodMet || capMet || (minHoldMet && debounceMet);
 
       if (exitMet) {
         const reason = eodMet ? "forced square-off" : capMet ? "daily loss cap hit" : "min hold + debounce both met";
-        const errNote = state.last_error ? ` — last automated attempt failed: ${state.last_error}` : "";
-        items.push(`
-          <div class="manual-item ${p.side}">
-            <div>
-              <div class="mi-label">${inst.label} — exit condition met (${reason})</div>
-              <div class="mi-action">EXIT ${p.side}</div>
-              <div class="mi-meta">${p.side} ${p.strike} @ entry ${p.entry_price} · Spot ${cl.ltp}${errNote}</div>
-            </div>
-          </div>`);
+        const errNote = state.last_error ? ` — last automated attempt failed: ${esc(state.last_error)}` : "";
+        items.push(decisionHtml(p.side, "✕", `${inst.label} — exit condition met (${reason})`, `EXIT ${p.side}`, `${p.side} ${p.strike} @ entry ${p.entry_price} · Spot ${cl.ltp}${errNote}`));
       } else {
-        items.push(`
-          <div class="manual-item PENDING">
-            <div>
-              <div class="mi-label">${inst.label}</div>
-              <div class="mi-action">DECISION PENDING</div>
-              <div class="mi-meta">Holding ${p.side} ${p.strike} @ ${p.entry_price} — exit condition not met yet (hold ${barsHeld}/${MIN_HOLD_BARS}+, debounce ${violationStreak}/${DEBOUNCE_BARS})</div>
-            </div>
-          </div>`);
+        items.push(decisionHtml("PENDING", "◔", inst.label, "DECISION PENDING", `Holding ${p.side} ${p.strike} @ ${p.entry_price} — exit condition not met yet (hold ${barsHeld}/${MIN_HOLD_BARS}+, debounce ${violationStreak}/${DEBOUNCE_BARS})`));
       }
       continue;
     }
@@ -474,137 +602,164 @@ function renderManualBackup(combined) {
     const putMet = cl.checks_put.every(([, ok]) => ok);
     const side = callMet ? "CALL" : (putMet ? "PUT" : null);
 
-    // Same entry-blocking rules the real strategy enforces (backtest_v4.py / live_engine_tick.py):
-    // no new entries past 15:15 IST, none 11:00-13:00 IST, none once 6 trades are already taken
-    // today. BUG FIXED 2026-09-15: this block used to show "BUY CALL/PUT" purely off the 5-condition
-    // signal, with no time/cap check -- so it kept suggesting trades the automated strategy itself
-    // would never take (e.g. a fully-met signal at 15:27, well past the cutoff).
-    const [entH, entM] = cl.as_of.split("T")[1].split(":").map(Number);
-    const entMin = entH * 60 + entM;
+    const { min: entMin, dow: asDow } = istParts(cl.as_of);
     const pastCutoff = entMin >= SQUAREOFF_MIN;
     const inMidday = entMin >= MIDDAY_SKIP_START_MIN && entMin < MIDDAY_SKIP_END_MIN;
     const capBlocked = !!state.daily_loss_cap_hit;
     const tradesCapped = (state.trades_today || 0) >= MAX_TRADES_PER_DAY;
-    const [asY, asMo, asD] = cl.as_of.split("T")[0].split("-").map(Number);
-    const asDow = new Date(asY, asMo - 1, asD).getDay();
     const weekdaySkipped = SKIP_ENTRY_DOW.includes(asDow);
     const entryBlocked = pastCutoff || inMidday || capBlocked || tradesCapped || weekdaySkipped;
 
     if (!side || entryBlocked) {
       let blockReason = "no full entry signal right now";
-      if (side && weekdaySkipped) blockReason = `signal met, but new entries are switched off on ${["Sun","Mon","Tue","Wed","Thu","Fri","Sat"][asDow]}s (weekday rule) -- strategy would not enter`;
+      if (side && weekdaySkipped) blockReason = `signal met, but new entries are switched off on ${DOW_FULL[asDow]}s (weekday rule) -- strategy would not enter`;
       else if (side && pastCutoff) blockReason = `signal met, but past 15:15 IST square-off cutoff -- strategy would not enter`;
       else if (side && inMidday) blockReason = `signal met, but inside the 11:00-13:00 IST blackout -- strategy would not enter`;
       else if (side && capBlocked) blockReason = `signal met, but daily loss cap already hit -- strategy would not enter`;
       else if (side && tradesCapped) blockReason = `signal met, but already at ${MAX_TRADES_PER_DAY}/${MAX_TRADES_PER_DAY} trades today -- strategy would not enter`;
-      items.push(`
-        <div class="manual-item PENDING">
-          <div>
-            <div class="mi-label">${inst.label} — as of ${new Date(cl.as_of).toLocaleTimeString("en-IN")}</div>
-            <div class="mi-action">DECISION PENDING</div>
-            <div class="mi-meta">Spot ${cl.ltp} — ${blockReason}</div>
-          </div>
-        </div>`);
+      items.push(decisionHtml("PENDING", side ? "‖" : "…", `${inst.label} — as of ${tm(cl.as_of)}`, "DECISION PENDING", `Spot ${cl.ltp} — ${blockReason}`));
       continue;
     }
 
-    const errNote = state.last_error ? ` — last automated attempt failed: ${state.last_error}` : " — automated attempt not yet confirmed";
-    items.push(`
-      <div class="manual-item ${side}">
-        <div>
-          <div class="mi-label">${inst.label} — signal live as of ${new Date(cl.as_of).toLocaleTimeString("en-IN")}</div>
-          <div class="mi-action">BUY ${side} (ATM)</div>
-          <div class="mi-meta">Spot ${cl.ltp}${errNote}</div>
-        </div>
-      </div>`);
+    const errNote = state.last_error ? ` — last automated attempt failed: ${esc(state.last_error)}` : " — automated attempt not yet confirmed";
+    items.push(decisionHtml(side, side === "CALL" ? "▲" : "▼", `${inst.label} — signal live as of ${tm(cl.as_of)}`, `BUY ${side} (ATM)`, `Spot ${cl.ltp}${errNote}`));
   }
 
   el.innerHTML = items.join("");
 }
 
+/* ------------------------------ start-of-day checklist ------------------------------ */
 function renderStartOfDayChecklist(combined) {
-  const el = document.getElementById("sod-checklist");
+  const el = $("sod-checklist");
   const nifty = combined.NIFTY, sensex = combined.SENSEX;
-  if (!nifty && !sensex) { el.innerHTML = ""; return; }
+  if (!nifty && !sensex) { el.innerHTML = ""; return null; }
 
-  const staleFor = (s) => {
-    if (!s || !s.last_tick) return Infinity;
-    return (Date.now() - new Date(s.last_tick).getTime()) / 60000;
-  };
-  const bothTicking = nifty && sensex && staleFor(nifty) <= 10 && staleFor(sensex) <= 10;
+  const bothTicking = nifty && sensex && ageMinutes(nifty) <= 10 && ageMinutes(sensex) <= 10;
   const neitherPaused = nifty && sensex && nifty.engine_status !== "paused" && sensex.engine_status !== "paused";
   const bothHealthy = nifty && sensex && nifty.engine_status === "running" && sensex.engine_status === "running";
   const noRecentError = nifty && sensex && !nifty.last_error && !sensex.last_error;
 
-  // ip_status is account-wide (same for both instruments) -- added 2026-08-31 after a
-  // dynamic-IP change silently blocked trading for a stretch of the morning before
-  // anyone noticed. This check would have caught it immediately.
+  // ip_status is account-wide (same for both instruments). Checking orders_allowed directly is the actual ground
+  // truth, regardless of which slot (primary/secondary) matched.
   const ip = nifty && nifty.ip_status;
-  // Fixed 2026-09-02: was checking match_status === "PRIMARY_MATCH" specifically,
-  // which incorrectly showed NEEDS ATTENTION when a secondary IP correctly matched
-  // instead (match_status "SECONDARY_MATCH", orders_allowed still true). Checking
-  // orders_allowed directly is the actual ground truth, regardless of which slot matched.
-  const ipOk = ip && ip.ok && ip.orders_allowed;
+  const ipOk = !!(ip && ip.ok && ip.orders_allowed);
   const ipDetail = ip && ip.ok
-    ? `(detected ${ip.detected_ip} — ${ip.match_status || 'status unknown'}; primary ${ip.primary_ip}${ip.secondary_ip && ip.secondary_ip !== 'NA' ? ', secondary ' + ip.secondary_ip : ''})`
-    : (ip ? `(check failed: ${ip.error})` : "");
+    ? `detected ${ip.detected_ip} — ${ip.match_status || "status unknown"}; primary ${ip.primary_ip}${ip.secondary_ip && ip.secondary_ip !== "NA" ? ", secondary " + ip.secondary_ip : ""}`
+    : (ip ? `check failed: ${esc(ip.error)}` : "");
 
+  const flags = [!!bothTicking, !!neitherPaused, !!bothHealthy, !!noRecentError, ipOk];
   const rows = [
-    sodRow("Both instruments ticking (last tick &le;10 min old)", bothTicking),
-    sodRow("Not paused (PAUSE.flag absent)", neitherPaused),
-    sodRow("No token/config/data errors (engine_status = running)", bothHealthy),
-    sodRow("No error on most recent order attempt", noRecentError),
-    sodRow("IP whitelist matches this machine's current public IP", ipOk, ipDetail),
+    sodRow("Both instruments ticking (last tick &le;10 min old)", flags[0]),
+    sodRow("Not paused (PAUSE.flag absent)", flags[1]),
+    sodRow("No token/config/data errors (engine_status = running)", flags[2]),
+    sodRow("No error on most recent order attempt", flags[3]),
+    sodRow("IP whitelist matches this machine's current public IP", flags[4], ipDetail),
   ];
-  const allPass = bothTicking && neitherPaused && bothHealthy && noRecentError && ipOk;
+  const allPass = flags.every(Boolean);
 
   el.innerHTML = `
     <div class="sod-summary">
       <span class="title">Start-of-day checklist</span>
-      <span class="badge ${allPass ? 'pass' : 'fail'}">${allPass ? 'ALL CLEAR' : 'NEEDS ATTENTION'}</span>
+      <span class="badge ${allPass ? "pass" : "fail"}">${allPass ? "ALL CLEAR" : "NEEDS ATTENTION"}</span>
     </div>
     ${rows.join("")}
   `;
+  return { pass: flags.filter(Boolean).length, total: flags.length, allPass };
 }
 
+/* ------------------------------ market levels ------------------------------ */
+function renderLevels(combined) {
+  const card = $("levels-card");
+  const oi = combined.NIFTY && combined.NIFTY.oi_metrics;
+  if (!oi) { card.hidden = true; return; }
+  card.hidden = false;
+
+  const vals = [oi.support_strike, oi.max_pain, oi.resistance_strike, oi.spot].map(Number).filter(Number.isFinite);
+  const lo = Math.min(...vals), hi = Math.max(...vals);
+  const pad = (hi - lo) * 0.10 || 50;
+  const a = lo - pad, b = hi + pad;
+  const pos = (v) => Math.min(98, Math.max(2, ((Number(v) - a) / (b - a)) * 100));
+  const gap = (v) => {
+    const g = ((Number(v) - Number(oi.spot)) / Number(oi.spot)) * 100;
+    return `${Math.abs(g).toFixed(2)}% ${g >= 0 ? "above" : "below"} spot`;
+  };
+
+  $("oi-summary").innerHTML = `
+    <div class="ladder">
+      <div class="track"></div>
+      <div class="spot" style="left:${pos(oi.spot)}%">${oi.spot}</div>
+      <div class="mk" style="left:${pos(oi.spot)}%; border-color:var(--accent);"></div>
+      <div class="mk" style="left:${pos(oi.support_strike)}%"></div><div class="tick" style="left:${pos(oi.support_strike)}%">S</div>
+      <div class="mk" style="left:${pos(oi.max_pain)}%"></div><div class="tick" style="left:${pos(oi.max_pain)}%">MP</div>
+      <div class="mk" style="left:${pos(oi.resistance_strike)}%"></div><div class="tick" style="left:${pos(oi.resistance_strike)}%">R</div>
+    </div>
+    <div class="lvl-grid">
+      <div class="lvl res"><div class="l">Resistance · max Call OI</div><div class="n">${oi.resistance_strike}</div><div class="d">${gap(oi.resistance_strike)}</div></div>
+      <div class="lvl sup"><div class="l">Support · max Put OI</div><div class="n">${oi.support_strike}</div><div class="d">${gap(oi.support_strike)}</div></div>
+      <div class="lvl mp"><div class="l">Max pain</div><div class="n">${oi.max_pain}</div><div class="d">${gap(oi.max_pain)}</div></div>
+      <div class="lvl pcr"><div class="l">PCR</div><div class="n">${oi.pcr ?? "—"}</div><div class="d">Suggests <span class="suggest ${oi.pcr_suggestion}">${oi.pcr_suggestion}</span></div></div>
+    </div>`;
+  $("oi-disclaimer").textContent = "PCR-based suggestion is a reference indicator only (simple contrarian PCR reading) — it plays no part in the live strategy's actual entry/exit logic, which is unchanged (5-condition Daily-CPR + EMA stack).";
+}
+
+/* ------------------------------ KPI strip ------------------------------ */
+function renderKpis(combined, sod) {
+  const states = INSTRUMENTS.map((i) => ({ inst: i, s: combined[i.key] }));
+  const have = states.filter((x) => x.s);
+  const net = have.reduce((a, x) => a + (Number(x.s.realized_pnl_today) || 0), 0);
+  const trades = have.map((x) => `${x.inst.key[0]}: ${x.s.trades_today}/${MAX_TRADES_PER_DAY}`).join("  ·  ");
+  const open = have.filter((x) => x.s.position);
+  const pnlBits = have.map((x) => `${x.inst.key} ${rs(Number(x.s.realized_pnl_today) || 0)}`).join(" · ");
+
+  const pills = have.map((x) => {
+    const st = statusPill(x.s);
+    return `<span class="st-pill ${st.cls}"><span class="dot"></span>${x.inst.key} ${st.label}</span>`;
+  }).join("");
+  const lastTickAny = have.map((x) => x.s.last_tick).filter(Boolean).sort().pop();
+  const anyBad = have.some((x) => statusPill(x.s).cls !== "live");
+
+  const entries = have.map((x) => ({ k: x.inst.key, e: entryStatus(x.s) }));
+  const anyOpen = entries.some((x) => x.e.open);
+
+  $("kpis").innerHTML = `
+    <div class="kpi hero-kpi ${net >= 0 ? "good" : "bad"}">
+      <div class="k">Net realized P&amp;L today</div>
+      <div class="v ${net >= 0 ? "good" : "bad"}">${rs(net)}</div>
+      <div class="s">${pnlBits || "—"}</div>
+    </div>
+    <div class="kpi violet"><div class="k">Trades today</div><div class="v">${have.reduce((a, x) => a + (x.s.trades_today || 0), 0)}<span class="muted" style="font-size:1rem;font-weight:600;"> / ${MAX_TRADES_PER_DAY * have.length}</span></div><div class="s">${trades || "—"}</div></div>
+    <div class="kpi ${open.length ? (open[0].s.position.side === "CALL" ? "blue" : "pink") : "teal"}"><div class="k">Open positions</div><div class="v">${open.length}</div><div class="s">${open.length ? open.map((x) => `${x.inst.key}: ${x.s.position.side} ${x.s.position.strike}`).join(" · ") : "Flat"}</div></div>
+    <div class="kpi ${anyBad ? "warn" : "good"}"><div class="k">Engine</div><div class="v" style="font-size:1.05rem;line-height:1.9;">${pills || "—"}</div><div class="s">Last tick ${lastTickAny ? tm(lastTickAny) : "—"}</div></div>
+    <div class="kpi ${sod && sod.allPass ? "good" : "bad"}"><div class="k">System checks</div><div class="v ${sod && sod.allPass ? "good" : "bad"}">${sod ? sod.pass + "/" + sod.total : "—"}</div><div class="s">${sod ? (sod.allPass ? "All clear" : "Needs attention — see checklist") : ""}</div></div>
+    <div class="kpi ${anyOpen ? "good" : "warn"}"><div class="k">New entries</div><div class="v ${anyOpen ? "good" : "warn"}" style="font-size:1.25rem;line-height:1.5;">${anyOpen ? "Allowed" : "Blocked"}</div><div class="s">${entries.map((x) => `${x.k}: ${x.e.text}`).join(" · ") || "—"}</div></div>
+  `;
+}
+
+/* ------------------------------ refresh loop ------------------------------ */
 async function refresh() {
-  const root = document.getElementById("root");
+  const root = $("root");
   let combined;
   try {
     const res = await fetch(STATE_URL + "?t=" + Date.now(), { cache: "no-store" });
     if (!res.ok) throw new Error("HTTP " + res.status);
     combined = await res.json();
   } catch (e) {
-    root.innerHTML = `<div class="card"><span class="pos-empty">Failed to load live_state.json — ${e.message}</span></div>`;
+    root.innerHTML = `<div class="card" style="grid-column:1/-1;"><span class="pos-empty">Failed to load live_state.json — ${esc(e.message)}</span></div>`;
     return;
   }
 
   renderManualBackup(combined);
-  renderStartOfDayChecklist(combined);
+  const sod = renderStartOfDayChecklist(combined);
+  renderKpis(combined, sod);
+  renderLevels(combined);
 
-  const oiEl = document.getElementById("oi-summary");
-  const oiDisclaimerEl = document.getElementById("oi-disclaimer");
-  const oi = combined.NIFTY && combined.NIFTY.oi_metrics;
-  if (oi) {
-    oiEl.innerHTML = `
-      <div class="oi-item"><span class="lbl"><span class="oi-dot price"></span>NIFTY</span><span class="val">${oi.spot}</span></div>
-      <div class="oi-item"><span class="lbl"><span class="oi-dot resistance"></span>Resistance strike (max Call OI)</span><span class="val">${oi.resistance_strike}</span></div>
-      <div class="oi-item"><span class="lbl"><span class="oi-dot maxpain"></span>Max Pain</span><span class="val">${oi.max_pain}</span></div>
-      <div class="oi-item"><span class="lbl"><span class="oi-dot support"></span>Support strike (max Put OI)</span><span class="val">${oi.support_strike}</span></div>
-      <div class="oi-item"><span class="lbl"><span class="oi-dot pcr"></span>PCR</span><span class="val">${oi.pcr ?? "—"}</span></div>
-      <div class="oi-item"><span class="lbl">Suggests</span><span class="val oi-suggestion ${oi.pcr_suggestion}">${oi.pcr_suggestion}</span></div>
-    `;
-    oiDisclaimerEl.textContent = "PCR-based suggestion is a reference indicator only (simple contrarian PCR reading) — it plays no part in the live strategy's actual entry/exit logic, which is unchanged (5-condition Daily-CPR + EMA stack).";
-  } else {
-    oiEl.innerHTML = "";
-    oiDisclaimerEl.textContent = "";
-  }
-
-  root.innerHTML = INSTRUMENTS.map(inst => {
+  root.innerHTML = INSTRUMENTS.map((inst) => {
     const state = combined[inst.key];
-    if (!state) return `<div class="sym-heading">${inst.label}</div><div class="card"><span class="pos-empty">No data yet for ${inst.label}</span></div>`;
+    if (!state) return `<section class="panel"><div class="card"><span class="pos-empty">No data yet for ${inst.label}</span></div></section>`;
     return renderInstrument(inst, state);
   }).join("");
+
+  $("clock").textContent = "Updated " + new Date().toLocaleTimeString("en-IN") + " · refreshes every 30s";
 }
 
 refresh();
