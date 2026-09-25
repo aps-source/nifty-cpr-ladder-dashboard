@@ -1,8 +1,8 @@
 {
   "NIFTY": {
     "date": "2026-09-25",
-    "engine_status": "token_invalid",
-    "last_tick": "2026-09-25T16:25:25.576545",
+    "engine_status": "running",
+    "last_tick": "2026-09-25T16:33:57.240473",
     "last_processed_bar": "2026-09-25T15:29:00+05:30",
     "position": null,
     "trades_today": 2,
@@ -112,14 +112,18 @@
       "pcr_suggestion": "NEUTRAL"
     },
     "ip_status": {
-      "ok": false,
-      "error": "Dhan returned no IP data (HTTPSConnectionPool(host='api.dhan.co', port=443): Read time) -- static IP may not be set, or a temporary Dhan error"
+      "ok": true,
+      "detected_ip": "171.78.154.168",
+      "primary_ip": "171.78.154.168",
+      "secondary_ip": "122.169.46.151",
+      "match_status": "PRIMARY_MATCH",
+      "orders_allowed": true
     }
   },
   "SENSEX": {
     "date": "2026-09-25",
-    "engine_status": "data_error",
-    "last_tick": "2026-09-25T16:26:36.430185",
+    "engine_status": "token_invalid",
+    "last_tick": "2026-09-25T16:35:00.405181",
     "last_processed_bar": "2026-09-25T15:29:00+05:30",
     "position": null,
     "trades_today": 2,
@@ -163,7 +167,7 @@
     ],
     "bars_held": 0,
     "violation_streak": 0,
-    "last_error": "1-min fetch failed: HTTPSConnectionPool(host='api.dhan.co', port=443): Read timed out. (read timeout=60)",
+    "last_error": null,
     "checklist": {
       "ltp": 73895.74,
       "as_of": "2026-09-25T15:29:00+05:30",
@@ -229,8 +233,12 @@
       "pcr_suggestion": "PUT"
     },
     "ip_status": {
-      "ok": false,
-      "error": "Dhan returned no IP data (HTTPSConnectionPool(host='api.dhan.co', port=443): Read time) -- static IP may not be set, or a temporary Dhan error"
+      "ok": true,
+      "detected_ip": "171.78.154.168",
+      "primary_ip": "171.78.154.168",
+      "secondary_ip": "122.169.46.151",
+      "match_status": "PRIMARY_MATCH",
+      "orders_allowed": true
     }
   }
 }
