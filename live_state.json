@@ -1,8 +1,8 @@
 {
   "NIFTY": {
     "date": "2026-09-25",
-    "engine_status": "running",
-    "last_tick": "2026-09-25T15:18:54.880416",
+    "engine_status": "data_error",
+    "last_tick": "2026-09-25T15:27:10.666939",
     "last_processed_bar": "2026-09-25T15:18:00+05:30",
     "position": null,
     "trades_today": 2,
@@ -46,7 +46,7 @@
     ],
     "bars_held": 0,
     "violation_streak": 0,
-    "last_error": null,
+    "last_error": "1-min fetch failed: HTTPSConnectionPool(host='api.dhan.co', port=443): Read timed out. (read timeout=60)",
     "checklist": {
       "ltp": 23128.1,
       "as_of": "2026-09-25T15:18:00+05:30",
@@ -122,8 +122,8 @@
   },
   "SENSEX": {
     "date": "2026-09-25",
-    "engine_status": "running",
-    "last_tick": "2026-09-25T15:21:18.194256",
+    "engine_status": "data_error",
+    "last_tick": "2026-09-25T15:28:48.578181",
     "last_processed_bar": "2026-09-25T15:19:00+05:30",
     "position": null,
     "trades_today": 2,
@@ -167,7 +167,7 @@
     ],
     "bars_held": 0,
     "violation_streak": 0,
-    "last_error": null,
+    "last_error": "1-min fetch failed: HTTPSConnectionPool(host='api.dhan.co', port=443): Read timed out. (read timeout=60)",
     "checklist": {
       "ltp": 73881.44,
       "as_of": "2026-09-25T15:19:00+05:30",
