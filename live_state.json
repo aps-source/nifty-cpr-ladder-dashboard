@@ -1,8 +1,8 @@
 {
   "NIFTY": {
     "date": "2026-09-25",
-    "engine_status": "token_invalid",
-    "last_tick": "2026-09-25T15:46:45.226359",
+    "engine_status": "data_error",
+    "last_tick": "2026-09-25T15:50:11.254361",
     "last_processed_bar": "2026-09-25T15:29:00+05:30",
     "position": null,
     "trades_today": 2,
@@ -46,7 +46,7 @@
     ],
     "bars_held": 0,
     "violation_streak": 0,
-    "last_error": null,
+    "last_error": "1-min fetch failed: HTTPSConnectionPool(host='api.dhan.co', port=443): Read timed out. (read timeout=60)",
     "checklist": {
       "ltp": 23140.5,
       "as_of": "2026-09-25T15:29:00+05:30",
@@ -113,13 +113,13 @@
     },
     "ip_status": {
       "ok": false,
-      "error": "Dhan returned no IP data (HTTPSConnectionPool(host='api.dhan.co', port=443): Max retri) -- static IP may not be set, or a temporary Dhan error"
+      "error": "Dhan returned no IP data (HTTPSConnectionPool(host='api.dhan.co', port=443): Read time) -- static IP may not be set, or a temporary Dhan error"
     }
   },
   "SENSEX": {
     "date": "2026-09-25",
     "engine_status": "token_invalid",
-    "last_tick": "2026-09-25T15:46:45.251537",
+    "last_tick": "2026-09-25T15:51:49.199443",
     "last_processed_bar": "2026-09-25T15:29:00+05:30",
     "position": null,
     "trades_today": 2,
@@ -230,7 +230,7 @@
     },
     "ip_status": {
       "ok": false,
-      "error": "Dhan returned no IP data (HTTPSConnectionPool(host='api.dhan.co', port=443): Max retri) -- static IP may not be set, or a temporary Dhan error"
+      "error": "Dhan returned no IP data (HTTPSConnectionPool(host='api.dhan.co', port=443): Read time) -- static IP may not be set, or a temporary Dhan error"
     }
   }
 }
