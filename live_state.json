@@ -2,7 +2,7 @@
   "NIFTY": {
     "date": "2026-09-25",
     "engine_status": "token_invalid",
-    "last_tick": "2026-09-25T16:18:33.547736",
+    "last_tick": "2026-09-25T16:25:25.576545",
     "last_processed_bar": "2026-09-25T15:29:00+05:30",
     "position": null,
     "trades_today": 2,
@@ -118,8 +118,8 @@
   },
   "SENSEX": {
     "date": "2026-09-25",
-    "engine_status": "token_invalid",
-    "last_tick": "2026-09-25T16:20:36.186882",
+    "engine_status": "data_error",
+    "last_tick": "2026-09-25T16:26:36.430185",
     "last_processed_bar": "2026-09-25T15:29:00+05:30",
     "position": null,
     "trades_today": 2,
@@ -163,7 +163,7 @@
     ],
     "bars_held": 0,
     "violation_streak": 0,
-    "last_error": null,
+    "last_error": "1-min fetch failed: HTTPSConnectionPool(host='api.dhan.co', port=443): Read timed out. (read timeout=60)",
     "checklist": {
       "ltp": 73895.74,
       "as_of": "2026-09-25T15:29:00+05:30",
