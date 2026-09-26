@@ -2,7 +2,7 @@
   "NIFTY": {
     "date": "2026-09-26",
     "engine_status": "running",
-    "last_tick": "2026-09-26T12:30:02.359867",
+    "last_tick": "2026-09-26T12:31:51.097320",
     "last_processed_bar": "2026-09-25T15:29:00+05:30",
     "position": null,
     "trades_today": 0,
@@ -71,9 +71,9 @@
       "resistance_strike": 23550.0,
       "resistance_call_oi": 161728580,
       "support_strike": 22500.0,
-      "support_put_oi": 314174510,
+      "support_put_oi": 314179775,
       "max_pain": 23100.0,
-      "pcr": 1.151,
+      "pcr": 1.188,
       "pcr_suggestion": "CALL"
     },
     "ip_status": {
@@ -87,8 +87,8 @@
   },
   "SENSEX": {
     "date": "2026-09-26",
-    "engine_status": "data_error",
-    "last_tick": "2026-09-26T12:30:26.600243",
+    "engine_status": "running",
+    "last_tick": "2026-09-26T12:31:54.653765",
     "last_processed_bar": "2026-09-25T15:29:00+05:30",
     "position": null,
     "trades_today": 0,
@@ -97,7 +97,7 @@
     "today_trades": [],
     "bars_held": 0,
     "violation_streak": 0,
-    "last_error": "1-min fetch failed: ('Connection aborted.', ConnectionResetError(10054, 'An existing connection was forcibly closed by the remote host', None, 10054, None))",
+    "last_error": null,
     "checklist": {
       "ltp": 73895.74,
       "as_of": "2026-09-25T15:29:00+05:30",
@@ -153,13 +153,13 @@
     },
     "oi_metrics": {
       "expiry": "2026-10-01",
-      "spot": 73895.74,
+      "spot": 76390.42,
       "resistance_strike": 71400.0,
       "resistance_call_oi": 48868660,
       "support_strike": 69000.0,
-      "support_put_oi": 631060,
-      "max_pain": 71200.0,
-      "pcr": 0.03,
+      "support_put_oi": 2464740,
+      "max_pain": 69100.0,
+      "pcr": 0.114,
       "pcr_suggestion": "PUT"
     },
     "ip_status": {
