@@ -1,284 +1,39 @@
 {
   "NIFTY": {
-    "date": "2026-10-01",
+    "date": "2026-10-02",
     "engine_status": "token_invalid",
-    "last_tick": "2026-10-01T23:58:56.886677",
-    "last_processed_bar": "2026-10-01T15:29:00+05:30",
+    "last_tick": "2026-10-02T00:00:10.936097",
+    "last_processed_bar": null,
     "position": null,
-    "trades_today": 3,
-    "realized_pnl_today": -2759.250000000001,
+    "trades_today": 0,
+    "realized_pnl_today": 0.0,
     "daily_loss_cap_hit": false,
-    "today_trades": [
-      {
-        "side": "PUT",
-        "entry_time": "2026-10-01T09:21:00+05:30",
-        "entry_price": 121.65,
-        "spot_at_entry": 22538.35,
-        "strike": 22550.0,
-        "expiry": "2026-10-06",
-        "security_id": "40700",
-        "qty": 65,
-        "order_id": "32226100119208",
-        "backstop_order_id": "22226100127208",
-        "exit_time": "2026-10-01T09:33:00+05:30",
-        "exit_price": 105.55,
-        "exit_order_id": "22226100148408",
-        "reason": "signal_exit",
-        "pnl": -1046.5000000000005
-      },
-      {
-        "side": "PUT",
-        "entry_time": "2026-10-01T09:35:00+05:30",
-        "entry_price": 122.0,
-        "spot_at_entry": 22541.85,
-        "strike": 22550.0,
-        "expiry": "2026-10-06",
-        "security_id": "40700",
-        "qty": 65,
-        "order_id": "34226100116708",
-        "backstop_order_id": "32226100134708",
-        "exit_time": "2026-10-01T09:42:00+05:30",
-        "exit_price": 113.6,
-        "exit_order_id": "34226100116908",
-        "reason": "signal_exit",
-        "pnl": -546.0000000000003
-      },
-      {
-        "side": "PUT",
-        "entry_time": "2026-10-01T09:45:00+05:30",
-        "entry_price": 115.3,
-        "spot_at_entry": 22551.5,
-        "strike": 22550.0,
-        "expiry": "2026-10-06",
-        "security_id": "40700",
-        "qty": 65,
-        "order_id": "22226100161708",
-        "backstop_order_id": "23226100118508",
-        "exit_time": "2026-10-01T10:01:00+05:30",
-        "exit_price": 97.35,
-        "exit_order_id": "22226100176708",
-        "reason": "loss_cap",
-        "pnl": -1166.7500000000002
-      }
-    ],
+    "today_trades": [],
     "bars_held": 0,
     "violation_streak": 0,
     "last_error": null,
-    "checklist": {
-      "ltp": 22421.95,
-      "as_of": "2026-10-01T15:29:00+05:30",
-      "tc": 22702.28,
-      "bc": 22647.72,
-      "prev_high": 22809.35,
-      "prev_low": 22595.2,
-      "checks_call": [
-        [
-          "Price above Daily CPR (TC)",
-          false
-        ],
-        [
-          "15-min stack: price>5>26>50",
-          false
-        ],
-        [
-          "5-min stack: price>5>26>50",
-          false
-        ],
-        [
-          "3-min stack: price>5>26>50",
-          false
-        ],
-        [
-          "Price above prev-day High",
-          false
-        ]
-      ],
-      "checks_put": [
-        [
-          "Price below Daily CPR (BC)",
-          true
-        ],
-        [
-          "15-min stack: price<5<26<50",
-          false
-        ],
-        [
-          "5-min stack: price<5<26<50",
-          false
-        ],
-        [
-          "3-min stack: price<5<26<50",
-          false
-        ],
-        [
-          "Price below prev-day Low",
-          true
-        ]
-      ],
-      "ema5_5m": 22427.74
-    },
-    "oi_metrics": {
-      "expiry": "2026-10-06",
-      "spot": 22421.95,
-      "resistance_strike": 23000.0,
-      "resistance_call_oi": 14017445,
-      "support_strike": 22000.0,
-      "support_put_oi": 10766795,
-      "max_pain": 22550.0,
-      "pcr": 0.688,
-      "pcr_suggestion": "PUT"
-    },
+    "checklist": null,
+    "oi_metrics": null,
     "ip_status": {
       "ok": false,
       "error": "Dhan returned no IP data ({'error_code': 'DH-906', 'error_type': 'Order_Error', 'error) -- static IP may not be set, or a temporary Dhan error"
     }
   },
   "SENSEX": {
-    "date": "2026-10-01",
+    "date": "2026-10-02",
     "engine_status": "token_invalid",
-    "last_tick": "2026-10-01T23:58:56.921552",
-    "last_processed_bar": "2026-10-01T15:29:00+05:30",
+    "last_tick": "2026-10-02T00:00:10.967581",
+    "last_processed_bar": null,
     "position": null,
-    "trades_today": 4,
-    "realized_pnl_today": 87.0,
+    "trades_today": 0,
+    "realized_pnl_today": 0.0,
     "daily_loss_cap_hit": false,
-    "today_trades": [
-      {
-        "side": "PUT",
-        "entry_time": "2026-10-01T09:22:00+05:30",
-        "entry_price": 212.05,
-        "spot_at_entry": 72310.36,
-        "strike": 72300.0,
-        "expiry": "2026-10-01",
-        "security_id": "886620",
-        "qty": 20,
-        "order_id": "22926100137708",
-        "backstop_order_id": "23926100112308",
-        "exit_time": "2026-10-01T09:33:00+05:30",
-        "exit_price": 165.1,
-        "exit_order_id": "23926100112908",
-        "reason": "signal_exit",
-        "pnl": -939.0000000000003
-      },
-      {
-        "side": "PUT",
-        "entry_time": "2026-10-01T09:35:00+05:30",
-        "entry_price": 196.25,
-        "spot_at_entry": 72335.68,
-        "strike": 72300.0,
-        "expiry": "2026-10-01",
-        "security_id": "886620",
-        "qty": 20,
-        "order_id": "23926100113008",
-        "backstop_order_id": "32926100143408",
-        "exit_time": "2026-10-01T09:42:00+05:30",
-        "exit_price": 170.8,
-        "exit_order_id": "32926100149808",
-        "reason": "signal_exit",
-        "pnl": -508.9999999999998
-      },
-      {
-        "side": "PUT",
-        "entry_time": "2026-10-01T09:54:00+05:30",
-        "entry_price": 190.6,
-        "spot_at_entry": 72339.72,
-        "strike": 72300.0,
-        "expiry": "2026-10-01",
-        "security_id": "886620",
-        "qty": 20,
-        "order_id": "229261001107808",
-        "backstop_order_id": "32926100160308",
-        "exit_time": "2026-10-01T09:59:00+05:30",
-        "exit_price": 140.6,
-        "exit_order_id": "229261001118708",
-        "reason": "loss_cap",
-        "pnl": -1000.0
-      },
-      {
-        "side": "PUT",
-        "entry_time": "2026-10-01T13:02:00+05:30",
-        "entry_price": 152.8,
-        "spot_at_entry": 71735.93,
-        "strike": 71700.0,
-        "expiry": "2026-10-01",
-        "security_id": "887072",
-        "qty": 20,
-        "order_id": "229261001473808",
-        "backstop_order_id": "23926100122308",
-        "exit_time": "2026-10-01T14:11:00+05:30",
-        "exit_price": 279.55,
-        "exit_order_id": "34926100126308",
-        "reason": "signal_exit",
-        "pnl": 2535.0
-      }
-    ],
+    "today_trades": [],
     "bars_held": 0,
     "violation_streak": 0,
     "last_error": null,
-    "checklist": {
-      "ltp": 71909.7,
-      "as_of": "2026-10-01T15:29:00+05:30",
-      "tc": 72714.3,
-      "bc": 72558.29,
-      "prev_high": 73062.16,
-      "prev_low": 72366.44,
-      "checks_call": [
-        [
-          "Price above Daily CPR (TC)",
-          false
-        ],
-        [
-          "15-min stack: price>5>26>50",
-          false
-        ],
-        [
-          "5-min stack: price>5>26>50",
-          false
-        ],
-        [
-          "3-min stack: price>5>26>50",
-          false
-        ],
-        [
-          "Price above prev-day High",
-          false
-        ]
-      ],
-      "checks_put": [
-        [
-          "Price below Daily CPR (BC)",
-          true
-        ],
-        [
-          "15-min stack: price<5<26<50",
-          false
-        ],
-        [
-          "5-min stack: price<5<26<50",
-          false
-        ],
-        [
-          "3-min stack: price<5<26<50",
-          false
-        ],
-        [
-          "Price below prev-day Low",
-          true
-        ]
-      ],
-      "ema5_5m": 71944.71
-    },
-    "oi_metrics": {
-      "expiry": "2026-10-01",
-      "spot": 71909.7,
-      "resistance_strike": 72000.0,
-      "resistance_call_oi": 8101340,
-      "support_strike": 71900.0,
-      "support_put_oi": 6391520,
-      "max_pain": 71900.0,
-      "pcr": 0.723,
-      "pcr_suggestion": "PUT"
-    },
+    "checklist": null,
+    "oi_metrics": null,
     "ip_status": {
       "ok": false,
       "error": "Dhan returned no IP data ({'error_code': 'DH-906', 'error_type': 'Order_Error', 'error) -- static IP may not be set, or a temporary Dhan error"
