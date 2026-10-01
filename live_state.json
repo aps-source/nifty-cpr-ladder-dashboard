@@ -1,8 +1,8 @@
 {
   "NIFTY": {
     "date": "2026-10-01",
-    "engine_status": "running",
-    "last_tick": "2026-10-01T09:33:14.254702",
+    "engine_status": "token_invalid",
+    "last_tick": "2026-10-01T09:34:43.736531",
     "last_processed_bar": "2026-10-01T09:33:00+05:30",
     "position": null,
     "trades_today": 1,
@@ -95,18 +95,14 @@
       "pcr_suggestion": "PUT"
     },
     "ip_status": {
-      "ok": true,
-      "detected_ip": "171.78.154.168",
-      "primary_ip": "171.78.154.168",
-      "secondary_ip": "122.169.46.151",
-      "match_status": "PRIMARY_MATCH",
-      "orders_allowed": true
+      "ok": false,
+      "error": "Dhan returned no IP data (('Connection aborted.', ConnectionResetError(10054, 'An exis) -- static IP may not be set, or a temporary Dhan error"
     }
   },
   "SENSEX": {
     "date": "2026-10-01",
-    "engine_status": "running",
-    "last_tick": "2026-10-01T09:33:21.685922",
+    "engine_status": "token_invalid",
+    "last_tick": "2026-10-01T09:34:43.769791",
     "last_processed_bar": "2026-10-01T09:33:00+05:30",
     "position": null,
     "trades_today": 1,
@@ -199,12 +195,8 @@
       "pcr_suggestion": "NEUTRAL"
     },
     "ip_status": {
-      "ok": true,
-      "detected_ip": "171.78.154.168",
-      "primary_ip": "171.78.154.168",
-      "secondary_ip": "122.169.46.151",
-      "match_status": "PRIMARY_MATCH",
-      "orders_allowed": true
+      "ok": false,
+      "error": "Dhan returned no IP data (('Connection aborted.', ConnectionResetError(10054, 'An exis) -- static IP may not be set, or a temporary Dhan error"
     }
   }
 }
