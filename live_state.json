@@ -1,8 +1,8 @@
 {
   "NIFTY": {
     "date": "2026-10-01",
-    "engine_status": "running",
-    "last_tick": "2026-10-01T18:12:37.963591",
+    "engine_status": "token_invalid",
+    "last_tick": "2026-10-01T23:46:35.515810",
     "last_processed_bar": "2026-10-01T15:29:00+05:30",
     "position": null,
     "trades_today": 3,
@@ -129,18 +129,14 @@
       "pcr_suggestion": "PUT"
     },
     "ip_status": {
-      "ok": true,
-      "detected_ip": "171.78.154.168",
-      "primary_ip": "171.78.154.168",
-      "secondary_ip": "122.169.46.151",
-      "match_status": "PRIMARY_MATCH",
-      "orders_allowed": true
+      "ok": false,
+      "error": "Dhan returned no IP data ({'error_code': 'DH-906', 'error_type': 'Order_Error', 'error) -- static IP may not be set, or a temporary Dhan error"
     }
   },
   "SENSEX": {
     "date": "2026-10-01",
-    "engine_status": "running",
-    "last_tick": "2026-10-01T18:12:40.726515",
+    "engine_status": "token_invalid",
+    "last_tick": "2026-10-01T23:46:36.510797",
     "last_processed_bar": "2026-10-01T15:29:00+05:30",
     "position": null,
     "trades_today": 4,
@@ -284,12 +280,8 @@
       "pcr_suggestion": "PUT"
     },
     "ip_status": {
-      "ok": true,
-      "detected_ip": "171.78.154.168",
-      "primary_ip": "171.78.154.168",
-      "secondary_ip": "122.169.46.151",
-      "match_status": "PRIMARY_MATCH",
-      "orders_allowed": true
+      "ok": false,
+      "error": "Dhan returned no IP data ({'error_code': 'DH-906', 'error_type': 'Order_Error', 'error) -- static IP may not be set, or a temporary Dhan error"
     }
   }
 }
