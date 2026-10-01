@@ -2,7 +2,7 @@
   "NIFTY": {
     "date": "2026-10-01",
     "engine_status": "running",
-    "last_tick": "2026-10-01T15:31:14.836652",
+    "last_tick": "2026-10-01T15:32:33.940441",
     "last_processed_bar": "2026-10-01T15:29:00+05:30",
     "position": null,
     "trades_today": 3,
@@ -121,22 +121,26 @@
       "expiry": "2026-10-06",
       "spot": 22421.95,
       "resistance_strike": 23000.0,
-      "resistance_call_oi": 13108745,
+      "resistance_call_oi": 13151645,
       "support_strike": 22000.0,
-      "support_put_oi": 10341695,
+      "support_put_oi": 10380435,
       "max_pain": 22550.0,
-      "pcr": 0.687,
+      "pcr": 0.686,
       "pcr_suggestion": "PUT"
     },
     "ip_status": {
-      "ok": false,
-      "error": "Dhan returned no IP data (HTTPSConnectionPool(host='api.dhan.co', port=443): Max retri) -- static IP may not be set, or a temporary Dhan error"
+      "ok": true,
+      "detected_ip": "171.78.154.168",
+      "primary_ip": "171.78.154.168",
+      "secondary_ip": "122.169.46.151",
+      "match_status": "PRIMARY_MATCH",
+      "orders_allowed": true
     }
   },
   "SENSEX": {
     "date": "2026-10-01",
     "engine_status": "running",
-    "last_tick": "2026-10-01T15:31:18.503561",
+    "last_tick": "2026-10-01T15:32:36.839073",
     "last_processed_bar": "2026-10-01T15:29:00+05:30",
     "position": null,
     "trades_today": 4,
@@ -272,16 +276,20 @@
       "expiry": "2026-10-01",
       "spot": 71909.7,
       "resistance_strike": 72000.0,
-      "resistance_call_oi": 10148700,
-      "support_strike": 71800.0,
-      "support_put_oi": 4762660,
+      "resistance_call_oi": 9418640,
+      "support_strike": 71900.0,
+      "support_put_oi": 7446620,
       "max_pain": 71900.0,
-      "pcr": 0.683,
+      "pcr": 0.708,
       "pcr_suggestion": "PUT"
     },
     "ip_status": {
-      "ok": false,
-      "error": "Dhan returned no IP data (HTTPSConnectionPool(host='api.dhan.co', port=443): Max retri) -- static IP may not be set, or a temporary Dhan error"
+      "ok": true,
+      "detected_ip": "171.78.154.168",
+      "primary_ip": "171.78.154.168",
+      "secondary_ip": "122.169.46.151",
+      "match_status": "PRIMARY_MATCH",
+      "orders_allowed": true
     }
   }
 }
