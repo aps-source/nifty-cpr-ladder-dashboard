@@ -2,8 +2,8 @@
   "NIFTY": {
     "date": "2026-10-01",
     "engine_status": "running",
-    "last_tick": "2026-10-01T12:52:57.741146",
-    "last_processed_bar": "2026-10-01T12:52:00+05:30",
+    "last_tick": "2026-10-01T12:54:12.012779",
+    "last_processed_bar": "2026-10-01T12:54:00+05:30",
     "position": null,
     "trades_today": 3,
     "realized_pnl_today": -2759.250000000001,
@@ -65,8 +65,8 @@
     "violation_streak": 0,
     "last_error": null,
     "checklist": {
-      "ltp": 22361.45,
-      "as_of": "2026-10-01T12:52:00+05:30",
+      "ltp": 22352.9,
+      "as_of": "2026-10-01T12:54:00+05:30",
       "tc": 22702.28,
       "bc": 22647.72,
       "prev_high": 22809.35,
@@ -115,29 +115,33 @@
           true
         ]
       ],
-      "ema5_5m": 22420.23
+      "ema5_5m": 22417.38
     },
     "oi_metrics": {
       "expiry": "2026-10-06",
-      "spot": 22361.2,
+      "spot": 22353.3,
       "resistance_strike": 23000.0,
-      "resistance_call_oi": 13225095,
+      "resistance_call_oi": 13170365,
       "support_strike": 22000.0,
-      "support_put_oi": 8789495,
+      "support_put_oi": 9071790,
       "max_pain": 22550.0,
-      "pcr": 0.544,
+      "pcr": 0.545,
       "pcr_suggestion": "PUT"
     },
     "ip_status": {
-      "ok": false,
-      "error": "Dhan returned no IP data (HTTPSConnectionPool(host='api.dhan.co', port=443): Max retri) -- static IP may not be set, or a temporary Dhan error"
+      "ok": true,
+      "detected_ip": "171.78.154.168",
+      "primary_ip": "171.78.154.168",
+      "secondary_ip": "122.169.46.151",
+      "match_status": "PRIMARY_MATCH",
+      "orders_allowed": true
     }
   },
   "SENSEX": {
     "date": "2026-10-01",
     "engine_status": "running",
-    "last_tick": "2026-10-01T12:53:02.381795",
-    "last_processed_bar": "2026-10-01T12:53:00+05:30",
+    "last_tick": "2026-10-01T12:54:14.955996",
+    "last_processed_bar": "2026-10-01T12:54:00+05:30",
     "position": null,
     "trades_today": 3,
     "realized_pnl_today": -2448.0,
@@ -199,8 +203,8 @@
     "violation_streak": 0,
     "last_error": null,
     "checklist": {
-      "ltp": 71717.2,
-      "as_of": "2026-10-01T12:53:00+05:30",
+      "ltp": 71689.14,
+      "as_of": "2026-10-01T12:54:00+05:30",
       "tc": 72714.3,
       "bc": 72558.29,
       "prev_high": 73062.16,
@@ -249,11 +253,11 @@
           true
         ]
       ],
-      "ema5_5m": 71911.26
+      "ema5_5m": 71901.9
     },
     "oi_metrics": {
       "expiry": "2026-10-01",
-      "spot": 71718.39,
+      "spot": 71690.59,
       "resistance_strike": 72500.0,
       "resistance_call_oi": 8493280,
       "support_strike": 71000.0,
@@ -263,8 +267,12 @@
       "pcr_suggestion": "PUT"
     },
     "ip_status": {
-      "ok": false,
-      "error": "Dhan returned no IP data (HTTPSConnectionPool(host='api.dhan.co', port=443): Max retri) -- static IP may not be set, or a temporary Dhan error"
+      "ok": true,
+      "detected_ip": "171.78.154.168",
+      "primary_ip": "171.78.154.168",
+      "secondary_ip": "122.169.46.151",
+      "match_status": "PRIMARY_MATCH",
+      "orders_allowed": true
     }
   }
 }
