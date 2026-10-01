@@ -2,7 +2,7 @@
   "NIFTY": {
     "date": "2026-10-01",
     "engine_status": "token_invalid",
-    "last_tick": "2026-10-01T00:30:42.295582",
+    "last_tick": "2026-10-01T09:12:22.293101",
     "last_processed_bar": "2026-09-30T15:29:00+05:30",
     "position": null,
     "trades_today": 0,
@@ -78,13 +78,13 @@
     },
     "ip_status": {
       "ok": false,
-      "error": "Dhan returned no IP data (HTTPSConnectionPool(host='api.dhan.co', port=443): Max retri) -- static IP may not be set, or a temporary Dhan error"
+      "error": "Dhan returned no IP data ({'error_code': 'DH-901', 'error_type': 'Invalid_Authenticati) -- static IP may not be set, or a temporary Dhan error"
     }
   },
   "SENSEX": {
     "date": "2026-10-01",
     "engine_status": "token_invalid",
-    "last_tick": "2026-10-01T00:30:42.309235",
+    "last_tick": "2026-10-01T09:12:22.907494",
     "last_processed_bar": "2026-09-30T15:29:00+05:30",
     "position": null,
     "trades_today": 0,
@@ -160,7 +160,7 @@
     },
     "ip_status": {
       "ok": false,
-      "error": "Dhan returned no IP data (HTTPSConnectionPool(host='api.dhan.co', port=443): Max retri) -- static IP may not be set, or a temporary Dhan error"
+      "error": "Dhan returned no IP data ({'error_code': 'DH-901', 'error_type': 'Invalid_Authenticati) -- static IP may not be set, or a temporary Dhan error"
     }
   }
 }
