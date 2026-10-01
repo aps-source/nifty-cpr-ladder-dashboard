@@ -72,6 +72,23 @@
           "date": "2026-10-01"
         },
         {
+          "symbol": "NIFTY 50",
+          "entry_time": "2026-10-01T09:45:00+05:30",
+          "exit_time": "2026-10-01T10:01:00+05:30",
+          "side": "PUT",
+          "strike": 22550.0,
+          "expiry": "2026-10-06",
+          "entry_price": 115.3,
+          "exit_price": 97.35,
+          "qty": 65,
+          "pnl": -1166.7500000000002,
+          "reason": "loss_cap",
+          "entry_order_id": 22226100161708,
+          "exit_order_id": 22226100176708,
+          "pnl_confirmed": true,
+          "date": "2026-10-01"
+        },
+        {
           "symbol": "SENSEX",
           "entry_time": "2026-10-01T09:54:00+05:30",
           "exit_time": "2026-10-01T09:59:00+05:30",
@@ -89,8 +106,8 @@
           "date": "2026-10-01"
         }
       ],
-      "day_pnl": -4040.5,
-      "day_trades": 5,
+      "day_pnl": -5207.25,
+      "day_trades": 6,
       "day_wins": 0
     },
     {
@@ -940,6 +957,6 @@
       "day_wins": 4
     }
   ],
-  "overall_pnl": 5670.5,
-  "overall_trades": 51
+  "overall_pnl": 4503.75,
+  "overall_trades": 52
 }
