@@ -2,10 +2,21 @@
   "NIFTY": {
     "date": "2026-10-01",
     "engine_status": "running",
-    "last_tick": "2026-10-01T09:20:45.567397",
-    "last_processed_bar": "2026-10-01T09:20:00+05:30",
-    "position": null,
-    "trades_today": 0,
+    "last_tick": "2026-10-01T09:21:58.164984",
+    "last_processed_bar": "2026-10-01T09:21:00+05:30",
+    "position": {
+      "side": "PUT",
+      "entry_time": "2026-10-01T09:21:00+05:30",
+      "entry_price": 121.65,
+      "spot_at_entry": 22538.35,
+      "strike": 22550.0,
+      "expiry": "2026-10-06",
+      "security_id": "40700",
+      "qty": 65,
+      "order_id": "32226100119208",
+      "backstop_order_id": "22226100127208"
+    },
+    "trades_today": 1,
     "realized_pnl_today": 0.0,
     "daily_loss_cap_hit": false,
     "today_trades": [],
@@ -13,8 +24,8 @@
     "violation_streak": 0,
     "last_error": null,
     "checklist": {
-      "ltp": 22547.35,
-      "as_of": "2026-10-01T09:20:00+05:30",
+      "ltp": 22539.1,
+      "as_of": "2026-10-01T09:21:00+05:30",
       "tc": 22702.28,
       "bc": 22647.72,
       "prev_high": 22809.35,
@@ -63,17 +74,17 @@
           true
         ]
       ],
-      "ema5_5m": 22582.42
+      "ema5_5m": 22579.67
     },
     "oi_metrics": {
       "expiry": "2026-10-06",
-      "spot": 22547.1,
+      "spot": 22538.75,
       "resistance_strike": 23000.0,
-      "resistance_call_oi": 12032995,
+      "resistance_call_oi": 12064390,
       "support_strike": 22500.0,
-      "support_put_oi": 8588450,
+      "support_put_oi": 8875555,
       "max_pain": 22700.0,
-      "pcr": 0.667,
+      "pcr": 0.664,
       "pcr_suggestion": "PUT"
     },
     "ip_status": {
@@ -88,10 +99,21 @@
   "SENSEX": {
     "date": "2026-10-01",
     "engine_status": "running",
-    "last_tick": "2026-10-01T09:20:48.997004",
-    "last_processed_bar": "2026-10-01T09:20:00+05:30",
-    "position": null,
-    "trades_today": 0,
+    "last_tick": "2026-10-01T09:22:11.728442",
+    "last_processed_bar": "2026-10-01T09:22:00+05:30",
+    "position": {
+      "side": "PUT",
+      "entry_time": "2026-10-01T09:22:00+05:30",
+      "entry_price": 212.05,
+      "spot_at_entry": 72310.36,
+      "strike": 72300.0,
+      "expiry": "2026-10-01",
+      "security_id": "886620",
+      "qty": 20,
+      "order_id": "22926100137708",
+      "backstop_order_id": "23926100112308"
+    },
+    "trades_today": 1,
     "realized_pnl_today": 0.0,
     "daily_loss_cap_hit": false,
     "today_trades": [],
@@ -99,8 +121,8 @@
     "violation_streak": 0,
     "last_error": null,
     "checklist": {
-      "ltp": 72334.77,
-      "as_of": "2026-10-01T09:20:00+05:30",
+      "ltp": 72316.44,
+      "as_of": "2026-10-01T09:22:00+05:30",
       "tc": 72714.3,
       "bc": 72558.29,
       "prev_high": 73062.16,
@@ -149,15 +171,15 @@
           true
         ]
       ],
-      "ema5_5m": 72398.0
+      "ema5_5m": 72391.89
     },
     "oi_metrics": {
       "expiry": "2026-10-01",
-      "spot": 72329.29,
+      "spot": 72305.14,
       "resistance_strike": 73000.0,
-      "resistance_call_oi": 3690320,
+      "resistance_call_oi": 4355000,
       "support_strike": 72000.0,
-      "support_put_oi": 4431420,
+      "support_put_oi": 5103940,
       "max_pain": 72500.0,
       "pcr": 0.903,
       "pcr_suggestion": "NEUTRAL"
