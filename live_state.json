@@ -2,7 +2,7 @@
   "NIFTY": {
     "date": "2026-10-06",
     "engine_status": "running",
-    "last_tick": "2026-10-06T08:21:27.937943",
+    "last_tick": "2026-10-06T08:22:44.574564",
     "last_processed_bar": "2026-10-05T15:29:00+05:30",
     "position": null,
     "trades_today": 0,
@@ -65,7 +65,17 @@
       ],
       "ema5_5m": 22534.34
     },
-    "oi_metrics": null,
+    "oi_metrics": {
+      "expiry": "2026-10-06",
+      "spot": 22555.75,
+      "resistance_strike": 23000.0,
+      "resistance_call_oi": 14955265,
+      "support_strike": 21500.0,
+      "support_put_oi": 14757405,
+      "max_pain": 22550.0,
+      "pcr": 0.907,
+      "pcr_suggestion": "NEUTRAL"
+    },
     "ip_status": {
       "ok": true,
       "detected_ip": "171.78.154.168",
@@ -77,9 +87,9 @@
   },
   "SENSEX": {
     "date": "2026-10-06",
-    "engine_status": "data_error",
-    "last_tick": "2026-10-06T08:21:30.898321",
-    "last_processed_bar": null,
+    "engine_status": "running",
+    "last_tick": "2026-10-06T08:22:50.069702",
+    "last_processed_bar": "2026-10-05T15:29:00+05:30",
     "position": null,
     "trades_today": 0,
     "realized_pnl_today": 0.0,
@@ -87,8 +97,60 @@
     "today_trades": [],
     "bars_held": 0,
     "violation_streak": 0,
-    "last_error": "1-min fetch failed: {'error_code': 'DH-906', 'error_type': 'Order_Error', 'error_message': 'Invalid Token'}",
-    "checklist": null,
+    "last_error": null,
+    "checklist": {
+      "ltp": 72312.23,
+      "as_of": "2026-10-05T15:29:00+05:30",
+      "tc": 71931.58,
+      "bc": 71916.99,
+      "prev_high": 72570.29,
+      "prev_low": 71292.88,
+      "checks_call": [
+        [
+          "Price above Daily CPR (TC)",
+          true
+        ],
+        [
+          "15-min stack: price>5>26>50",
+          false
+        ],
+        [
+          "5-min stack: price>5>26>50",
+          true
+        ],
+        [
+          "3-min stack: price>5>26>50",
+          true
+        ],
+        [
+          "Price above prev-day High",
+          false
+        ]
+      ],
+      "checks_put": [
+        [
+          "Price below Daily CPR (BC)",
+          false
+        ],
+        [
+          "15-min stack: price<5<26<50",
+          false
+        ],
+        [
+          "5-min stack: price<5<26<50",
+          false
+        ],
+        [
+          "3-min stack: price<5<26<50",
+          false
+        ],
+        [
+          "Price below prev-day Low",
+          false
+        ]
+      ],
+      "ema5_5m": 72302.82
+    },
     "oi_metrics": null,
     "ip_status": {
       "ok": true,
