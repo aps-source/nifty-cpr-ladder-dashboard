@@ -1,9 +1,9 @@
 {
   "NIFTY": {
     "date": "2026-10-06",
-    "engine_status": "token_invalid",
-    "last_tick": "2026-10-06T08:19:59.786930",
-    "last_processed_bar": null,
+    "engine_status": "running",
+    "last_tick": "2026-10-06T08:21:27.937943",
+    "last_processed_bar": "2026-10-05T15:29:00+05:30",
     "position": null,
     "trades_today": 0,
     "realized_pnl_today": 0.0,
@@ -12,7 +12,59 @@
     "bars_held": 0,
     "violation_streak": 0,
     "last_error": null,
-    "checklist": null,
+    "checklist": {
+      "ltp": 22535.45,
+      "as_of": "2026-10-05T15:29:00+05:30",
+      "tc": 22418.97,
+      "bc": 22413.0,
+      "prev_high": 22608.7,
+      "prev_low": 22217.3,
+      "checks_call": [
+        [
+          "Price above Daily CPR (TC)",
+          true
+        ],
+        [
+          "15-min stack: price>5>26>50",
+          false
+        ],
+        [
+          "5-min stack: price>5>26>50",
+          true
+        ],
+        [
+          "3-min stack: price>5>26>50",
+          true
+        ],
+        [
+          "Price above prev-day High",
+          false
+        ]
+      ],
+      "checks_put": [
+        [
+          "Price below Daily CPR (BC)",
+          false
+        ],
+        [
+          "15-min stack: price<5<26<50",
+          false
+        ],
+        [
+          "5-min stack: price<5<26<50",
+          false
+        ],
+        [
+          "3-min stack: price<5<26<50",
+          false
+        ],
+        [
+          "Price below prev-day Low",
+          false
+        ]
+      ],
+      "ema5_5m": 22534.34
+    },
     "oi_metrics": null,
     "ip_status": {
       "ok": true,
@@ -25,8 +77,8 @@
   },
   "SENSEX": {
     "date": "2026-10-06",
-    "engine_status": "token_invalid",
-    "last_tick": "2026-10-06T08:20:01.019026",
+    "engine_status": "data_error",
+    "last_tick": "2026-10-06T08:21:30.898321",
     "last_processed_bar": null,
     "position": null,
     "trades_today": 0,
@@ -35,7 +87,7 @@
     "today_trades": [],
     "bars_held": 0,
     "violation_streak": 0,
-    "last_error": null,
+    "last_error": "1-min fetch failed: {'error_code': 'DH-906', 'error_type': 'Order_Error', 'error_message': 'Invalid Token'}",
     "checklist": null,
     "oi_metrics": null,
     "ip_status": {
