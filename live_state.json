@@ -1,9 +1,9 @@
 {
   "NIFTY": {
-    "date": "2026-10-05",
-    "engine_status": "running",
-    "last_tick": "2026-10-05T23:56:43.540808",
-    "last_processed_bar": "2026-10-05T15:29:00+05:30",
+    "date": "2026-10-06",
+    "engine_status": "token_invalid",
+    "last_tick": "2026-10-06T08:19:59.786930",
+    "last_processed_bar": null,
     "position": null,
     "trades_today": 0,
     "realized_pnl_today": 0.0,
@@ -12,70 +12,8 @@
     "bars_held": 0,
     "violation_streak": 0,
     "last_error": null,
-    "checklist": {
-      "ltp": 22535.45,
-      "as_of": "2026-10-05T15:29:00+05:30",
-      "tc": 22418.97,
-      "bc": 22413.0,
-      "prev_high": 22608.7,
-      "prev_low": 22217.3,
-      "checks_call": [
-        [
-          "Price above Daily CPR (TC)",
-          true
-        ],
-        [
-          "15-min stack: price>5>26>50",
-          false
-        ],
-        [
-          "5-min stack: price>5>26>50",
-          true
-        ],
-        [
-          "3-min stack: price>5>26>50",
-          true
-        ],
-        [
-          "Price above prev-day High",
-          false
-        ]
-      ],
-      "checks_put": [
-        [
-          "Price below Daily CPR (BC)",
-          false
-        ],
-        [
-          "15-min stack: price<5<26<50",
-          false
-        ],
-        [
-          "5-min stack: price<5<26<50",
-          false
-        ],
-        [
-          "3-min stack: price<5<26<50",
-          false
-        ],
-        [
-          "Price below prev-day Low",
-          false
-        ]
-      ],
-      "ema5_5m": 22534.34
-    },
-    "oi_metrics": {
-      "expiry": "2026-10-06",
-      "spot": 22555.75,
-      "resistance_strike": 23000.0,
-      "resistance_call_oi": 14955265,
-      "support_strike": 21500.0,
-      "support_put_oi": 14757405,
-      "max_pain": 22550.0,
-      "pcr": 0.907,
-      "pcr_suggestion": "NEUTRAL"
-    },
+    "checklist": null,
+    "oi_metrics": null,
     "ip_status": {
       "ok": true,
       "detected_ip": "171.78.154.168",
@@ -86,10 +24,10 @@
     }
   },
   "SENSEX": {
-    "date": "2026-10-05",
-    "engine_status": "running",
-    "last_tick": "2026-10-05T23:56:48.599872",
-    "last_processed_bar": "2026-10-05T15:29:00+05:30",
+    "date": "2026-10-06",
+    "engine_status": "token_invalid",
+    "last_tick": "2026-10-06T08:20:01.019026",
+    "last_processed_bar": null,
     "position": null,
     "trades_today": 0,
     "realized_pnl_today": 0.0,
@@ -98,70 +36,8 @@
     "bars_held": 0,
     "violation_streak": 0,
     "last_error": null,
-    "checklist": {
-      "ltp": 72312.23,
-      "as_of": "2026-10-05T15:29:00+05:30",
-      "tc": 71931.58,
-      "bc": 71916.99,
-      "prev_high": 72570.29,
-      "prev_low": 71292.88,
-      "checks_call": [
-        [
-          "Price above Daily CPR (TC)",
-          true
-        ],
-        [
-          "15-min stack: price>5>26>50",
-          false
-        ],
-        [
-          "5-min stack: price>5>26>50",
-          true
-        ],
-        [
-          "3-min stack: price>5>26>50",
-          true
-        ],
-        [
-          "Price above prev-day High",
-          false
-        ]
-      ],
-      "checks_put": [
-        [
-          "Price below Daily CPR (BC)",
-          false
-        ],
-        [
-          "15-min stack: price<5<26<50",
-          false
-        ],
-        [
-          "5-min stack: price<5<26<50",
-          false
-        ],
-        [
-          "3-min stack: price<5<26<50",
-          false
-        ],
-        [
-          "Price below prev-day Low",
-          false
-        ]
-      ],
-      "ema5_5m": 72302.82
-    },
-    "oi_metrics": {
-      "expiry": "2026-10-08",
-      "spot": 72382.47,
-      "resistance_strike": 74000.0,
-      "resistance_call_oi": 972020,
-      "support_strike": 70000.0,
-      "support_put_oi": 869900,
-      "max_pain": 72400.0,
-      "pcr": 1.111,
-      "pcr_suggestion": "CALL"
-    },
+    "checklist": null,
+    "oi_metrics": null,
     "ip_status": {
       "ok": true,
       "detected_ip": "171.78.154.168",
