@@ -2,8 +2,8 @@
   "NIFTY": {
     "date": "2026-10-06",
     "engine_status": "running",
-    "last_tick": "2026-10-06T09:30:19.695367",
-    "last_processed_bar": "2026-10-06T09:30:00+05:30",
+    "last_tick": "2026-10-06T09:31:31.493611",
+    "last_processed_bar": "2026-10-06T09:31:00+05:30",
     "position": null,
     "trades_today": 0,
     "realized_pnl_today": 0.0,
@@ -13,8 +13,8 @@
     "violation_streak": 0,
     "last_error": null,
     "checklist": {
-      "ltp": 22603.1,
-      "as_of": "2026-10-06T09:30:00+05:30",
+      "ltp": 22600.2,
+      "as_of": "2026-10-06T09:31:00+05:30",
       "tc": 22527.31,
       "bc": 22511.03,
       "prev_high": 22621.8,
@@ -63,17 +63,17 @@
           false
         ]
       ],
-      "ema5_5m": 22584.11
+      "ema5_5m": 22583.15
     },
     "oi_metrics": {
       "expiry": "2026-10-06",
-      "spot": 22604.85,
+      "spot": 22598.7,
       "resistance_strike": 22600.0,
-      "resistance_call_oi": 25925770,
+      "resistance_call_oi": 26663455,
       "support_strike": 22500.0,
-      "support_put_oi": 24432200,
+      "support_put_oi": 24850085,
       "max_pain": 22600.0,
-      "pcr": 1.012,
+      "pcr": 1.006,
       "pcr_suggestion": "NEUTRAL"
     },
     "ip_status": {
@@ -87,8 +87,8 @@
   },
   "SENSEX": {
     "date": "2026-10-06",
-    "engine_status": "running",
-    "last_tick": "2026-10-06T09:30:22.872163",
+    "engine_status": "data_error",
+    "last_tick": "2026-10-06T09:31:33.128106",
     "last_processed_bar": "2026-10-06T09:30:00+05:30",
     "position": null,
     "trades_today": 0,
@@ -97,7 +97,7 @@
     "today_trades": [],
     "bars_held": 0,
     "violation_streak": 0,
-    "last_error": null,
+    "last_error": "1-min fetch failed: {'error_code': 'DH-904', 'error_type': 'Rate_Limit', 'error_message': 'Too many requests on server from single user breaching rate limits. Try throttling API calls.'}",
     "checklist": {
       "ltp": 72535.41,
       "as_of": "2026-10-06T09:30:00+05:30",
