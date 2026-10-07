@@ -1,9 +1,9 @@
 {
   "NIFTY": {
-    "date": "2026-10-06",
-    "engine_status": "running",
-    "last_tick": "2026-10-06T16:31:50.713827",
-    "last_processed_bar": "2026-10-06T15:29:00+05:30",
+    "date": "2026-10-07",
+    "engine_status": "token_invalid",
+    "last_tick": "2026-10-07T08:37:43.108791",
+    "last_processed_bar": null,
     "position": null,
     "trades_today": 0,
     "realized_pnl_today": 0.0,
@@ -12,84 +12,18 @@
     "bars_held": 0,
     "violation_streak": 0,
     "last_error": null,
-    "checklist": {
-      "ltp": 22717.7,
-      "as_of": "2026-10-06T15:29:00+05:30",
-      "tc": 22527.31,
-      "bc": 22511.03,
-      "prev_high": 22621.8,
-      "prev_low": 22400.25,
-      "checks_call": [
-        [
-          "Price above Daily CPR (TC)",
-          true
-        ],
-        [
-          "15-min stack: price>5>26>50",
-          true
-        ],
-        [
-          "5-min stack: price>5>26>50",
-          true
-        ],
-        [
-          "3-min stack: price>5>26>50",
-          true
-        ],
-        [
-          "Price above prev-day High",
-          true
-        ]
-      ],
-      "checks_put": [
-        [
-          "Price below Daily CPR (BC)",
-          false
-        ],
-        [
-          "15-min stack: price<5<26<50",
-          false
-        ],
-        [
-          "5-min stack: price<5<26<50",
-          false
-        ],
-        [
-          "3-min stack: price<5<26<50",
-          false
-        ],
-        [
-          "Price below prev-day Low",
-          false
-        ]
-      ],
-      "ema5_5m": 22715.22
-    },
-    "oi_metrics": {
-      "expiry": "2026-10-06",
-      "spot": 22776.1,
-      "resistance_strike": 22800.0,
-      "resistance_call_oi": 22079330,
-      "support_strike": 22700.0,
-      "support_put_oi": 26465660,
-      "max_pain": 22750.0,
-      "pcr": 1.423,
-      "pcr_suggestion": "CALL"
-    },
+    "checklist": null,
+    "oi_metrics": null,
     "ip_status": {
-      "ok": true,
-      "detected_ip": "171.78.154.168",
-      "primary_ip": "171.78.154.168",
-      "secondary_ip": "122.169.46.151",
-      "match_status": "PRIMARY_MATCH",
-      "orders_allowed": true
+      "ok": false,
+      "error": "Dhan returned no IP data ({'error_code': 'DH-901', 'error_type': 'Invalid_Authenticati) -- static IP may not be set, or a temporary Dhan error"
     }
   },
   "SENSEX": {
-    "date": "2026-10-06",
-    "engine_status": "running",
-    "last_tick": "2026-10-06T16:31:57.079599",
-    "last_processed_bar": "2026-10-06T15:29:00+05:30",
+    "date": "2026-10-07",
+    "engine_status": "token_invalid",
+    "last_tick": "2026-10-07T08:37:44.083964",
+    "last_processed_bar": null,
     "position": null,
     "trades_today": 0,
     "realized_pnl_today": 0.0,
@@ -98,77 +32,11 @@
     "bars_held": 0,
     "violation_streak": 0,
     "last_error": null,
-    "checklist": {
-      "ltp": 73067.81,
-      "as_of": "2026-10-06T15:29:00+05:30",
-      "tc": 72287.78,
-      "bc": 72238.88,
-      "prev_high": 72631.93,
-      "prev_low": 71845.83,
-      "checks_call": [
-        [
-          "Price above Daily CPR (TC)",
-          true
-        ],
-        [
-          "15-min stack: price>5>26>50",
-          true
-        ],
-        [
-          "5-min stack: price>5>26>50",
-          true
-        ],
-        [
-          "3-min stack: price>5>26>50",
-          true
-        ],
-        [
-          "Price above prev-day High",
-          true
-        ]
-      ],
-      "checks_put": [
-        [
-          "Price below Daily CPR (BC)",
-          false
-        ],
-        [
-          "15-min stack: price<5<26<50",
-          false
-        ],
-        [
-          "5-min stack: price<5<26<50",
-          false
-        ],
-        [
-          "3-min stack: price<5<26<50",
-          false
-        ],
-        [
-          "Price below prev-day Low",
-          false
-        ]
-      ],
-      "ema5_5m": 72973.2
-    },
-    "oi_metrics": {
-      "expiry": "2026-10-08",
-      "spot": 73067.81,
-      "resistance_strike": 74000.0,
-      "resistance_call_oi": 1313080,
-      "support_strike": 70000.0,
-      "support_put_oi": 2133380,
-      "max_pain": 72900.0,
-      "pcr": 1.556,
-      "pcr_suggestion": "CALL"
-    },
+    "checklist": null,
+    "oi_metrics": null,
     "ip_status": {
-      "ok": true,
-      "detected_ip": "171.78.154.168",
-      "primary_ip": "171.78.154.168",
-      "secondary_ip": "122.169.46.151",
-      "match_status": "PRIMARY_MATCH",
-      "orders_allowed": true
+      "ok": false,
+      "error": "Dhan returned no IP data ({'error_code': 'DH-901', 'error_type': 'Invalid_Authenticati) -- static IP may not be set, or a temporary Dhan error"
     }
   }
 }
