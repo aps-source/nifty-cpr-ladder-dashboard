@@ -2,8 +2,8 @@
   "NIFTY": {
     "date": "2026-10-08",
     "engine_status": "running",
-    "last_tick": "2026-10-08T09:25:27.193087",
-    "last_processed_bar": "2026-10-08T09:25:00+05:30",
+    "last_tick": "2026-10-08T09:26:47.535386",
+    "last_processed_bar": "2026-10-08T09:26:00+05:30",
     "position": null,
     "trades_today": 0,
     "realized_pnl_today": 0.0,
@@ -13,8 +13,8 @@
     "violation_streak": 0,
     "last_error": null,
     "checklist": {
-      "ltp": 22510.5,
-      "as_of": "2026-10-08T09:25:00+05:30",
+      "ltp": 22488.15,
+      "as_of": "2026-10-08T09:26:00+05:30",
       "tc": 22630.85,
       "bc": 22612.32,
       "prev_high": 22715.4,
@@ -63,9 +63,19 @@
           true
         ]
       ],
-      "ema5_5m": 22542.8
+      "ema5_5m": 22535.35
     },
-    "oi_metrics": null,
+    "oi_metrics": {
+      "expiry": "2026-10-13",
+      "spot": 22488.85,
+      "resistance_strike": 23000.0,
+      "resistance_call_oi": 9897355,
+      "support_strike": 22000.0,
+      "support_put_oi": 7446270,
+      "max_pain": 22600.0,
+      "pcr": 0.869,
+      "pcr_suggestion": "PUT"
+    },
     "ip_status": {
       "ok": true,
       "detected_ip": "171.78.154.168",
@@ -78,8 +88,8 @@
   "SENSEX": {
     "date": "2026-10-08",
     "engine_status": "running",
-    "last_tick": "2026-10-08T09:25:33.819662",
-    "last_processed_bar": "2026-10-08T09:25:00+05:30",
+    "last_tick": "2026-10-08T09:26:51.066394",
+    "last_processed_bar": "2026-10-08T09:26:00+05:30",
     "position": null,
     "trades_today": 0,
     "realized_pnl_today": 0.0,
@@ -89,8 +99,8 @@
     "violation_streak": 0,
     "last_error": null,
     "checklist": {
-      "ltp": 72385.12,
-      "as_of": "2026-10-08T09:25:00+05:30",
+      "ltp": 72317.78,
+      "as_of": "2026-10-08T09:26:00+05:30",
       "tc": 72743.77,
       "bc": 72673.72,
       "prev_high": 73018.82,
@@ -139,9 +149,19 @@
           true
         ]
       ],
-      "ema5_5m": 72464.74
+      "ema5_5m": 72442.3
     },
-    "oi_metrics": null,
+    "oi_metrics": {
+      "expiry": "2026-10-08",
+      "spot": 72319.47,
+      "resistance_strike": 73000.0,
+      "resistance_call_oi": 4903020,
+      "support_strike": 72000.0,
+      "support_put_oi": 5538320,
+      "max_pain": 72500.0,
+      "pcr": 1.133,
+      "pcr_suggestion": "CALL"
+    },
     "ip_status": {
       "ok": true,
       "detected_ip": "171.78.154.168",
