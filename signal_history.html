@@ -1,0 +1,234 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<title>Signal History — NIFTY + SENSEX Tuned</title>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<style>
+  :root {
+    color-scheme: light;
+    --page:           #eceff8;
+    --surface-1:      #ffffff;
+    --surface-2:      #f3f5fb;
+    --text-primary:   #0e1320;
+    --text-secondary: #4f5a74;
+    --text-muted:     #76829c;
+    --gridline:       #e2e7f1;
+    --border:         rgba(14,19,32,0.10);
+    --shadow:         0 1px 2px rgba(14,19,32,0.06), 0 8px 24px rgba(40,50,110,0.08);
+    --brand-a: #4338ca; --brand-b: #7c3aed; --brand-c: #0d9488; --accent: #4f46e5;
+    --nifty: #6d4bd8; --sensex: #0b8f83; --call: #2563eb; --put: #d6336c;
+    --good: #12a150; --warning: #c77d00; --critical: #dc3545;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      color-scheme: dark;
+      --page:           #090c14;
+      --surface-1:      #131a29;
+      --surface-2:      #1a2336;
+      --text-primary:   #eef1f9;
+      --text-secondary: #a0abc4;
+      --text-muted:     #7f8aa3;
+      --gridline:       #253048;
+      --border:         rgba(238,241,249,0.11);
+      --shadow:         0 1px 2px rgba(0,0,0,0.4), 0 10px 28px rgba(0,0,0,0.35);
+      --brand-a: #4f46e5; --brand-b: #8b5cf6; --brand-c: #14b8a6; --accent: #9b8cf3;
+      --nifty: #8a75ec; --sensex: #17a390; --call: #4a8cf0; --put: #e0578a;
+      --good: #2bc85a; --warning: #f2b636; --critical: #f0645f;
+    }
+  }
+  * { box-sizing: border-box; }
+  html { font-size: clamp(15px, 0.55vw + 9px, 19px); }
+  body {
+    margin: 0; color: var(--text-primary); font-family: system-ui, -apple-system, "Segoe UI", sans-serif; line-height: 1.4;
+    background:
+      radial-gradient(1100px 480px at 8% -8%, color-mix(in srgb, var(--brand-b) 16%, transparent), transparent 70%),
+      radial-gradient(900px 480px at 100% 0%, color-mix(in srgb, var(--brand-c) 14%, transparent), transparent 70%),
+      var(--page);
+    background-attachment: fixed;
+  }
+  .hero { background: linear-gradient(115deg, var(--brand-a) 0%, var(--brand-b) 52%, var(--brand-c) 100%); color: #fff; padding: 1.05rem clamp(14px, 2vw, 32px); box-shadow: 0 6px 26px rgba(67,56,202,0.28); }
+  .hero-inner { max-width: 2300px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; gap: 12px 24px; flex-wrap: wrap; }
+  .brand { display: flex; align-items: center; gap: 0.9rem; }
+  .logo { width: 2.5rem; height: 2.5rem; border-radius: 0.8rem; background: rgba(255,255,255,0.18); display: grid; place-items: center; font-size: 1.35rem; }
+  h1 { font-size: 1.45rem; margin: 0; font-weight: 800; letter-spacing: -0.015em; }
+  .tag { font-size: 0.86rem; opacity: 0.88; margin-top: 1px; }
+  a.btn { background: #fff; color: var(--brand-a); text-decoration: none; font-weight: 700; font-size: 0.88rem; padding: 0.45rem 0.95rem; border-radius: 999px; box-shadow: 0 2px 10px rgba(0,0,0,0.18); }
+  .page { max-width: 2300px; margin: 0 auto; padding: 1.1rem clamp(14px, 2vw, 32px) 2rem; }
+
+  .card { background: var(--surface-1); border: 1px solid var(--border); border-radius: 1rem; padding: 1.05rem 1.2rem; box-shadow: var(--shadow); min-width: 0; }
+
+  .filters { display: flex; gap: 0.7rem 1rem; flex-wrap: wrap; align-items: flex-end; margin-bottom: 1rem; }
+  .filter-group { display: flex; flex-direction: column; min-width: 9rem; flex: 1 1 9rem; max-width: 16rem; }
+  .filters label { font-size: 0.68rem; text-transform: uppercase; letter-spacing: 0.06em; color: var(--text-muted); margin-bottom: 0.25rem; font-weight: 700; }
+  .filters select { background: var(--surface-1); color: var(--text-primary); border: 1px solid var(--border); border-radius: 0.7rem; padding: 0.5rem 0.7rem; font-size: 0.9rem; font-family: inherit; cursor: pointer; box-shadow: var(--shadow); }
+  .clear-filters { background: linear-gradient(120deg, var(--brand-a), var(--brand-b)); color: #fff; border: none; border-radius: 0.7rem; padding: 0.55rem 1.1rem; font-size: 0.88rem; font-weight: 700; cursor: pointer; font-family: inherit; box-shadow: var(--shadow); }
+
+  .kpis { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(165px, 100%), 1fr)); gap: 0.9rem; margin-bottom: 1rem; }
+  .kpi { position: relative; overflow: hidden; background: var(--surface-1); border: 1px solid var(--border); border-radius: 1rem; padding: 0.95rem 1.1rem; box-shadow: var(--shadow); }
+  .kpi::before { content: ""; position: absolute; inset: 0 auto 0 0; width: 5px; background: var(--kc, var(--accent)); }
+  .kpi .k { font-size: 0.72rem; text-transform: uppercase; letter-spacing: 0.07em; color: var(--text-muted); font-weight: 700; }
+  .kpi .v { font-size: 1.75rem; font-weight: 800; letter-spacing: -0.02em; font-variant-numeric: tabular-nums; line-height: 1.15; margin-top: 0.1rem; }
+  .kpi .s { font-size: 0.8rem; color: var(--text-secondary); margin-top: 0.15rem; }
+  .kpi.violet { --kc: var(--nifty); } .kpi.teal { --kc: var(--sensex); } .kpi.blue { --kc: var(--call); } .kpi.pink { --kc: var(--put); }
+
+  table { width: 100%; border-collapse: collapse; font-size: 0.84rem; }
+  th { text-align: left; color: var(--text-muted); font-weight: 700; padding: 0.4rem 0.4rem; border-bottom: 2px solid var(--gridline); font-size: 0.68rem; text-transform: uppercase; letter-spacing: 0.06em; white-space: nowrap; }
+  td { padding: 0.45rem 0.4rem; border-bottom: 1px solid var(--gridline); font-variant-numeric: tabular-nums; white-space: nowrap; vertical-align: middle; }
+  tr:last-child td { border-bottom: none; }
+  .sym-pill { font-weight: 700; font-size: 0.72rem; padding: 0.12rem 0.55rem; border-radius: 999px; color: #fff; }
+  .sym-pill.n { background: var(--nifty); } .sym-pill.s { background: var(--sensex); }
+  .sig-pill { font-weight: 800; font-size: 0.7rem; padding: 0.12rem 0.55rem; border-radius: 999px; color: #fff; }
+  .sig-pill.CALL { background: var(--call); } .sig-pill.PUT { background: var(--put); } .sig-pill.none { background: var(--surface-2); color: var(--text-muted); }
+  .dots { display: inline-flex; gap: 3px; }
+  .dot { width: 0.65rem; height: 0.65rem; border-radius: 50%; display: inline-block; cursor: help; }
+  .dot.y { background: var(--good); } .dot.n { background: var(--gridline); }
+  .empty { color: var(--text-muted); text-align: center; padding: 2.5rem 0.4rem; font-size: 0.95rem; display: block; }
+  .table-wrap { overflow-x: auto; }
+  footer { margin-top: 1.4rem; font-size: 0.78rem; color: var(--text-muted); text-align: center; }
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <div class="hero-inner">
+    <div class="brand">
+      <div class="logo">◆</div>
+      <div>
+        <h1>Signal History</h1>
+        <div class="tag">Entry checklist snapshot every ~5 minutes &middot; NIFTY 50 + SENSEX</div>
+      </div>
+    </div>
+    <a class="btn" href="index.html">&larr; Back to live dashboard</a>
+  </div>
+</header>
+
+<main class="page">
+  <div class="filters">
+    <div class="filter-group"><label for="f-date">Date</label><select id="f-date"><option value="">All dates</option></select></div>
+    <div class="filter-group"><label for="f-symbol">Symbol</label><select id="f-symbol"><option value="">All symbols</option></select></div>
+    <div class="filter-group"><label for="f-signal">Signal</label>
+      <select id="f-signal"><option value="">Any</option><option value="CALL">CALL only</option><option value="PUT">PUT only</option><option value="none">No signal</option></select></div>
+    <button class="clear-filters" id="f-clear">Clear filters</button>
+  </div>
+
+  <section class="kpis" id="kpis"></section>
+
+  <section class="card">
+    <div class="table-wrap" id="table-root"></div>
+  </section>
+
+  <footer>
+    Reads signal_history.json from this same site. Each row is a snapshot of the live checklist
+    at that moment, captured roughly every 5 minutes -- not every signal fired a trade (entries
+    also need daily-loss-cap, trade-count-cap, weekday-rule and dashboard-toggle checks to pass).
+    Kept for the last 30 days.
+  </footer>
+</main>
+
+<script>
+const STATE_URL = "signal_history.json";
+let RAW = [];
+
+const esc = (s) => String(s).replace(/[&<>"]/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]));
+const tm = (iso) => new Date(iso).toLocaleTimeString("en-IN", { hour: "2-digit", minute: "2-digit" });
+const dateOf = (iso) => iso.slice(0, 10);
+
+function dots(checks) {
+  return `<span class="dots">` + checks.map(([label, ok]) => `<span class="dot ${ok ? "y" : "n"}" title="${esc(label)}: ${ok ? "pass" : "fail"}"></span>`).join("") + `</span>`;
+}
+
+function populateFilters() {
+  const dateSel = document.getElementById("f-date");
+  const symbolSel = document.getElementById("f-symbol");
+  const prevDate = dateSel.value, prevSymbol = symbolSel.value;
+
+  const dates = [...new Set(RAW.map((r) => dateOf(r.bucket)))].sort().reverse();
+  const symbols = [...new Set(RAW.map((r) => r.instrument))].sort();
+
+  dateSel.innerHTML = '<option value="">All dates</option>' + dates.map((d) => `<option value="${d}">${d}</option>`).join("");
+  symbolSel.innerHTML = '<option value="">All symbols</option>' + symbols.map((s) => `<option value="${s}">${s}</option>`).join("");
+
+  if (dates.includes(prevDate)) dateSel.value = prevDate;
+  if (symbols.includes(prevSymbol)) symbolSel.value = prevSymbol;
+}
+
+function getFilters() {
+  return {
+    date: document.getElementById("f-date").value,
+    symbol: document.getElementById("f-symbol").value,
+    signal: document.getElementById("f-signal").value,
+  };
+}
+
+function overallSignal(r) {
+  if (r.call_signal) return "CALL";
+  if (r.put_signal) return "PUT";
+  return "none";
+}
+
+function render() {
+  const f = getFilters();
+  const rows = RAW
+    .filter((r) => !f.date || dateOf(r.bucket) === f.date)
+    .filter((r) => !f.symbol || r.instrument === f.symbol)
+    .filter((r) => !f.signal || overallSignal(r) === f.signal)
+    .slice()
+    .sort((a, b) => new Date(b.bucket) - new Date(a.bucket));
+
+  const callCount = rows.filter((r) => r.call_signal).length;
+  const putCount = rows.filter((r) => r.put_signal).length;
+  const dateCount = new Set(rows.map((r) => dateOf(r.bucket))).size;
+
+  document.getElementById("kpis").innerHTML = `
+    <div class="kpi violet"><div class="k">Snapshots</div><div class="v">${rows.length}</div><div class="s">${dateCount} day${dateCount === 1 ? "" : "s"}</div></div>
+    <div class="kpi blue"><div class="k">All-5 CALL</div><div class="v">${callCount}</div><div class="s">every call condition passed</div></div>
+    <div class="kpi pink"><div class="k">All-5 PUT</div><div class="v">${putCount}</div><div class="s">every put condition passed</div></div>
+  `;
+
+  const root = document.getElementById("table-root");
+  if (!rows.length) {
+    root.innerHTML = `<span class="empty">No snapshots match the current filters</span>`;
+    return;
+  }
+  root.innerHTML = `
+    <table>
+      <thead><tr><th>Time</th><th>Symbol</th><th>LTP</th><th>Signal</th><th>Call conditions</th><th>Put conditions</th></tr></thead>
+      <tbody>
+        ${rows.map((r) => `
+          <tr>
+            <td>${tm(r.bucket)}</td>
+            <td><span class="sym-pill ${r.instrument.startsWith("N") ? "n" : "s"}">${esc(r.instrument)}</span></td>
+            <td>${r.ltp}</td>
+            <td><span class="sig-pill ${overallSignal(r)}">${overallSignal(r) === "none" ? "—" : overallSignal(r)}</span></td>
+            <td>${dots(r.checks_call)}</td>
+            <td>${dots(r.checks_put)}</td>
+          </tr>`).join("")}
+      </tbody>
+    </table>`;
+}
+
+async function refresh() {
+  try {
+    const res = await fetch(STATE_URL + "?t=" + Date.now(), { cache: "no-store" });
+    if (!res.ok) throw new Error("HTTP " + res.status);
+    RAW = await res.json();
+  } catch (e) {
+    document.getElementById("table-root").innerHTML = `<span class="empty">Failed to load signal_history.json — ${esc(e.message)}</span>`;
+    return;
+  }
+  populateFilters();
+  render();
+}
+
+["f-date", "f-symbol", "f-signal"].forEach((id) => document.getElementById(id).addEventListener("change", render));
+document.getElementById("f-clear").addEventListener("click", () => {
+  ["f-date", "f-symbol", "f-signal"].forEach((id) => (document.getElementById(id).value = ""));
+  render();
+});
+
+refresh();
+setInterval(refresh, 30000);
+</script>
+</body>
+</html>
