@@ -1,9 +1,9 @@
 {
   "NIFTY": {
     "date": "2026-10-09",
-    "engine_status": "token_invalid",
-    "last_tick": "2026-10-09T08:52:07.751802",
-    "last_processed_bar": null,
+    "engine_status": "running",
+    "last_tick": "2026-10-09T08:53:19.078180",
+    "last_processed_bar": "2026-10-08T15:29:00+05:30",
     "position": null,
     "trades_today": 0,
     "realized_pnl_today": 0.0,
@@ -12,18 +12,74 @@
     "bars_held": 0,
     "violation_streak": 0,
     "last_error": null,
-    "checklist": null,
+    "checklist": {
+      "ltp": 22231.8,
+      "as_of": "2026-10-08T15:29:00+05:30",
+      "tc": 22630.85,
+      "bc": 22612.32,
+      "prev_high": 22715.4,
+      "prev_low": 22546.3,
+      "checks_call": [
+        [
+          "Price above Daily CPR (TC)",
+          false
+        ],
+        [
+          "15-min stack: price>5>26>50",
+          false
+        ],
+        [
+          "5-min stack: price>5>26>50",
+          false
+        ],
+        [
+          "3-min stack: price>5>26>50",
+          false
+        ],
+        [
+          "Price above prev-day High",
+          false
+        ]
+      ],
+      "checks_put": [
+        [
+          "Price below Daily CPR (BC)",
+          true
+        ],
+        [
+          "15-min stack: price<5<26<50",
+          false
+        ],
+        [
+          "5-min stack: price<5<26<50",
+          false
+        ],
+        [
+          "3-min stack: price<5<26<50",
+          false
+        ],
+        [
+          "Price below prev-day Low",
+          true
+        ]
+      ],
+      "ema5_5m": 22217.61
+    },
     "oi_metrics": null,
     "ip_status": {
-      "ok": false,
-      "error": "Dhan returned no IP data ({'error_code': 'DH-901', 'error_type': 'Invalid_Authenticati) -- static IP may not be set, or a temporary Dhan error"
+      "ok": true,
+      "detected_ip": "171.78.154.168",
+      "primary_ip": "171.78.154.168",
+      "secondary_ip": "122.169.46.151",
+      "match_status": "PRIMARY_MATCH",
+      "orders_allowed": true
     }
   },
   "SENSEX": {
     "date": "2026-10-09",
-    "engine_status": "token_invalid",
-    "last_tick": "2026-10-09T08:52:07.813675",
-    "last_processed_bar": null,
+    "engine_status": "running",
+    "last_tick": "2026-10-09T08:53:24.836305",
+    "last_processed_bar": "2026-10-08T15:29:00+05:30",
     "position": null,
     "trades_today": 0,
     "realized_pnl_today": 0.0,
@@ -32,11 +88,67 @@
     "bars_held": 0,
     "violation_streak": 0,
     "last_error": null,
-    "checklist": null,
+    "checklist": {
+      "ltp": 71593.24,
+      "as_of": "2026-10-08T15:29:00+05:30",
+      "tc": 72743.77,
+      "bc": 72673.72,
+      "prev_high": 73018.82,
+      "prev_low": 72468.72,
+      "checks_call": [
+        [
+          "Price above Daily CPR (TC)",
+          false
+        ],
+        [
+          "15-min stack: price>5>26>50",
+          false
+        ],
+        [
+          "5-min stack: price>5>26>50",
+          false
+        ],
+        [
+          "3-min stack: price>5>26>50",
+          false
+        ],
+        [
+          "Price above prev-day High",
+          false
+        ]
+      ],
+      "checks_put": [
+        [
+          "Price below Daily CPR (BC)",
+          true
+        ],
+        [
+          "15-min stack: price<5<26<50",
+          false
+        ],
+        [
+          "5-min stack: price<5<26<50",
+          false
+        ],
+        [
+          "3-min stack: price<5<26<50",
+          false
+        ],
+        [
+          "Price below prev-day Low",
+          true
+        ]
+      ],
+      "ema5_5m": 71502.03
+    },
     "oi_metrics": null,
     "ip_status": {
-      "ok": false,
-      "error": "Dhan returned no IP data ({'error_code': 'DH-901', 'error_type': 'Invalid_Authenticati) -- static IP may not be set, or a temporary Dhan error"
+      "ok": true,
+      "detected_ip": "171.78.154.168",
+      "primary_ip": "171.78.154.168",
+      "secondary_ip": "122.169.46.151",
+      "match_status": "PRIMARY_MATCH",
+      "orders_allowed": true
     }
   }
 }
