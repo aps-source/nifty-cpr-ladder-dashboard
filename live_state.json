@@ -2,8 +2,8 @@
   "NIFTY": {
     "date": "2026-10-13",
     "engine_status": "running",
-    "last_tick": "2026-10-13T12:44:39.840696",
-    "last_processed_bar": "2026-10-13T12:44:00+05:30",
+    "last_tick": "2026-10-13T12:46:03.532767",
+    "last_processed_bar": "2026-10-13T12:46:00+05:30",
     "position": null,
     "trades_today": 0,
     "realized_pnl_today": 0.0,
@@ -13,8 +13,8 @@
     "violation_streak": 0,
     "last_error": null,
     "checklist": {
-      "ltp": 22537.25,
-      "as_of": "2026-10-13T12:44:00+05:30",
+      "ltp": 22531.05,
+      "as_of": "2026-10-13T12:46:00+05:30",
       "tc": 22475.43,
       "bc": 22400.71,
       "prev_high": 22646.4,
@@ -63,17 +63,17 @@
           false
         ]
       ],
-      "ema5_5m": 22537.51
+      "ema5_5m": 22535.35
     },
     "oi_metrics": {
       "expiry": "2026-10-13",
-      "spot": 22537.4,
+      "spot": 22533.55,
       "resistance_strike": 22600.0,
-      "resistance_call_oi": 39132210,
+      "resistance_call_oi": 39469690,
       "support_strike": 22500.0,
-      "support_put_oi": 42717025,
+      "support_put_oi": 43039685,
       "max_pain": 22550.0,
-      "pcr": 1.18,
+      "pcr": 1.178,
       "pcr_suggestion": "CALL"
     },
     "ip_status": {
@@ -84,12 +84,12 @@
       "match_status": "PRIMARY_MATCH",
       "orders_allowed": true
     },
-    "_last_signal_bucket": "2026-10-13T12:40:00"
+    "_last_signal_bucket": "2026-10-13T12:45:00"
   },
   "SENSEX": {
     "date": "2026-10-13",
-    "engine_status": "running",
-    "last_tick": "2026-10-13T12:44:44.303877",
+    "engine_status": "data_error",
+    "last_tick": "2026-10-13T12:46:26.054863",
     "last_processed_bar": "2026-10-13T12:44:00+05:30",
     "position": null,
     "trades_today": 0,
@@ -98,7 +98,7 @@
     "today_trades": [],
     "bars_held": 0,
     "violation_streak": 0,
-    "last_error": null,
+    "last_error": "[WinError 5] Access is denied: 'D:\\\\Claude - Algo\\\\Claude Projects\\\\Live\\\\Project Nifty 3min CPR Strategy\\\\sensex_1min_raw.csv.tmp' -> 'D:\\\\Claude - Algo\\\\Claude Projects\\\\Live\\\\Project Nifty 3min CPR Strategy\\\\sensex_1min_raw.csv'",
     "checklist": {
       "ltp": 72478.51,
       "as_of": "2026-10-13T12:44:00+05:30",
