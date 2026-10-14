@@ -2,8 +2,8 @@
   "NIFTY": {
     "date": "2026-10-14",
     "engine_status": "running",
-    "last_tick": "2026-10-14T11:04:52.342177",
-    "last_processed_bar": "2026-10-14T11:04:00+05:30",
+    "last_tick": "2026-10-14T11:06:43.255260",
+    "last_processed_bar": "2026-10-14T11:06:00+05:30",
     "position": null,
     "trades_today": 3,
     "realized_pnl_today": -3477.4999999999973,
@@ -65,8 +65,8 @@
     "violation_streak": 0,
     "last_error": null,
     "checklist": {
-      "ltp": 22717.85,
-      "as_of": "2026-10-14T11:04:00+05:30",
+      "ltp": 22712.65,
+      "as_of": "2026-10-14T11:06:00+05:30",
       "tc": 22649.7,
       "bc": 22505.2,
       "prev_high": 22721.95,
@@ -115,17 +115,17 @@
           false
         ]
       ],
-      "ema5_5m": 22726.22
+      "ema5_5m": 22721.69
     },
     "oi_metrics": {
       "expiry": "2026-10-19",
-      "spot": 22717.95,
+      "spot": 22711.65,
       "resistance_strike": 23000.0,
-      "resistance_call_oi": 9905480,
+      "resistance_call_oi": 9964955,
       "support_strike": 22700.0,
-      "support_put_oi": 12276680,
+      "support_put_oi": 12291890,
       "max_pain": 22700.0,
-      "pcr": 1.175,
+      "pcr": 1.172,
       "pcr_suggestion": "CALL"
     },
     "ip_status": {
@@ -136,27 +136,16 @@
       "match_status": "PRIMARY_MATCH",
       "orders_allowed": true
     },
-    "_last_signal_bucket": "2026-10-14T11:00:00"
+    "_last_signal_bucket": "2026-10-14T11:05:00"
   },
   "SENSEX": {
     "date": "2026-10-14",
     "engine_status": "running",
-    "last_tick": "2026-10-14T11:05:03.286356",
-    "last_processed_bar": "2026-10-14T11:04:00+05:30",
-    "position": {
-      "side": "CALL",
-      "entry_time": "2026-10-14T10:35:00+05:30",
-      "entry_price": 313.95,
-      "spot_at_entry": 73044.47,
-      "strike": 73000.0,
-      "expiry": "2026-10-15",
-      "security_id": "1111226",
-      "qty": 20,
-      "order_id": "229261014147608",
-      "backstop_order_id": "34926101415608"
-    },
+    "last_tick": "2026-10-14T11:06:58.133325",
+    "last_processed_bar": "2026-10-14T11:06:00+05:30",
+    "position": null,
     "trades_today": 3,
-    "realized_pnl_today": -2028.9999999999998,
+    "realized_pnl_today": -2251.999999999999,
     "daily_loss_cap_hit": false,
     "today_trades": [
       {
@@ -192,14 +181,31 @@
         "exit_order_id": "229261014110508",
         "reason": "signal_exit",
         "pnl": -910.0
+      },
+      {
+        "side": "CALL",
+        "entry_time": "2026-10-14T10:35:00+05:30",
+        "entry_price": 313.95,
+        "spot_at_entry": 73044.47,
+        "strike": 73000.0,
+        "expiry": "2026-10-15",
+        "security_id": "1111226",
+        "qty": 20,
+        "order_id": "229261014147608",
+        "backstop_order_id": "34926101415608",
+        "exit_time": "2026-10-14T11:05:00+05:30",
+        "exit_price": 302.8,
+        "exit_order_id": "229261014184708",
+        "reason": "signal_exit",
+        "pnl": -222.99999999999955
       }
     ],
-    "bars_held": 22,
-    "violation_streak": 2,
+    "bars_held": 0,
+    "violation_streak": 0,
     "last_error": null,
     "checklist": {
-      "ltp": 73064.61,
-      "as_of": "2026-10-14T11:04:00+05:30",
+      "ltp": 73044.44,
+      "as_of": "2026-10-14T11:06:00+05:30",
       "tc": 72830.18,
       "bc": 72422.97,
       "prev_high": 73045.67,
@@ -223,7 +229,7 @@
         ],
         [
           "Price above prev-day High",
-          true
+          false
         ]
       ],
       "checks_put": [
@@ -248,17 +254,17 @@
           false
         ]
       ],
-      "ema5_5m": 73091.26
+      "ema5_5m": 73075.65
     },
     "oi_metrics": {
       "expiry": "2026-10-15",
-      "spot": 73063.38,
+      "spot": 73029.08,
       "resistance_strike": 75000.0,
-      "resistance_call_oi": 3534280,
+      "resistance_call_oi": 3529960,
       "support_strike": 72000.0,
-      "support_put_oi": 3945080,
+      "support_put_oi": 3946220,
       "max_pain": 73000.0,
-      "pcr": 1.446,
+      "pcr": 1.449,
       "pcr_suggestion": "CALL"
     },
     "ip_status": {
