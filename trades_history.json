@@ -1,6 +1,31 @@
 {
   "days": [
     {
+      "date": "2026-10-14",
+      "trades": [
+        {
+          "symbol": "NIFTY 50",
+          "entry_time": "2026-10-14T09:16:00+05:30",
+          "exit_time": "2026-10-14T09:29:00+05:30",
+          "side": "CALL",
+          "strike": 22750.0,
+          "expiry": "2026-10-19",
+          "entry_price": 155.7,
+          "exit_price": 126.15,
+          "qty": 65,
+          "pnl": -1920.7499999999989,
+          "reason": "signal_exit",
+          "entry_order_id": 32226101423308,
+          "exit_order_id": 32226101450408,
+          "pnl_confirmed": true,
+          "date": "2026-10-14"
+        }
+      ],
+      "day_pnl": -1920.75,
+      "day_trades": 1,
+      "day_wins": 0
+    },
+    {
       "date": "2026-10-12",
       "trades": [
         {
@@ -1016,6 +1041,6 @@
       "day_wins": 4
     }
   ],
-  "overall_pnl": 465.25,
-  "overall_trades": 55
+  "overall_pnl": -1455.5,
+  "overall_trades": 56
 }
