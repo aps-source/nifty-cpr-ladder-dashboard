@@ -19,10 +19,27 @@
           "exit_order_id": 32226101450408,
           "pnl_confirmed": true,
           "date": "2026-10-14"
+        },
+        {
+          "symbol": "SENSEX",
+          "entry_time": "2026-10-14T09:17:00+05:30",
+          "exit_time": "2026-10-14T09:32:00+05:30",
+          "side": "CALL",
+          "strike": 73100.0,
+          "expiry": "2026-10-15",
+          "entry_price": 320.45,
+          "exit_price": 264.5,
+          "qty": 20,
+          "pnl": -1118.9999999999998,
+          "reason": "signal_exit",
+          "entry_order_id": 22926101420908,
+          "exit_order_id": 23926101413508,
+          "pnl_confirmed": true,
+          "date": "2026-10-14"
         }
       ],
-      "day_pnl": -1920.75,
-      "day_trades": 1,
+      "day_pnl": -3039.75,
+      "day_trades": 2,
       "day_wins": 0
     },
     {
@@ -1041,6 +1058,6 @@
       "day_wins": 4
     }
   ],
-  "overall_pnl": -1455.5,
-  "overall_trades": 56
+  "overall_pnl": -2574.5,
+  "overall_trades": 57
 }
