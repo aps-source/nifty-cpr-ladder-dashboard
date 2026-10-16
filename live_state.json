@@ -2,7 +2,7 @@
   "NIFTY": {
     "date": "2026-10-16",
     "engine_status": "running",
-    "last_tick": "2026-10-16T15:29:44.566233",
+    "last_tick": "2026-10-16T15:30:55.685162",
     "last_processed_bar": "2026-10-16T15:29:00+05:30",
     "position": null,
     "trades_today": 4,
@@ -138,23 +138,27 @@
       "expiry": "2026-10-19",
       "spot": 23146.15,
       "resistance_strike": 24000.0,
-      "resistance_call_oi": 13666185,
+      "resistance_call_oi": 13633425,
       "support_strike": 22000.0,
-      "support_put_oi": 16583125,
+      "support_put_oi": 16758690,
       "max_pain": 23050.0,
-      "pcr": 1.317,
+      "pcr": 1.316,
       "pcr_suggestion": "CALL"
     },
     "ip_status": {
-      "ok": false,
-      "error": "Dhan returned no IP data (HTTPSConnectionPool(host='api.dhan.co', port=443): Max retri) -- static IP may not be set, or a temporary Dhan error"
+      "ok": true,
+      "detected_ip": "171.78.154.168",
+      "primary_ip": "171.78.154.168",
+      "secondary_ip": "122.169.46.151",
+      "match_status": "PRIMARY_MATCH",
+      "orders_allowed": true
     },
-    "_last_signal_bucket": "2026-10-16T15:25:00"
+    "_last_signal_bucket": "2026-10-16T15:30:00"
   },
   "SENSEX": {
     "date": "2026-10-16",
     "engine_status": "running",
-    "last_tick": "2026-10-16T15:29:47.420142",
+    "last_tick": "2026-10-16T15:30:58.584472",
     "last_processed_bar": "2026-10-16T15:29:00+05:30",
     "position": null,
     "trades_today": 4,
@@ -298,9 +302,13 @@
       "pcr_suggestion": "CALL"
     },
     "ip_status": {
-      "ok": false,
-      "error": "Dhan returned no IP data (HTTPSConnectionPool(host='api.dhan.co', port=443): Max retri) -- static IP may not be set, or a temporary Dhan error"
+      "ok": true,
+      "detected_ip": "171.78.154.168",
+      "primary_ip": "171.78.154.168",
+      "secondary_ip": "122.169.46.151",
+      "match_status": "PRIMARY_MATCH",
+      "orders_allowed": true
     },
-    "_last_signal_bucket": "2026-10-16T15:25:00"
+    "_last_signal_bucket": "2026-10-16T15:30:00"
   }
 }
