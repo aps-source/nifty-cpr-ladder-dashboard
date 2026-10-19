@@ -2,8 +2,8 @@
   "NIFTY": {
     "date": "2026-10-19",
     "engine_status": "running",
-    "last_tick": "2026-10-19T11:11:07.130780",
-    "last_processed_bar": "2026-10-19T11:11:00+05:30",
+    "last_tick": "2026-10-19T11:12:39.037510",
+    "last_processed_bar": "2026-10-19T11:12:00+05:30",
     "position": null,
     "trades_today": 1,
     "realized_pnl_today": -3266.2500000000005,
@@ -31,8 +31,8 @@
     "violation_streak": 0,
     "last_error": null,
     "checklist": {
-      "ltp": 23077.2,
-      "as_of": "2026-10-19T11:11:00+05:30",
+      "ltp": 23073.45,
+      "as_of": "2026-10-19T11:12:00+05:30",
       "tc": 23108.04,
       "bc": 23031.82,
       "prev_high": 23149.85,
@@ -81,17 +81,17 @@
           false
         ]
       ],
-      "ema5_5m": 23068.03
+      "ema5_5m": 23066.78
     },
     "oi_metrics": {
       "expiry": "2026-10-19",
-      "spot": 23076.65,
+      "spot": 23073.1,
       "resistance_strike": 23200.0,
-      "resistance_call_oi": 28543125,
+      "resistance_call_oi": 28732860,
       "support_strike": 23000.0,
-      "support_put_oi": 25491375,
+      "support_put_oi": 25697425,
       "max_pain": 23050.0,
-      "pcr": 1.033,
+      "pcr": 1.034,
       "pcr_suggestion": "NEUTRAL"
     },
     "ip_status": {
@@ -106,9 +106,9 @@
   },
   "SENSEX": {
     "date": "2026-10-19",
-    "engine_status": "data_error",
-    "last_tick": "2026-10-19T11:11:18.715523",
-    "last_processed_bar": "2026-10-19T11:09:00+05:30",
+    "engine_status": "running",
+    "last_tick": "2026-10-19T11:12:43.123660",
+    "last_processed_bar": "2026-10-19T11:12:00+05:30",
     "position": null,
     "trades_today": 0,
     "realized_pnl_today": 0.0,
@@ -116,10 +116,10 @@
     "today_trades": [],
     "bars_held": 0,
     "violation_streak": 0,
-    "last_error": "[WinError 5] Access is denied: 'D:\\\\Claude - Algo\\\\Claude Projects\\\\Live\\\\Project Nifty 3min CPR Strategy\\\\sensex_1min_raw.csv.tmp' -> 'D:\\\\Claude - Algo\\\\Claude Projects\\\\Live\\\\Project Nifty 3min CPR Strategy\\\\sensex_1min_raw.csv'",
+    "last_error": null,
     "checklist": {
-      "ltp": 74456.63,
-      "as_of": "2026-10-19T11:09:00+05:30",
+      "ltp": 74468.13,
+      "as_of": "2026-10-19T11:12:00+05:30",
       "tc": 74618.14,
       "bc": 74395.89,
       "prev_high": 74778.78,
@@ -168,17 +168,17 @@
           false
         ]
       ],
-      "ema5_5m": 74432.16
+      "ema5_5m": 74444.15
     },
     "oi_metrics": {
       "expiry": "2026-10-22",
-      "spot": 74457.04,
+      "spot": 74470.42,
       "resistance_strike": 78000.0,
-      "resistance_call_oi": 1162880,
+      "resistance_call_oi": 1162160,
       "support_strike": 70000.0,
-      "support_put_oi": 1386480,
+      "support_put_oi": 1371120,
       "max_pain": 74400.0,
-      "pcr": 1.001,
+      "pcr": 0.997,
       "pcr_suggestion": "NEUTRAL"
     },
     "ip_status": {
@@ -189,6 +189,6 @@
       "match_status": "PRIMARY_MATCH",
       "orders_allowed": true
     },
-    "_last_signal_bucket": "2026-10-19T11:05:00"
+    "_last_signal_bucket": "2026-10-19T11:10:00"
   }
 }
