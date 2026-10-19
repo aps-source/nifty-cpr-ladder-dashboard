@@ -36,13 +36,47 @@
           "exit_order_id": "PAPER-20261019150142114458",
           "pnl_confirmed": true,
           "date": "2026-10-19"
+        },
+        {
+          "symbol": "NIFTY 50",
+          "entry_time": "2026-10-19T15:02:00+05:30",
+          "exit_time": "2026-10-19T15:15:00+05:30",
+          "side": "PUT",
+          "strike": 22850.0,
+          "expiry": "2026-10-19",
+          "entry_price": 20.5,
+          "exit_price": 20.5,
+          "qty": 65,
+          "pnl": 0.0,
+          "reason": "eod_squareoff",
+          "entry_order_id": "PAPER-20261019150305836467",
+          "exit_order_id": "PAPER-20261019151507539941",
+          "pnl_confirmed": true,
+          "date": "2026-10-19"
+        },
+        {
+          "symbol": "SENSEX",
+          "entry_time": "2026-10-19T15:04:00+05:30",
+          "exit_time": "2026-10-19T15:14:00+05:30",
+          "side": "PUT",
+          "strike": 73800.0,
+          "expiry": "2026-10-22",
+          "entry_price": 394.2,
+          "exit_price": 366.65,
+          "qty": 20,
+          "pnl": -551.0000000000002,
+          "reason": "signal_exit",
+          "entry_order_id": "PAPER-20261019150428061883",
+          "exit_order_id": "PAPER-20261019151514643214",
+          "pnl_confirmed": true,
+          "date": "2026-10-19"
         }
       ],
-      "day_pnl": -206.0,
-      "day_trades": 2,
+      "day_pnl": -757.0,
+      "day_trades": 4,
       "day_wins": 0
     }
   ],
-  "overall_pnl": -206.0,
-  "overall_trades": 2
+  "overall_pnl": -757.0,
+  "overall_trades": 4
 }
