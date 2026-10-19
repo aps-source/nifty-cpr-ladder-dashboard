@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 <meta charset="utf-8" />
-<title>NIFTY + SENSEX Tuned — Live Engine</title>
+<title>NIFTY + SENSEX Tuned — Paper Engine</title>
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <style>
   :root {
@@ -256,6 +256,7 @@
   .spark-cap { display: flex; justify-content: space-between; font-size: 0.78rem; color: var(--text-secondary); margin-top: 0.3rem; }
 
   footer { margin-top: 1.4rem; font-size: 0.78rem; color: var(--text-muted); text-align: center; }
+  .paper-banner { background: #92400e; color: #fff; text-align: center; font-weight: 700; font-size: 0.86rem; padding: 0.55rem 1rem; letter-spacing: 0.01em; }
 
   .chart-section { margin-top: 1.2rem; }
   .chart-section h2 { font-size: 1.05rem; margin: 0 0 0.7rem; }
@@ -282,8 +283,8 @@
     <div class="brand">
       <div class="logo">◆</div>
       <div>
-        <h1>NIFTY + SENSEX Live Engine</h1>
-        <div class="tag">Tuned CPR-ladder &middot; regular candles &middot; 1 lot per index</div>
+        <h1>NIFTY + SENSEX Paper Engine</h1>
+        <div class="tag">Tuned CPR-ladder &middot; regular candles &middot; 1 lot per index &middot; <b>simulated fills, no real orders</b></div>
       </div>
     </div>
     <div class="hero-right">
@@ -291,7 +292,7 @@
       <span class="hero-pill" id="clock">loading…</span>
       <div class="toggle-wrap">
         <span class="toggle-label">Trading</span>
-        <button class="switch" id="trading-switch" title="Turn new entries on/off for the live engine (both instruments)"></button>
+        <button class="switch" id="trading-switch" title="Turn new PAPER entries on/off (both instruments) -- no real money is ever at risk either way"></button>
         <span class="toggle-state" id="trading-switch-state">loading…</span>
       </div>
       <a class="btn" href="signal_history.html">Signal history &rarr;</a>
@@ -300,9 +301,11 @@
   </div>
   <details class="rules">
     <summary>Strategy rules</summary>
-    <p>5-condition Daily-CPR + 3/5/15-min EMA stack entry, debounced 5-min-EMA5 exit, no overnight, 11:00&ndash;13:00 blackout, no new entries on Tuesdays/Thursdays, forced square-off 15:15, max 6 trades/day per index. Shared PAUSE.flag halts both indices.</p>
+    <p>5-condition Daily-CPR + 3/5/15-min EMA stack entry, debounced 5-min-EMA5 exit, no overnight, 11:00&ndash;13:00 blackout, no new entries on Tuesdays/Thursdays, forced square-off 15:15, max 6 trades/day per index. Shared PAUSE_PAPER.flag halts both indices.</p>
   </details>
 </header>
+
+<div class="paper-banner">PAPER TRADE ONLY &mdash; every fill on this page is simulated at the live quoted premium. No real order is ever placed, no real money is at risk. Converted from the real-money engine on 2026-10-14.</div>
 
 <main class="page">
   <section class="kpis" id="kpis"></section>
