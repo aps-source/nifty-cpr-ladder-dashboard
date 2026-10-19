@@ -1,9 +1,9 @@
 {
   "NIFTY": {
-    "date": "2026-10-17",
-    "engine_status": "paused",
-    "last_tick": "2026-10-17T22:19:51.512167",
-    "last_processed_bar": null,
+    "date": "2026-10-19",
+    "engine_status": "running",
+    "last_tick": "2026-10-19T09:10:03.953268",
+    "last_processed_bar": "2026-10-16T15:29:00+05:30",
     "position": null,
     "trades_today": 0,
     "realized_pnl_today": 0.0,
@@ -12,18 +12,75 @@
     "bars_held": 0,
     "violation_streak": 0,
     "last_error": null,
-    "checklist": null,
+    "checklist": {
+      "ltp": 23146.15,
+      "as_of": "2026-10-16T15:29:00+05:30",
+      "tc": 22949.04,
+      "bc": 22852.43,
+      "prev_high": 23056.4,
+      "prev_low": 22648.45,
+      "checks_call": [
+        [
+          "Price above Daily CPR (TC)",
+          true
+        ],
+        [
+          "15-min stack: price>5>26>50",
+          true
+        ],
+        [
+          "5-min stack: price>5>26>50",
+          true
+        ],
+        [
+          "3-min stack: price>5>26>50",
+          true
+        ],
+        [
+          "Price above prev-day High",
+          true
+        ]
+      ],
+      "checks_put": [
+        [
+          "Price below Daily CPR (BC)",
+          false
+        ],
+        [
+          "15-min stack: price<5<26<50",
+          false
+        ],
+        [
+          "5-min stack: price<5<26<50",
+          false
+        ],
+        [
+          "3-min stack: price<5<26<50",
+          false
+        ],
+        [
+          "Price below prev-day Low",
+          false
+        ]
+      ],
+      "ema5_5m": 23122.51
+    },
     "oi_metrics": null,
     "ip_status": {
-      "ok": false,
-      "error": "Dhan returned no IP data ({'error_code': 'DH-901', 'error_type': 'Invalid_Authenticati) -- static IP may not be set, or a temporary Dhan error"
-    }
+      "ok": true,
+      "detected_ip": "171.78.154.168",
+      "primary_ip": "171.78.154.168",
+      "secondary_ip": "122.169.46.151",
+      "match_status": "PRIMARY_MATCH",
+      "orders_allowed": true
+    },
+    "_last_signal_bucket": "2026-10-19T09:10:00"
   },
   "SENSEX": {
-    "date": "2026-10-17",
-    "engine_status": "paused",
-    "last_tick": "2026-10-17T22:19:51.603426",
-    "last_processed_bar": null,
+    "date": "2026-10-19",
+    "engine_status": "running",
+    "last_tick": "2026-10-19T09:10:14.731937",
+    "last_processed_bar": "2026-10-16T15:29:00+05:30",
     "position": null,
     "trades_today": 0,
     "realized_pnl_today": 0.0,
@@ -32,11 +89,68 @@
     "bars_held": 0,
     "violation_streak": 0,
     "last_error": null,
-    "checklist": null,
+    "checklist": {
+      "ltp": 74729.27,
+      "as_of": "2026-10-16T15:29:00+05:30",
+      "tc": 74081.52,
+      "bc": 73613.33,
+      "prev_high": 74330.29,
+      "prev_low": 72896.38,
+      "checks_call": [
+        [
+          "Price above Daily CPR (TC)",
+          true
+        ],
+        [
+          "15-min stack: price>5>26>50",
+          true
+        ],
+        [
+          "5-min stack: price>5>26>50",
+          true
+        ],
+        [
+          "3-min stack: price>5>26>50",
+          true
+        ],
+        [
+          "Price above prev-day High",
+          true
+        ]
+      ],
+      "checks_put": [
+        [
+          "Price below Daily CPR (BC)",
+          false
+        ],
+        [
+          "15-min stack: price<5<26<50",
+          false
+        ],
+        [
+          "5-min stack: price<5<26<50",
+          false
+        ],
+        [
+          "3-min stack: price<5<26<50",
+          false
+        ],
+        [
+          "Price below prev-day Low",
+          false
+        ]
+      ],
+      "ema5_5m": 74675.6
+    },
     "oi_metrics": null,
     "ip_status": {
-      "ok": false,
-      "error": "Dhan returned no IP data ({'error_code': 'DH-901', 'error_type': 'Invalid_Authenticati) -- static IP may not be set, or a temporary Dhan error"
-    }
+      "ok": true,
+      "detected_ip": "171.78.154.168",
+      "primary_ip": "171.78.154.168",
+      "secondary_ip": "122.169.46.151",
+      "match_status": "PRIMARY_MATCH",
+      "orders_allowed": true
+    },
+    "_last_signal_bucket": "2026-10-19T09:10:00"
   }
 }
