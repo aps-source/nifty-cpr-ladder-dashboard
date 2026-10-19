@@ -1,5 +1,31 @@
 {
-  "days": [],
+  "days": [
+    {
+      "date": "2026-10-19",
+      "trades": [
+        {
+          "symbol": "NIFTY 50",
+          "entry_time": "2026-10-19T14:53:00+05:30",
+          "exit_time": "2026-10-19T15:00:00+05:30",
+          "side": "PUT",
+          "strike": 22850.0,
+          "expiry": "2026-10-19",
+          "entry_price": 27.2,
+          "exit_price": 27.2,
+          "qty": 65,
+          "pnl": 0.0,
+          "reason": "signal_exit",
+          "entry_order_id": "PAPER-20261019145308744322",
+          "exit_order_id": "PAPER-20261019150018344336",
+          "pnl_confirmed": true,
+          "date": "2026-10-19"
+        }
+      ],
+      "day_pnl": 0.0,
+      "day_trades": 1,
+      "day_wins": 0
+    }
+  ],
   "overall_pnl": 0.0,
-  "overall_trades": 0
+  "overall_trades": 1
 }
