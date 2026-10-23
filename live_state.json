@@ -1,8 +1,8 @@
 {
   "NIFTY": {
     "date": "2026-10-23",
-    "engine_status": "running",
-    "last_tick": "2026-10-23T13:29:53.853079",
+    "engine_status": "data_error",
+    "last_tick": "2026-10-23T13:31:10.550691",
     "last_processed_bar": "2026-10-23T13:29:00+05:30",
     "position": null,
     "trades_today": 1,
@@ -29,7 +29,7 @@
     ],
     "bars_held": 0,
     "violation_streak": 0,
-    "last_error": null,
+    "last_error": "[WinError 5] Access is denied: 'D:\\\\Claude - Algo\\\\Claude Projects\\\\Live\\\\Project Nifty 3min CPR Strategy\\\\nifty_1min_raw.csv.tmp' -> 'D:\\\\Claude - Algo\\\\Claude Projects\\\\Live\\\\Project Nifty 3min CPR Strategy\\\\nifty_1min_raw.csv'",
     "checklist": {
       "ltp": 22410.9,
       "as_of": "2026-10-23T13:29:00+05:30",
@@ -100,8 +100,8 @@
   "SENSEX": {
     "date": "2026-10-23",
     "engine_status": "running",
-    "last_tick": "2026-10-23T13:29:57.819766",
-    "last_processed_bar": "2026-10-23T13:29:00+05:30",
+    "last_tick": "2026-10-23T13:31:17.562342",
+    "last_processed_bar": "2026-10-23T13:31:00+05:30",
     "position": null,
     "trades_today": 1,
     "realized_pnl_today": -295.0,
@@ -129,8 +129,8 @@
     "violation_streak": 0,
     "last_error": null,
     "checklist": {
-      "ltp": 72568.89,
-      "as_of": "2026-10-23T13:29:00+05:30",
+      "ltp": 72589.57,
+      "as_of": "2026-10-23T13:31:00+05:30",
       "tc": 73362.97,
       "bc": 73287.25,
       "prev_high": 73720.83,
@@ -179,20 +179,20 @@
           true
         ]
       ],
-      "ema5_5m": 72566.55
+      "ema5_5m": 72574.22
     },
     "oi_metrics": {
       "expiry": "2026-10-29",
-      "spot": 72568.26,
+      "spot": 72591.86,
       "resistance_strike": 73500.0,
-      "resistance_call_oi": 789320,
+      "resistance_call_oi": 789000,
       "support_strike": 72000.0,
-      "support_put_oi": 687120,
+      "support_put_oi": 685280,
       "max_pain": 73100.0,
-      "pcr": 0.806,
+      "pcr": 0.802,
       "pcr_suggestion": "PUT"
     },
     "ip_status": null,
-    "_last_signal_bucket": "2026-10-23T13:25:00"
+    "_last_signal_bucket": "2026-10-23T13:30:00"
   }
 }
