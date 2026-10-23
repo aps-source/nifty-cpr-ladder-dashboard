@@ -2,30 +2,37 @@
   "NIFTY": {
     "date": "2026-10-23",
     "engine_status": "running",
-    "last_tick": "2026-10-23T13:28:25.847553",
-    "last_processed_bar": "2026-10-23T13:28:00+05:30",
-    "position": {
-      "side": "PUT",
-      "entry_time": "2026-10-23T13:05:00+05:30",
-      "entry_price": 113.8,
-      "spot_at_entry": 22403.3,
-      "strike": 22400.0,
-      "expiry": "2026-10-27",
-      "security_id": "51327",
-      "qty": 65,
-      "order_id": "PAPER-20261023130738339704",
-      "backstop_order_id": null
-    },
+    "last_tick": "2026-10-23T13:29:53.853079",
+    "last_processed_bar": "2026-10-23T13:29:00+05:30",
+    "position": null,
     "trades_today": 1,
-    "realized_pnl_today": 0.0,
+    "realized_pnl_today": -90.99999999999945,
     "daily_loss_cap_hit": false,
-    "today_trades": [],
-    "bars_held": 18,
-    "violation_streak": 2,
+    "today_trades": [
+      {
+        "side": "PUT",
+        "entry_time": "2026-10-23T13:05:00+05:30",
+        "entry_price": 113.8,
+        "spot_at_entry": 22403.3,
+        "strike": 22400.0,
+        "expiry": "2026-10-27",
+        "security_id": "51327",
+        "qty": 65,
+        "order_id": "PAPER-20261023130738339704",
+        "backstop_order_id": null,
+        "exit_time": "2026-10-23T13:29:00+05:30",
+        "exit_price": 112.4,
+        "exit_order_id": "PAPER-20261023132953617581",
+        "reason": "signal_exit",
+        "pnl": -90.99999999999945
+      }
+    ],
+    "bars_held": 0,
+    "violation_streak": 0,
     "last_error": null,
     "checklist": {
-      "ltp": 22413.4,
-      "as_of": "2026-10-23T13:28:00+05:30",
+      "ltp": 22410.9,
+      "as_of": "2026-10-23T13:29:00+05:30",
       "tc": 22681.74,
       "bc": 22669.92,
       "prev_high": 22785.0,
@@ -74,17 +81,17 @@
           true
         ]
       ],
-      "ema5_5m": 22411.09
+      "ema5_5m": 22410.26
     },
     "oi_metrics": {
       "expiry": "2026-10-27",
-      "spot": 22412.65,
+      "spot": 22410.6,
       "resistance_strike": 23000.0,
-      "resistance_call_oi": 24397555,
+      "resistance_call_oi": 24401845,
       "support_strike": 22000.0,
-      "support_put_oi": 15881645,
+      "support_put_oi": 15910895,
       "max_pain": 22600.0,
-      "pcr": 0.673,
+      "pcr": 0.672,
       "pcr_suggestion": "PUT"
     },
     "ip_status": null,
@@ -93,30 +100,37 @@
   "SENSEX": {
     "date": "2026-10-23",
     "engine_status": "running",
-    "last_tick": "2026-10-23T13:28:29.365974",
-    "last_processed_bar": "2026-10-23T13:28:00+05:30",
-    "position": {
-      "side": "PUT",
-      "entry_time": "2026-10-23T13:05:00+05:30",
-      "entry_price": 509.75,
-      "spot_at_entry": 72544.65,
-      "strike": 72500.0,
-      "expiry": "2026-10-29",
-      "security_id": "865130",
-      "qty": 20,
-      "order_id": "PAPER-20261023130742640609",
-      "backstop_order_id": null
-    },
+    "last_tick": "2026-10-23T13:29:57.819766",
+    "last_processed_bar": "2026-10-23T13:29:00+05:30",
+    "position": null,
     "trades_today": 1,
-    "realized_pnl_today": 0.0,
+    "realized_pnl_today": -295.0,
     "daily_loss_cap_hit": false,
-    "today_trades": [],
-    "bars_held": 18,
-    "violation_streak": 2,
+    "today_trades": [
+      {
+        "side": "PUT",
+        "entry_time": "2026-10-23T13:05:00+05:30",
+        "entry_price": 509.75,
+        "spot_at_entry": 72544.65,
+        "strike": 72500.0,
+        "expiry": "2026-10-29",
+        "security_id": "865130",
+        "qty": 20,
+        "order_id": "PAPER-20261023130742640609",
+        "backstop_order_id": null,
+        "exit_time": "2026-10-23T13:29:00+05:30",
+        "exit_price": 495.0,
+        "exit_order_id": "PAPER-20261023132957606970",
+        "reason": "signal_exit",
+        "pnl": -295.0
+      }
+    ],
+    "bars_held": 0,
+    "violation_streak": 0,
     "last_error": null,
     "checklist": {
-      "ltp": 72570.91,
-      "as_of": "2026-10-23T13:28:00+05:30",
+      "ltp": 72568.89,
+      "as_of": "2026-10-23T13:29:00+05:30",
       "tc": 73362.97,
       "bc": 73287.25,
       "prev_high": 73720.83,
@@ -165,11 +179,11 @@
           true
         ]
       ],
-      "ema5_5m": 72567.22
+      "ema5_5m": 72566.55
     },
     "oi_metrics": {
       "expiry": "2026-10-29",
-      "spot": 72571.93,
+      "spot": 72568.26,
       "resistance_strike": 73500.0,
       "resistance_call_oi": 789320,
       "support_strike": 72000.0,
