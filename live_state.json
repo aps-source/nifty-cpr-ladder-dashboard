@@ -1,9 +1,9 @@
 {
   "NIFTY": {
     "date": "2026-10-24",
-    "engine_status": "token_invalid",
-    "last_tick": "2026-10-24T22:20:53.778767",
-    "last_processed_bar": null,
+    "engine_status": "running",
+    "last_tick": "2026-10-24T22:22:04.686106",
+    "last_processed_bar": "2026-10-23T15:29:00+05:30",
     "position": null,
     "trades_today": 0,
     "realized_pnl_today": 0.0,
@@ -12,15 +12,68 @@
     "bars_held": 0,
     "violation_streak": 0,
     "last_error": null,
-    "checklist": null,
+    "checklist": {
+      "ltp": 22600.0,
+      "as_of": "2026-10-23T15:29:00+05:30",
+      "tc": 22681.74,
+      "bc": 22669.92,
+      "prev_high": 22785.0,
+      "prev_low": 22554.85,
+      "checks_call": [
+        [
+          "Price above Daily CPR (TC)",
+          false
+        ],
+        [
+          "15-min stack: price>5>26>50",
+          false
+        ],
+        [
+          "5-min stack: price>5>26>50",
+          true
+        ],
+        [
+          "3-min stack: price>5>26>50",
+          true
+        ],
+        [
+          "Price above prev-day High",
+          false
+        ]
+      ],
+      "checks_put": [
+        [
+          "Price below Daily CPR (BC)",
+          true
+        ],
+        [
+          "15-min stack: price<5<26<50",
+          false
+        ],
+        [
+          "5-min stack: price<5<26<50",
+          false
+        ],
+        [
+          "3-min stack: price<5<26<50",
+          false
+        ],
+        [
+          "Price below prev-day Low",
+          false
+        ]
+      ],
+      "ema5_5m": 22539.28
+    },
     "oi_metrics": null,
-    "ip_status": null
+    "ip_status": null,
+    "_last_signal_bucket": "2026-10-24T22:20:00"
   },
   "SENSEX": {
     "date": "2026-10-24",
-    "engine_status": "token_invalid",
-    "last_tick": "2026-10-24T22:20:53.820000",
-    "last_processed_bar": null,
+    "engine_status": "running",
+    "last_tick": "2026-10-24T22:22:07.887419",
+    "last_processed_bar": "2026-10-23T15:29:00+05:30",
     "position": null,
     "trades_today": 0,
     "realized_pnl_today": 0.0,
@@ -29,8 +82,61 @@
     "bars_held": 0,
     "violation_streak": 0,
     "last_error": null,
-    "checklist": null,
+    "checklist": {
+      "ltp": 73123.83,
+      "as_of": "2026-10-23T15:29:00+05:30",
+      "tc": 73362.97,
+      "bc": 73287.25,
+      "prev_high": 73720.83,
+      "prev_low": 73005.11,
+      "checks_call": [
+        [
+          "Price above Daily CPR (TC)",
+          false
+        ],
+        [
+          "15-min stack: price>5>26>50",
+          false
+        ],
+        [
+          "5-min stack: price>5>26>50",
+          true
+        ],
+        [
+          "3-min stack: price>5>26>50",
+          true
+        ],
+        [
+          "Price above prev-day High",
+          false
+        ]
+      ],
+      "checks_put": [
+        [
+          "Price below Daily CPR (BC)",
+          true
+        ],
+        [
+          "15-min stack: price<5<26<50",
+          false
+        ],
+        [
+          "5-min stack: price<5<26<50",
+          false
+        ],
+        [
+          "3-min stack: price<5<26<50",
+          false
+        ],
+        [
+          "Price below prev-day Low",
+          false
+        ]
+      ],
+      "ema5_5m": 72959.64
+    },
     "oi_metrics": null,
-    "ip_status": null
+    "ip_status": null,
+    "_last_signal_bucket": "2026-10-24T22:20:00"
   }
 }
