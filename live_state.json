@@ -1,8 +1,8 @@
 {
   "NIFTY": {
     "date": "2026-10-27",
-    "engine_status": "data_error",
-    "last_tick": "2026-10-27T15:01:29.114085",
+    "engine_status": "token_invalid",
+    "last_tick": "2026-10-27T15:02:56.628096",
     "last_processed_bar": "2026-10-27T15:00:00+05:30",
     "position": null,
     "trades_today": 0,
@@ -11,7 +11,7 @@
     "today_trades": [],
     "bars_held": 0,
     "violation_streak": 0,
-    "last_error": "[WinError 5] Access is denied: 'D:\\\\Claude - Algo\\\\Claude Projects\\\\Live\\\\Project Nifty 3min CPR Strategy\\\\nifty_1min_raw.csv.tmp' -> 'D:\\\\Claude - Algo\\\\Claude Projects\\\\Live\\\\Project Nifty 3min CPR Strategy\\\\nifty_1min_raw.csv'",
+    "last_error": null,
     "checklist": {
       "ltp": 22767.1,
       "as_of": "2026-10-27T15:00:00+05:30",
@@ -82,8 +82,8 @@
   "SENSEX": {
     "date": "2026-10-27",
     "engine_status": "running",
-    "last_tick": "2026-10-27T15:01:39.564699",
-    "last_processed_bar": "2026-10-27T15:01:00+05:30",
+    "last_tick": "2026-10-27T15:03:06.434777",
+    "last_processed_bar": "2026-10-27T15:03:00+05:30",
     "position": null,
     "trades_today": 0,
     "realized_pnl_today": 0.0,
@@ -93,8 +93,8 @@
     "violation_streak": 0,
     "last_error": null,
     "checklist": {
-      "ltp": 73576.15,
-      "as_of": "2026-10-27T15:01:00+05:30",
+      "ltp": 73573.46,
+      "as_of": "2026-10-27T15:03:00+05:30",
       "tc": 73424.72,
       "bc": 73060.66,
       "prev_high": 73606.75,
@@ -143,17 +143,17 @@
           false
         ]
       ],
-      "ema5_5m": 73529.48
+      "ema5_5m": 73528.58
     },
     "oi_metrics": {
       "expiry": "2026-10-29",
-      "spot": 73581.92,
+      "spot": 73576.71,
       "resistance_strike": 75000.0,
-      "resistance_call_oi": 1292460,
+      "resistance_call_oi": 1277880,
       "support_strike": 70000.0,
-      "support_put_oi": 1209240,
+      "support_put_oi": 1219440,
       "max_pain": 73500.0,
-      "pcr": 1.052,
+      "pcr": 1.062,
       "pcr_suggestion": "NEUTRAL"
     },
     "ip_status": null,
