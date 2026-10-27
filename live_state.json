@@ -2,8 +2,8 @@
   "NIFTY": {
     "date": "2026-10-27",
     "engine_status": "running",
-    "last_tick": "2026-10-27T10:39:46.626273",
-    "last_processed_bar": "2026-10-27T10:39:00+05:30",
+    "last_tick": "2026-10-27T10:41:04.275285",
+    "last_processed_bar": "2026-10-27T10:41:00+05:30",
     "position": null,
     "trades_today": 0,
     "realized_pnl_today": 0.0,
@@ -13,8 +13,8 @@
     "violation_streak": 0,
     "last_error": null,
     "checklist": {
-      "ltp": 22755.7,
-      "as_of": "2026-10-27T10:39:00+05:30",
+      "ltp": 22766.25,
+      "as_of": "2026-10-27T10:41:00+05:30",
       "tc": 22692.22,
       "bc": 22570.28,
       "prev_high": 22753.2,
@@ -63,26 +63,26 @@
           false
         ]
       ],
-      "ema5_5m": 22744.87
+      "ema5_5m": 22752.0
     },
     "oi_metrics": {
       "expiry": "2026-10-27",
-      "spot": 22756.6,
+      "spot": 22765.7,
       "resistance_strike": 23000.0,
-      "resistance_call_oi": 29202160,
+      "resistance_call_oi": 29242525,
       "support_strike": 22500.0,
-      "support_put_oi": 24975210,
+      "support_put_oi": 25005565,
       "max_pain": 22750.0,
-      "pcr": 0.981,
+      "pcr": 0.98,
       "pcr_suggestion": "NEUTRAL"
     },
     "ip_status": null,
-    "_last_signal_bucket": "2026-10-27T10:35:00"
+    "_last_signal_bucket": "2026-10-27T10:40:00"
   },
   "SENSEX": {
     "date": "2026-10-27",
-    "engine_status": "running",
-    "last_tick": "2026-10-27T10:39:52.654061",
+    "engine_status": "data_error",
+    "last_tick": "2026-10-27T10:41:13.795740",
     "last_processed_bar": "2026-10-27T10:39:00+05:30",
     "position": null,
     "trades_today": 0,
@@ -91,7 +91,7 @@
     "today_trades": [],
     "bars_held": 0,
     "violation_streak": 0,
-    "last_error": null,
+    "last_error": "[WinError 5] Access is denied: 'D:\\\\Claude - Algo\\\\Claude Projects\\\\Live\\\\Project Nifty 3min CPR Strategy\\\\sensex_1min_raw.csv.tmp' -> 'D:\\\\Claude - Algo\\\\Claude Projects\\\\Live\\\\Project Nifty 3min CPR Strategy\\\\sensex_1min_raw.csv'",
     "checklist": {
       "ltp": 73559.74,
       "as_of": "2026-10-27T10:39:00+05:30",
