@@ -1,9 +1,9 @@
 {
   "NIFTY": {
     "date": "2026-10-27",
-    "engine_status": "token_invalid",
-    "last_tick": "2026-10-27T10:05:49.065021",
-    "last_processed_bar": "2026-10-26T15:29:00+05:30",
+    "engine_status": "running",
+    "last_tick": "2026-10-27T10:07:34.031253",
+    "last_processed_bar": "2026-10-27T10:07:00+05:30",
     "position": null,
     "trades_today": 0,
     "realized_pnl_today": 0.0,
@@ -13,12 +13,12 @@
     "violation_streak": 0,
     "last_error": null,
     "checklist": {
-      "ltp": 22753.2,
-      "as_of": "2026-10-26T15:29:00+05:30",
-      "tc": 22593.21,
-      "bc": 22579.62,
-      "prev_high": 22787.25,
-      "prev_low": 22372.0,
+      "ltp": 22775.3,
+      "as_of": "2026-10-27T10:07:00+05:30",
+      "tc": 22692.22,
+      "bc": 22570.28,
+      "prev_high": 22753.2,
+      "prev_low": 22387.35,
       "checks_call": [
         [
           "Price above Daily CPR (TC)",
@@ -38,7 +38,7 @@
         ],
         [
           "Price above prev-day High",
-          false
+          true
         ]
       ],
       "checks_put": [
@@ -63,17 +63,17 @@
           false
         ]
       ],
-      "ema5_5m": 22726.22
+      "ema5_5m": 22764.33
     },
     "oi_metrics": null,
     "ip_status": null,
-    "_last_signal_bucket": "2026-10-27T09:00:00"
+    "_last_signal_bucket": "2026-10-27T10:05:00"
   },
   "SENSEX": {
     "date": "2026-10-27",
-    "engine_status": "token_invalid",
-    "last_tick": "2026-10-27T10:05:49.100214",
-    "last_processed_bar": "2026-10-26T15:29:00+05:30",
+    "engine_status": "running",
+    "last_tick": "2026-10-27T10:07:59.445708",
+    "last_processed_bar": "2026-10-27T10:07:00+05:30",
     "position": null,
     "trades_today": 0,
     "realized_pnl_today": 0.0,
@@ -83,12 +83,12 @@
     "violation_streak": 0,
     "last_error": null,
     "checklist": {
-      "ltp": 73606.75,
-      "as_of": "2026-10-26T15:29:00+05:30",
-      "tc": 73119.03,
-      "bc": 73109.44,
-      "prev_high": 73766.51,
-      "prev_low": 72452.37,
+      "ltp": 73617.31,
+      "as_of": "2026-10-27T10:07:00+05:30",
+      "tc": 73424.72,
+      "bc": 73060.66,
+      "prev_high": 73606.75,
+      "prev_low": 72514.57,
       "checks_call": [
         [
           "Price above Daily CPR (TC)",
@@ -108,7 +108,7 @@
         ],
         [
           "Price above prev-day High",
-          false
+          true
         ]
       ],
       "checks_put": [
@@ -133,10 +133,10 @@
           false
         ]
       ],
-      "ema5_5m": 73525.65
+      "ema5_5m": 73575.85
     },
     "oi_metrics": null,
     "ip_status": null,
-    "_last_signal_bucket": "2026-10-27T09:00:00"
+    "_last_signal_bucket": "2026-10-27T10:05:00"
   }
 }
