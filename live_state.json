@@ -2,8 +2,8 @@
   "NIFTY": {
     "date": "2026-10-28",
     "engine_status": "running",
-    "last_tick": "2026-10-28T14:09:49.413968",
-    "last_processed_bar": "2026-10-28T14:09:00+05:30",
+    "last_tick": "2026-10-28T14:11:04.601658",
+    "last_processed_bar": "2026-10-28T14:11:00+05:30",
     "position": null,
     "trades_today": 0,
     "realized_pnl_today": 0.0,
@@ -13,8 +13,8 @@
     "violation_streak": 0,
     "last_error": null,
     "checklist": {
-      "ltp": 22705.4,
-      "as_of": "2026-10-28T14:09:00+05:30",
+      "ltp": 22700.75,
+      "as_of": "2026-10-28T14:11:00+05:30",
       "tc": 22744.27,
       "bc": 22733.3,
       "prev_high": 22829.75,
@@ -63,26 +63,26 @@
           false
         ]
       ],
-      "ema5_5m": 22707.06
+      "ema5_5m": 22704.95
     },
     "oi_metrics": {
       "expiry": "2026-11-03",
-      "spot": 22704.95,
+      "spot": 22702.2,
       "resistance_strike": 23000.0,
-      "resistance_call_oi": 8580910,
+      "resistance_call_oi": 8598720,
       "support_strike": 20050.0,
       "support_put_oi": 8776040,
       "max_pain": 22700.0,
-      "pcr": 1.144,
+      "pcr": 1.143,
       "pcr_suggestion": "CALL"
     },
     "ip_status": null,
-    "_last_signal_bucket": "2026-10-28T14:05:00"
+    "_last_signal_bucket": "2026-10-28T14:10:00"
   },
   "SENSEX": {
     "date": "2026-10-28",
-    "engine_status": "running",
-    "last_tick": "2026-10-28T14:09:53.271702",
+    "engine_status": "data_error",
+    "last_tick": "2026-10-28T14:11:15.460515",
     "last_processed_bar": "2026-10-28T14:09:00+05:30",
     "position": null,
     "trades_today": 0,
@@ -91,7 +91,7 @@
     "today_trades": [],
     "bars_held": 0,
     "violation_streak": 0,
-    "last_error": null,
+    "last_error": "[WinError 5] Access is denied: 'D:\\\\Claude - Algo\\\\Claude Projects\\\\Live\\\\Project Nifty 3min CPR Strategy\\\\sensex_1min_raw.csv.tmp' -> 'D:\\\\Claude - Algo\\\\Claude Projects\\\\Live\\\\Project Nifty 3min CPR Strategy\\\\sensex_1min_raw.csv'",
     "checklist": {
       "ltp": 73299.31,
       "as_of": "2026-10-28T14:09:00+05:30",
