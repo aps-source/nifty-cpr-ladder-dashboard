@@ -2,8 +2,8 @@
   "NIFTY": {
     "date": "2026-10-28",
     "engine_status": "running",
-    "last_tick": "2026-10-28T09:14:21.323729",
-    "last_processed_bar": "2026-10-27T15:29:00+05:30",
+    "last_tick": "2026-10-28T09:15:31.960010",
+    "last_processed_bar": "2026-10-28T09:15:00+05:30",
     "position": null,
     "trades_today": 0,
     "realized_pnl_today": 0.0,
@@ -13,20 +13,20 @@
     "violation_streak": 0,
     "last_error": null,
     "checklist": {
-      "ltp": 22749.75,
-      "as_of": "2026-10-27T15:29:00+05:30",
-      "tc": 22692.22,
-      "bc": 22570.28,
-      "prev_high": 22753.2,
-      "prev_low": 22387.35,
+      "ltp": 22574.25,
+      "as_of": "2026-10-28T09:15:00+05:30",
+      "tc": 22744.27,
+      "bc": 22733.3,
+      "prev_high": 22829.75,
+      "prev_low": 22636.85,
       "checks_call": [
         [
           "Price above Daily CPR (TC)",
-          true
+          false
         ],
         [
           "15-min stack: price>5>26>50",
-          true
+          false
         ],
         [
           "5-min stack: price>5>26>50",
@@ -44,7 +44,7 @@
       "checks_put": [
         [
           "Price below Daily CPR (BC)",
-          false
+          true
         ],
         [
           "15-min stack: price<5<26<50",
@@ -52,7 +52,7 @@
         ],
         [
           "5-min stack: price<5<26<50",
-          false
+          true
         ],
         [
           "3-min stack: price<5<26<50",
@@ -60,14 +60,14 @@
         ],
         [
           "Price below prev-day Low",
-          false
+          true
         ]
       ],
-      "ema5_5m": 22753.96
+      "ema5_5m": 22694.06
     },
     "oi_metrics": {
       "expiry": "2026-11-03",
-      "spot": 22678.0,
+      "spot": 22586.95,
       "resistance_strike": 23500.0,
       "resistance_call_oi": 6597955,
       "support_strike": 20050.0,
@@ -77,13 +77,13 @@
       "pcr_suggestion": "NEUTRAL"
     },
     "ip_status": null,
-    "_last_signal_bucket": "2026-10-28T09:10:00"
+    "_last_signal_bucket": "2026-10-28T09:15:00"
   },
   "SENSEX": {
     "date": "2026-10-28",
     "engine_status": "running",
-    "last_tick": "2026-10-28T09:14:24.380141",
-    "last_processed_bar": "2026-10-27T15:29:00+05:30",
+    "last_tick": "2026-10-28T09:15:35.559265",
+    "last_processed_bar": "2026-10-28T09:15:00+05:30",
     "position": null,
     "trades_today": 0,
     "realized_pnl_today": 0.0,
@@ -93,28 +93,28 @@
     "violation_streak": 0,
     "last_error": null,
     "checklist": {
-      "ltp": 73598.67,
-      "as_of": "2026-10-27T15:29:00+05:30",
-      "tc": 73424.72,
-      "bc": 73060.66,
-      "prev_high": 73606.75,
-      "prev_low": 72514.57,
+      "ltp": 72947.41,
+      "as_of": "2026-10-28T09:15:00+05:30",
+      "tc": 73556.18,
+      "bc": 73471.2,
+      "prev_high": 73762.98,
+      "prev_low": 73179.41,
       "checks_call": [
         [
           "Price above Daily CPR (TC)",
-          true
+          false
         ],
         [
           "15-min stack: price>5>26>50",
-          true
+          false
         ],
         [
           "5-min stack: price>5>26>50",
-          true
+          false
         ],
         [
           "3-min stack: price>5>26>50",
-          true
+          false
         ],
         [
           "Price above prev-day High",
@@ -124,7 +124,7 @@
       "checks_put": [
         [
           "Price below Daily CPR (BC)",
-          false
+          true
         ],
         [
           "15-min stack: price<5<26<50",
@@ -132,7 +132,7 @@
         ],
         [
           "5-min stack: price<5<26<50",
-          false
+          true
         ],
         [
           "3-min stack: price<5<26<50",
@@ -140,14 +140,14 @@
         ],
         [
           "Price below prev-day Low",
-          false
+          true
         ]
       ],
-      "ema5_5m": 73565.27
+      "ema5_5m": 73359.32
     },
     "oi_metrics": {
       "expiry": "2026-10-29",
-      "spot": 73253.44,
+      "spot": 72947.62,
       "resistance_strike": 75000.0,
       "resistance_call_oi": 1582820,
       "support_strike": 72000.0,
@@ -157,6 +157,6 @@
       "pcr_suggestion": "NEUTRAL"
     },
     "ip_status": null,
-    "_last_signal_bucket": "2026-10-28T09:10:00"
+    "_last_signal_bucket": "2026-10-28T09:15:00"
   }
 }
