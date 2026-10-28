@@ -1,8 +1,8 @@
 {
   "NIFTY": {
-    "date": "2026-10-27",
-    "engine_status": "data_error",
-    "last_tick": "2026-10-27T15:40:12.648911",
+    "date": "2026-10-28",
+    "engine_status": "running",
+    "last_tick": "2026-10-28T09:00:38.255805",
     "last_processed_bar": "2026-10-27T15:29:00+05:30",
     "position": null,
     "trades_today": 0,
@@ -11,7 +11,7 @@
     "today_trades": [],
     "bars_held": 0,
     "violation_streak": 0,
-    "last_error": "[WinError 5] Access is denied: 'D:\\\\Claude - Algo\\\\Claude Projects\\\\Live\\\\Project Nifty 3min CPR Strategy\\\\nifty_1min_raw.csv.tmp' -> 'D:\\\\Claude - Algo\\\\Claude Projects\\\\Live\\\\Project Nifty 3min CPR Strategy\\\\nifty_1min_raw.csv'",
+    "last_error": null,
     "checklist": {
       "ltp": 22749.75,
       "as_of": "2026-10-27T15:29:00+05:30",
@@ -65,24 +65,14 @@
       ],
       "ema5_5m": 22753.96
     },
-    "oi_metrics": {
-      "expiry": "2026-10-27",
-      "spot": 22749.75,
-      "resistance_strike": 22800.0,
-      "resistance_call_oi": 16255005,
-      "support_strike": 22750.0,
-      "support_put_oi": 20132970,
-      "max_pain": 22750.0,
-      "pcr": 1.041,
-      "pcr_suggestion": "NEUTRAL"
-    },
+    "oi_metrics": null,
     "ip_status": null,
-    "_last_signal_bucket": "2026-10-27T15:35:00"
+    "_last_signal_bucket": "2026-10-28T09:00:00"
   },
   "SENSEX": {
-    "date": "2026-10-27",
+    "date": "2026-10-28",
     "engine_status": "running",
-    "last_tick": "2026-10-27T15:40:21.932896",
+    "last_tick": "2026-10-28T09:01:06.362215",
     "last_processed_bar": "2026-10-27T15:29:00+05:30",
     "position": null,
     "trades_today": 0,
@@ -145,18 +135,8 @@
       ],
       "ema5_5m": 73565.27
     },
-    "oi_metrics": {
-      "expiry": "2026-10-29",
-      "spot": 73598.67,
-      "resistance_strike": 75000.0,
-      "resistance_call_oi": 1586960,
-      "support_strike": 72000.0,
-      "support_put_oi": 1280860,
-      "max_pain": 73500.0,
-      "pcr": 1.086,
-      "pcr_suggestion": "NEUTRAL"
-    },
+    "oi_metrics": null,
     "ip_status": null,
-    "_last_signal_bucket": "2026-10-27T15:40:00"
+    "_last_signal_bucket": "2026-10-28T09:00:00"
   }
 }
