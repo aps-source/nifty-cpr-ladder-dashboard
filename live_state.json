@@ -1,8 +1,8 @@
 {
   "NIFTY": {
     "date": "2026-10-29",
-    "engine_status": "data_error",
-    "last_tick": "2026-10-29T12:56:06.899251",
+    "engine_status": "token_invalid",
+    "last_tick": "2026-10-29T12:57:30.319601",
     "last_processed_bar": "2026-10-29T12:54:00+05:30",
     "position": null,
     "trades_today": 0,
@@ -11,7 +11,7 @@
     "today_trades": [],
     "bars_held": 0,
     "violation_streak": 0,
-    "last_error": "[WinError 5] Access is denied: 'D:\\\\Claude - Algo\\\\Claude Projects\\\\Live\\\\Project Nifty 3min CPR Strategy\\\\nifty_1min_raw.csv.tmp' -> 'D:\\\\Claude - Algo\\\\Claude Projects\\\\Live\\\\Project Nifty 3min CPR Strategy\\\\nifty_1min_raw.csv'",
+    "last_error": null,
     "checklist": {
       "ltp": 22811.85,
       "as_of": "2026-10-29T12:54:00+05:30",
@@ -81,9 +81,9 @@
   },
   "SENSEX": {
     "date": "2026-10-29",
-    "engine_status": "data_error",
-    "last_tick": "2026-10-29T12:56:12.755632",
-    "last_processed_bar": "2026-10-29T12:54:00+05:30",
+    "engine_status": "running",
+    "last_tick": "2026-10-29T12:57:35.846739",
+    "last_processed_bar": "2026-10-29T12:57:00+05:30",
     "position": null,
     "trades_today": 0,
     "realized_pnl_today": 0.0,
@@ -91,10 +91,10 @@
     "today_trades": [],
     "bars_held": 0,
     "violation_streak": 0,
-    "last_error": "[WinError 5] Access is denied: 'D:\\\\Claude - Algo\\\\Claude Projects\\\\Live\\\\Project Nifty 3min CPR Strategy\\\\sensex_1min_raw.csv.tmp' -> 'D:\\\\Claude - Algo\\\\Claude Projects\\\\Live\\\\Project Nifty 3min CPR Strategy\\\\sensex_1min_raw.csv'",
+    "last_error": null,
     "checklist": {
-      "ltp": 73681.6,
-      "as_of": "2026-10-29T12:54:00+05:30",
+      "ltp": 73687.53,
+      "as_of": "2026-10-29T12:57:00+05:30",
       "tc": 73185.52,
       "bc": 73064.51,
       "prev_high": 73525.44,
@@ -143,20 +143,20 @@
           false
         ]
       ],
-      "ema5_5m": 73739.85
+      "ema5_5m": 73722.41
     },
     "oi_metrics": {
       "expiry": "2026-10-29",
-      "spot": 73681.6,
+      "spot": 73690.09,
       "resistance_strike": 74000.0,
-      "resistance_call_oi": 8106240,
+      "resistance_call_oi": 8207440,
       "support_strike": 73000.0,
-      "support_put_oi": 7977880,
+      "support_put_oi": 8126760,
       "max_pain": 73700.0,
-      "pcr": 1.459,
+      "pcr": 1.46,
       "pcr_suggestion": "CALL"
     },
     "ip_status": null,
-    "_last_signal_bucket": "2026-10-29T12:50:00"
+    "_last_signal_bucket": "2026-10-29T12:55:00"
   }
 }
