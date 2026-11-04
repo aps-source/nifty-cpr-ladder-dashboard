@@ -1,9 +1,9 @@
 {
   "NIFTY": {
     "date": "2026-11-04",
-    "engine_status": "token_invalid",
-    "last_tick": "2026-11-04T11:24:48.006617",
-    "last_processed_bar": "2026-11-04T11:23:00+05:30",
+    "engine_status": "running",
+    "last_tick": "2026-11-04T11:26:01.275199",
+    "last_processed_bar": "2026-11-04T11:25:00+05:30",
     "position": null,
     "trades_today": 0,
     "realized_pnl_today": 0.0,
@@ -13,8 +13,8 @@
     "violation_streak": 0,
     "last_error": null,
     "checklist": {
-      "ltp": 23833.35,
-      "as_of": "2026-11-04T11:23:00+05:30",
+      "ltp": 23825.75,
+      "as_of": "2026-11-04T11:25:00+05:30",
       "tc": 23764.03,
       "bc": 23670.4,
       "prev_high": 23810.85,
@@ -26,7 +26,7 @@
         ],
         [
           "15-min stack: price>5>26>50",
-          true
+          false
         ],
         [
           "5-min stack: price>5>26>50",
@@ -63,26 +63,26 @@
           false
         ]
       ],
-      "ema5_5m": 23824.82
+      "ema5_5m": 23824.57
     },
     "oi_metrics": {
       "expiry": "2026-11-09",
-      "spot": 23833.5,
+      "spot": 23826.1,
       "resistance_strike": 24000.0,
-      "resistance_call_oi": 11506235,
+      "resistance_call_oi": 11336130,
       "support_strike": 23600.0,
-      "support_put_oi": 7331675,
+      "support_put_oi": 7386795,
       "max_pain": 23750.0,
-      "pcr": 0.92,
+      "pcr": 0.929,
       "pcr_suggestion": "NEUTRAL"
     },
     "ip_status": null,
-    "_last_signal_bucket": "2026-11-04T11:20:00"
+    "_last_signal_bucket": "2026-11-04T11:25:00"
   },
   "SENSEX": {
     "date": "2026-11-04",
-    "engine_status": "running",
-    "last_tick": "2026-11-04T11:24:52.298054",
+    "engine_status": "data_error",
+    "last_tick": "2026-11-04T11:26:09.465810",
     "last_processed_bar": "2026-11-04T11:24:00+05:30",
     "position": null,
     "trades_today": 0,
@@ -91,7 +91,7 @@
     "today_trades": [],
     "bars_held": 0,
     "violation_streak": 0,
-    "last_error": null,
+    "last_error": "[WinError 5] Access is denied: 'D:\\\\Claude - Algo\\\\Claude Projects\\\\Live\\\\Project Nifty 3min CPR Strategy\\\\sensex_1min_raw.csv.tmp' -> 'D:\\\\Claude - Algo\\\\Claude Projects\\\\Live\\\\Project Nifty 3min CPR Strategy\\\\sensex_1min_raw.csv'",
     "checklist": {
       "ltp": 77006.44,
       "as_of": "2026-11-04T11:24:00+05:30",
