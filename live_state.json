@@ -2,8 +2,8 @@
   "NIFTY": {
     "date": "2026-11-06",
     "engine_status": "running",
-    "last_tick": "2026-11-06T14:18:44.459516",
-    "last_processed_bar": "2026-11-06T14:18:00+05:30",
+    "last_tick": "2026-11-06T14:20:19.732739",
+    "last_processed_bar": "2026-11-06T14:20:00+05:30",
     "position": null,
     "trades_today": 0,
     "realized_pnl_today": 0.0,
@@ -11,10 +11,10 @@
     "today_trades": [],
     "bars_held": 0,
     "violation_streak": 0,
-    "last_error": null,
+    "last_error": "Unable to fetch the Dhan security master",
     "checklist": {
-      "ltp": 24794.85,
-      "as_of": "2026-11-06T14:18:00+05:30",
+      "ltp": 24811.4,
+      "as_of": "2026-11-06T14:20:00+05:30",
       "tc": 24503.77,
       "bc": 24438.1,
       "prev_high": 24579.9,
@@ -30,11 +30,11 @@
         ],
         [
           "5-min stack: price>5>26>50",
-          false
+          true
         ],
         [
           "3-min stack: price>5>26>50",
-          false
+          true
         ],
         [
           "Price above prev-day High",
@@ -63,27 +63,27 @@
           false
         ]
       ],
-      "ema5_5m": 24797.14
+      "ema5_5m": 24804.51
     },
     "oi_metrics": {
       "expiry": "2026-11-09",
-      "spot": 24794.55,
+      "spot": 24811.15,
       "resistance_strike": 25000.0,
-      "resistance_call_oi": 15659150,
-      "support_strike": 24500.0,
-      "support_put_oi": 14415830,
+      "resistance_call_oi": 15727855,
+      "support_strike": 23000.0,
+      "support_put_oi": 14335555,
       "max_pain": 24650.0,
-      "pcr": 1.647,
+      "pcr": 1.638,
       "pcr_suggestion": "CALL"
     },
     "ip_status": null,
-    "_last_signal_bucket": "2026-11-06T14:15:00"
+    "_last_signal_bucket": "2026-11-06T14:20:00"
   },
   "SENSEX": {
     "date": "2026-11-06",
     "engine_status": "running",
-    "last_tick": "2026-11-06T14:18:48.830157",
-    "last_processed_bar": "2026-11-06T14:18:00+05:30",
+    "last_tick": "2026-11-06T14:20:29.630332",
+    "last_processed_bar": "2026-11-06T14:20:00+05:30",
     "position": null,
     "trades_today": 0,
     "realized_pnl_today": 0.0,
@@ -91,10 +91,10 @@
     "today_trades": [],
     "bars_held": 0,
     "violation_streak": 0,
-    "last_error": null,
+    "last_error": "Unable to fetch the Dhan security master",
     "checklist": {
-      "ltp": 80348.93,
-      "as_of": "2026-11-06T14:18:00+05:30",
+      "ltp": 80411.2,
+      "as_of": "2026-11-06T14:20:00+05:30",
       "tc": 79205.1,
       "bc": 78995.29,
       "prev_high": 79470.03,
@@ -110,11 +110,11 @@
         ],
         [
           "5-min stack: price>5>26>50",
-          false
+          true
         ],
         [
           "3-min stack: price>5>26>50",
-          false
+          true
         ],
         [
           "Price above prev-day High",
@@ -143,11 +143,11 @@
           false
         ]
       ],
-      "ema5_5m": 80365.9
+      "ema5_5m": 80391.35
     },
     "oi_metrics": {
       "expiry": "2026-11-12",
-      "spot": 80359.7,
+      "spot": 80389.54,
       "resistance_strike": 83000.0,
       "resistance_call_oi": 618020,
       "support_strike": 79000.0,
@@ -157,6 +157,6 @@
       "pcr_suggestion": "CALL"
     },
     "ip_status": null,
-    "_last_signal_bucket": "2026-11-06T14:15:00"
+    "_last_signal_bucket": "2026-11-06T14:20:00"
   }
 }
