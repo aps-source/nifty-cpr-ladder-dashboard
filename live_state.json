@@ -1,8 +1,8 @@
 {
   "NIFTY": {
     "date": "2026-11-06",
-    "engine_status": "running",
-    "last_tick": "2026-11-06T13:36:47.565385",
+    "engine_status": "token_invalid",
+    "last_tick": "2026-11-06T13:38:17.954098",
     "last_processed_bar": "2026-11-06T13:36:00+05:30",
     "position": null,
     "trades_today": 0,
@@ -11,7 +11,7 @@
     "today_trades": [],
     "bars_held": 0,
     "violation_streak": 0,
-    "last_error": "Unable to fetch the Dhan security master",
+    "last_error": null,
     "checklist": {
       "ltp": 24747.8,
       "as_of": "2026-11-06T13:36:00+05:30",
@@ -82,8 +82,8 @@
   "SENSEX": {
     "date": "2026-11-06",
     "engine_status": "running",
-    "last_tick": "2026-11-06T13:36:55.067398",
-    "last_processed_bar": "2026-11-06T13:36:00+05:30",
+    "last_tick": "2026-11-06T13:38:35.340092",
+    "last_processed_bar": "2026-11-06T13:38:00+05:30",
     "position": null,
     "trades_today": 0,
     "realized_pnl_today": 0.0,
@@ -93,8 +93,8 @@
     "violation_streak": 0,
     "last_error": "Unable to fetch the Dhan security master",
     "checklist": {
-      "ltp": 80202.91,
-      "as_of": "2026-11-06T13:36:00+05:30",
+      "ltp": 80210.2,
+      "as_of": "2026-11-06T13:38:00+05:30",
       "tc": 79205.1,
       "bc": 78995.29,
       "prev_high": 79470.03,
@@ -143,17 +143,17 @@
           false
         ]
       ],
-      "ema5_5m": 80169.08
+      "ema5_5m": 80171.51
     },
     "oi_metrics": {
       "expiry": "2026-11-12",
-      "spot": 80200.8,
+      "spot": 80210.49,
       "resistance_strike": 80000.0,
-      "resistance_call_oi": 640180,
+      "resistance_call_oi": 622360,
       "support_strike": 78000.0,
-      "support_put_oi": 881740,
+      "support_put_oi": 885620,
       "max_pain": 79500.0,
-      "pcr": 1.506,
+      "pcr": 1.524,
       "pcr_suggestion": "CALL"
     },
     "ip_status": null,
