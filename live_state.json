@@ -2,8 +2,8 @@
   "NIFTY": {
     "date": "2026-11-06",
     "engine_status": "running",
-    "last_tick": "2026-11-06T13:21:02.732976",
-    "last_processed_bar": "2026-11-06T13:20:00+05:30",
+    "last_tick": "2026-11-06T13:22:27.648837",
+    "last_processed_bar": "2026-11-06T13:22:00+05:30",
     "position": null,
     "trades_today": 0,
     "realized_pnl_today": 0.0,
@@ -13,8 +13,8 @@
     "violation_streak": 0,
     "last_error": "Unable to fetch the Dhan security master",
     "checklist": {
-      "ltp": 24745.95,
-      "as_of": "2026-11-06T13:20:00+05:30",
+      "ltp": 24742.3,
+      "as_of": "2026-11-06T13:22:00+05:30",
       "tc": 24503.77,
       "bc": 24438.1,
       "prev_high": 24579.9,
@@ -63,17 +63,17 @@
           false
         ]
       ],
-      "ema5_5m": 24720.58
+      "ema5_5m": 24719.36
     },
     "oi_metrics": {
       "expiry": "2026-11-09",
-      "spot": 24744.15,
+      "spot": 24738.15,
       "resistance_strike": 25000.0,
-      "resistance_call_oi": 14688635,
+      "resistance_call_oi": 14487265,
       "support_strike": 23000.0,
-      "support_put_oi": 15112500,
-      "max_pain": 24550.0,
-      "pcr": 1.595,
+      "support_put_oi": 15145845,
+      "max_pain": 24600.0,
+      "pcr": 1.604,
       "pcr_suggestion": "CALL"
     },
     "ip_status": null,
@@ -81,9 +81,9 @@
   },
   "SENSEX": {
     "date": "2026-11-06",
-    "engine_status": "data_error",
-    "last_tick": "2026-11-06T13:21:13.669635",
-    "last_processed_bar": "2026-11-06T13:19:00+05:30",
+    "engine_status": "running",
+    "last_tick": "2026-11-06T13:22:34.945128",
+    "last_processed_bar": "2026-11-06T13:22:00+05:30",
     "position": null,
     "trades_today": 0,
     "realized_pnl_today": 0.0,
@@ -91,10 +91,10 @@
     "today_trades": [],
     "bars_held": 0,
     "violation_streak": 0,
-    "last_error": "[WinError 5] Access is denied: 'D:\\\\Claude - Algo\\\\Claude Projects\\\\Live\\\\Project Nifty 3min CPR Strategy\\\\sensex_1min_raw.csv.tmp' -> 'D:\\\\Claude - Algo\\\\Claude Projects\\\\Live\\\\Project Nifty 3min CPR Strategy\\\\sensex_1min_raw.csv'",
+    "last_error": "Unable to fetch the Dhan security master",
     "checklist": {
-      "ltp": 80200.45,
-      "as_of": "2026-11-06T13:19:00+05:30",
+      "ltp": 80172.51,
+      "as_of": "2026-11-06T13:22:00+05:30",
       "tc": 79205.1,
       "bc": 78995.29,
       "prev_high": 79470.03,
@@ -143,20 +143,20 @@
           false
         ]
       ],
-      "ema5_5m": 80079.17
+      "ema5_5m": 80110.29
     },
     "oi_metrics": {
       "expiry": "2026-11-12",
-      "spot": 80199.33,
+      "spot": 80182.69,
       "resistance_strike": 80000.0,
-      "resistance_call_oi": 656120,
+      "resistance_call_oi": 639340,
       "support_strike": 78000.0,
-      "support_put_oi": 873620,
+      "support_put_oi": 879660,
       "max_pain": 79500.0,
-      "pcr": 1.491,
+      "pcr": 1.511,
       "pcr_suggestion": "CALL"
     },
     "ip_status": null,
-    "_last_signal_bucket": "2026-11-06T13:15:00"
+    "_last_signal_bucket": "2026-11-06T13:20:00"
   }
 }
