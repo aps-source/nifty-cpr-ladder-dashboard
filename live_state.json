@@ -2,8 +2,8 @@
   "NIFTY": {
     "date": "2026-11-06",
     "engine_status": "running",
-    "last_tick": "2026-11-06T10:25:02.170697",
-    "last_processed_bar": "2026-11-06T10:24:00+05:30",
+    "last_tick": "2026-11-06T10:26:29.262539",
+    "last_processed_bar": "2026-11-06T10:26:00+05:30",
     "position": null,
     "trades_today": 0,
     "realized_pnl_today": 0.0,
@@ -11,10 +11,10 @@
     "today_trades": [],
     "bars_held": 0,
     "violation_streak": 0,
-    "last_error": "Unable to fetch the Dhan security master",
+    "last_error": null,
     "checklist": {
-      "ltp": 24655.8,
-      "as_of": "2026-11-06T10:24:00+05:30",
+      "ltp": 24642.8,
+      "as_of": "2026-11-06T10:26:00+05:30",
       "tc": 24503.77,
       "bc": 24438.1,
       "prev_high": 24579.9,
@@ -34,7 +34,7 @@
         ],
         [
           "3-min stack: price>5>26>50",
-          true
+          false
         ],
         [
           "Price above prev-day High",
@@ -63,17 +63,17 @@
           false
         ]
       ],
-      "ema5_5m": 24641.4
+      "ema5_5m": 24641.87
     },
     "oi_metrics": {
       "expiry": "2026-11-09",
-      "spot": 24654.0,
+      "spot": 24642.45,
       "resistance_strike": 25000.0,
-      "resistance_call_oi": 13018005,
+      "resistance_call_oi": 12887290,
       "support_strike": 24500.0,
-      "support_put_oi": 16329625,
+      "support_put_oi": 16493230,
       "max_pain": 24500.0,
-      "pcr": 1.513,
+      "pcr": 1.519,
       "pcr_suggestion": "CALL"
     },
     "ip_status": null,
@@ -82,8 +82,8 @@
   "SENSEX": {
     "date": "2026-11-06",
     "engine_status": "running",
-    "last_tick": "2026-11-06T10:25:17.990600",
-    "last_processed_bar": "2026-11-06T10:25:00+05:30",
+    "last_tick": "2026-11-06T10:26:33.149232",
+    "last_processed_bar": "2026-11-06T10:26:00+05:30",
     "position": null,
     "trades_today": 0,
     "realized_pnl_today": 0.0,
@@ -91,10 +91,10 @@
     "today_trades": [],
     "bars_held": 0,
     "violation_streak": 0,
-    "last_error": "Unable to fetch the Dhan security master",
+    "last_error": null,
     "checklist": {
-      "ltp": 79876.55,
-      "as_of": "2026-11-06T10:25:00+05:30",
+      "ltp": 79863.78,
+      "as_of": "2026-11-06T10:26:00+05:30",
       "tc": 79205.1,
       "bc": 78995.29,
       "prev_high": 79470.03,
@@ -114,7 +114,7 @@
         ],
         [
           "3-min stack: price>5>26>50",
-          true
+          false
         ],
         [
           "Price above prev-day High",
@@ -143,17 +143,17 @@
           false
         ]
       ],
-      "ema5_5m": 79860.67
+      "ema5_5m": 79856.41
     },
     "oi_metrics": {
       "expiry": "2026-11-12",
-      "spot": 79889.33,
+      "spot": 79859.49,
       "resistance_strike": 80000.0,
-      "resistance_call_oi": 577080,
+      "resistance_call_oi": 571520,
       "support_strike": 78000.0,
-      "support_put_oi": 1005440,
+      "support_put_oi": 1006260,
       "max_pain": 79300.0,
-      "pcr": 1.396,
+      "pcr": 1.397,
       "pcr_suggestion": "CALL"
     },
     "ip_status": null,
