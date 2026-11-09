@@ -1,0 +1,159 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<title>CPR Ladder — Backtest</title>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<style>
+  :root {
+    color-scheme: light;
+    --page:#eceff8; --surface-1:#ffffff; --surface-2:#f3f5fb; --text-primary:#0e1320; --text-secondary:#4f5a74; --text-muted:#76829c;
+    --gridline:#e2e7f1; --border:rgba(14,19,32,0.10); --shadow:0 1px 2px rgba(14,19,32,0.06), 0 8px 24px rgba(40,50,110,0.08);
+    --brand-a:#4338ca; --brand-b:#7c3aed; --brand-c:#0d9488; --accent:#4f46e5;
+    --nifty:#6d4bd8; --sensex:#0b8f83; --call:#2563eb; --put:#d6336c;
+    --good:#12a150; --warning:#c77d00; --critical:#dc3545; --slate-1:#1b2340; --slate-2:#2d3a66;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      color-scheme: dark;
+      --page:#090c14; --surface-1:#131a29; --surface-2:#1a2336; --text-primary:#eef1f9; --text-secondary:#a0abc4; --text-muted:#7f8aa3;
+      --gridline:#253048; --border:rgba(238,241,249,0.11); --shadow:0 1px 2px rgba(0,0,0,0.4), 0 10px 28px rgba(0,0,0,0.35);
+      --brand-a:#4f46e5; --brand-b:#8b5cf6; --brand-c:#14b8a6; --accent:#9b8cf3;
+      --nifty:#8a75ec; --sensex:#17a390; --call:#5b9cff; --put:#e0578a;
+      --good:#2bc85a; --warning:#f2b636; --critical:#f0645f; --slate-1:#0f1630; --slate-2:#26305a;
+    }
+  }
+  * { box-sizing:border-box; }
+  html { font-size:clamp(15px,0.55vw + 9px,19px); }
+  body { margin:0; color:var(--text-primary); font-family:system-ui,-apple-system,"Segoe UI",sans-serif; line-height:1.4;
+    background:radial-gradient(1100px 480px at 8% -8%, color-mix(in srgb,var(--brand-b) 16%,transparent), transparent 70%),
+               radial-gradient(900px 480px at 100% 0%, color-mix(in srgb,var(--brand-c) 14%,transparent), transparent 70%), var(--page); background-attachment:fixed; }
+  .good { color:var(--good); } .bad { color:var(--critical); } .muted { color:var(--text-muted); }
+  .hero { background:linear-gradient(115deg,var(--brand-a) 0%,var(--brand-b) 52%,var(--brand-c) 100%); color:#fff; padding:1.05rem clamp(14px,2vw,32px); box-shadow:0 6px 26px rgba(67,56,202,0.28); }
+  .hero-inner { max-width:1500px; margin:0 auto; display:flex; align-items:center; justify-content:space-between; gap:12px; flex-wrap:wrap; }
+  h1 { font-size:1.45rem; margin:0; font-weight:800; } .tag { font-size:0.86rem; opacity:0.88; max-width:90ch; margin-top:2px; }
+  .nav { display:flex; gap:8px; flex-wrap:wrap; }
+  a.btn, button.btn { background:#fff; color:var(--brand-a); text-decoration:none; font-weight:700; font-size:0.88rem; padding:0.45rem 0.95rem; border-radius:999px; border:none; cursor:pointer; font-family:inherit; }
+  a.btn.ghost, button.btn.ghost { background:rgba(255,255,255,0.16); color:#fff; border:1px solid rgba(255,255,255,0.3); }
+  .page { max-width:1500px; margin:0 auto; padding:1.1rem clamp(14px,2vw,32px) 2rem; }
+  .kpis { display:grid; grid-template-columns:repeat(auto-fit,minmax(min(165px,100%),1fr)); gap:0.9rem; margin-bottom:1rem; }
+  .kpi { background:var(--surface-1); border:1px solid var(--border); border-radius:1rem; padding:0.9rem 1.1rem; box-shadow:var(--shadow); }
+  .kpi .k { font-size:0.72rem; text-transform:uppercase; letter-spacing:0.07em; color:var(--text-muted); font-weight:700; }
+  .kpi .v { font-size:1.65rem; font-weight:800; margin-top:0.15rem; font-variant-numeric:tabular-nums; }
+  .card { background:var(--surface-1); border:1px solid var(--border); border-radius:1.1rem; box-shadow:var(--shadow); margin-bottom:1rem; overflow:hidden; }
+  .card h2 { font-size:0.8rem; text-transform:uppercase; letter-spacing:0.07em; color:var(--text-muted); margin:0; padding:0.85rem 1.1rem; border-bottom:1px solid var(--gridline); display:flex; align-items:center; justify-content:space-between; gap:0.6rem; }
+  .verdict { border-left:6px solid var(--warning); }
+  .verdict .body { padding:0.9rem 1.1rem; font-size:0.9rem; color:var(--text-secondary); }
+  .verdict .body b { color:var(--text-primary); } .verdict ul { margin:0.4rem 0 0; padding-left:1.2rem; }
+  .scroll { overflow-x:auto; } .scroll.tall { max-height:520px; overflow-y:auto; }
+  table { width:100%; border-collapse:collapse; font-size:0.85rem; font-variant-numeric:tabular-nums; }
+  th { text-align:left; padding:0.5rem 0.8rem; font-size:0.7rem; text-transform:uppercase; letter-spacing:0.05em; color:var(--text-muted); border-bottom:1px solid var(--gridline); white-space:nowrap; position:sticky; top:0; background:var(--surface-1); }
+  td { padding:0.48rem 0.8rem; border-bottom:1px solid var(--gridline); white-space:nowrap; }
+  td.r, th.r { text-align:right; }
+  .sym-tag { display:inline-block; padding:0.08rem 0.5rem; border-radius:999px; color:#fff; font-size:0.72rem; font-weight:700; }
+  .sym-tag.NIFTY { background:var(--nifty); } .sym-tag.SENSEX { background:var(--sensex); }
+  .side-tag { font-weight:700; } .side-tag.CALL { color:var(--call); } .side-tag.PUT { color:var(--put); }
+  .rsn { font-size:0.72rem; font-weight:700; padding:0.08rem 0.5rem; border-radius:999px; background:var(--surface-2); border:1px solid var(--gridline); color:var(--text-secondary); }
+  .csvbtn { background:var(--accent); color:#fff; border:none; border-radius:999px; padding:0.35rem 0.85rem; font-size:0.78rem; font-weight:700; cursor:pointer; font-family:inherit; }
+  .foot { font-size:0.8rem; color:var(--text-muted); line-height:1.6; margin-top:0.4rem; }
+</style>
+</head>
+<body>
+<header class="hero"><div class="hero-inner">
+  <div><h1>CPR Ladder — Backtest</h1><div class="tag" id="params">Loading…</div></div>
+  <div class="nav">
+    <button class="btn ghost" id="btnCsvTop" onclick="downloadCsv()">⬇ Download CSV</button>
+    <a class="btn ghost" href="index.html">Live dashboard</a>
+    <a class="btn ghost" href="trades.html">Paper trades</a>
+  </div>
+</div></header>
+
+<main class="page">
+  <div class="card verdict"><h2>How to read this</h2><div class="body">
+    <b>Treat every number on this page as in-sample.</b>
+    <ul>
+      <li>Simulated on real 1-min price data, same signal/exit code the live engine uses — but no slippage, and P&amp;L is index points × current lot size (NIFTY 75, SENSEX 20), not real option premiums.</li>
+      <li>The weekday rule (no new entries Tue/Thu) and the gap-guard (no entry whose prev-day High/Low condition a gap alone satisfied) were both added <b>after</b> looking at earlier data from this same period — treat them as forward-test candidates, not proven edges.</li>
+      <li>A third rule (pause all entries after a big gap until 10:30) was tested, found to remove net-positive trades, and removed on 2026-11-10 — see the project's own notes for that analysis.</li>
+      <li>That's why this project runs as paper trading, not real money: to test the rules on data the backtest never saw.</li>
+    </ul>
+  </div></div>
+
+  <div class="kpis" id="kpis"></div>
+
+  <div class="card"><h2>By month</h2><div class="scroll" id="monthly"></div></div>
+  <div class="card"><h2>By symbol + side</h2><div class="scroll" id="bySymSide"></div></div>
+  <div class="card"><h2>All backtest trades</h2><div class="scroll tall" id="log"></div></div>
+  <div class="foot" id="foot"></div>
+</main>
+
+<script>
+const esc = s => String(s).replace(/[&<>"']/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
+const rs = v => v == null ? "—" : (v < 0 ? "−₹" : "₹") + Math.abs(Math.round(v)).toLocaleString("en-IN");
+const pts = v => v == null ? "—" : (v > 0 ? "+" : "") + Number(v).toFixed(1);
+const cls = v => v > 0 ? "good" : v < 0 ? "bad" : "";
+const fmtTime = iso => { const d = new Date(iso); return d.toLocaleString("en-IN", {day:"2-digit", month:"short", hour:"2-digit", minute:"2-digit", hour12:false}); };
+
+let DATA = null;
+
+async function load() {
+  const res = await fetch("backtest_data.json?t=" + Date.now(), { cache: "no-store" });
+  DATA = await res.json();
+
+  document.getElementById("params").textContent =
+    `${DATA.period.from} to ${DATA.period.to} · ${DATA.rules}`;
+
+  const s = DATA.summary;
+  document.getElementById("kpis").innerHTML = `
+    <div class="kpi"><div class="k">Total trades</div><div class="v">${s.total_trades}</div></div>
+    <div class="kpi"><div class="k">Win rate</div><div class="v">${s.win_pct}%</div></div>
+    <div class="kpi"><div class="k">Wins / Losses</div><div class="v">${s.wins} / ${s.losses}</div></div>
+    <div class="kpi"><div class="k">Total points</div><div class="v ${cls(s.total_pts)}">${pts(s.total_pts)}</div></div>
+    <div class="kpi"><div class="k">Total P&amp;L (approx.)</div><div class="v ${cls(s.total_rs)}">${rs(s.total_rs)}</div></div>
+    <div class="kpi"><div class="k">Avg Rs / trade</div><div class="v ${cls(s.avg_rs)}">${rs(s.avg_rs)}</div></div>
+    <div class="kpi"><div class="k">Max drawdown</div><div class="v bad">${rs(s.max_drawdown_rs)}</div></div>`;
+
+  document.getElementById("monthly").innerHTML = `<table><thead><tr><th>Month</th><th class="r">Trades</th><th class="r">P&amp;L</th><th class="r">Win %</th></tr></thead><tbody>
+    ${DATA.monthly.map(m => `<tr><td>${m.month}</td><td class="r">${m.trades}</td><td class="r ${cls(m.rs)}">${rs(m.rs)}</td><td class="r">${m.win_pct}%</td></tr>`).join("")}
+  </tbody></table>`;
+
+  document.getElementById("bySymSide").innerHTML = `<table><thead><tr><th>Symbol</th><th>Side</th><th class="r">Trades</th><th class="r">P&amp;L</th><th class="r">Win %</th></tr></thead><tbody>
+    ${DATA.by_sym_side.map(r2 => `<tr><td><span class="sym-tag ${r2.sym}">${r2.sym}</span></td><td><span class="side-tag ${r2.side}">${r2.side}</span></td><td class="r">${r2.trades}</td><td class="r ${cls(r2.rs)}">${rs(r2.rs)}</td><td class="r">${r2.win_pct}%</td></tr>`).join("")}
+  </tbody></table>`;
+
+  document.getElementById("log").innerHTML = `<table><thead><tr>
+    <th>Entry</th><th>Exit</th><th>Symbol</th><th>Side</th><th class="r">Entry idx</th><th class="r">Exit idx</th><th class="r">Pts</th><th class="r">P&amp;L</th><th>Reason</th><th class="r">Hold (min)</th>
+  </tr></thead><tbody>
+    ${DATA.trades.map(t => `<tr>
+      <td>${fmtTime(t.entry_time)}</td><td>${fmtTime(t.exit_time)}</td>
+      <td><span class="sym-tag ${t.sym}">${t.sym}</span></td><td><span class="side-tag ${t.side}">${t.side}</span></td>
+      <td class="r">${t.entry.toLocaleString("en-IN")}</td><td class="r">${t.exit.toLocaleString("en-IN")}</td>
+      <td class="r ${cls(t.pts)}">${pts(t.pts)}</td><td class="r ${cls(t.rs)}">${rs(t.rs)}</td>
+      <td><span class="rsn">${esc(t.reason)}</span></td><td class="r">${t.dur_min}</td>
+    </tr>`).join("")}
+  </tbody></table>`;
+
+  document.getElementById("foot").textContent = `Generated ${new Date(DATA.generated_at).toLocaleString("en-IN")} · ${DATA.trades.length} trades.`;
+}
+
+function downloadCsv() {
+  if (!DATA) return;
+  const cols = ["entry_time","exit_time","sym","side","entry","exit","pts","rs","reason","dur_min"];
+  const header = cols.join(",");
+  const rows = DATA.trades.map(t => cols.map(c => t[c]).join(","));
+  const csv = [header, ...rows].join("\n");
+  const blob = new Blob([csv], { type: "text/csv;charset=utf-8;" });
+  const url = URL.createObjectURL(blob);
+  const a = document.createElement("a");
+  a.href = url;
+  a.download = `cpr_backtest_${DATA.period.from}_to_${DATA.period.to}.csv`;
+  document.body.appendChild(a);
+  a.click();
+  document.body.removeChild(a);
+  URL.revokeObjectURL(url);
+}
+
+load();
+</script>
+</body>
+</html>
