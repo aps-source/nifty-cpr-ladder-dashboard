@@ -1,8 +1,8 @@
 {
   "NIFTY": {
     "date": "2026-11-09",
-    "engine_status": "data_error",
-    "last_tick": "2026-11-09T15:31:44.586438",
+    "engine_status": "running",
+    "last_tick": "2026-11-09T15:33:10.827103",
     "last_processed_bar": "2026-11-09T15:29:00+05:30",
     "position": null,
     "trades_today": 0,
@@ -11,7 +11,7 @@
     "today_trades": [],
     "bars_held": 0,
     "violation_streak": 0,
-    "last_error": "[WinError 5] Access is denied: 'D:\\\\Claude - Algo\\\\Claude Projects\\\\Live\\\\Project Nifty 3min CPR Strategy\\\\nifty_1min_raw.csv.tmp' -> 'D:\\\\Claude - Algo\\\\Claude Projects\\\\Live\\\\Project Nifty 3min CPR Strategy\\\\nifty_1min_raw.csv'",
+    "last_error": null,
     "checklist": {
       "ltp": 25044.65,
       "as_of": "2026-11-09T15:29:00+05:30",
@@ -68,12 +68,12 @@
     "oi_metrics": {
       "expiry": "2026-11-09",
       "spot": 25044.65,
-      "resistance_strike": 25100.0,
-      "resistance_call_oi": 19131060,
+      "resistance_strike": 26000.0,
+      "resistance_call_oi": 15784665,
       "support_strike": 25000.0,
-      "support_put_oi": 22180405,
+      "support_put_oi": 19492655,
       "max_pain": 25000.0,
-      "pcr": 1.021,
+      "pcr": 1.056,
       "pcr_suggestion": "NEUTRAL"
     },
     "ip_status": null,
@@ -81,8 +81,8 @@
   },
   "SENSEX": {
     "date": "2026-11-09",
-    "engine_status": "data_error",
-    "last_tick": "2026-11-09T15:31:56.426898",
+    "engine_status": "running",
+    "last_tick": "2026-11-09T15:33:14.256627",
     "last_processed_bar": "2026-11-09T15:29:00+05:30",
     "position": null,
     "trades_today": 0,
@@ -91,7 +91,7 @@
     "today_trades": [],
     "bars_held": 0,
     "violation_streak": 0,
-    "last_error": "[WinError 5] Access is denied: 'D:\\\\Claude - Algo\\\\Claude Projects\\\\Live\\\\Project Nifty 3min CPR Strategy\\\\sensex_1min_raw.csv.tmp' -> 'D:\\\\Claude - Algo\\\\Claude Projects\\\\Live\\\\Project Nifty 3min CPR Strategy\\\\sensex_1min_raw.csv'",
+    "last_error": null,
     "checklist": {
       "ltp": 81106.65,
       "as_of": "2026-11-09T15:29:00+05:30",
@@ -149,11 +149,11 @@
       "expiry": "2026-11-12",
       "spot": 81106.65,
       "resistance_strike": 85000.0,
-      "resistance_call_oi": 2229660,
+      "resistance_call_oi": 2317980,
       "support_strike": 77000.0,
-      "support_put_oi": 1577820,
+      "support_put_oi": 1655640,
       "max_pain": 80500.0,
-      "pcr": 0.93,
+      "pcr": 0.943,
       "pcr_suggestion": "NEUTRAL"
     },
     "ip_status": null,
