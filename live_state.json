@@ -2,7 +2,7 @@
   "NIFTY": {
     "date": "2026-11-10",
     "engine_status": "running",
-    "last_tick": "2026-11-10T14:41:02.112232",
+    "last_tick": "2026-11-10T14:42:17.887713",
     "last_processed_bar": "2026-11-09T15:29:00+05:30",
     "position": null,
     "trades_today": 0,
@@ -81,8 +81,8 @@
   },
   "SENSEX": {
     "date": "2026-11-10",
-    "engine_status": "data_error",
-    "last_tick": "2026-11-10T14:41:08.311766",
+    "engine_status": "running",
+    "last_tick": "2026-11-10T14:42:20.894102",
     "last_processed_bar": "2026-11-09T15:29:00+05:30",
     "position": null,
     "trades_today": 0,
@@ -91,7 +91,7 @@
     "today_trades": [],
     "bars_held": 0,
     "violation_streak": 0,
-    "last_error": "[WinError 5] Access is denied: 'D:\\\\Claude - Algo\\\\Claude Projects\\\\Live\\\\Project Nifty 3min CPR Strategy\\\\sensex_1min_raw.csv.tmp' -> 'D:\\\\Claude - Algo\\\\Claude Projects\\\\Live\\\\Project Nifty 3min CPR Strategy\\\\sensex_1min_raw.csv'",
+    "last_error": null,
     "checklist": {
       "ltp": 81106.65,
       "as_of": "2026-11-09T15:29:00+05:30",
@@ -157,6 +157,6 @@
       "pcr_suggestion": "NEUTRAL"
     },
     "ip_status": null,
-    "_last_signal_bucket": "2026-11-10T14:35:00"
+    "_last_signal_bucket": "2026-11-10T14:40:00"
   }
 }
