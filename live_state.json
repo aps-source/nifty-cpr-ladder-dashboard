@@ -1,8 +1,8 @@
 {
   "NIFTY": {
     "date": "2026-11-12",
-    "engine_status": "running",
-    "last_tick": "2026-11-12T11:30:12.193999",
+    "engine_status": "data_error",
+    "last_tick": "2026-11-12T11:32:09.225812",
     "last_processed_bar": "2026-11-12T11:30:00+05:30",
     "position": null,
     "trades_today": 0,
@@ -11,7 +11,7 @@
     "today_trades": [],
     "bars_held": 0,
     "violation_streak": 0,
-    "last_error": null,
+    "last_error": "[WinError 5] Access is denied: 'D:\\\\Claude - Algo\\\\Claude Projects\\\\Live\\\\Project Nifty 3min CPR Strategy\\\\nifty_1min_raw.csv.tmp' -> 'D:\\\\Claude - Algo\\\\Claude Projects\\\\Live\\\\Project Nifty 3min CPR Strategy\\\\nifty_1min_raw.csv'",
     "checklist": {
       "ltp": 25279.55,
       "as_of": "2026-11-12T11:30:00+05:30",
@@ -82,8 +82,8 @@
   "SENSEX": {
     "date": "2026-11-12",
     "engine_status": "running",
-    "last_tick": "2026-11-12T11:30:15.834232",
-    "last_processed_bar": "2026-11-12T11:30:00+05:30",
+    "last_tick": "2026-11-12T11:32:43.475311",
+    "last_processed_bar": "2026-11-12T11:32:00+05:30",
     "position": null,
     "trades_today": 0,
     "realized_pnl_today": 0.0,
@@ -93,8 +93,8 @@
     "violation_streak": 0,
     "last_error": null,
     "checklist": {
-      "ltp": 81997.97,
-      "as_of": "2026-11-12T11:30:00+05:30",
+      "ltp": 81997.3,
+      "as_of": "2026-11-12T11:32:00+05:30",
       "tc": 81972.78,
       "bc": 81660.16,
       "prev_high": 82520.4,
@@ -143,17 +143,17 @@
           false
         ]
       ],
-      "ema5_5m": 82048.19
+      "ema5_5m": 82047.97
     },
     "oi_metrics": {
       "expiry": "2026-11-12",
-      "spot": 81996.41,
+      "spot": 82006.17,
       "resistance_strike": 83000.0,
-      "resistance_call_oi": 5571520,
+      "resistance_call_oi": 5562140,
       "support_strike": 81500.0,
-      "support_put_oi": 6065000,
+      "support_put_oi": 6125920,
       "max_pain": 82100.0,
-      "pcr": 1.078,
+      "pcr": 1.075,
       "pcr_suggestion": "NEUTRAL"
     },
     "ip_status": null,
