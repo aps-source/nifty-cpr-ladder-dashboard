@@ -1,9 +1,9 @@
 {
   "NIFTY": {
-    "date": "2026-11-11",
+    "date": "2026-11-12",
     "engine_status": "running",
-    "last_tick": "2026-11-11T15:39:23.588905",
-    "last_processed_bar": "2026-11-11T15:29:00+05:30",
+    "last_tick": "2026-11-12T09:30:10.547315",
+    "last_processed_bar": "2026-11-12T09:30:00+05:30",
     "position": null,
     "trades_today": 0,
     "realized_pnl_today": 0.0,
@@ -13,12 +13,12 @@
     "violation_streak": 0,
     "last_error": null,
     "checklist": {
-      "ltp": 25130.0,
-      "as_of": "2026-11-11T15:29:00+05:30",
-      "tc": 25017.91,
-      "bc": 24964.42,
-      "prev_high": 25084.05,
-      "prev_low": 24844.8,
+      "ltp": 25333.95,
+      "as_of": "2026-11-12T09:30:00+05:30",
+      "tc": 25259.85,
+      "bc": 25173.28,
+      "prev_high": 25424.35,
+      "prev_low": 25095.35,
       "checks_call": [
         [
           "Price above Daily CPR (TC)",
@@ -26,7 +26,7 @@
         ],
         [
           "15-min stack: price>5>26>50",
-          false
+          true
         ],
         [
           "5-min stack: price>5>26>50",
@@ -38,7 +38,7 @@
         ],
         [
           "Price above prev-day High",
-          true
+          false
         ]
       ],
       "checks_put": [
@@ -52,7 +52,7 @@
         ],
         [
           "5-min stack: price<5<26<50",
-          true
+          false
         ],
         [
           "3-min stack: price<5<26<50",
@@ -63,27 +63,17 @@
           false
         ]
       ],
-      "ema5_5m": 25133.13
+      "ema5_5m": 25283.28
     },
-    "oi_metrics": {
-      "expiry": "2026-11-17",
-      "spot": 25255.05,
-      "resistance_strike": 26000.0,
-      "resistance_call_oi": 10904270,
-      "support_strike": 24500.0,
-      "support_put_oi": 6114290,
-      "max_pain": 25100.0,
-      "pcr": 0.773,
-      "pcr_suggestion": "PUT"
-    },
+    "oi_metrics": null,
     "ip_status": null,
-    "_last_signal_bucket": "2026-11-11T15:35:00"
+    "_last_signal_bucket": "2026-11-12T09:30:00"
   },
   "SENSEX": {
-    "date": "2026-11-11",
+    "date": "2026-11-12",
     "engine_status": "running",
-    "last_tick": "2026-11-11T15:39:27.651934",
-    "last_processed_bar": "2026-11-11T15:29:00+05:30",
+    "last_tick": "2026-11-12T09:30:14.822730",
+    "last_processed_bar": "2026-11-12T09:30:00+05:30",
     "position": null,
     "trades_today": 0,
     "realized_pnl_today": 0.0,
@@ -93,12 +83,12 @@
     "violation_streak": 0,
     "last_error": null,
     "checklist": {
-      "ltp": 81503.85,
-      "as_of": "2026-11-11T15:29:00+05:30",
-      "tc": 81049.84,
-      "bc": 80936.23,
-      "prev_high": 81339.41,
-      "prev_low": 80533.04,
+      "ltp": 82179.51,
+      "as_of": "2026-11-12T09:30:00+05:30",
+      "tc": 81972.78,
+      "bc": 81660.16,
+      "prev_high": 82520.4,
+      "prev_low": 81425.16,
       "checks_call": [
         [
           "Price above Daily CPR (TC)",
@@ -106,7 +96,7 @@
         ],
         [
           "15-min stack: price>5>26>50",
-          false
+          true
         ],
         [
           "5-min stack: price>5>26>50",
@@ -118,7 +108,7 @@
         ],
         [
           "Price above prev-day High",
-          true
+          false
         ]
       ],
       "checks_put": [
@@ -132,31 +122,21 @@
         ],
         [
           "5-min stack: price<5<26<50",
-          true
+          false
         ],
         [
           "3-min stack: price<5<26<50",
-          true
+          false
         ],
         [
           "Price below prev-day Low",
           false
         ]
       ],
-      "ema5_5m": 81516.51
+      "ema5_5m": 82005.4
     },
-    "oi_metrics": {
-      "expiry": "2026-11-12",
-      "spot": 81879.4,
-      "resistance_strike": 85000.0,
-      "resistance_call_oi": 3778080,
-      "support_strike": 80000.0,
-      "support_put_oi": 2268620,
-      "max_pain": 81500.0,
-      "pcr": 0.695,
-      "pcr_suggestion": "PUT"
-    },
+    "oi_metrics": null,
     "ip_status": null,
-    "_last_signal_bucket": "2026-11-11T15:35:00"
+    "_last_signal_bucket": "2026-11-12T09:30:00"
   }
 }
