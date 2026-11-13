@@ -1,8 +1,8 @@
 {
   "NIFTY": {
     "date": "2026-11-13",
-    "engine_status": "running",
-    "last_tick": "2026-11-13T11:21:40.334478",
+    "engine_status": "token_invalid",
+    "last_tick": "2026-11-13T11:22:59.192485",
     "last_processed_bar": "2026-11-13T11:21:00+05:30",
     "position": null,
     "trades_today": 0,
@@ -82,8 +82,8 @@
   "SENSEX": {
     "date": "2026-11-13",
     "engine_status": "running",
-    "last_tick": "2026-11-13T11:21:43.470397",
-    "last_processed_bar": "2026-11-13T11:21:00+05:30",
+    "last_tick": "2026-11-13T11:23:04.323536",
+    "last_processed_bar": "2026-11-13T11:23:00+05:30",
     "position": null,
     "trades_today": 0,
     "realized_pnl_today": 0.0,
@@ -93,8 +93,8 @@
     "violation_streak": 0,
     "last_error": null,
     "checklist": {
-      "ltp": 81639.78,
-      "as_of": "2026-11-13T11:21:00+05:30",
+      "ltp": 81668.03,
+      "as_of": "2026-11-13T11:23:00+05:30",
       "tc": 81961.08,
       "bc": 81948.1,
       "prev_high": 82320.06,
@@ -136,18 +136,18 @@
         ],
         [
           "3-min stack: price<5<26<50",
-          true
+          false
         ],
         [
           "Price below prev-day Low",
           false
         ]
       ],
-      "ema5_5m": 81675.67
+      "ema5_5m": 81685.09
     },
     "oi_metrics": {
       "expiry": "2026-11-19",
-      "spot": 81639.78,
+      "spot": 81667.88,
       "resistance_strike": 82000.0,
       "resistance_call_oi": 614160,
       "support_strike": 81500.0,
