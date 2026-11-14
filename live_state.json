@@ -1,8 +1,8 @@
 {
   "NIFTY": {
     "date": "2026-11-14",
-    "engine_status": "running",
-    "last_tick": "2026-11-14T11:35:08.180505",
+    "engine_status": "data_error",
+    "last_tick": "2026-11-14T11:36:17.468254",
     "last_processed_bar": "2026-11-13T15:29:00+05:30",
     "position": null,
     "trades_today": 0,
@@ -11,7 +11,7 @@
     "today_trades": [],
     "bars_held": 0,
     "violation_streak": 0,
-    "last_error": null,
+    "last_error": "1-min fetch failed: {'error_code': 'DH-907', 'error_type': 'Data_Error', 'error_message': 'System is unable to fetch data due to incorrect parameters or no data present'}",
     "checklist": {
       "ltp": 25144.3,
       "as_of": "2026-11-13T15:29:00+05:30",
@@ -82,7 +82,7 @@
   "SENSEX": {
     "date": "2026-11-14",
     "engine_status": "running",
-    "last_tick": "2026-11-14T11:35:11.312206",
+    "last_tick": "2026-11-14T11:36:20.444885",
     "last_processed_bar": "2026-11-13T15:29:00+05:30",
     "position": null,
     "trades_today": 0,
@@ -147,7 +147,7 @@
     },
     "oi_metrics": {
       "expiry": "2026-11-19",
-      "spot": 83200.27,
+      "spot": 83410.82,
       "resistance_strike": 81500.0,
       "resistance_call_oi": 615780,
       "support_strike": 81500.0,
