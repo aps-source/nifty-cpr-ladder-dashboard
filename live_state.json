@@ -2,7 +2,7 @@
   "NIFTY": {
     "date": "2026-11-14",
     "engine_status": "running",
-    "last_tick": "2026-11-14T11:33:59.446317",
+    "last_tick": "2026-11-14T11:35:08.180505",
     "last_processed_bar": "2026-11-13T15:29:00+05:30",
     "position": null,
     "trades_today": 0,
@@ -69,7 +69,7 @@
       "expiry": "2026-11-17",
       "spot": 25738.1,
       "resistance_strike": 26000.0,
-      "resistance_call_oi": 14801475,
+      "resistance_call_oi": 14801540,
       "support_strike": 24000.0,
       "support_put_oi": 11704290,
       "max_pain": 25100.0,
@@ -77,12 +77,12 @@
       "pcr_suggestion": "PUT"
     },
     "ip_status": null,
-    "_last_signal_bucket": "2026-11-14T11:30:00"
+    "_last_signal_bucket": "2026-11-14T11:35:00"
   },
   "SENSEX": {
     "date": "2026-11-14",
-    "engine_status": "data_error",
-    "last_tick": "2026-11-14T11:34:00.849824",
+    "engine_status": "running",
+    "last_tick": "2026-11-14T11:35:11.312206",
     "last_processed_bar": "2026-11-13T15:29:00+05:30",
     "position": null,
     "trades_today": 0,
@@ -91,7 +91,7 @@
     "today_trades": [],
     "bars_held": 0,
     "violation_streak": 0,
-    "last_error": "1-min fetch failed: {'error_code': 'DH-907', 'error_type': 'Data_Error', 'error_message': 'System is unable to fetch data due to incorrect parameters or no data present'}",
+    "last_error": null,
     "checklist": {
       "ltp": 81592.45,
       "as_of": "2026-11-13T15:29:00+05:30",
@@ -147,9 +147,9 @@
     },
     "oi_metrics": {
       "expiry": "2026-11-19",
-      "spot": 83265.04,
+      "spot": 83200.27,
       "resistance_strike": 81500.0,
-      "resistance_call_oi": 615740,
+      "resistance_call_oi": 615780,
       "support_strike": 81500.0,
       "support_put_oi": 545540,
       "max_pain": 81500.0,
@@ -157,6 +157,6 @@
       "pcr_suggestion": "PUT"
     },
     "ip_status": null,
-    "_last_signal_bucket": "2026-11-14T11:30:00"
+    "_last_signal_bucket": "2026-11-14T11:35:00"
   }
 }
