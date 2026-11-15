@@ -1,9 +1,9 @@
 {
   "NIFTY": {
-    "date": "2026-11-14",
-    "engine_status": "running",
-    "last_tick": "2026-11-14T11:37:27.818717",
-    "last_processed_bar": "2026-11-13T15:29:00+05:30",
+    "date": "2026-11-15",
+    "engine_status": "token_invalid",
+    "last_tick": "2026-11-15T10:30:10.119523",
+    "last_processed_bar": null,
     "position": null,
     "trades_today": 0,
     "realized_pnl_today": 0.0,
@@ -12,78 +12,15 @@
     "bars_held": 0,
     "violation_streak": 0,
     "last_error": null,
-    "checklist": {
-      "ltp": 25144.3,
-      "as_of": "2026-11-13T15:29:00+05:30",
-      "tc": 25286.63,
-      "bc": 25261.2,
-      "prev_high": 25379.45,
-      "prev_low": 25142.95,
-      "checks_call": [
-        [
-          "Price above Daily CPR (TC)",
-          false
-        ],
-        [
-          "15-min stack: price>5>26>50",
-          false
-        ],
-        [
-          "5-min stack: price>5>26>50",
-          false
-        ],
-        [
-          "3-min stack: price>5>26>50",
-          true
-        ],
-        [
-          "Price above prev-day High",
-          false
-        ]
-      ],
-      "checks_put": [
-        [
-          "Price below Daily CPR (BC)",
-          true
-        ],
-        [
-          "15-min stack: price<5<26<50",
-          false
-        ],
-        [
-          "5-min stack: price<5<26<50",
-          false
-        ],
-        [
-          "3-min stack: price<5<26<50",
-          false
-        ],
-        [
-          "Price below prev-day Low",
-          false
-        ]
-      ],
-      "ema5_5m": 25134.29
-    },
-    "oi_metrics": {
-      "expiry": "2026-11-17",
-      "spot": 25738.1,
-      "resistance_strike": 26000.0,
-      "resistance_call_oi": 14801345,
-      "support_strike": 24000.0,
-      "support_put_oi": 11704290,
-      "max_pain": 25100.0,
-      "pcr": 0.828,
-      "pcr_suggestion": "PUT"
-    },
-    "ip_status": null,
-    "_last_signal_bucket": "2026-11-14T11:35:00"
+    "checklist": null,
+    "oi_metrics": null,
+    "ip_status": null
   },
   "SENSEX": {
-    "date": "2026-11-14",
-    "engine_status": "running",
-    "last_tick": "2026-11-14T11:37:30.798484",
-    "last_processed_bar": "2026-11-13T15:29:00+05:30",
+    "date": "2026-11-15",
+    "engine_status": "token_invalid",
+    "last_tick": "2026-11-15T10:30:10.148227",
+    "last_processed_bar": null,
     "position": null,
     "trades_today": 0,
     "realized_pnl_today": 0.0,
@@ -92,71 +29,8 @@
     "bars_held": 0,
     "violation_streak": 0,
     "last_error": null,
-    "checklist": {
-      "ltp": 81592.45,
-      "as_of": "2026-11-13T15:29:00+05:30",
-      "tc": 81961.08,
-      "bc": 81948.1,
-      "prev_high": 82320.06,
-      "prev_low": 81576.15,
-      "checks_call": [
-        [
-          "Price above Daily CPR (TC)",
-          false
-        ],
-        [
-          "15-min stack: price>5>26>50",
-          false
-        ],
-        [
-          "5-min stack: price>5>26>50",
-          false
-        ],
-        [
-          "3-min stack: price>5>26>50",
-          true
-        ],
-        [
-          "Price above prev-day High",
-          false
-        ]
-      ],
-      "checks_put": [
-        [
-          "Price below Daily CPR (BC)",
-          true
-        ],
-        [
-          "15-min stack: price<5<26<50",
-          false
-        ],
-        [
-          "5-min stack: price<5<26<50",
-          false
-        ],
-        [
-          "3-min stack: price<5<26<50",
-          false
-        ],
-        [
-          "Price below prev-day Low",
-          false
-        ]
-      ],
-      "ema5_5m": 81569.06
-    },
-    "oi_metrics": {
-      "expiry": "2026-11-19",
-      "spot": 83270.12,
-      "resistance_strike": 81500.0,
-      "resistance_call_oi": 615860,
-      "support_strike": 81500.0,
-      "support_put_oi": 545540,
-      "max_pain": 81500.0,
-      "pcr": 0.898,
-      "pcr_suggestion": "PUT"
-    },
-    "ip_status": null,
-    "_last_signal_bucket": "2026-11-14T11:35:00"
+    "checklist": null,
+    "oi_metrics": null,
+    "ip_status": null
   }
 }
