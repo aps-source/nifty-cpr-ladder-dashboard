@@ -2,8 +2,8 @@
   "NIFTY": {
     "date": "2026-11-16",
     "engine_status": "running",
-    "last_tick": "2026-11-16T11:49:38.466406",
-    "last_processed_bar": "2026-11-16T11:49:00+05:30",
+    "last_tick": "2026-11-16T11:51:02.828412",
+    "last_processed_bar": "2026-11-16T11:50:00+05:30",
     "position": null,
     "trades_today": 2,
     "realized_pnl_today": -1638.000000000001,
@@ -48,8 +48,8 @@
     "violation_streak": 0,
     "last_error": null,
     "checklist": {
-      "ltp": 25214.3,
-      "as_of": "2026-11-16T11:49:00+05:30",
+      "ltp": 25217.15,
+      "as_of": "2026-11-16T11:50:00+05:30",
       "tc": 25149.38,
       "bc": 25145.99,
       "prev_high": 25244.35,
@@ -98,26 +98,26 @@
           false
         ]
       ],
-      "ema5_5m": 25223.96
+      "ema5_5m": 25221.69
     },
     "oi_metrics": {
       "expiry": "2026-11-17",
-      "spot": 25215.25,
+      "spot": 25216.95,
       "resistance_strike": 25300.0,
-      "resistance_call_oi": 20908160,
+      "resistance_call_oi": 21037835,
       "support_strike": 25200.0,
-      "support_put_oi": 23423920,
+      "support_put_oi": 23478390,
       "max_pain": 25200.0,
       "pcr": 0.895,
       "pcr_suggestion": "PUT"
     },
     "ip_status": null,
-    "_last_signal_bucket": "2026-11-16T11:45:00"
+    "_last_signal_bucket": "2026-11-16T11:50:00"
   },
   "SENSEX": {
     "date": "2026-11-16",
-    "engine_status": "running",
-    "last_tick": "2026-11-16T11:49:41.861893",
+    "engine_status": "data_error",
+    "last_tick": "2026-11-16T11:51:17.291302",
     "last_processed_bar": "2026-11-16T11:49:00+05:30",
     "position": null,
     "trades_today": 2,
@@ -161,7 +161,7 @@
     ],
     "bars_held": 0,
     "violation_streak": 0,
-    "last_error": null,
+    "last_error": "[WinError 5] Access is denied: 'D:\\\\Claude - Algo\\\\Claude Projects\\\\Live\\\\Project Nifty 3min CPR Strategy\\\\sensex_1min_raw.csv.tmp' -> 'D:\\\\Claude - Algo\\\\Claude Projects\\\\Live\\\\Project Nifty 3min CPR Strategy\\\\sensex_1min_raw.csv'",
     "checklist": {
       "ltp": 81906.15,
       "as_of": "2026-11-16T11:49:00+05:30",
