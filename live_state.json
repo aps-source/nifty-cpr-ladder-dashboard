@@ -2,8 +2,8 @@
   "NIFTY": {
     "date": "2026-11-18",
     "engine_status": "running",
-    "last_tick": "2026-11-18T13:49:24.693386",
-    "last_processed_bar": "2026-11-18T13:49:00+05:30",
+    "last_tick": "2026-11-18T13:50:39.392979",
+    "last_processed_bar": "2026-11-18T13:50:00+05:30",
     "position": {
       "side": "PUT",
       "entry_time": "2026-11-18T13:25:00+05:30",
@@ -38,12 +38,12 @@
         "pnl": -441.99999999999886
       }
     ],
-    "bars_held": 20,
-    "violation_streak": 1,
+    "bars_held": 21,
+    "violation_streak": 2,
     "last_error": null,
     "checklist": {
-      "ltp": 25169.95,
-      "as_of": "2026-11-18T13:49:00+05:30",
+      "ltp": 25183.4,
+      "as_of": "2026-11-18T13:50:00+05:30",
       "tc": 25386.27,
       "bc": 25384.0,
       "prev_high": 25500.7,
@@ -77,7 +77,7 @@
         ],
         [
           "15-min stack: price<5<26<50",
-          true
+          false
         ],
         [
           "5-min stack: price<5<26<50",
@@ -92,41 +92,30 @@
           true
         ]
       ],
-      "ema5_5m": 25167.31
+      "ema5_5m": 25172.67
     },
     "oi_metrics": {
       "expiry": "2026-11-23",
-      "spot": 25171.1,
+      "spot": 25182.7,
       "resistance_strike": 26000.0,
-      "resistance_call_oi": 17029220,
+      "resistance_call_oi": 16935035,
       "support_strike": 25000.0,
-      "support_put_oi": 11476725,
+      "support_put_oi": 11451115,
       "max_pain": 25100.0,
       "pcr": 0.76,
       "pcr_suggestion": "PUT"
     },
     "ip_status": null,
-    "_last_signal_bucket": "2026-11-18T13:45:00"
+    "_last_signal_bucket": "2026-11-18T13:50:00"
   },
   "SENSEX": {
     "date": "2026-11-18",
     "engine_status": "running",
-    "last_tick": "2026-11-18T13:49:27.775409",
-    "last_processed_bar": "2026-11-18T13:49:00+05:30",
-    "position": {
-      "side": "PUT",
-      "entry_time": "2026-11-18T13:25:00+05:30",
-      "entry_price": 340.05,
-      "spot_at_entry": 81889.49,
-      "strike": 81900.0,
-      "expiry": "2026-11-19",
-      "security_id": "822012",
-      "qty": 20,
-      "order_id": "PAPER-20261118132527781788",
-      "backstop_order_id": null
-    },
+    "last_tick": "2026-11-18T13:50:42.755318",
+    "last_processed_bar": "2026-11-18T13:50:00+05:30",
+    "position": null,
     "trades_today": 2,
-    "realized_pnl_today": 145.0,
+    "realized_pnl_today": 88.99999999999977,
     "daily_loss_cap_hit": false,
     "today_trades": [
       {
@@ -145,14 +134,31 @@
         "exit_order_id": "PAPER-20261118132008683340",
         "reason": "signal_exit",
         "pnl": 145.0
+      },
+      {
+        "side": "PUT",
+        "entry_time": "2026-11-18T13:25:00+05:30",
+        "entry_price": 340.05,
+        "spot_at_entry": 81889.49,
+        "strike": 81900.0,
+        "expiry": "2026-11-19",
+        "security_id": "822012",
+        "qty": 20,
+        "order_id": "PAPER-20261118132527781788",
+        "backstop_order_id": null,
+        "exit_time": "2026-11-18T13:50:00+05:30",
+        "exit_price": 337.25,
+        "exit_order_id": "PAPER-20261118135042615855",
+        "reason": "signal_exit",
+        "pnl": -56.00000000000023
       }
     ],
-    "bars_held": 21,
-    "violation_streak": 2,
+    "bars_held": 0,
+    "violation_streak": 0,
     "last_error": null,
     "checklist": {
-      "ltp": 81856.02,
-      "as_of": "2026-11-18T13:49:00+05:30",
+      "ltp": 81910.45,
+      "as_of": "2026-11-18T13:50:00+05:30",
       "tc": 82519.69,
       "bc": 82494.7,
       "prev_high": 82897.49,
@@ -186,7 +192,7 @@
         ],
         [
           "15-min stack: price<5<26<50",
-          true
+          false
         ],
         [
           "5-min stack: price<5<26<50",
@@ -201,11 +207,11 @@
           true
         ]
       ],
-      "ema5_5m": 81850.08
+      "ema5_5m": 81870.2
     },
     "oi_metrics": {
       "expiry": "2026-11-19",
-      "spot": 81857.15,
+      "spot": 81909.65,
       "resistance_strike": 82500.0,
       "resistance_call_oi": 3775680,
       "support_strike": 81000.0,
@@ -215,6 +221,6 @@
       "pcr_suggestion": "PUT"
     },
     "ip_status": null,
-    "_last_signal_bucket": "2026-11-18T13:45:00"
+    "_last_signal_bucket": "2026-11-18T13:50:00"
   }
 }
