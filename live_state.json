@@ -2,8 +2,8 @@
   "NIFTY": {
     "date": "2026-11-19",
     "engine_status": "running",
-    "last_tick": "2026-11-19T09:30:12.910225",
-    "last_processed_bar": "2026-11-19T09:30:00+05:30",
+    "last_tick": "2026-11-19T09:31:32.764868",
+    "last_processed_bar": "2026-11-19T09:31:00+05:30",
     "position": null,
     "trades_today": 0,
     "realized_pnl_today": 0.0,
@@ -13,8 +13,8 @@
     "violation_streak": 0,
     "last_error": null,
     "checklist": {
-      "ltp": 25111.15,
-      "as_of": "2026-11-19T09:30:00+05:30",
+      "ltp": 25136.4,
+      "as_of": "2026-11-19T09:31:00+05:30",
       "tc": 25264.35,
       "bc": 25240.08,
       "prev_high": 25386.9,
@@ -63,17 +63,27 @@
           true
         ]
       ],
-      "ema5_5m": 25150.37
+      "ema5_5m": 25158.79
     },
-    "oi_metrics": null,
+    "oi_metrics": {
+      "expiry": "2026-11-23",
+      "spot": 25135.75,
+      "resistance_strike": 26000.0,
+      "resistance_call_oi": 14374360,
+      "support_strike": 24000.0,
+      "support_put_oi": 11382215,
+      "max_pain": 25100.0,
+      "pcr": 0.824,
+      "pcr_suggestion": "PUT"
+    },
     "ip_status": null,
     "_last_signal_bucket": "2026-11-19T09:30:00"
   },
   "SENSEX": {
     "date": "2026-11-19",
     "engine_status": "running",
-    "last_tick": "2026-11-19T09:30:16.521802",
-    "last_processed_bar": "2026-11-19T09:30:00+05:30",
+    "last_tick": "2026-11-19T09:31:36.149867",
+    "last_processed_bar": "2026-11-19T09:31:00+05:30",
     "position": null,
     "trades_today": 0,
     "realized_pnl_today": 0.0,
@@ -83,8 +93,8 @@
     "violation_streak": 0,
     "last_error": null,
     "checklist": {
-      "ltp": 81713.91,
-      "as_of": "2026-11-19T09:30:00+05:30",
+      "ltp": 81771.38,
+      "as_of": "2026-11-19T09:31:00+05:30",
       "tc": 82173.6,
       "bc": 82079.07,
       "prev_high": 82566.73,
@@ -133,9 +143,19 @@
           true
         ]
       ],
-      "ema5_5m": 81835.99
+      "ema5_5m": 81855.14
     },
-    "oi_metrics": null,
+    "oi_metrics": {
+      "expiry": "2026-11-19",
+      "spot": 81773.43,
+      "resistance_strike": 82500.0,
+      "resistance_call_oi": 4429180,
+      "support_strike": 81000.0,
+      "support_put_oi": 4179900,
+      "max_pain": 81900.0,
+      "pcr": 0.758,
+      "pcr_suggestion": "PUT"
+    },
     "ip_status": null,
     "_last_signal_bucket": "2026-11-19T09:30:00"
   }
