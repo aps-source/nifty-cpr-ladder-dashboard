@@ -2,8 +2,8 @@
   "NIFTY": {
     "date": "2026-11-20",
     "engine_status": "running",
-    "last_tick": "2026-11-20T14:29:45.129145",
-    "last_processed_bar": "2026-11-20T14:29:00+05:30",
+    "last_tick": "2026-11-20T14:31:04.437350",
+    "last_processed_bar": "2026-11-20T14:31:00+05:30",
     "position": {
       "side": "CALL",
       "entry_time": "2026-11-20T13:36:00+05:30",
@@ -72,12 +72,12 @@
         "pnl": 237.24999999999852
       }
     ],
-    "bars_held": 42,
-    "violation_streak": 0,
+    "bars_held": 43,
+    "violation_streak": 1,
     "last_error": null,
     "checklist": {
-      "ltp": 25763.9,
-      "as_of": "2026-11-20T14:29:00+05:30",
+      "ltp": 25750.75,
+      "as_of": "2026-11-20T14:31:00+05:30",
       "tc": 25446.05,
       "bc": 25309.55,
       "prev_high": 25514.3,
@@ -93,11 +93,11 @@
         ],
         [
           "5-min stack: price>5>26>50",
-          true
+          false
         ],
         [
           "3-min stack: price>5>26>50",
-          true
+          false
         ],
         [
           "Price above prev-day High",
@@ -126,26 +126,26 @@
           false
         ]
       ],
-      "ema5_5m": 25760.89
+      "ema5_5m": 25757.51
     },
     "oi_metrics": {
       "expiry": "2026-11-23",
-      "spot": 25764.8,
+      "spot": 25752.8,
       "resistance_strike": 26000.0,
-      "resistance_call_oi": 17059315,
+      "resistance_call_oi": 17260490,
       "support_strike": 25500.0,
-      "support_put_oi": 19405880,
-      "max_pain": 25550.0,
-      "pcr": 1.626,
+      "support_put_oi": 19572930,
+      "max_pain": 25600.0,
+      "pcr": 1.616,
       "pcr_suggestion": "CALL"
     },
     "ip_status": null,
-    "_last_signal_bucket": "2026-11-20T14:25:00"
+    "_last_signal_bucket": "2026-11-20T14:30:00"
   },
   "SENSEX": {
     "date": "2026-11-20",
-    "engine_status": "running",
-    "last_tick": "2026-11-20T14:29:49.027330",
+    "engine_status": "data_error",
+    "last_tick": "2026-11-20T14:31:20.810128",
     "last_processed_bar": "2026-11-20T14:29:00+05:30",
     "position": {
       "side": "CALL",
@@ -217,7 +217,7 @@
     ],
     "bars_held": 46,
     "violation_streak": 0,
-    "last_error": null,
+    "last_error": "[WinError 5] Access is denied: 'D:\\\\Claude - Algo\\\\Claude Projects\\\\Live\\\\Project Nifty 3min CPR Strategy\\\\sensex_1min_raw.csv.tmp' -> 'D:\\\\Claude - Algo\\\\Claude Projects\\\\Live\\\\Project Nifty 3min CPR Strategy\\\\sensex_1min_raw.csv'",
     "checklist": {
       "ltp": 83874.61,
       "as_of": "2026-11-20T14:29:00+05:30",
