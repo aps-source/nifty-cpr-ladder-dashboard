@@ -1,8 +1,8 @@
 {
   "NIFTY": {
     "date": "2026-11-20",
-    "engine_status": "running",
-    "last_tick": "2026-11-20T14:50:07.706698",
+    "engine_status": "token_invalid",
+    "last_tick": "2026-11-20T14:51:21.510127",
     "last_processed_bar": "2026-11-20T14:50:00+05:30",
     "position": null,
     "trades_today": 5,
@@ -168,10 +168,21 @@
   "SENSEX": {
     "date": "2026-11-20",
     "engine_status": "running",
-    "last_tick": "2026-11-20T14:50:13.508690",
-    "last_processed_bar": "2026-11-20T14:50:00+05:30",
-    "position": null,
-    "trades_today": 5,
+    "last_tick": "2026-11-20T14:51:33.411740",
+    "last_processed_bar": "2026-11-20T14:51:00+05:30",
+    "position": {
+      "side": "CALL",
+      "entry_time": "2026-11-20T14:51:00+05:30",
+      "entry_price": 681.5,
+      "spot_at_entry": 83874.34,
+      "strike": 83900.0,
+      "expiry": "2026-11-26",
+      "security_id": "1105546",
+      "qty": 20,
+      "order_id": "PAPER-20261120145129740614",
+      "backstop_order_id": null
+    },
+    "trades_today": 6,
     "realized_pnl_today": 1398.0000000000018,
     "daily_loss_cap_hit": false,
     "today_trades": [
@@ -265,8 +276,8 @@
     "violation_streak": 0,
     "last_error": null,
     "checklist": {
-      "ltp": 83798.69,
-      "as_of": "2026-11-20T14:50:00+05:30",
+      "ltp": 83861.22,
+      "as_of": "2026-11-20T14:51:00+05:30",
       "tc": 82755.73,
       "bc": 82345.46,
       "prev_high": 82992.29,
@@ -278,11 +289,11 @@
         ],
         [
           "15-min stack: price>5>26>50",
-          false
+          true
         ],
         [
           "5-min stack: price>5>26>50",
-          false
+          true
         ],
         [
           "3-min stack: price>5>26>50",
@@ -315,17 +326,17 @@
           false
         ]
       ],
-      "ema5_5m": 83809.59
+      "ema5_5m": 83830.43
     },
     "oi_metrics": {
       "expiry": "2026-11-26",
-      "spot": 83798.95,
+      "spot": 83872.41,
       "resistance_strike": 88000.0,
-      "resistance_call_oi": 580340,
+      "resistance_call_oi": 579860,
       "support_strike": 81500.0,
-      "support_put_oi": 536360,
+      "support_put_oi": 535140,
       "max_pain": 83200.0,
-      "pcr": 1.364,
+      "pcr": 1.356,
       "pcr_suggestion": "CALL"
     },
     "ip_status": null,
