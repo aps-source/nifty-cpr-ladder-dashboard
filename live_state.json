@@ -2,22 +2,11 @@
   "NIFTY": {
     "date": "2026-11-20",
     "engine_status": "running",
-    "last_tick": "2026-11-20T13:14:09.208825",
-    "last_processed_bar": "2026-11-20T13:14:00+05:30",
-    "position": {
-      "side": "CALL",
-      "entry_time": "2026-11-20T13:02:00+05:30",
-      "entry_price": 132.05,
-      "spot_at_entry": 25721.8,
-      "strike": 25700.0,
-      "expiry": "2026-11-23",
-      "security_id": "64481",
-      "qty": 65,
-      "order_id": "PAPER-20261120130210034281",
-      "backstop_order_id": null
-    },
+    "last_tick": "2026-11-20T13:15:24.820949",
+    "last_processed_bar": "2026-11-20T13:15:00+05:30",
+    "position": null,
     "trades_today": 3,
-    "realized_pnl_today": -207.99999999999926,
+    "realized_pnl_today": 29.24999999999926,
     "daily_loss_cap_hit": false,
     "today_trades": [
       {
@@ -53,14 +42,31 @@
         "exit_order_id": "PAPER-20261120110600200082",
         "reason": "signal_exit",
         "pnl": -207.99999999999926
+      },
+      {
+        "side": "CALL",
+        "entry_time": "2026-11-20T13:02:00+05:30",
+        "entry_price": 132.05,
+        "spot_at_entry": 25721.8,
+        "strike": 25700.0,
+        "expiry": "2026-11-23",
+        "security_id": "64481",
+        "qty": 65,
+        "order_id": "PAPER-20261120130210034281",
+        "backstop_order_id": null,
+        "exit_time": "2026-11-20T13:15:00+05:30",
+        "exit_price": 135.7,
+        "exit_order_id": "PAPER-20261120131524631312",
+        "reason": "signal_exit",
+        "pnl": 237.24999999999852
       }
     ],
-    "bars_held": 10,
-    "violation_streak": 2,
+    "bars_held": 0,
+    "violation_streak": 0,
     "last_error": null,
     "checklist": {
-      "ltp": 25718.45,
-      "as_of": "2026-11-20T13:14:00+05:30",
+      "ltp": 25718.95,
+      "as_of": "2026-11-20T13:15:00+05:30",
       "tc": 25446.05,
       "bc": 25309.55,
       "prev_high": 25514.3,
@@ -109,27 +115,27 @@
           false
         ]
       ],
-      "ema5_5m": 25721.2
+      "ema5_5m": 25720.45
     },
     "oi_metrics": {
       "expiry": "2026-11-23",
-      "spot": 25719.45,
+      "spot": 25718.4,
       "resistance_strike": 26000.0,
-      "resistance_call_oi": 16609385,
+      "resistance_call_oi": 16629535,
       "support_strike": 25500.0,
-      "support_put_oi": 21742825,
+      "support_put_oi": 21585265,
       "max_pain": 25500.0,
-      "pcr": 1.653,
+      "pcr": 1.647,
       "pcr_suggestion": "CALL"
     },
     "ip_status": null,
-    "_last_signal_bucket": "2026-11-20T13:10:00"
+    "_last_signal_bucket": "2026-11-20T13:15:00"
   },
   "SENSEX": {
     "date": "2026-11-20",
     "engine_status": "running",
-    "last_tick": "2026-11-20T13:14:13.517928",
-    "last_processed_bar": "2026-11-20T13:14:00+05:30",
+    "last_tick": "2026-11-20T13:15:29.127681",
+    "last_processed_bar": "2026-11-20T13:15:00+05:30",
     "position": {
       "side": "CALL",
       "entry_time": "2026-11-20T13:02:00+05:30",
@@ -181,12 +187,12 @@
         "pnl": 995.0
       }
     ],
-    "bars_held": 10,
-    "violation_streak": 2,
+    "bars_held": 11,
+    "violation_streak": 0,
     "last_error": null,
     "checklist": {
-      "ltp": 83733.91,
-      "as_of": "2026-11-20T13:14:00+05:30",
+      "ltp": 83742.66,
+      "as_of": "2026-11-20T13:15:00+05:30",
       "tc": 82755.73,
       "bc": 82345.46,
       "prev_high": 82992.29,
@@ -202,7 +208,7 @@
         ],
         [
           "5-min stack: price>5>26>50",
-          false
+          true
         ],
         [
           "3-min stack: price>5>26>50",
@@ -235,11 +241,11 @@
           false
         ]
       ],
-      "ema5_5m": 83734.37
+      "ema5_5m": 83737.13
     },
     "oi_metrics": {
       "expiry": "2026-11-26",
-      "spot": 83735.6,
+      "spot": 83742.16,
       "resistance_strike": 88000.0,
       "resistance_call_oi": 542480,
       "support_strike": 82500.0,
@@ -249,6 +255,6 @@
       "pcr_suggestion": "CALL"
     },
     "ip_status": null,
-    "_last_signal_bucket": "2026-11-20T13:10:00"
+    "_last_signal_bucket": "2026-11-20T13:15:00"
   }
 }
