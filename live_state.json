@@ -2,22 +2,11 @@
   "NIFTY": {
     "date": "2026-11-20",
     "engine_status": "running",
-    "last_tick": "2026-11-20T14:48:53.062811",
-    "last_processed_bar": "2026-11-20T14:48:00+05:30",
-    "position": {
-      "side": "CALL",
-      "entry_time": "2026-11-20T14:41:00+05:30",
-      "entry_price": 124.85,
-      "spot_at_entry": 25750.8,
-      "strike": 25750.0,
-      "expiry": "2026-11-23",
-      "security_id": "64487",
-      "qty": 65,
-      "order_id": "PAPER-20261120144153078753",
-      "backstop_order_id": null
-    },
+    "last_tick": "2026-11-20T14:50:07.706698",
+    "last_processed_bar": "2026-11-20T14:50:00+05:30",
+    "position": null,
     "trades_today": 5,
-    "realized_pnl_today": 29.24999999999926,
+    "realized_pnl_today": -152.75000000000057,
     "daily_loss_cap_hit": false,
     "today_trades": [
       {
@@ -87,14 +76,31 @@
         "exit_order_id": "PAPER-20261120143410624048",
         "reason": "signal_exit",
         "pnl": 0.0
+      },
+      {
+        "side": "CALL",
+        "entry_time": "2026-11-20T14:41:00+05:30",
+        "entry_price": 124.85,
+        "spot_at_entry": 25750.8,
+        "strike": 25750.0,
+        "expiry": "2026-11-23",
+        "security_id": "64487",
+        "qty": 65,
+        "order_id": "PAPER-20261120144153078753",
+        "backstop_order_id": null,
+        "exit_time": "2026-11-20T14:50:00+05:30",
+        "exit_price": 122.05,
+        "exit_order_id": "PAPER-20261120145007553310",
+        "reason": "signal_exit",
+        "pnl": -181.99999999999983
       }
     ],
-    "bars_held": 5,
-    "violation_streak": 4,
+    "bars_held": 0,
+    "violation_streak": 0,
     "last_error": null,
     "checklist": {
-      "ltp": 25731.05,
-      "as_of": "2026-11-20T14:48:00+05:30",
+      "ltp": 25738.85,
+      "as_of": "2026-11-20T14:50:00+05:30",
       "tc": 25446.05,
       "bc": 25309.55,
       "prev_high": 25514.3,
@@ -114,7 +120,7 @@
         ],
         [
           "3-min stack: price>5>26>50",
-          false
+          true
         ],
         [
           "Price above prev-day High",
@@ -143,27 +149,27 @@
           false
         ]
       ],
-      "ema5_5m": 25741.52
+      "ema5_5m": 25742.77
     },
     "oi_metrics": {
       "expiry": "2026-11-23",
-      "spot": 25732.45,
+      "spot": 25739.1,
       "resistance_strike": 26000.0,
-      "resistance_call_oi": 16488680,
+      "resistance_call_oi": 16550170,
       "support_strike": 25500.0,
-      "support_put_oi": 19253455,
+      "support_put_oi": 19185790,
       "max_pain": 25550.0,
-      "pcr": 1.632,
+      "pcr": 1.621,
       "pcr_suggestion": "CALL"
     },
     "ip_status": null,
-    "_last_signal_bucket": "2026-11-20T14:45:00"
+    "_last_signal_bucket": "2026-11-20T14:50:00"
   },
   "SENSEX": {
     "date": "2026-11-20",
     "engine_status": "running",
-    "last_tick": "2026-11-20T14:48:56.797769",
-    "last_processed_bar": "2026-11-20T14:48:00+05:30",
+    "last_tick": "2026-11-20T14:50:13.508690",
+    "last_processed_bar": "2026-11-20T14:50:00+05:30",
     "position": null,
     "trades_today": 5,
     "realized_pnl_today": 1398.0000000000018,
@@ -259,8 +265,8 @@
     "violation_streak": 0,
     "last_error": null,
     "checklist": {
-      "ltp": 83771.46,
-      "as_of": "2026-11-20T14:48:00+05:30",
+      "ltp": 83798.69,
+      "as_of": "2026-11-20T14:50:00+05:30",
       "tc": 82755.73,
       "bc": 82345.46,
       "prev_high": 82992.29,
@@ -280,7 +286,7 @@
         ],
         [
           "3-min stack: price>5>26>50",
-          false
+          true
         ],
         [
           "Price above prev-day High",
@@ -309,11 +315,11 @@
           false
         ]
       ],
-      "ema5_5m": 83804.43
+      "ema5_5m": 83809.59
     },
     "oi_metrics": {
       "expiry": "2026-11-26",
-      "spot": 83772.15,
+      "spot": 83798.95,
       "resistance_strike": 88000.0,
       "resistance_call_oi": 580340,
       "support_strike": 81500.0,
@@ -323,6 +329,6 @@
       "pcr_suggestion": "CALL"
     },
     "ip_status": null,
-    "_last_signal_bucket": "2026-11-20T14:45:00"
+    "_last_signal_bucket": "2026-11-20T14:50:00"
   }
 }

@@ -155,10 +155,27 @@
           "exit_order_id": "PAPER-20261120144856678307",
           "pnl_confirmed": true,
           "date": "2026-11-20"
+        },
+        {
+          "symbol": "NIFTY 50",
+          "entry_time": "2026-11-20T14:41:00+05:30",
+          "exit_time": "2026-11-20T14:50:00+05:30",
+          "side": "CALL",
+          "strike": 25750.0,
+          "expiry": "2026-11-23",
+          "entry_price": 124.85,
+          "exit_price": 122.05,
+          "qty": 65,
+          "pnl": -181.99999999999983,
+          "reason": "signal_exit",
+          "entry_order_id": "PAPER-20261120144153078753",
+          "exit_order_id": "PAPER-20261120145007553310",
+          "pnl_confirmed": true,
+          "date": "2026-11-20"
         }
       ],
-      "day_pnl": 1427.25,
-      "day_trades": 9,
+      "day_pnl": 1245.25,
+      "day_trades": 10,
       "day_wins": 3
     },
     {
@@ -576,6 +593,6 @@
       "day_wins": 0
     }
   ],
-  "overall_pnl": -4701.75,
-  "overall_trades": 31
+  "overall_pnl": -4883.75,
+  "overall_trades": 32
 }
