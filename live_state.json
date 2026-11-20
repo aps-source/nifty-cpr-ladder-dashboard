@@ -2,8 +2,8 @@
   "NIFTY": {
     "date": "2026-11-20",
     "engine_status": "running",
-    "last_tick": "2026-11-20T12:09:37.463839",
-    "last_processed_bar": "2026-11-20T12:09:00+05:30",
+    "last_tick": "2026-11-20T12:11:02.705464",
+    "last_processed_bar": "2026-11-20T12:11:00+05:30",
     "position": null,
     "trades_today": 2,
     "realized_pnl_today": -207.99999999999926,
@@ -48,8 +48,8 @@
     "violation_streak": 0,
     "last_error": null,
     "checklist": {
-      "ltp": 25644.15,
-      "as_of": "2026-11-20T12:09:00+05:30",
+      "ltp": 25650.05,
+      "as_of": "2026-11-20T12:11:00+05:30",
       "tc": 25446.05,
       "bc": 25309.55,
       "prev_high": 25514.3,
@@ -98,26 +98,26 @@
           false
         ]
       ],
-      "ema5_5m": 25617.03
+      "ema5_5m": 25628.04
     },
     "oi_metrics": {
       "expiry": "2026-11-23",
-      "spot": 25647.95,
+      "spot": 25648.75,
       "resistance_strike": 26000.0,
-      "resistance_call_oi": 17013425,
+      "resistance_call_oi": 16937310,
       "support_strike": 25500.0,
-      "support_put_oi": 21872305,
-      "max_pain": 25450.0,
-      "pcr": 1.489,
+      "support_put_oi": 21914815,
+      "max_pain": 25500.0,
+      "pcr": 1.505,
       "pcr_suggestion": "CALL"
     },
     "ip_status": null,
-    "_last_signal_bucket": "2026-11-20T12:05:00"
+    "_last_signal_bucket": "2026-11-20T12:10:00"
   },
   "SENSEX": {
     "date": "2026-11-20",
-    "engine_status": "running",
-    "last_tick": "2026-11-20T12:09:41.391158",
+    "engine_status": "data_error",
+    "last_tick": "2026-11-20T12:11:18.049396",
     "last_processed_bar": "2026-11-20T12:09:00+05:30",
     "position": null,
     "trades_today": 2,
@@ -161,7 +161,7 @@
     ],
     "bars_held": 0,
     "violation_streak": 0,
-    "last_error": null,
+    "last_error": "[WinError 5] Access is denied: 'D:\\\\Claude - Algo\\\\Claude Projects\\\\Live\\\\Project Nifty 3min CPR Strategy\\\\sensex_1min_raw.csv.tmp' -> 'D:\\\\Claude - Algo\\\\Claude Projects\\\\Live\\\\Project Nifty 3min CPR Strategy\\\\sensex_1min_raw.csv'",
     "checklist": {
       "ltp": 83491.47,
       "as_of": "2026-11-20T12:09:00+05:30",
