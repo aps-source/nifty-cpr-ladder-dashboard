@@ -1,8 +1,8 @@
 {
   "NIFTY": {
     "date": "2026-11-20",
-    "engine_status": "running",
-    "last_tick": "2026-11-20T14:54:06.538033",
+    "engine_status": "token_invalid",
+    "last_tick": "2026-11-20T14:55:19.004154",
     "last_processed_bar": "2026-11-20T14:54:00+05:30",
     "position": {
       "side": "CALL",
@@ -179,8 +179,8 @@
   "SENSEX": {
     "date": "2026-11-20",
     "engine_status": "running",
-    "last_tick": "2026-11-20T14:54:10.933042",
-    "last_processed_bar": "2026-11-20T14:54:00+05:30",
+    "last_tick": "2026-11-20T14:55:23.715864",
+    "last_processed_bar": "2026-11-20T14:55:00+05:30",
     "position": {
       "side": "CALL",
       "entry_time": "2026-11-20T14:51:00+05:30",
@@ -283,12 +283,12 @@
         "pnl": -195.0
       }
     ],
-    "bars_held": 3,
+    "bars_held": 4,
     "violation_streak": 0,
     "last_error": null,
     "checklist": {
-      "ltp": 83890.23,
-      "as_of": "2026-11-20T14:54:00+05:30",
+      "ltp": 83904.05,
+      "as_of": "2026-11-20T14:55:00+05:30",
       "tc": 82755.73,
       "bc": 82345.46,
       "prev_high": 82992.29,
@@ -337,11 +337,11 @@
           false
         ]
       ],
-      "ema5_5m": 83840.1
+      "ema5_5m": 83861.42
     },
     "oi_metrics": {
       "expiry": "2026-11-26",
-      "spot": 83890.39,
+      "spot": 83899.88,
       "resistance_strike": 88000.0,
       "resistance_call_oi": 583100,
       "support_strike": 81500.0,
@@ -351,6 +351,6 @@
       "pcr_suggestion": "CALL"
     },
     "ip_status": null,
-    "_last_signal_bucket": "2026-11-20T14:50:00"
+    "_last_signal_bucket": "2026-11-20T14:55:00"
   }
 }
