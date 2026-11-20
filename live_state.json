@@ -2,8 +2,8 @@
   "NIFTY": {
     "date": "2026-11-20",
     "engine_status": "running",
-    "last_tick": "2026-11-20T11:02:00.551379",
-    "last_processed_bar": "2026-11-20T11:02:00+05:30",
+    "last_tick": "2026-11-20T11:03:23.258491",
+    "last_processed_bar": "2026-11-20T11:03:00+05:30",
     "position": {
       "side": "CALL",
       "entry_time": "2026-11-20T10:23:00+05:30",
@@ -38,12 +38,12 @@
         "pnl": 0.0
       }
     ],
-    "bars_held": 30,
-    "violation_streak": 0,
+    "bars_held": 31,
+    "violation_streak": 1,
     "last_error": null,
     "checklist": {
-      "ltp": 25546.75,
-      "as_of": "2026-11-20T11:02:00+05:30",
+      "ltp": 25540.5,
+      "as_of": "2026-11-20T11:03:00+05:30",
       "tc": 25446.05,
       "bc": 25309.55,
       "prev_high": 25514.3,
@@ -59,7 +59,7 @@
         ],
         [
           "5-min stack: price>5>26>50",
-          true
+          false
         ],
         [
           "3-min stack: price>5>26>50",
@@ -92,17 +92,17 @@
           false
         ]
       ],
-      "ema5_5m": 25546.58
+      "ema5_5m": 25544.49
     },
     "oi_metrics": {
       "expiry": "2026-11-23",
-      "spot": 25549.1,
+      "spot": 25539.45,
       "resistance_strike": 25500.0,
-      "resistance_call_oi": 18955365,
+      "resistance_call_oi": 19266650,
       "support_strike": 25500.0,
-      "support_put_oi": 17841915,
+      "support_put_oi": 17754230,
       "max_pain": 25400.0,
-      "pcr": 1.272,
+      "pcr": 1.258,
       "pcr_suggestion": "CALL"
     },
     "ip_status": null,
@@ -111,22 +111,11 @@
   "SENSEX": {
     "date": "2026-11-20",
     "engine_status": "running",
-    "last_tick": "2026-11-20T11:02:08.894115",
-    "last_processed_bar": "2026-11-20T11:02:00+05:30",
-    "position": {
-      "side": "CALL",
-      "entry_time": "2026-11-20T10:23:00+05:30",
-      "entry_price": 653.2,
-      "spot_at_entry": 83024.73,
-      "strike": 83000.0,
-      "expiry": "2026-11-26",
-      "security_id": "1105458",
-      "qty": 20,
-      "order_id": "PAPER-20261120102331952761",
-      "backstop_order_id": null
-    },
+    "last_tick": "2026-11-20T11:03:28.888718",
+    "last_processed_bar": "2026-11-20T11:03:00+05:30",
+    "position": null,
     "trades_today": 2,
-    "realized_pnl_today": -32.999999999999545,
+    "realized_pnl_today": 962.0000000000005,
     "daily_loss_cap_hit": false,
     "today_trades": [
       {
@@ -145,14 +134,31 @@
         "exit_order_id": "PAPER-20261120101942400301",
         "reason": "signal_exit",
         "pnl": -32.999999999999545
+      },
+      {
+        "side": "CALL",
+        "entry_time": "2026-11-20T10:23:00+05:30",
+        "entry_price": 653.2,
+        "spot_at_entry": 83024.73,
+        "strike": 83000.0,
+        "expiry": "2026-11-26",
+        "security_id": "1105458",
+        "qty": 20,
+        "order_id": "PAPER-20261120102331952761",
+        "backstop_order_id": null,
+        "exit_time": "2026-11-20T11:03:00+05:30",
+        "exit_price": 702.95,
+        "exit_order_id": "PAPER-20261120110328774055",
+        "reason": "signal_exit",
+        "pnl": 995.0
       }
     ],
-    "bars_held": 30,
-    "violation_streak": 2,
+    "bars_held": 0,
+    "violation_streak": 0,
     "last_error": null,
     "checklist": {
-      "ltp": 83164.97,
-      "as_of": "2026-11-20T11:02:00+05:30",
+      "ltp": 83140.41,
+      "as_of": "2026-11-20T11:03:00+05:30",
       "tc": 82755.73,
       "bc": 82345.46,
       "prev_high": 82992.29,
@@ -201,11 +207,11 @@
           false
         ]
       ],
-      "ema5_5m": 83165.51
+      "ema5_5m": 83157.33
     },
     "oi_metrics": {
       "expiry": "2026-11-26",
-      "spot": 83175.41,
+      "spot": 83137.13,
       "resistance_strike": 83000.0,
       "resistance_call_oi": 513700,
       "support_strike": 82500.0,
