@@ -1,8 +1,8 @@
 {
   "NIFTY": {
     "date": "2026-11-23",
-    "engine_status": "running",
-    "last_tick": "2026-11-23T11:29:49.821368",
+    "engine_status": "data_error",
+    "last_tick": "2026-11-23T11:31:15.685795",
     "last_processed_bar": "2026-11-23T11:29:00+05:30",
     "position": null,
     "trades_today": 0,
@@ -11,7 +11,7 @@
     "today_trades": [],
     "bars_held": 0,
     "violation_streak": 0,
-    "last_error": null,
+    "last_error": "[WinError 5] Access is denied: 'D:\\\\Claude - Algo\\\\Claude Projects\\\\Live\\\\Project Nifty 3min CPR Strategy\\\\nifty_1min_raw.csv.tmp' -> 'D:\\\\Claude - Algo\\\\Claude Projects\\\\Live\\\\Project Nifty 3min CPR Strategy\\\\nifty_1min_raw.csv'",
     "checklist": {
       "ltp": 25614.55,
       "as_of": "2026-11-23T11:29:00+05:30",
@@ -82,8 +82,8 @@
   "SENSEX": {
     "date": "2026-11-23",
     "engine_status": "running",
-    "last_tick": "2026-11-23T11:29:53.863368",
-    "last_processed_bar": "2026-11-23T11:29:00+05:30",
+    "last_tick": "2026-11-23T11:31:26.478787",
+    "last_processed_bar": "2026-11-23T11:31:00+05:30",
     "position": null,
     "trades_today": 0,
     "realized_pnl_today": 0.0,
@@ -93,8 +93,8 @@
     "violation_streak": 0,
     "last_error": null,
     "checklist": {
-      "ltp": 83322.16,
-      "as_of": "2026-11-23T11:29:00+05:30",
+      "ltp": 83337.81,
+      "as_of": "2026-11-23T11:31:00+05:30",
       "tc": 83686.68,
       "bc": 83220.62,
       "prev_high": 84037.96,
@@ -143,20 +143,20 @@
           false
         ]
       ],
-      "ema5_5m": 83292.77
+      "ema5_5m": 83307.79
     },
     "oi_metrics": {
       "expiry": "2026-11-26",
-      "spot": 83331.42,
-      "resistance_strike": 85000.0,
-      "resistance_call_oi": 807420,
+      "spot": 83341.12,
+      "resistance_strike": 88000.0,
+      "resistance_call_oi": 809400,
       "support_strike": 79000.0,
-      "support_put_oi": 837560,
+      "support_put_oi": 837160,
       "max_pain": 83300.0,
-      "pcr": 0.893,
+      "pcr": 0.894,
       "pcr_suggestion": "PUT"
     },
     "ip_status": null,
-    "_last_signal_bucket": "2026-11-23T11:25:00"
+    "_last_signal_bucket": "2026-11-23T11:30:00"
   }
 }
