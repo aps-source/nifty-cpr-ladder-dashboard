@@ -1,9 +1,9 @@
 {
   "NIFTY": {
     "date": "2026-11-25",
-    "engine_status": "data_error",
-    "last_tick": "2026-11-25T13:01:06.165134",
-    "last_processed_bar": "2026-11-25T12:59:00+05:30",
+    "engine_status": "running",
+    "last_tick": "2026-11-25T13:02:26.528138",
+    "last_processed_bar": "2026-11-25T13:02:00+05:30",
     "position": null,
     "trades_today": 0,
     "realized_pnl_today": 0.0,
@@ -11,10 +11,10 @@
     "today_trades": [],
     "bars_held": 0,
     "violation_streak": 0,
-    "last_error": "[WinError 5] Access is denied: 'D:\\\\Claude - Algo\\\\Claude Projects\\\\Live\\\\Project Nifty 3min CPR Strategy\\\\nifty_1min_raw.csv.tmp' -> 'D:\\\\Claude - Algo\\\\Claude Projects\\\\Live\\\\Project Nifty 3min CPR Strategy\\\\nifty_1min_raw.csv'",
+    "last_error": null,
     "checklist": {
-      "ltp": 25711.05,
-      "as_of": "2026-11-25T12:59:00+05:30",
+      "ltp": 25696.3,
+      "as_of": "2026-11-25T13:02:00+05:30",
       "tc": 25668.22,
       "bc": 25467.01,
       "prev_high": 25992.6,
@@ -56,34 +56,34 @@
         ],
         [
           "3-min stack: price<5<26<50",
-          false
+          true
         ],
         [
           "Price below prev-day Low",
           false
         ]
       ],
-      "ema5_5m": 25758.82
+      "ema5_5m": 25737.98
     },
     "oi_metrics": {
       "expiry": "2026-12-01",
-      "spot": 25714.8,
+      "spot": 25694.6,
       "resistance_strike": 26000.0,
-      "resistance_call_oi": 9705540,
+      "resistance_call_oi": 9787050,
       "support_strike": 25000.0,
-      "support_put_oi": 6414265,
+      "support_put_oi": 6458595,
       "max_pain": 25750.0,
-      "pcr": 0.932,
+      "pcr": 0.911,
       "pcr_suggestion": "NEUTRAL"
     },
     "ip_status": null,
-    "_last_signal_bucket": "2026-11-25T12:55:00"
+    "_last_signal_bucket": "2026-11-25T13:00:00"
   },
   "SENSEX": {
     "date": "2026-11-25",
-    "engine_status": "data_error",
-    "last_tick": "2026-11-25T13:01:15.174361",
-    "last_processed_bar": "2026-11-25T12:59:00+05:30",
+    "engine_status": "running",
+    "last_tick": "2026-11-25T13:02:30.380014",
+    "last_processed_bar": "2026-11-25T13:02:00+05:30",
     "position": null,
     "trades_today": 0,
     "realized_pnl_today": 0.0,
@@ -91,10 +91,10 @@
     "today_trades": [],
     "bars_held": 0,
     "violation_streak": 0,
-    "last_error": "[WinError 5] Access is denied: 'D:\\\\Claude - Algo\\\\Claude Projects\\\\Live\\\\Project Nifty 3min CPR Strategy\\\\sensex_1min_raw.csv.tmp' -> 'D:\\\\Claude - Algo\\\\Claude Projects\\\\Live\\\\Project Nifty 3min CPR Strategy\\\\sensex_1min_raw.csv'",
+    "last_error": null,
     "checklist": {
-      "ltp": 83709.83,
-      "as_of": "2026-11-25T12:59:00+05:30",
+      "ltp": 83642.32,
+      "as_of": "2026-11-25T13:02:00+05:30",
       "tc": 83534.33,
       "bc": 82807.42,
       "prev_high": 84662.96,
@@ -143,20 +143,20 @@
           false
         ]
       ],
-      "ema5_5m": 83854.57
+      "ema5_5m": 83783.82
     },
     "oi_metrics": {
       "expiry": "2026-11-26",
-      "spot": 83703.55,
+      "spot": 83646.42,
       "resistance_strike": 85000.0,
-      "resistance_call_oi": 2947100,
+      "resistance_call_oi": 2830540,
       "support_strike": 83000.0,
-      "support_put_oi": 2551220,
+      "support_put_oi": 2449260,
       "max_pain": 83900.0,
-      "pcr": 1.019,
+      "pcr": 0.965,
       "pcr_suggestion": "NEUTRAL"
     },
     "ip_status": null,
-    "_last_signal_bucket": "2026-11-25T12:55:00"
+    "_last_signal_bucket": "2026-11-25T13:00:00"
   }
 }
