@@ -1,8 +1,8 @@
 {
   "NIFTY": {
     "date": "2026-11-25",
-    "engine_status": "running",
-    "last_tick": "2026-11-25T09:40:27.272494",
+    "engine_status": "data_error",
+    "last_tick": "2026-11-25T09:41:49.529401",
     "last_processed_bar": "2026-11-25T09:40:00+05:30",
     "position": null,
     "trades_today": 0,
@@ -11,7 +11,7 @@
     "today_trades": [],
     "bars_held": 0,
     "violation_streak": 0,
-    "last_error": null,
+    "last_error": "1-min fetch failed: {'error_code': 'DH-904', 'error_type': 'Rate_Limit', 'error_message': 'Too many requests on server from single user breaching rate limits. Try throttling API calls.'}",
     "checklist": {
       "ltp": 25762.1,
       "as_of": "2026-11-25T09:40:00+05:30",
@@ -82,8 +82,8 @@
   "SENSEX": {
     "date": "2026-11-25",
     "engine_status": "running",
-    "last_tick": "2026-11-25T09:40:33.974375",
-    "last_processed_bar": "2026-11-25T09:40:00+05:30",
+    "last_tick": "2026-11-25T09:41:55.727012",
+    "last_processed_bar": "2026-11-25T09:41:00+05:30",
     "position": null,
     "trades_today": 0,
     "realized_pnl_today": 0.0,
@@ -93,8 +93,8 @@
     "violation_streak": 0,
     "last_error": null,
     "checklist": {
-      "ltp": 83856.66,
-      "as_of": "2026-11-25T09:40:00+05:30",
+      "ltp": 83890.21,
+      "as_of": "2026-11-25T09:41:00+05:30",
       "tc": 83534.33,
       "bc": 82807.42,
       "prev_high": 84662.96,
@@ -106,7 +106,7 @@
         ],
         [
           "15-min stack: price>5>26>50",
-          false
+          true
         ],
         [
           "5-min stack: price>5>26>50",
@@ -143,11 +143,11 @@
           false
         ]
       ],
-      "ema5_5m": 83737.2
+      "ema5_5m": 83748.38
     },
     "oi_metrics": {
       "expiry": "2026-11-26",
-      "spot": 83853.13,
+      "spot": 83885.25,
       "resistance_strike": 84000.0,
       "resistance_call_oi": 2412120,
       "support_strike": 83000.0,
