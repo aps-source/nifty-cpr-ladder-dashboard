@@ -1,9 +1,9 @@
 {
   "NIFTY": {
     "date": "2026-11-25",
-    "engine_status": "data_error",
-    "last_tick": "2026-11-25T14:46:08.730931",
-    "last_processed_bar": "2026-11-25T14:44:00+05:30",
+    "engine_status": "running",
+    "last_tick": "2026-11-25T14:47:29.510968",
+    "last_processed_bar": "2026-11-25T14:47:00+05:30",
     "position": null,
     "trades_today": 0,
     "realized_pnl_today": 0.0,
@@ -11,10 +11,10 @@
     "today_trades": [],
     "bars_held": 0,
     "violation_streak": 0,
-    "last_error": "[WinError 5] Access is denied: 'D:\\\\Claude - Algo\\\\Claude Projects\\\\Live\\\\Project Nifty 3min CPR Strategy\\\\nifty_1min_raw.csv.tmp' -> 'D:\\\\Claude - Algo\\\\Claude Projects\\\\Live\\\\Project Nifty 3min CPR Strategy\\\\nifty_1min_raw.csv'",
+    "last_error": null,
     "checklist": {
-      "ltp": 25728.45,
-      "as_of": "2026-11-25T14:44:00+05:30",
+      "ltp": 25744.95,
+      "as_of": "2026-11-25T14:47:00+05:30",
       "tc": 25668.22,
       "bc": 25467.01,
       "prev_high": 25992.6,
@@ -26,7 +26,7 @@
         ],
         [
           "15-min stack: price>5>26>50",
-          false
+          true
         ],
         [
           "5-min stack: price>5>26>50",
@@ -52,38 +52,38 @@
         ],
         [
           "5-min stack: price<5<26<50",
-          true
+          false
         ],
         [
           "3-min stack: price<5<26<50",
-          true
+          false
         ],
         [
           "Price below prev-day Low",
           false
         ]
       ],
-      "ema5_5m": 25737.7
+      "ema5_5m": 25740.12
     },
     "oi_metrics": {
       "expiry": "2026-12-01",
-      "spot": 25727.8,
+      "spot": 25746.2,
       "resistance_strike": 26000.0,
-      "resistance_call_oi": 10499775,
+      "resistance_call_oi": 10498995,
       "support_strike": 25000.0,
-      "support_put_oi": 6522295,
+      "support_put_oi": 6512545,
       "max_pain": 25700.0,
-      "pcr": 0.863,
+      "pcr": 0.858,
       "pcr_suggestion": "PUT"
     },
     "ip_status": null,
-    "_last_signal_bucket": "2026-11-25T14:40:00"
+    "_last_signal_bucket": "2026-11-25T14:45:00"
   },
   "SENSEX": {
     "date": "2026-11-25",
-    "engine_status": "data_error",
-    "last_tick": "2026-11-25T14:46:18.906256",
-    "last_processed_bar": "2026-11-25T14:44:00+05:30",
+    "engine_status": "running",
+    "last_tick": "2026-11-25T14:47:33.768446",
+    "last_processed_bar": "2026-11-25T14:47:00+05:30",
     "position": null,
     "trades_today": 0,
     "realized_pnl_today": 0.0,
@@ -91,10 +91,10 @@
     "today_trades": [],
     "bars_held": 0,
     "violation_streak": 0,
-    "last_error": "[WinError 5] Access is denied: 'D:\\\\Claude - Algo\\\\Claude Projects\\\\Live\\\\Project Nifty 3min CPR Strategy\\\\sensex_1min_raw.csv.tmp' -> 'D:\\\\Claude - Algo\\\\Claude Projects\\\\Live\\\\Project Nifty 3min CPR Strategy\\\\sensex_1min_raw.csv'",
+    "last_error": null,
     "checklist": {
-      "ltp": 83740.98,
-      "as_of": "2026-11-25T14:44:00+05:30",
+      "ltp": 83798.11,
+      "as_of": "2026-11-25T14:47:00+05:30",
       "tc": 83534.33,
       "bc": 82807.42,
       "prev_high": 84662.96,
@@ -106,7 +106,7 @@
         ],
         [
           "15-min stack: price>5>26>50",
-          false
+          true
         ],
         [
           "5-min stack: price>5>26>50",
@@ -136,27 +136,27 @@
         ],
         [
           "3-min stack: price<5<26<50",
-          true
+          false
         ],
         [
           "Price below prev-day Low",
           false
         ]
       ],
-      "ema5_5m": 83775.62
+      "ema5_5m": 83783.12
     },
     "oi_metrics": {
       "expiry": "2026-11-26",
-      "spot": 83744.51,
+      "spot": 83800.09,
       "resistance_strike": 85000.0,
-      "resistance_call_oi": 3564020,
-      "support_strike": 83000.0,
-      "support_put_oi": 2258240,
+      "resistance_call_oi": 3554920,
+      "support_strike": 82000.0,
+      "support_put_oi": 2245500,
       "max_pain": 83800.0,
-      "pcr": 0.795,
+      "pcr": 0.802,
       "pcr_suggestion": "PUT"
     },
     "ip_status": null,
-    "_last_signal_bucket": "2026-11-25T14:40:00"
+    "_last_signal_bucket": "2026-11-25T14:45:00"
   }
 }
